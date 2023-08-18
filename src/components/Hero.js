@@ -1,7 +1,6 @@
 import React from 'react'
 // import './Hero.css'
 import LocomotiveScroll from 'locomotive-scroll'
-import 'animate.css';
 
 const Hero = () => {
   return (
