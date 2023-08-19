@@ -6,30 +6,30 @@ import LocomotiveScroll from "locomotive-scroll";
 
 const Footer = () => {
   return (
-    <footer class="flex flex-col gap-3 mx-auto items-center justify-between px-6 md:px-16">
-          <div className="flex  gap-3 flex-col md:flex-row justify-between items-center">
-          <div class="w-[30%] md:w-[13%] px-3">
+    <footer className="flex flex-col gap-3 mx-auto items-center justify-between px-6 md:px-16">
+          <div classNameName="flex  gap-3 flex-col md:flex-row justify-between items-center">
+          <div className="w-[30%] md:w-[13%] px-3">
             <img src="./images/nav_logo.jpg" alt="footer logo"/>
           </div>
-            <div class="flex justify-center items-center gap-6">
-            <div className="bg-black px-3 py-1 rounded-full transition-colors duration-300 text-white">
-                <Link href="/"><FontAwesomeIcon icon={faFacebookF} className="text-3xl p-1"/></Link>
+            <div className="flex justify-center items-center gap-6">
+            <div classNameName="bg-black px-3 py-1 rounded-full transition-colors duration-300 text-white">
+                <Link href="/"><FontAwesomeIcon icon={faFacebookF} classNameName="text-3xl p-1"/></Link>
             </div>
-            <div className="bg-black px-2 py-1 rounded-full transition-colors duration-300 text-white">
-                <Link href="/"><FontAwesomeIcon icon={faTwitter} className="text-3xl p-1"/></Link>
+            <div classNameName="bg-black px-2 py-1 rounded-full transition-colors duration-300 text-white">
+                <Link href="/"><FontAwesomeIcon icon={faTwitter} classNameName="text-3xl p-1"/></Link>
             </div>
-            <div className="bg-black px-2 py-1 rounded-full transition-colors duration-300 text-white">
-                <Link href="/"><FontAwesomeIcon icon={faLinkedinIn} className="text-3xl p-1"/></Link>
+            <div classNameName="bg-black px-2 py-1 rounded-full transition-colors duration-300 text-white">
+                <Link href="/"><FontAwesomeIcon icon={faLinkedinIn} classNameName="text-3xl p-1"/></Link>
             </div>
-            <div className="bg-black px-2 py-1 rounded-full transition-colors duration-300 text-white">
-                <Link href="/"><FontAwesomeIcon icon={faInstagram} className="text-3xl p-1"/></Link>
-            </div>
-            </div>
-            <div class="flex justify-end w-1/2 md:w-1/4">
-              <img src='./images/play-store.png' className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+            <div classNameName="bg-black px-2 py-1 rounded-full transition-colors duration-300 text-white">
+                <Link href="/"><FontAwesomeIcon icon={faInstagram} classNameName="text-3xl p-1"/></Link>
             </div>
             </div>
-            <div className="pt-10 text-left w-full">
+            <div className="flex justify-end w-1/2 md:w-1/4">
+              <img src='./images/play-store.png' classNameName="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+            </div>
+            </div>
+            <div classNameName="py-5 text-left w-full">
                 &copy; copyright @ 2023 by <span>Adapt</span> | all rights reserved!
             </div>
     </footer>

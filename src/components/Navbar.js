@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <section
       id="intro"
-      className="my-5 flex items-center justify-center text-center"
+      className="my-5 flex items-center justify-center text-center" 
       data-scroll-section
     >
       <div class="lg:container px-5 mx-auto">
