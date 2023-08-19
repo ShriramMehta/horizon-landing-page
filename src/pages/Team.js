@@ -5,10 +5,11 @@ const Team = () => {
   return (
     <section
       id="team"
-      className="h-screen bg-gray-200"
+      className="bg-green-200"
       data-scroll-section
     >
     {/* <Testinominal/>  */}
+    Testinominal
     </section>
   )
 }

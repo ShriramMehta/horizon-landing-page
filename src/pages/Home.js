@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <section
       id="home"
-      className=""
       data-scroll-section
     >
     <Hero/>
