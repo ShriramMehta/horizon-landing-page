@@ -1,0 +1,8 @@
+.blob{
+    border-radius:94% 6% 87% 13% / 21% 65% 35% 79%  ;
+    transition: border-radius 500ms ease-in-out;
+}
+
+.blob:hover{
+    border-radius: 94% 6% 93% 7% / 13% 72% 28% 87% ;
+}
