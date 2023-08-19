@@ -1,14 +1,14 @@
 import React from 'react'
-import Testinominal from '../components/Testinominal'
+import Testimonial from '../components/Testimonials'
 
 const Team = () => {
   return (
     <section
       id="team"
-      className="bg-green-200"
+      className=""
       data-scroll-section
     >
-    {/* <Testinominal/>  */}
+    <Testimonial/> 
     Testinominal
     </section>
   )
