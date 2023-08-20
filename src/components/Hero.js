@@ -1,7 +1,7 @@
 import React from 'react'
 import './Hero.css'
-import LocomotiveScroll from 'locomotive-scroll'
 // import homeBg from './images/home.svg'
+
 
 const Hero = () => {
   return (
@@ -26,7 +26,7 @@ const Hero = () => {
             find what helps you in your journey towards mental wellness.
           </h4>
         </div>
-        <div class="flex w-full">
+        <div class="flex w-full z-[-1]">
           <img src="./images/hero_bg.jpg" class="" alt='home img' />
         </div>
       </div>
