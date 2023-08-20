@@ -7,23 +7,3 @@
   background-position: center;
   object-fit: cover;
 } */
-.waveTest {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.waveTest svg {
-  position: relative;
-  display: block;
-  width: calc(150% + 1.3px);
-  height: 171px;
-  transform: rotateY(180deg);
-}
-
-.waveTest .shape-fill {
-  fill: #ECE7FE;
-}

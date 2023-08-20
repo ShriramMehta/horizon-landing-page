@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
   /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); */
+  /* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap'); */
+  /* @import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;600;700&display=swap'); */
 body { 
   font-family: 'Poppins', sans-serif;
   /* font-family: 'Playfair Display', serif; */
+  /* font-family: 'Roboto Mono', monospace; */
+  /* font-family: 'Alegreya', serif; */
   background-color: #ffffff;
   box-sizing: border-box;
   outline: none;

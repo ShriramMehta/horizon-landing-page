@@ -30,11 +30,7 @@ const Testimonial = () => {
                 I always wanted to begin therapy but felt confused and
                 frustrated on how to go about finding a suitable counsellor.
                 Their platform has made the entire process so easy and hassle
-                free. After a few sessions I even began recommending them to a
-                few of my friends who have started using their services too and
-                are very content! Mynd has reaffirmed my faith in the power of
-                therapy and I hope to continue having a wonderful journey with
-                them
+                free.
               </p>
             </div>
           </div>
@@ -48,9 +44,7 @@ const Testimonial = () => {
                 were so amazingly understanding, efficient and responsive, and
                 made sure I got the help I needed as quickly as possible. Their
                 discounted student rates were also incredibly helpful for me and
-                it made it much easier for me to seek help. Although I only had
-                a few sessions, they gave me the clarity I needed and I am now
-                seeing a psychiatrist thanks to them. I definitely recommend
+                it made it much easier for me to seek help. I definitely recommend
                 seeking help through Mynd, it changed a lot of things for me and
                 I’m very grateful for it.
               </p>
@@ -66,8 +60,7 @@ const Testimonial = () => {
                 a session (with an amazing psychologist/therapist) at my
                 convenience and by the earliest. Plus the team is sensitive,
                 helpful and punctual and offer assistance and reply ASAP (which
-                is amazing).Sessions with Mynd/ my therapist have been extremely
-                helpful. Sessions provided me with perspective and made me
+                is amazing). Sessions provided me with perspective and made me
                 introspect and I’ve seen a positive impact on my life.
               </p>
             </div>
