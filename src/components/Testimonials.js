@@ -8,7 +8,7 @@ import "./Testimonial.css";
 
 const Testimonial = () => {
   return (
-    <section className="relative p-6 md:p-16 w-full text-center bg-darkWhite" data-scroll-section>
+    <section className="p-6 md:p-16 w-full text-center bg-darkWhite" data-scroll-section>
       <h1 className="text-3xl md:text-5xl font-bold p-3">Testimonial</h1>
       <Swiper
         freeMode={true}
@@ -42,7 +42,7 @@ const Testimonial = () => {
         <SwiperSlide>
           <div className="p-6">
             <div className="text-center myTest">
-              <p className="text-3xl">
+              <p className="text-xl md:text-3xl mb-4 pb-4">
                 I was going through a really tough time and I was really
                 struggling to find the help I needed until I found Mynd. They
                 were so amazingly understanding, efficient and responsive, and
@@ -60,7 +60,7 @@ const Testimonial = () => {
         <SwiperSlide>
           <div className="p-6">
             <div className="text-center myTest">
-              <p className="text-3xl">
+              <p className="text-xl md:text-3xl mb-4 pb-4">
                 Mynd helped me with student-pocket friendly therapy session when
                 I was in a rough spot. The team replied immediately and assigned
                 a session (with an amazing psychologist/therapist) at my
@@ -76,7 +76,7 @@ const Testimonial = () => {
         <SwiperSlide>
           <div className="p-6">
             <div className="text-center myTest">
-              <p className="text-3xl">
+              <p className="text-xl md:text-3xl mb-4 pb-4">
                 My experience with mynd was wonderful. In a low point in my life
                 and mindset, Ms. Vedika really was a source of self-reflection
                 and understanding. Mynd also made the whole customer experience
@@ -91,7 +91,7 @@ const Testimonial = () => {
         <SwiperSlide>
           <div className="p-6">
             <div className="text-center myTest">
-              <p className="text-3xl">
+              <p className="text-xl md:text-3xl mb-4 pb-4">
                 At first, the thought of online therapy was a little scary. The
                 thought of not having an in person meeting with someone who I
                 was to share very personal experiences with made me anxious.
