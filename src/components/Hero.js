@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="flex py-3 mx-auto flex items-center justify-between pt-10">
       <div class="flex flex-wrap-reverse md:flex-nowrap items-center px-6 justify-center gap-6">
         <div class="flex w-full flex-col justify-center items-center text-center gap-4 p-4">
-          <h2 class="mb-4 text-4xl md:text-6xl text-black font-bold p-3 w-full" data-scroll data-scroll-speed="2">
+          <h2 class="mt-4 text-4xl md:text-6xl text-black font-bold p-3 w-full" data-scroll data-scroll-speed="2">
             <span>Wellness, Your Way.</span>
           </h2>
           <h4 class="text-2xl font-medium p-3 text-left w-full">

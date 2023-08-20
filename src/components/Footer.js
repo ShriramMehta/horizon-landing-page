@@ -7,7 +7,7 @@ import LocomotiveScroll from "locomotive-scroll";
 const Footer = () => {
   return (
     <footer className="flex flex-col gap-3 mx-auto items-center justify-between px-6 md:px-16">
-          <div classNameName="gap-3 flex flex-col md:flex-row justify-between items-center">
+          <div classNameName="gap-3 flex flex-row justify-between items-center">
           <div className="w-[30%] md:w-[13%] px-3">
             <img src="./images/nav_logo.jpg" alt="footer logo"/>
           </div>
