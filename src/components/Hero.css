@@ -1,4 +1,4 @@
-.section-with-background {
+/* .section-with-background {
     background-image: url('C:\F\Projects\adapt\public\images\hero_back.jpeg');
     background-size: cover;
     background-position: center;
@@ -13,5 +13,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.8); /* Optionally add a semi-transparent background */
-  }
+    background-color: rgba(255, 255, 255, 0.8)
+  } */

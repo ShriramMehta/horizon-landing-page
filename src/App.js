@@ -11,18 +11,18 @@ import Testimonial from './components/Testimonials';
 import Features from './components/Features';
 
 const App = () => {
-  // useEffect(() => {
-  //   const scroll = new LocomotiveScroll({
-  //     el: document.querySelector("[data-scroll-container]"),
-  //     smooth: true,
-  //     tablet: { smooth: true },
-  //     smartphone: { smooth: true }
-  //   });
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      tablet: { smooth: true },
+      smartphone: { smooth: true }
+    });
 
-  //   return () => {
-  //     scroll.destroy();
-  //   };
-  // }, []);
+    return () => {
+      scroll.destroy();
+    };
+  }, []);
   
   return (
     <div data-scroll-container className='overflow-x-hidden'>

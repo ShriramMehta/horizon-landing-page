@@ -5,7 +5,7 @@ const Team = () => {
   return (
     <section
       id="team"
-      className="flex flex-col gap-6 w-full justify-center items-center"
+      className="my-10 flex flex-col gap-6 w-full justify-center items-center"
       data-scroll-section
     >
         <div>
@@ -75,7 +75,7 @@ const Team = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div>  
     </section>
   );
 };

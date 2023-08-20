@@ -8,7 +8,7 @@ import "./Testimonial.css";
 
 const Testimonial = () => {
   return (
-    <div className="w-full text-center" data-scroll-section>
+    <section className="w-full text-center my-10" data-scroll-section>
       <h1 className="text-5xl font-semibold">Testimonial</h1>
       <Swiper
         freeMode={true}
@@ -102,7 +102,7 @@ const Testimonial = () => {
         </SwiperSlide>
         <div className="swiper-pagination"></div>
       </Swiper>
-    </div>
+    </section>
   );
 };
 

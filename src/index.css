@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
-
-body {
-  /* transition: background-color 0.2s ease-in-out;  */
-  font-family: 'Roboto','Poppins', sans-serif;
+  /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); */
+body { 
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Playfair Display', serif; */
   background-color: #ffffff;
   box-sizing: border-box;
   outline: none;

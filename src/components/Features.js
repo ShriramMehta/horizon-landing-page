@@ -2,7 +2,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <section className="w-full mx-auto p-6" data-scroll-section>
+    <section id="features" className="w-full mx-auto p-6" data-scroll-section>
       <h1 className="text-center text-5xl font-bold">FEATURES</h1>
       <div className="flex flex-wrap justify-center items-center gap-6 py-6">
       <div class="group h-96 w-80 [perspective:1000px]">

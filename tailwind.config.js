@@ -17,6 +17,7 @@ module.exports = {
         "lightWhite" : "#D0D5DD",
         "errorRed" : "#E50000",
         "successGreen":"#00C853" ,
+        "lightIndigo": "#9E9EFF"
       }
     },
   },
