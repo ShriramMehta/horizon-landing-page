@@ -9,7 +9,7 @@ const Team = () => {
       data-scroll-section
     >
       <div>
-        <h1 className="text-5xl font-bold text-indigo-300">FOUNDARS</h1>
+        <h1 className="text-5xl font-bold text-indigo-300">FOUNDERS</h1>
       </div>
       <div>
         <div className="flex flex-col md:flex-row w-full">
@@ -33,7 +33,7 @@ const Team = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row w-full">
+        <div className="flex flex-col-reverse md:flex-row w-full">
           <div className="flex flex-col justify-center gap-6 p-8 px-10 w-full">
             <h1 className="text-5xl">Preet Bhatti</h1>
             <h4 className="text-2xl">Co-Founder</h4>

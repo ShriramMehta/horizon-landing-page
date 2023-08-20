@@ -14,21 +14,21 @@ const About = () => {
           data-scroll
           data-scroll-speed="2"
         >
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-4xl md:text-6xl font-bold">
             Who are
             <br />
             we?
           </h1>
         </div>
         <div className="w-full flex flex-col justify-center items-center p-6 gap-3">
-          <div className="my-3 p-3">
+          <div className="my-3">
             <h3 className="text-3xl md:text-4xl font-medium">
               We are a women-led tech startup (previously known as Mynd) with an
               aim to be India's leading behavioral health platform for the
               youth.
             </h3>
           </div>
-          <div className="my-3 p-3">
+          <div className="my-3">
             <h6 className="text-xl md:text-2xl">
               We help you adapt to difficult situationsAnd we adapt to your
               unique needs. From activities that fit seamlessly into your daily

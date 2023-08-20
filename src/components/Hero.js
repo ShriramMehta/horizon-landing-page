@@ -5,9 +5,9 @@ import './Hero.css'
 
 const Hero = () => {
   return (
-    <section className="flex mx-auto items-center justify-between pt-3">
-      <div class="flex flex-wrap-reverse md:flex-nowrap items-center px-6 justify-center gap-6">
-        <div class="flex w-full flex-col justify-center items-center text-left gap-4 p-4">
+    <section className="flex mx-auto items-center justify-between p-6">
+      <div class="flex flex-wrap-reverse md:flex-nowrap items-center  justify-center gap-6">
+        <div class="flex w-full flex-col justify-center items-center text-left gap-4 ">
           <h2 class="mt-4 text-4xl md:text-6xl text-black font-bold p-3 w-full" data-scroll data-scroll-speed="2">
             <span style={{
       background: "linear-gradient(90deg, rgba(78,19,159,1) 0%, rgba(123,60,243,1) 35%, rgba(108,99,255,1) 100%)",

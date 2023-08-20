@@ -8,8 +8,8 @@ import "./Testimonial.css";
 
 const Testimonial = () => {
   return (
-    <section className="relative p-16 w-full text-center bg-darkWhite" data-scroll-section>
-      <h1 className="text-5xl font-semibold py-3">Testimonial</h1>
+    <section className="relative p-6 md:p-16 w-full text-center bg-darkWhite" data-scroll-section>
+      <h1 className="text-3xl md:text-5xl font-bold p-3">Testimonial</h1>
       <Swiper
         freeMode={true}
         grabCursor={true}
@@ -23,7 +23,7 @@ const Testimonial = () => {
         <SwiperSlide>
           <div className="p-6">
             <div className="text-center myTest">
-              <p className="text-3xl mb-4 pb-4">
+              <p className="text-xl md:text-3xl mb-4 pb-4">
                 My experience with Mynd has been really smooth and helpful. I’m
                 happy I decided to reach out to them for their services and
                 since the beginning they’ve been really involved and proactive.
