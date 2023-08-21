@@ -34,6 +34,7 @@ const App = () => {
       <Features/>
       <GetApp />
       <Footer />
+      {/* <Team2/> */}
     </div>
   )
 }
