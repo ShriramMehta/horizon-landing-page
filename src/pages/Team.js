@@ -31,36 +31,44 @@ const Team = () => {
   return (
     <section
       id="team"
-      className="my-10 flex flex-col gap-6 w-full justify-center items-center p-16"
+      className="my-10 flex flex-col gap-6 w-full justify-center items-center p-10"
       data-scroll-section
     >
-       <div className="mb-3">
-        <h1 className="text-5xl text-indigo-300 font-heading font-bold">FOUNDERS</h1>
+      <div className="mb-3">
+        <h1 className="text-5xl text-indigo-300 font-heading font-bold">
+          FOUNDERS
+        </h1>
       </div>
-      <div className="flex w-full justify-center items-center ModalContainer">
-        <div className="p-6 flex gap-16 justify-between items-center">
-        <div className="w-[200px] h-[200px] ">
-          <img src="./images/img1.png" alt="founder1" className="max-w-full max-h-full cursor-pointer transform transition-transform duration-300 hover:scale-110" onMouseOver={()=>setFounder(0)}/>
-        </div>
-          <div className="flex flex-col gap-16 justify-between items-center">
-          <div className="w-[200px] h-[200px] ">
-          <img src="./images/img2.png" alt="founder2" className="max-w-full max-h-full cursor-pointer transform transition-transform duration-300 hover:scale-110"onMouseOver={()=>setFounder(1)}/>
-        </div>
-        <div className="w-[200px] h-[200px] ">
-          <img src="./images/img3.png" alt="founder3" className="max-w-full max-h-full cursor-pointer transform transition-transform duration-300 hover:scale-110" onMouseOver={()=>setFounder(2)}/>
-        </div>
+      <div className="flex flex-col md:flex-row w-full justify-center items-center p-6 ModalContainer ">
+        <div className="p-6 relative flex  gap-6 justify-between items-center w-full">
+          <div className="flex flex-row flex-wrap gap-6 justify-center items-center">
+          {Founders.map((founderData, index) => (
+            <div
+              key={index}
+              className="w-[200px] h-[200px]"
+              onMouseOver={() => setFounder(index)}
+            >
+              <img
+                src={founderData.image}
+                alt={`founder${index + 1}`}
+                className={`max-w-full max-h-full cursor-pointer transform transition-transform duration-300 hover:scale-110 ${
+                  founder === index ? "" : "grayscale"
+                }`}
+              />
+            </div>
+          ))}
           </div>
         </div>
-        <div className="flex flex-col justify-center p-16 text-left gap-3">
-                <h1 className="text-4xl font-heading font-bold my-6">{Founders[founder].name}</h1>
-                <h4 className="text-xl font-heading font-semibold mb-3">Co-Founder</h4>
-                <h4 className="text-xl">
-                  {Founders[founder].para}
-                </h4>
-                <p className="text-md">
-                  {Founders[founder].subpara}
-                </p>
-              </div>
+        <div className="flex flex-col justify-center p-6 text-left gap-3 w-full">
+          <h1 className="text-4xl font-heading font-bold my-6">
+            {Founders[founder].name}
+          </h1>
+          <h4 className="text-xl font-heading font-semibold mb-3">
+            Co-Founder
+          </h4>
+          <h4 className="text-xl">{Founders[founder].para}</h4>
+          <p className="text-md">{Founders[founder].subpara}</p>
+        </div>
       </div>
     </section>
   );
