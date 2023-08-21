@@ -1,23 +1,34 @@
-import React from 'react';
+import React from "react";
 
 const GetApp = () => {
   return (
     <section
       id="getApp"
-      className="flex items-center justify-center text-center bg-gray-200 py-28 mx-auto"
+      className="flex items-center p-6 justify-center text-center bg-gray-200 py-28 mx-auto"
       data-scroll-section
     >
-    <div class="w-60 sm:w-80 mx-auto px-3 bg-white rounded-lg py-2 shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer border border-[2px] border-blue-50">
-    <div class="mb-2 p-3">
-        <h1 class="mb-1 text-2xl font-bold">Scan to download/link</h1>
-    </div>
-    <div class="mb-2 p-3">
-      <img src="./images/qr_code.png" alt="scanner"class="w-full" />
-    </div>
-    <div class="mb-2 p-3">
-    <h4>Get the Adapt app now and let’s take you towards your personalised wellness path!</h4>
-    </div>
-  </div>
+      <div class="mx-auto p-3 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-95">
+        <div className="flex flex-col md:flex-row justify-center text-left items-center">
+          <div className="w-full md:w-1/2 lg:w-3/4 p-6">
+                <h1 className="px-3 text-4xl font-heading font-bold">
+                  Get the Adapt app now and let’s<br/>take you towards your
+                  personalised<br/>wellness path!
+                </h1>
+                <img src="./images/qr_code.png" alt="scanner"/>
+            <div className="flex p-3 gap-3 justify-center md:justify-start items-center">
+              <img src="./images/app-store.svg" alt="app-store" className="cursor-pointer"/>
+              <img src="./images/google-play.svg" alt="google-play-store" className="cursor-pointer"/>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-1/2">
+            <img
+              src="./images/Get_App.jpg"
+              alt="get App"
+              className="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

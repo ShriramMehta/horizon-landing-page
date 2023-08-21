@@ -3,7 +3,7 @@ import React from "react";
 const Features = () => {
   return (
     <section id="features" className="w-full mx-auto p-6" data-scroll-section>
-      <h1 className="text-center text-5xl font-bold">FEATURES</h1>
+      <h1 className="text-center text-5xl font-bold font-heading">FEATURES</h1>
       <div className="flex flex-wrap justify-center items-center gap-6 py-6">
       <div class="group h-96 w-80 [perspective:1000px]">
         <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">

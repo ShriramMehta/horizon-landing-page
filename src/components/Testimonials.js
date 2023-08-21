@@ -9,7 +9,7 @@ import "./Testimonial.css";
 const Testimonial = () => {
   return (
     <section className="p-6 md:p-16 w-full text-center bg-darkWhite" data-scroll-section>
-      <h1 className="text-3xl md:text-5xl font-bold p-3">Testimonial</h1>
+      <h1 className="text-3xl md:text-5xl font-bold p-3 font-heading">Testimonials</h1>
       <Swiper
         freeMode={true}
         grabCursor={true}

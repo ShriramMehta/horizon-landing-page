@@ -9,7 +9,7 @@ const Team = () => {
       data-scroll-section
     >
       <div>
-        <h1 className="text-5xl font-bold text-indigo-300">FOUNDERS</h1>
+        <h1 className="text-5xl text-indigo-300 font-heading font-bold">FOUNDERS</h1>
       </div>
       <div>
         <div className="flex flex-col md:flex-row w-full">
@@ -19,8 +19,8 @@ const Team = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center gap-6 p-8 w-full">
-            <h1 className="text-5xl">Aayushi Shah</h1>
-            <h4 className="text-2xl">Co-Founder</h4>
+            <h1 className="text-5xl font-heading font-bold">Aayushi Shah</h1>
+            <h4 className="text-2xl font-heading font-semibold">Co-Founder</h4>
             <h4 className="text-2xl">
               “The day people talk about and confront mental health issues,
               therapy, seek help for themselves & make it a part of their
@@ -35,8 +35,8 @@ const Team = () => {
         </div>
         <div className="flex flex-col-reverse md:flex-row w-full">
           <div className="flex flex-col justify-center gap-6 p-8 px-10 w-full">
-            <h1 className="text-5xl">Preet Bhatti</h1>
-            <h4 className="text-2xl">Co-Founder</h4>
+            <h1 className="text-5xl font-heading font-bold">Preet Bhatti</h1>
+            <h4 className="text-2xl font-heading font-semibold">Co-Founder</h4>
             <h4 className="text-2xl">
               “There is a need to acknowledge the importance of investing in
               yourself, mentally & physically – time, resources, energy,
@@ -61,8 +61,8 @@ const Team = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center gap-6 p-8 w-full">
-            <h1 className="text-5xl">Varnika Hathi</h1>
-            <h4 className="text-2xl">Co-Founder</h4>
+            <h1 className="text-5xl font-heading font-bold">Varnika Hathi</h1>
+            <h4 className="text-2xl font-heading font-semibold">Co-Founder</h4>
             <h4 className="text-2xl">
               “The aim is to create a community. A community of those who
               provide help, and those who seek it. When people know there’s a
