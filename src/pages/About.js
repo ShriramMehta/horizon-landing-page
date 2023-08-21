@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <div className="w-full flex flex-col justify-center items-center p-6 gap-3">
           <div className="my-3">
-            <h3 className="text-3xl md:text-4xl font-medium font-heading">
+            <h3 className="text-3xl md:text-4xl font-semibold font-heading">
               We are a women-led tech startup (previously known as Mynd) with an
               aim to be India's leading behavioral health platform for the
               youth.

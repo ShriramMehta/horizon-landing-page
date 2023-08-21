@@ -25,8 +25,9 @@ const Footer = () => {
                 <Link href="/"><FontAwesomeIcon icon={faInstagram} className="text-3xl p-1"/></Link>
             </div>
             </div>
-            <div class="flex justify-end w-1/2 md:w-1/4">
-              <img src='./images/play-store.png' className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+            <div class="flex justify-end w-1/2 md:w-1/4 gap-6">
+            <img src='./images/app-store.svg' className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+              <img src='./images/google-play.svg' className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
             </div>
             </div>
             <div className="pt-10 text-left w-full">
