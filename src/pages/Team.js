@@ -60,14 +60,14 @@ const Team = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center p-6 text-left gap-3 w-full">
-          <h1 className="text-4xl font-heading font-bold my-6">
+          <h1 className="text-5xl font-heading font-bold my-6">
             {Founders[founder].name}
           </h1>
-          <h4 className="text-xl font-heading font-semibold mb-3">
+          <h4 className="text-2xl font-heading font-semibold mb-3">
             Co-Founder
           </h4>
           <h4 className="text-xl">{Founders[founder].para}</h4>
-          <p className="text-md">{Founders[founder].subpara}</p>
+          <p className="text-lg">{Founders[founder].subpara}</p>
         </div>
       </div>
     </section>

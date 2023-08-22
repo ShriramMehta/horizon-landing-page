@@ -1,6 +1,5 @@
 import React from "react";
-import "./Hero.css";
-// import homeBg from './images/home.svg'
+
 
 const Hero = () => {
   return (

@@ -3,7 +3,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Footer from './components/Footer';
-import './App.css'; // Include Tailwind CSS styles
+import './App.css'; 
 import Home from './pages/Home';
 import Team from './pages/Team';
 import GetApp from './pages/GetApp';
@@ -34,7 +34,6 @@ const App = () => {
       <Features/>
       <GetApp />
       <Footer />
-      {/* <Team2/> */}
     </div>
   )
 }

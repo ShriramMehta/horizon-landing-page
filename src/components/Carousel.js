@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide, FreeMode } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import './Carousel.css';
 import 'swiper/css';
 

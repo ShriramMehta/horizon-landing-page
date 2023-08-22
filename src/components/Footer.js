@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import LocomotiveScroll from "locomotive-scroll";
 
 const Footer = () => {
   return (
@@ -25,9 +24,9 @@ const Footer = () => {
                 <Link href="/"><FontAwesomeIcon icon={faInstagram} className="text-3xl p-1"/></Link>
             </div>
             </div>
-            <div class="flex justify-end w-1/2 md:w-1/4 gap-6">
-            <img src='./images/app-store.svg' className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
-              <img src='./images/google-play.svg' className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+            <div class="flex justify-center w-full md:w-1/2 gap-6">
+            <img src='./images/app-store.svg' alt="app-store" className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+              <img src='./images/google-play.svg' alt="google-play" className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
             </div>
             </div>
             <div className="pt-10 text-left w-full">
