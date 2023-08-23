@@ -35,9 +35,9 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Main />} />
       <Route path="/privacy-policy" element={<Privacy />} />
       <Route path="/delete" element={<DeleteAccount />} />
+      <Route path="/" element={<Main />} />
     </Routes>
   );
 };

@@ -9,9 +9,9 @@ const DeleteAccount = () => {
     // e.preventDefault();
     try {
       if (email) {
-        toast.success("mail sent successfully")
+        toast.success("mail sent successfully");
       } else {
-        toast.success("enter email address")
+        toast.success("enter email address");
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -19,7 +19,7 @@ const DeleteAccount = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Account Delete")
+    console.log("Account Delete");
   };
 
   return (
@@ -38,7 +38,10 @@ const DeleteAccount = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button className="my-2 bg-blue-400 hover:bg-blue-500 text-white text-lg p-2 rounded" onClick={handleSendOTP}>
+          <button
+            className="my-2 bg-blue-400 hover:bg-blue-500 text-white text-lg p-2 rounded"
+            onClick={() => handleSendOTP()}
+          >
             Send OTP
           </button>
         </div>
@@ -52,9 +55,12 @@ const DeleteAccount = () => {
             placeholder="Enter OPT"
             className="border border-black  rounded w-full p-3"
             value={otp}
-            onChange={(e)=>setOtp(e.target.value)}
+            onChange={(e) => setOtp(e.target.value)}
           />
-          <button className="my-2 bg-red-400 hover:bg-red-500 text-white text-lg p-2 rounded" onClick={handleSubmit}>
+          <button
+            className="my-2 bg-red-400 hover:bg-red-500 text-white text-lg p-2 rounded"
+            onClick={handleSubmit}
+          >
             Delete Account
           </button>
         </div>
