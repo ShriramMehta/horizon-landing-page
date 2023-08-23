@@ -15,13 +15,14 @@ const Navbar = () => {
     <section className="my-3" data-scroll-section>
       <div className="relative md:flex items-center justify-between  md:px-10 px-7 w-full">
         <div class="p-5 flex justify-between items-center">
+          <Link to="/">
           <img
             src="./images/nav_logo.jpg"
             class="w-20 cursor-pointer object-cover"
-            href="#home"
             alt="nav logo"
             data-scroll-to
           />
+          </Link>
           <div
             onClick={() => setOpen(!open)}
             className="flex justify-end items-center text-4xl cursor-pointer md:hidden"
