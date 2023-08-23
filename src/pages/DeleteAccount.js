@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { toast } from "react-hot-toast";
+import toast, { Toaster } from 'react-hot-toast';
 
 const DeleteAccount = () => {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
 
   const handleSendOTP = () => {
-    // e.preventDefault();
-    console.log("btn clicked")
       if (email) {
         toast.success("mail sent successfully");
       } else {
-        console.log("enter email address");
+        toast.error("enter email address");
       }
     
   };
@@ -30,18 +28,20 @@ const DeleteAccount = () => {
           </label>
           <input
             name="email"
-            type="text"
+            type="email"
             placeholder="Enter email address"
             className="border  border-black rounded w-full p-3"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <button
-            className=""
+            className="my-2 bg-blue-400 hover:bg-blue-500 text-white text-lg p-2 rounded"
             onClick={handleSendOTP}
           >
             Send OTP
           </button>
+          <Toaster />
         </div>
         <div className="mb-4">
           <label className="block text-lightBlack text-sm font-bold mb-2">
@@ -50,7 +50,7 @@ const DeleteAccount = () => {
           <input
             name="number"
             type="text"
-            placeholder="Enter OPT"
+            placeholder="Enter OTP"
             className="border border-black  rounded w-full p-3"
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
