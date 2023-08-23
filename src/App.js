@@ -18,6 +18,15 @@ import Features from "./components/Features";
 import Privacy from "./pages/Privacy";
 import DeleteAccount from "./pages/DeleteAccount";
 import Main from "./pages/Main";
+const MainSection = ({ content }) => {
+  return (
+    <div>
+      <Navbar />
+      {content}
+      <Footer />
+    </div>
+  );
+};
 
 const App = () => {
   // useEffect(() => {
@@ -37,6 +46,23 @@ const App = () => {
     <Routes>
       <Route path="/privacy-policy" element={<Privacy />} />
       <Route path="/delete-account" element={<DeleteAccount />} />
+      <Route path="/home" element={<Main />} />
+      <Route
+        path="/about"
+        element={
+          <MainSection
+            content={
+              <>
+                <About />
+                <Testimonial />
+                <Features />
+              </>
+            }
+          />
+        }
+      />
+      <Route path="/team" element={<MainSection content={<Team />} />} />
+      <Route path="/getApp" element={<MainSection content={<GetApp />} />} />
       <Route path="/" element={<Main />} />
     </Routes>
   );
