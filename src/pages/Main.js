@@ -15,9 +15,9 @@ const Main = () => {
       <Home />
       <About />
       <Testimonial />
-      <Team />
-      <Features />
       <GetApp />
+      <Features />
+      <Team />
       <Footer />
     </div>
   );
