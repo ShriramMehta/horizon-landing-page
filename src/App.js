@@ -1,10 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Outlet,
-} from "react-router-dom";
+import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
 import LocomotiveScroll from "locomotive-scroll";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
@@ -17,15 +12,14 @@ import Testimonial from "./components/Testimonials";
 import Features from "./components/Features";
 import Privacy from "./pages/Privacy";
 import DeleteAccount from "./pages/DeleteAccount";
-import Main from "./pages/Main";
 
-const MainSection = ({ content }) => {
+const Layout = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      {content}
+      <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 
@@ -43,29 +37,62 @@ const App = () => {
   //   };
   // }, []);
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: (
+            <>
+              <Home />
+              <About />
+              <Testimonial />
+              <GetApp />
+              <Features />
+              <Team />
+            </>
+          ),
+        },
+        {
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: (
+            <>
+              <About />
+              <Testimonial />
+              <Features />
+            </>
+          ),
+        },
+        {
+          path: "/team",
+          element: <Team />,
+        },
+        {
+          path: "/getApp",
+          element: <GetApp />,
+        },
+      ],
+    },
+    {
+      path: "/privacy-policy",
+      element: <Privacy />,
+    },
+    {
+      path: "/delete-account",
+      element: <DeleteAccount />,
+    },
+  ]);
+
   return (
-    <Routes>
-      <Route path="/home" element={<Main />} />
-      <Route
-        path="/about"
-        element={
-          <MainSection
-            content={
-              <>
-                <About />
-                <Testimonial />
-                <Features />
-              </>
-            }
-          />
-        }
-      />
-      <Route path="/team" element={<MainSection content={<Team />} />} />
-      <Route path="/getApp" element={<MainSection content={<GetApp />} />} />
-      <Route path="/privacy-policy" element={<Privacy />} />
-      <Route path="/delete-account" element={<DeleteAccount />} />
-      <Route path="/" element={<Main />} />
-    </Routes>
+    <div className="app">
+      <RouterProvider router={router} />
+    </div>
   );
 };
 export default App;
