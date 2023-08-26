@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
             </div>
             <div className="py-5 md:mr-20 text-center">
-                &copy; copyright @ 2023 by <span className="text-primaryIndigo font-bold">Adapt</span> | all rights reserved!
+                Copyright @ 2023 by <span className="text-primaryIndigo font-bold">Adapt</span> | all rights reserved!
             </div>
     </footer>
   );
