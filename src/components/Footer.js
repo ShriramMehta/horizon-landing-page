@@ -24,12 +24,15 @@ const Footer = () => {
                 <Link href="/"><FontAwesomeIcon icon={faInstagram} className="text-3xl p-1"/></Link>
             </div>
             </div>
-            <div class="flex justify-center gap-6">
-            <img src='./images/app-store.svg' alt="app-store" className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+            <div class="flex flex-col justify-center items-center">
+              <div className="flex justify-center items-center gap-6">
+              <img src='./images/app-store.svg' alt="app-store" className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
               <img src='./images/google-play.svg' alt="google-play" className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"/>
+              </div>
+              <Link to="/delete-account" className="mt-5 underline" >Delete Account</Link>
             </div>
             </div>
-            <div className="py-5 mr-20 text-center">
+            <div className="py-5 md:mr-20 text-center">
                 &copy; copyright @ 2023 by <span>Adapt</span> | all rights reserved!
             </div>
     </footer>
