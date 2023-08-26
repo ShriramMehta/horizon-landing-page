@@ -44,7 +44,7 @@ const GetApp = () => {
           </div>
           <div className="w-full md:w-1/2 lg:w-1/2">
             <img
-              src="./images/Get_App.jpg"
+              src="./images/Get_App.png"
               alt="get App"
               className="rounded-xl"
             />
