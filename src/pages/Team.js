@@ -35,7 +35,7 @@ const Team = () => {
       data-scroll-section
     >
       <div className="mb-3">
-        <h1 className="text-5xl text-indigo-300 font-heading font-bold">
+        <h1 className="text-5xl text-darkIndigo font-heading font-bold">
           FOUNDERS
         </h1>
       </div>
@@ -50,7 +50,7 @@ const Team = () => {
             >
               <img
                 src={founderData.image}
-                alt={`founder${index + 1}`}
+                alt="founder"
                 className={`max-w-full max-h-full cursor-pointer transform transition-transform duration-300 hover:scale-110 ${
                   founder === index ? "" : "grayscale"
                 }`}
