@@ -3,23 +3,23 @@ import React from "react";
 const Features = () => {
   const features = [
     {
-      imgSrc: "./images/Feat1.jpeg",
+      imgSrc: "./images/7.png",
       title: "Therapy",
       description:
         "Connect with compassionate therapists for personalized support.",
     },
     {
-      imgSrc: "./images/Feat2.jpeg",
+      imgSrc: "./images/8.png",
       title: "Guided Meditations",
       description: "Get access to calming mindfulness audio and videos.",
     },
     {
-      imgSrc: "./images/Feat3.jpeg",
+      imgSrc: "./images/10.png",
       title: "Personalized Flows",
       description: "Tailored well-being journeys designed just for you.",
     },
     {
-      imgSrc: "./images/Feat4.jpeg",
+      imgSrc: "./images/9.png",
       title: "Progress Tracking",
       description: "Stay motivated by monitoring your growth and achievements.",
     },
@@ -27,7 +27,9 @@ const Features = () => {
 
   return (
     <section id="features" className="w-full mx-auto p-6" data-scroll-section>
-      <h1 className="text-center text-4xl font-bold font-heading text-indigo-400">FEATURES</h1>
+      <h1 className="text-center text-4xl font-bold font-heading text-indigo-400">
+        FEATURES
+      </h1>
       <div className="flex flex-wrap justify-center items-center gap-6 py-6">
         {features.map((feature, index) => (
           <div key={index} className="group h-72 w-60 [perspective:1000px]">

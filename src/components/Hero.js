@@ -1,6 +1,5 @@
 import React from "react";
-
-
+import "./Styles.css";
 const Hero = () => {
   return (
     <section className="flex mx-auto items-center justify-between p-6">
@@ -34,7 +33,11 @@ const Hero = () => {
           </h4>
         </div>
         <div class="flex w-full z-[-1]">
-          <img src="./images/hero_bg.jpg" class="" alt="home img" />
+          <img
+            src="./images/6.png"
+            className="animate-on-hover"
+            alt="home img"
+          />
         </div>
       </div>
     </section>
