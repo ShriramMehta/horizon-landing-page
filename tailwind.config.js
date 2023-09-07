@@ -21,6 +21,11 @@ module.exports = {
         body: ["Inter"],
         heading: ["Poppins"],
       },
+      backgroundImage: {
+        "gradient-lightIndigo": "linear-gradient(to bottom, #9E9EFF, #d6e1ff)",
+        "gradient-lightIndigo-top":
+          "linear-gradient(to bottom, #d6e1ff, #9E9EFF)",
+      },
     },
   },
   plugins: [],

@@ -5,7 +5,7 @@ const GetApp = () => {
   return (
     <section
       id="getApp"
-      className="flex items-center p-6 justify-center text-center bg-darkWhite py-28 mx-auto"
+      className="flex items-center p-6 justify-center text-center bg-gradient-lightIndigo-top py-28 mx-auto"
       data-scroll-section
     >
       <div class="mx-auto p-3 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-95">

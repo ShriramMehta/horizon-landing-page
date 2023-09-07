@@ -4,7 +4,7 @@ const About2 = () => {
   return (
     <section
       id="about"
-      className="bg-darkWhite mt-20 w-full relative p-8"
+      className="bg-gradient-lightIndigo mt-20 w-full relative p-8"
       data-scroll-section
     >
       <div className="flex justify-center items-center p-3 mb-5">

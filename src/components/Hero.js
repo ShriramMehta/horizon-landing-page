@@ -2,7 +2,10 @@ import React from "react";
 import "./Styles.css";
 const Hero = () => {
   return (
-    <section className="flex mx-auto items-center justify-between p-6">
+    <section
+      className="flex mx-auto items-center justify-between p-6"
+      style={{ marginTop: "-8rem" }}
+    >
       <div class="flex flex-wrap-reverse md:flex-nowrap items-center  justify-center gap-6">
         <div class="flex w-full flex-col justify-center items-center text-left gap-4 ">
           <h2
