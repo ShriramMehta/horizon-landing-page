@@ -9,7 +9,7 @@ const Features = () => {
         "Connect with compassionate therapists for personalized support.",
     },
     {
-      imgSrc: "./images/8.png",
+      imgSrc: "./images/11.png",
       title: "Guided Meditations",
       description: "Get access to calming mindfulness audio and videos.",
     },
@@ -47,7 +47,9 @@ const Features = () => {
 
               <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-white [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div className="flex min-h-full flex-col items-center justify-center">
-                  <h1 className="text-xl font-bold">{feature.description}</h1>
+                  <h1 className="text-xl font-bold font-heading">
+                    {feature.description}
+                  </h1>
                 </div>
               </div>
             </div>

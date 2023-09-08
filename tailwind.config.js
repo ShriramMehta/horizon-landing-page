@@ -18,8 +18,8 @@ module.exports = {
         lightIndigo: "#9E9EFF",
       },
       fontFamily: {
-        body: ["Inter"],
-        heading: ["Poppins"],
+        body: ["poppins"],
+        heading: ["poppins"],
       },
       backgroundImage: {
         "gradient-lightIndigo": "linear-gradient(to bottom, #9E9EFF, #d6e1ff)",

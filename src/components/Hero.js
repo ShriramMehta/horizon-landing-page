@@ -3,8 +3,8 @@ import "./Styles.css";
 const Hero = () => {
   return (
     <section
-      className="flex mx-auto items-center justify-between p-6"
-      style={{ marginTop: "-8rem" }}
+      className="flex mx-auto items-center justify-between p-16"
+      style={{ marginTop: "-12rem" }}
     >
       <div class="flex flex-wrap-reverse md:flex-nowrap items-center  justify-center gap-6">
         <div class="flex w-full flex-col justify-center items-center text-left gap-4 ">
@@ -30,9 +30,10 @@ const Hero = () => {
             Your journey to mental well-being starts here.
             <br /> Let's create a happier, healthier you - together!
           </h4>
-          <h4 class="text-xl text-lightBlack p-3 text-left w-full">
-            Wellness isn’t a one size fits all concept. We are here to help you
-            find what helps you in your journey towards mental wellness.
+          <h4 class="text-xl text-lightBlack p-3 text-left w-full font-heading">
+            Wellness isn’t a one size fits all concept.
+            <br></br>We are here to help you find what helps you in your journey
+            towards mental wellness.
           </h4>
         </div>
         <div class="flex w-full z-[-1]">
