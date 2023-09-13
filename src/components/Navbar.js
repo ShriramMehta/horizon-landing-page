@@ -12,7 +12,7 @@ const Navbar = () => {
   ];
   return (
     <section className="my-3" data-scroll-section>
-      <div className="relative md:flex items-center justify-between  md:px-10 px-7 w-full">
+      <div className="relative md:flex items-center justify-start  md:px-10 px-7 w-full">
         <div class="p-5 flex justify-between items-center">
           <Link to="/">
           <img
@@ -24,7 +24,7 @@ const Navbar = () => {
           </Link>
           <div
             onClick={() => setOpen(!open)}
-            className="flex justify-end items-center text-4xl cursor-pointer md:hidden"
+            className="flex justify-end items-center text-3xl cursor-pointer md:hidden"
           >
             {open ? (
               <FontAwesomeIcon icon={faWindowClose} />
@@ -43,7 +43,7 @@ const Navbar = () => {
               <li key={link.name}>
                 <Link
                   to={link.link}
-                  className="inline-block text-2xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-lightBlue transform transition-transform duration-300 hover:scale-90"
+                  className="inline-block text-[#171A1FFF] text-xl font-normal px-4 py-2 border-4 border-double border-transparent hover:text-lightBlue transform transition-transform duration-300 hover:scale-90"
                   onClick={() => setOpen(!open)}
                 >
                   {link.name}
