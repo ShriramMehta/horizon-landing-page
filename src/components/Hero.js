@@ -1,20 +1,11 @@
 import React from "react";
-import "./Hero.css"
-
-const item = {
-  hidden: { y: "10vh", opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
+import "./Components.css"
 
 const Hero = () => {
   
   return (
     <section
       className="p-6 mx-auto md:mt-[-3rem] lg:mt-[-3rem] xl:mt-[-8rem]"
-      // style={{ marginTop: "-12rem" }}
     >
       <div class="mx-auto w-full  flex flex-wrap-reverse lg:flex-nowrap md:items-center  md:justify-center gap-6">
         <div class="flex lg:w-1/2 flex-col justify-center items-center text-left px-3 gap-4 mx-auto lg:ml-[-5px] lg:mt-20">

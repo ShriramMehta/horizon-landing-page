@@ -1,0 +1,10 @@
+.blob {
+  background-image: linear-gradient(to right,#9C85EF, #A289F1, #BC98FB, #C5A3FD, #D3C1FD, #DCD3FE);
+  border-radius: 45% 10% 10% 42% / 50% 0% 0% 46%;
+}
+.section-background-bottom{
+  background-image: linear-gradient(to right top,#D0B9F5, #D8C5F6, #ECE3FB, #FFFFFF 50%);
+}
+.section-background-top{
+  background-image: linear-gradient(to left bottom, #dbc7fb, #dfcefa,#ECE3FB , #ffffff 50%);
+}

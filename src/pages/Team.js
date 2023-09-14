@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "./Team.css";
+import "./Pages.css";
 
 const Founders = [
   {

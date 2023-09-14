@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Team.css'
+import './Pages.css'
 
 const GetApp = () => {
   return (
