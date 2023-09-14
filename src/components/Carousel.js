@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import './Carousel.css';
 import 'swiper/css';
 
 const Carousel = () => {
@@ -34,7 +33,7 @@ const Carousel = () => {
     >
       <SwiperSlide>
       <div className='px-12 py-16'>
-      <div className='Car1 w-100 h-100 bg-gradient-to-tr from-[#9E9EFF] to-blue-50 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
+      <div className='rounded-[40px] w-100 h-100 bg-gradient-to-tr from-[#9E9EFF] to-blue-50 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
         {/* <div className='w-40 h-40'>
             <img src="./images/help.jpeg" className='image-hover-effect rounded-full w-full h-full object-cover' alt='choose'/>
           </div> */}
@@ -44,7 +43,7 @@ const Carousel = () => {
       </SwiperSlide>
       <SwiperSlide>
       <div className='px-12 py-16'>
-      <div className='Car1 w-100 h-100  bg-gradient-to-r from-yellow-50 to-yellow-100 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
+      <div className='rounded-[40px] w-100 h-100  bg-gradient-to-r from-yellow-100 to-yellow-200 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
         {/* <div className='w-40 h-40'>
             <img src="./images/help.jpeg" className='image-hover-effect rounded-full w-full h-full object-cover' alt='choose'/>
           </div> */}
@@ -54,7 +53,7 @@ const Carousel = () => {
       </SwiperSlide>
       <SwiperSlide>
       <div className='px-12 py-16'>
-      <div className='Car1 w-100 h-100 bg-gradient-to-r from-violet-400 to-violet-100 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
+      <div className='rounded-[40px] w-100 h-100 bg-gradient-to-r from-violet-400 to-violet-100 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
         {/* <div className='w-40 h-40'>
             <img src="./images/help.jpeg" className='image-hover-effect rounded-full w-full h-full object-cover' alt='choose'/>
           </div> */}
