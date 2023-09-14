@@ -1,6 +1,4 @@
 import React from "react";
-import "./Styles.css";
-import { motion as m, useScroll, useAnimation } from "framer-motion";
 import "./Hero.css"
 
 const item = {
