@@ -19,7 +19,7 @@ const Carousel = () => {
             },
             768:{
                 slidesPerView: 2,
-                spaceBetween:0,
+                spaceBetween:20,
             },
             1024:{
                 slidesPerView: 2.5,
