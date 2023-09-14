@@ -1,11 +1,12 @@
 import React from "react";
+import './Hero.css'
 
 const AppInfo = () => {
   return (
-    <section className="my-10">
-      <div className="flex flex-col md:flex-row justify-center items-center p-5 md:gap-0 gap-4">
-        <div className="w-full lg:w-1/2 flex justify-center items-center">
-          <img src="./images/hand.png" alt="hand" className="object-cover" />
+    <section className="">
+      <div className="flex flex-col md:flex-row justify-center items-center md:gap-0 gap-4 glowing2">
+        <div className="flex justify-center items-center">
+          <img src="./images/Hand.png" alt="hand" className="object-cover glowing" />
         </div>
         <div className="w-full lg:w-3/4 flex flex-col gap-8 p-4">
           <div className="text-3xl text-[#1C048DFF] font-bold">

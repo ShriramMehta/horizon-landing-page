@@ -31,8 +31,8 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="my-10 mx-auto container" data-scroll-section>
-      <h1 className="text-2xl text-center md:text-4xl font-medium p-3 font-heading text-[#1C048DFF]">
+    <section className="py-10 " data-scroll-section>
+      <h1 className="py-6 text-2xl text-center md:text-4xl font-medium p-3 font-heading text-[#1C048DFF]">
         Testimonials
       </h1>
       <Swiper
@@ -66,22 +66,15 @@ const Testimonial = () => {
       >
         {testimonial.map((testimonial, index) => (
           <SwiperSlide key={index}>
-            <div className="my-2 p-4 mx-auto flex justify-center items-center">
-              <div className="flex flex-col justify-center items-center mx-auto md:p-4 my-10 py-4">
-                {/* <div className="circle w-[500px] h-[500px] rounded-full flex justify-center items-center"> */}
-                <div className="relative w-[350px] h-[350px] md:w-[550px] md:h-[300px] ModalContainer flex justify-center items-center bg-white">
+            <div className="my-2 px-4 mx-auto flex justify-center items-center">
+              <div className="flex flex-col justify-center items-center mx-auto py-4 my-10">
+                <div className="glowing-background relative w-[350px] h-[350px] md:w-[550px] md:h-[300px] ModalContainer flex justify-center items-center bg-white">
                   <div className="absolute w-[300px] md:w-[500px] text-center text-base md:text-xl text-[#171A1FFF] md:px-3">
                     " {testimonial.content} "
                   </div>
-                  {/* </div> */}
                 </div>
               </div>
             </div>
-            {/* <div className="p-12 flex flex-col justify-center items-center w-1/2 mx-auto">
-                <div className="p-8 ModalContainer text-center">
-                  {testimonial.content}
-                </div>
-            </div> */}
           </SwiperSlide>
         ))}
       </Swiper>
