@@ -13,12 +13,12 @@ const Hero = () => {
   
   return (
     <section
-      className="p-6 mx-auto overflow-x-hidden lg:mt-[-4rem] xl:mt-[-8rem]"
+      className="p-6 mx-auto md:mt-[-3rem] lg:mt-[-3rem] xl:mt-[-8rem]"
       // style={{ marginTop: "-12rem" }}
     >
       <div class="mx-auto w-full  flex flex-wrap-reverse lg:flex-nowrap md:items-center  md:justify-center gap-6">
-        <div class="flex lg:w-1/2 flex-col justify-center items-center text-left px-3 gap-4 mx-auto lg:ml-[-5px] lg:mt-10">
-          <div className="flex flex-col justify-start items-start">
+        <div class="flex lg:w-1/2 flex-col justify-center items-center text-left px-3 gap-4 mx-auto lg:ml-[-5px] lg:mt-20">
+          <div className="flex flex-col justify-start items-start ">
           <h2
             class="mt-4 text-4xl md:text-6xl text-black font-bold p-3 font-heading"
           >
@@ -46,10 +46,10 @@ const Hero = () => {
           </h4>
           </div>
         </div>
-        <div class="blob w-[500px] h-[300px] md:h-[500px] lg:w-[600px] overflow-hidden bg-gradient-to-r from-purple-600 via-purple-400 to-purple-200 flex justify-center items-center">
+        <div class="blob lg:absolute right-0 top-44 xl:top-0 w-[700px] lg:w-[500px] xl:w-[600px] z-[-1] flex justify-center items-center">
           <img
             src="./images/hero.png"
-            className="animate-on-hover"
+            className=""
             alt="home img"
           />
         </div>
