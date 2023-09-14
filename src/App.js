@@ -75,7 +75,7 @@ const App = () => {
         },
         {
           path: "/getApp",
-          element: <GetApp />,
+          element: <GetApp/>,
         },
       ],
     },
