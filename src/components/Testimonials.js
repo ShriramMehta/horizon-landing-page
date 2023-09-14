@@ -39,18 +39,38 @@ const Testimonial = () => {
         freeMode={true}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={1}
-        spaceBetween={10}
         pagination={{ clickable: true }}
         modules={[Pagination]}
+        breakpoints={{
+          0:{
+              slidesPerView: 1,
+              spaceBetween:10,
+          },
+          480:{
+              slidesPerView: 1,
+              spaceBetween:20,
+          },
+          768:{
+              slidesPerView: 1,
+              spaceBetween:0,
+          },
+          1024:{
+              slidesPerView: 1.5,
+              spaceBetween:10,
+          },
+          1280:{
+              slidesPerView: 1.8,
+              spaceBetween:10,
+          }
+      }}
       >
         {testimonial.map((testimonial, index) => (
           <SwiperSlide key={index}>
-            <div className="my-2 py-4">
-              <div className="flex flex-col justify-center items-center mx-auto p-4">
+            <div className="my-2 p-4 mx-auto flex justify-center items-center">
+              <div className="flex flex-col justify-center items-center mx-auto md:p-4 my-10 py-4">
                 {/* <div className="circle w-[500px] h-[500px] rounded-full flex justify-center items-center"> */}
-                <div className="relative w-[550px] h-[300px] ModalContainer flex justify-center items-center bg-white">
-                  <div className="absolute w-[500px] text-center text-xl text-[#171A1FFF] px-3">
+                <div className="relative w-[350px] h-[350px] md:w-[550px] md:h-[300px] ModalContainer flex justify-center items-center bg-white">
+                  <div className="absolute w-[300px] md:w-[500px] text-center text-base md:text-xl text-[#171A1FFF] md:px-3">
                     " {testimonial.content} "
                   </div>
                   {/* </div> */}
