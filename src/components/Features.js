@@ -27,7 +27,7 @@ const Features = () => {
         </div>
         <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full p-1 ">
           <img
-            src="./images/Flows.png"
+            src="./images/flows.png"
             alt="flows"
             className="object-cover w-[200px] h-[200px]"
           />
