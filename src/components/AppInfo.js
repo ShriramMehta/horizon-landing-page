@@ -2,8 +2,8 @@ import React from "react";
 
 const AppInfo = () => {
   return (
-    <section className="my-10 p-6">
-      <div className="flex flex-col md:flex-row justify-center items-center p-5">
+    <section className="my-10">
+      <div className="flex flex-col md:flex-row justify-center items-center p-5 md:gap-0 gap-4">
         <div className="w-full lg:w-1/2 flex justify-center items-center">
           <img src="./images/hand.png" alt="hand" className="object-cover" />
         </div>
