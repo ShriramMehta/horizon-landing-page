@@ -49,7 +49,7 @@ const GetApp = () => {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <img src="./images/APP.png" alt="app"/>
+          <img src="./images/App.png" alt="app"/>
         </div>
       </div>
     </section>
