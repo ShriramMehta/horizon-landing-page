@@ -1,60 +1,50 @@
 import React from "react";
 
 const Features = () => {
-  const features = [
-    {
-      imgSrc: "./images/7.png",
-      title: "Therapy",
-      description:
-        "Connect with compassionate therapists for personalized support.",
-    },
-    {
-      imgSrc: "./images/11.png",
-      title: "Guided Meditations",
-      description: "Get access to calming mindfulness audio and videos.",
-    },
-    {
-      imgSrc: "./images/10.png",
-      title: "Personalized Flows",
-      description: "Tailored well-being journeys designed just for you.",
-    },
-    {
-      imgSrc: "./images/9.png",
-      title: "Progress Tracking",
-      description: "Stay motivated by monitoring your growth and achievements.",
-    },
-  ];
-
   return (
-    <section id="features" className="w-full mx-auto p-6" data-scroll-section>
-      <h1 className="text-center text-4xl font-bold font-heading text-indigo-400">
-        FEATURES
-      </h1>
-      <div className="flex flex-wrap justify-center items-center gap-6 py-6">
-        {features.map((feature, index) => (
-          <div key={index} className="group h-72 w-60 [perspective:1000px]">
-            <h1 className="absolute inset-x-0 bottom-10 text-xl text-center font-semibold text-lightBlack">
-              {feature.title}
-            </h1>
-            <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              <div className="absolute inset-0">
-                <img
-                  className="h-3/4 w-full rounded-xl object-cover"
-                  src={feature.imgSrc}
-                  alt={feature.title}
-                />
-              </div>
-
-              <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-white [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                <div className="flex min-h-full flex-col items-center justify-center">
-                  <h1 className="text-xl font-bold font-heading">
-                    {feature.description}
-                  </h1>
-                </div>
-              </div>
-            </div>
+    <section id="features" className="w-full mx-auto p-6">
+      <div className="my-3 text-center text-3xl font-bold font-heading text-[#1C048DFF]">
+        Get access to
+      </div>
+      <div className="flex justify-center items-center text-center flex-wrap gap-6 my-6">
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-4 w-full h-full p-1 ">
+          <img
+            src="./images/Thearpy.png"
+            alt="thearpy"
+            className="object-cover w-[200px] h-[200px]"
+          />
+          <div className="text-lg text-[#171A1FFF] font-medium">Thearpy</div>
+        </div>
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full p-1 ">
+          <img
+            src="./images/Meditation.png"
+            alt="Meditation"
+            className="object-cover w-[200px] h-[200px]"
+          />
+          <div className="text-lg text-[#171A1FFF] font-medium">
+            Meditations & Breathwork
           </div>
-        ))}
+        </div>
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full p-1 ">
+          <img
+            src="./images/Flows.png"
+            alt="flows"
+            className="object-cover w-[200px] h-[200px]"
+          />
+          <div className="text-lg text-[#171A1FFF] font-medium">
+            Personalized Flows
+          </div>
+        </div>
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full p-1 ">
+          <img
+            src="./images/Workout.png"
+            alt="Workout"
+            className="object-cover w-[200px] h-[200px]"
+          />
+          <div className="text-lg text-[#171A1FFF] font-medium">
+            Guided Workout
+          </div>
+        </div>
       </div>
     </section>
   );
