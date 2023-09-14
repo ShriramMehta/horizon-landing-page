@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "./Testimonial.css";
+import "../pages/Team.css";
 
 const Testimonial = () => {
   const testimonial = [
@@ -31,18 +31,14 @@ const Testimonial = () => {
   ];
 
   return (
-    <section
-      className="relative p-6 md:p-16 w-full text-center bg-Backgroundwhite"
-      data-scroll-section
-    >
-      <h1 className="text-3xl md:text-5xl font-bold p-3 font-heading text-indigo-400">
+    <section className="my-10 mx-auto container" data-scroll-section>
+      <h1 className="text-2xl text-center md:text-4xl font-medium p-3 font-heading text-[#1C048DFF]">
         Testimonials
       </h1>
       <Swiper
         freeMode={true}
         grabCursor={true}
         centeredSlides={true}
-        className=""
         slidesPerView={1}
         spaceBetween={10}
         pagination={{ clickable: true }}
@@ -50,23 +46,22 @@ const Testimonial = () => {
       >
         {testimonial.map((testimonial, index) => (
           <SwiperSlide key={index}>
-            <img
-              src="./images/Test_mobile.png"
-              alt="bg"
-              className="md:hidden flex relative w-full object-cover "
-            />
-            <img
-              src="./images/Testimonial-background.svg"
-              alt="bg"
-              className="hidden md:flex relative w-full px-12 object-cover"
-            />
-            <div className="p-6 flex justify-center items-center">
-              <div className="flex items-center justify-center absolute max-w-[500px] lg:max-w-[700px] top-6  lg:top-10 xl:top-20 text-center myTest">
-                <p className="text-lg md:text-base lg:text-2xl xl:text-3xl p-4 font-medium text-lightBlack">
-                  {testimonial.content}
-                </p>
+            <div className="my-2 py-4">
+              <div className="flex flex-col justify-center items-center mx-auto p-4">
+                {/* <div className="circle w-[500px] h-[500px] rounded-full flex justify-center items-center"> */}
+                <div className="relative w-[550px] h-[300px] ModalContainer flex justify-center items-center bg-white">
+                  <div className="absolute w-[500px] text-center text-xl text-[#171A1FFF] px-3">
+                    " {testimonial.content} "
+                  </div>
+                  {/* </div> */}
+                </div>
               </div>
             </div>
+            {/* <div className="p-12 flex flex-col justify-center items-center w-1/2 mx-auto">
+                <div className="p-8 ModalContainer text-center">
+                  {testimonial.content}
+                </div>
+            </div> */}
           </SwiperSlide>
         ))}
       </Swiper>
