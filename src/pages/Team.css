@@ -1,7 +1,11 @@
 .ModalContainer {
   border-radius: 50px;
+  box-shadow: 10px 10px 60px 10px #b29dde;
 }
 .glowing-background {
   background-color: #fff;
   box-shadow: 10px 10px 60px 10px #b29dde;
+}
+.section-background-app{
+  background-image: linear-gradient(to right, #D0DBF9, #E6ECFC, #F4F7FE, #FFFFFF 48%);
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Team.css'
 
 const GetApp = () => {
   return (
-    <section className="my-10">
-      <div className="bg-indigo-300 flex flex-col-reverse md:flex-row justify-center items-center gap-8 md:gap-32 px-8 md:pb-0 pb-6 py-0">
+    <section className="my-10 py-10 section-background-app">
+      <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8 md:gap-32 px-8 md:pb-0 py-6 py-0">
         <div className="flex flex-col justify-center items-center gap-8 p-3">
           <div className="text-2xl text-[#1C048DFF] font-medium">
             Get the <span className="font-bold">Adapt app</span> now and <br />{" "}
