@@ -9,6 +9,7 @@ const Home = () => {
       data-scroll-section
       className='overflow-x-hidden'
     >
+    {/* <Hero/> */}
     <Hero/>
     <Carousel />
     </section>

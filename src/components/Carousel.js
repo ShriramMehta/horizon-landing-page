@@ -1,53 +1,72 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./Components.css";
 
 const Carousel = () => {
   return (
     <Swiper
-        freeMode = {true}
-        grabCursor = {true}
-        className='mySwiper my-24  z-[3] bg-white mx-6'
-        spaceBetween={0}
-        pagination={{ clickable: true }}
-        breakpoints={{
-            0:{
-                slidesPerView: 1,
-            },
-            480:{
-                slidesPerView: 2,
-            },
-            768:{
-                slidesPerView: 2,
-                spaceBetween:20,
-            },
-            1024:{
-                slidesPerView: 2.5,
-            },
-            1280:{
-                slidesPerView: 3
-            }
-        }}
+      freeMode={true}
+      grabCursor={true}
+      spaceBetween={5}
+      pagination={{ clickable: true }}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+        },
+        480: {
+          slidesPerView: 1.8,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2.5,
+        },
+        1280: {
+          slidesPerView: 3,
+        },
+      }}
     >
-      <SwiperSlide>
-      <div className='p-6'>
-      <div className='rounded-[40px] w-100 h-100 bg-gradient-to-tr from-[#bdbdff] to-blue-20 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
-        <div className='flex flex-col text-center font-normal text-xl py-1 text-[#171A1FFF] leading-10'>We have helped<span className='text-[#1C048DFF] text-3xl'> 4,000 </span>people.</div>
-    </div>
-      </div>
+      <SwiperSlide className="my-20">
+        <div className="flex flex-col justify-center items-center mx-6">
+          <img
+            src="./images/Feat1.png"
+            alt="blue"
+            className=" object-cover relative w-full"
+          />
+          <div className="absolute flex flex-col text-center font-medium text-[22px] text-[#171A1FFF] leading-[40px]">
+            We have helped
+            <span className="text-[#1C048DFF] text-[30px] py-2"> 4,000 </span>
+            people.
+          </div>
+        </div>
       </SwiperSlide>
-      <SwiperSlide>
-      <div className='p-6'>
-      <div className='rounded-[40px] w-100 h-100  bg-gradient-to-r from-yellow-50 to-yellow-100 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
-        <div className='flex flex-col text-center font-normal text-xl py-1 text-[#171A1FFF] leading-10'>You can choose from <span className='text-[#1C048DFF] text-3xl'>30+</span>therapists.</div>
-    </div>
-      </div>
+      <SwiperSlide className="my-20">
+        <div className="flex flex-col justify-center items-center mx-6">
+          <img
+            src="./images/Feat2.png"
+            alt="yellow"
+            className=" object-cover relative w-full"
+          />
+          <div className="absolute flex flex-col text-center font-medium text-[22px] text-[#171A1FFF] leading-[40px]">
+            You can choose from{" "}
+            <span className="text-[#1C048DFF] text-[30px] py-2"> 30+ </span>
+            therapists.
+          </div>
+        </div>
       </SwiperSlide>
-      <SwiperSlide>
-      <div className='p-6'>
-      <div className='rounded-[40px] w-100 h-100 bg-gradient-to-bl from-purple-50 to-purple-400 flex flex-col gap-3 py-8 px-4 justify-center items-center max-w-100'>
-        <div className='flex flex-col text-center font-normal text-xl py-1 text-[#171A1FFF] leading-10'>We have conducted over<span className='text-[#1C048DFF] text-3xl'>10,000</span>sessions.</div>
-    </div>
-      </div>
+      <SwiperSlide className="my-20">
+        <div className="flex flex-col justify-center items-center mx-6">
+          <img
+            src="./images/Feat3.png"
+            alt="purple"
+            className=" object-cover relative w-full"
+          />
+          <div className="absolute flex flex-col text-center font-medium text-[22px] text-[#171A1FFF] leading-[40px]">
+            We have conducted over
+            <span className="text-[#1C048DFF] text-[30px] py-2"> 10,000 </span>
+            sessions.
+          </div>
+        </div>
       </SwiperSlide>
     </Swiper>
   );
