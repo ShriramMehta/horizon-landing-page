@@ -34,7 +34,7 @@ const Navbar = () => {
           </div>
         </div>
         <nav
-          className={`md:flex w-full text-center gap-6 md:items-center justify-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[10] left-0  md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          className={`md:flex w-full text-center gap-6 md:items-center justify-center md:pb-0 pb-12 absolute md:static bg-white lg:bg-transparent md:z-auto z-[10] left-0  md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
             open ? "top-25 " : "top-[-490px]"
           }`}
         >
