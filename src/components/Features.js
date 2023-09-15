@@ -6,8 +6,8 @@ const Features = () => {
       <div className="my-3 text-center text-3xl font-bold font-heading text-[#1C048DFF]">
         Get access to
       </div>
-      <div className="flex justify-center items-center text-center flex-wrap gap-6 my-6">
-        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-4 w-full h-full p-1 ">
+      <div className="my-10 flex justify-center items-center text-center flex-wrap gap-3 md:gap-0">
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-4 w-full h-full ">
           <img
             src="./images/Thearpy.png"
             alt="thearpy"
@@ -15,7 +15,7 @@ const Features = () => {
           />
           <div className="text-lg text-[#171A1FFF] font-medium">Thearpy</div>
         </div>
-        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full p-1 ">
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full ">
           <img
             src="./images/Meditation.png"
             alt="Meditation"
@@ -25,7 +25,7 @@ const Features = () => {
             Meditations & Breathwork
           </div>
         </div>
-        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full p-1 ">
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full ">
           <img
             src="./images/flows.png"
             alt="flows"
@@ -35,7 +35,7 @@ const Features = () => {
             Personalized Flows
           </div>
         </div>
-        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full p-1 ">
+        <div className="max-w-[250px] max-h-[250px] flex flex-col justify-center items-center gap-2 w-full h-full ">
           <img
             src="./images/Workout.png"
             alt="Workout"

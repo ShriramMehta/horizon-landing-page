@@ -1,0 +1,57 @@
+import React from "react";
+
+const Hero = () => {
+  return (
+    <section className="mb-20 mx-auto">
+      <div className="flex justify-center items-center w-full">
+        <div className="w-full flex flex-col justify-center items-center gap-6">
+          <div
+            class="mt-4 text-4xl md:text-5xl lg:text-6xl text-black font-bold p-3 font-heading"
+          >
+            <span
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(78,19,159,1) 0%, rgba(123,60,243,1) 35%, rgba(108,99,255,1) 100%)",
+                "-webkit-background-clip": "text",
+                "background-clip": "text",
+                color: "transparent",
+              }}
+            >
+              Wellness,
+            </span>
+            <span style={{ color: "#9E9EFF" }}>Your Way.</span>
+            <div class="ml-2 mb-2 text-xl lg:text-2xl text-[#1C048DFF] font-bold p-3 text-left w-full font-body">
+              Your journey to mental well-being starts here.
+              <br /> Let's create a happier, healthier you - together!
+            </div>
+            <div class="ml-2 text-xl text-[#171A1FFF] p-3 text-left w-full font-body">
+              Wellness isn’t a one size fits all concept.
+              <br />
+              We are here to help you find what helps you in your
+              <br /> journey towards mental wellness.
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex justify-center items-center">
+        <div className="w-full absolute flex justify-center items-center md:absolute md:top-0 md:right-0 xl:right-0  xl:top-[-6rem] md:w-[400px] md:h-[650px] lg:h-[700px]  xl:w-[600px] xl:h-[700px]">
+            <img src="./images/Image 6.png" alt="header" className="w-full h-auto object-cover z-[-1]"/>
+            <img
+            src="./images/hero.png"
+            className="absolute object-cover w-full z-[1]"
+            alt="home img"
+          />
+          {/* <div className="flex justify-center items-center z-[6]">
+          <img
+            src="./images/hero.png"
+            className="object-cover w-full z-[2]"
+            alt="home img"
+          />
+          </div> */}
+        </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

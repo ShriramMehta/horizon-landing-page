@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "../pages/Pages.css";
+import "./Components.css";
 
 const Testimonial = () => {
   const testimonial = [
@@ -31,8 +31,8 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="mx-auto pb-10 mb-10 " data-scroll-section>
-      <h1 className="pb-6 text-3xl font-bold font-heading text-[#1C048DFF] text-center">
+    <section className="mx-auto my-20 py-20 bg-[#feffea]" data-scroll-section>
+      <h1 className="text-[36px] leading-[50px] font-bold font-heading text-[#1C048DFF] text-center">
         Testimonials
       </h1>
       <Swiper
@@ -66,10 +66,10 @@ const Testimonial = () => {
       >
         {testimonial.map((testimonial, index) => (
           <SwiperSlide key={index}>
-            <div className="my-2 px-4 mx-auto flex justify-center items-center">
-              <div className="flex flex-col justify-center items-center mx-auto py-4 my-10">
-                <div className="glowing-background relative w-[350px] h-[350px] md:w-[550px] md:h-[300px] ModalContainer flex justify-center items-center bg-white">
-                  <div className="absolute w-[300px] md:w-[500px] text-center text-base md:text-xl text-[#171A1FFF] md:px-3">
+            <div className="px-4 mx-auto flex justify-center items-center">
+              <div className="flex flex-col justify-center items-center mx-auto my-10">
+                <div className="glowing-background relative w-[350px] h-[350px] md:w-[800px] md:h-[450px] flex justify-center items-center bg-white">
+                  <div className="absolute w-[500px] md:w-[700px] md:h-[400px] text-center text-base text-[30px] leading-[42px] text-[#171A1FFF] md:px-3">
                     " {testimonial.content} "
                   </div>
                 </div>

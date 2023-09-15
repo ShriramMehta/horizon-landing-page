@@ -26,6 +26,9 @@ module.exports = {
         "gradient-lightIndigo-top":
           "linear-gradient(to bottom, #d6e1ff, #9E9EFF)",
       },
+      fontWeight: {
+        'extra-bold': '900',
+      }
     },
   },
   plugins: [],

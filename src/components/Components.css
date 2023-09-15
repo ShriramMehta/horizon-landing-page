@@ -3,8 +3,17 @@
   border-radius: 45% 10% 10% 42% / 50% 0% 0% 46%;
 }
 .section-background-bottom{
-  background-image: linear-gradient(to right top,#D0B9F5, #D8C5F6, #ECE3FB, #FFFFFF 50%);
+  background-image: linear-gradient(to right top,#b88ffa, #D8C5F6, #ECE3FB, #FFFFFF 50%);
 }
 .section-background-top{
-  background-image: linear-gradient(to left bottom, #dbc7fb, #dfcefa,#ECE3FB , #ffffff 50%);
+  background-image: linear-gradient(to left bottom, #b88ffa, #dfcefa,#ECE3FB , #ffffff 50%);
+}
+.glowing-background {
+  /* background-color: #fff; */
+  /* box-shadow: 10px 10px 80px 10px #b29dde; */
+  /* background-image: radial-gradient(#ffffff 100%, #ECE3FB , #dfcefa 45% ,#b88ffa 35%); */
+  /* background-image: radial-gradient(#ffffff 100%, #f5fdb7 , #f8fca9 45% ,#fdf37cfd 35%); */
+  box-shadow: 0px 0px 70px 20px#fcffc7;
+  background-image: radial-gradient(#feffea);
+  border-radius: 50px;
 }
