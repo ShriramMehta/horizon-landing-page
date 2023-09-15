@@ -6,7 +6,7 @@ const Carousel = () => {
     <Swiper
         freeMode = {true}
         grabCursor = {true}
-        className='mySwiper my-10 z-[3] bg-white'
+        className='mySwiper mb-20 z-[3] bg-white'
         pagination={{ clickable: true }}
         breakpoints={{
             0:{

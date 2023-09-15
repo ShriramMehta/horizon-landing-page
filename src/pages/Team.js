@@ -31,7 +31,7 @@ const Team = () => {
   return (
     <section
       id="team"
-      className="my-10 flex flex-col gap-6 w-full justify-center items-center p-10"
+      className="mb-10 flex flex-col gap-6 w-full justify-center items-center pb-10 px-10"
       data-scroll-section
     >
       <div className="mb-3">

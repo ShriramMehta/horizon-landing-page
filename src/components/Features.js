@@ -2,7 +2,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <section id="features" className="w-full mx-auto py-20 mb-10">
+    <section id="features" className="w-full mx-auto pb-10 pt-10 my-20">
       <div className="my-3 text-center text-3xl font-bold font-heading text-[#1C048DFF]">
         Get access to
       </div>

@@ -5,11 +5,11 @@ const Hero = () => {
   
   return (
     <section
-      className="overflow-x-hidden p-6 mx-auto md:mt-[-3rem] lg:mt-[-2rem] lg:mb-[3rem]"
+      className="p-6 mx-auto md:mt-[-3rem] lg:mt-[-2rem] lg:mb-[4rem]"
     >
       <div class="mx-auto w-full  flex flex-wrap-reverse md:flex-nowrap items-center  justify-center gap-6">
         <div class="flex md:w-1/2 flex-col justify-center items-center text-left px-3 gap-4 mx-auto md:ml-[-5px] md:mt-10">
-          <div className="flex flex-col justify-start items-start gap-5">
+          <div className="flex flex-col justify-start items-start">
           <h2
             class="mt-4 text-4xl md:text-5xl lg:text-6xl text-black font-bold p-3 font-heading"
           >
@@ -26,21 +26,21 @@ const Hero = () => {
             </span>
             <span style={{ color: "#9E9EFF" }}>Your Way.</span>
           </h2>
-          <h4 class="text-xl md:text-2xl lg:text-2xl text-[#1C048DFF] font-bold p-3 text-left w-full font-heading">
+          <h4 class="ml-2 mb-2 text-xl md:text-2xl lg:text-2xl text-[#1C048DFF] font-bold p-3 text-left w-full font-body">
             Your journey to mental well-being starts here.
             <br /> Let's create a happier, healthier you - together!
           </h4>
-          <h4 class="text-xl text-[#171A1FFF] p-3 text-left w-full font-heading">
+          <h4 class="ml-2 text-xl text-[#171A1FFF] p-3 text-left w-full font-body">
             Wellness isn’t a one size fits all concept.
             <br/>We are here to help you find what helps you in your<br/> journey
             towards mental wellness.
           </h4>
           </div>
         </div>
-        <div class="flex justify-center items-center h-auto blob w-[500px] md:absolute md:top-0 md:right-[-10rem] lg:right-0 xl:right-0  xl:top-[-2rem] md:w-[500px] md:h-[700px]  xl:w-[600px] xl:h-[700px] z-[-1]">
+        <div class="flex justify-center items-center h-auto blob w-[500px] md:absolute md:top-0 md:right-0 xl:right-0  xl:top-[-2rem] md:w-[400px] md:h-[650px] lg:h-[700px]  xl:w-[600px] xl:h-[700px] z-[-1]">
           <img
             src="./images/hero.png"
-            className="w-full object-cover"
+            className="object-cover w-full h-3/4"
             alt="home img"
           />
         </div>

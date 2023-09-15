@@ -4,7 +4,7 @@ import './Pages.css'
 
 const GetApp = () => {
   return (
-    <section className="py-20 mb-10 section-background-app">
+    <section className="py-20 my-10 section-background-app">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8 md:gap-32 px-8 md:pb-0 py-6 py-0">
         <div className="flex flex-col justify-center items-center gap-8 p-3">
           <div className="text-2xl text-[#1C048DFF] font-medium">
