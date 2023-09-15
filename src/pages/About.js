@@ -30,7 +30,7 @@ const About = () => {
     //     </div>
     //   </div>
     // </section>
-    <section className="relative pb-10 mb-10">
+    <section className="relative pt-10 mb-20">
       <div className="flex flex-col md:flex-row justify-center items-center md:gap-0 gap-4 glowing2">
         <div className="flex justify-center items-center">
           <img src="./images/Hand.png" alt="hand" className="object-cover glowing z-[2]" />

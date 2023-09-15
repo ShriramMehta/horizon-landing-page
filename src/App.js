@@ -47,7 +47,7 @@ const App = () => {
           element: (
             <>
               <Home />
-              {/* <About /> */}
+              <About />
               <Testimonial />
               <GetApp />
               <Features />
@@ -63,7 +63,7 @@ const App = () => {
           path: "/about",
           element: (
             <>
-              {/* <About /> */}
+              <About />
               <Testimonial />
               <Features />
             </>

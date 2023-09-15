@@ -12,6 +12,7 @@ const Hero = () => {
           <div className="flex flex-col justify-start items-start">
           <h2
             class="mt-4 text-4xl md:text-5xl lg:text-6xl text-black font-bold p-3 font-heading"
+            // style={{fontFamily:"poppins"}}
           >
             <span
               style={{
@@ -26,7 +27,8 @@ const Hero = () => {
             </span>
             <span style={{ color: "#9E9EFF" }}>Your Way.</span>
           </h2>
-          <h4 class="ml-2 mb-2 text-xl md:text-2xl lg:text-2xl text-[#1C048DFF] font-bold p-3 text-left w-full font-body">
+          {/* <img src="./images/header.png" alt="header" className="w-full object-cover h-[50px] md:h-[100px]" /> */}
+          <h4 class="ml-2 mb-2 text-xl lg:text-2xl text-[#1C048DFF] font-bold p-3 text-left w-full font-body">
             Your journey to mental well-being starts here.
             <br /> Let's create a happier, healthier you - together!
           </h4>
