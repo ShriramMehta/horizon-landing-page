@@ -35,12 +35,12 @@ const Team = () => {
       data-scroll-section
     >
       <div className="mb-3">
-        <h1 className="text-5xl text-darkIndigo font-heading font-bold">
-          FOUNDERS
+        <h1 className="text-center text-3xl font-bold font-heading text-[#1C048DFF]">
+          Founders
         </h1>
       </div>
       <div className="flex flex-col md:flex-row w-full justify-center items-center p-6 ModalContainer ">
-        <div className="p-6 relative flex  gap-6 justify-between items-center w-full">
+        <div className="md:p-6 relative flex  gap-6 justify-between items-center w-full">
           <div className="flex flex-row flex-wrap gap-6 justify-center items-center">
           {Founders.map((founderData, index) => (
             <div
@@ -60,14 +60,14 @@ const Team = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center p-6 text-left gap-3 w-full">
-          <h1 className="text-5xl font-heading font-bold my-6">
+          <h1 className="text-4xl font-heading font-bold my-6">
             {Founders[founder].name}
           </h1>
-          <h4 className="text-2xl font-heading font-semibold mb-3">
+          <h4 className="text-xl font-heading font-semibold mb-3">
             Co-Founder
           </h4>
-          <h4 className="text-xl">{Founders[founder].para}</h4>
-          <p className="text-lg">{Founders[founder].subpara}</p>
+          <h4 className="text-lg font-body font-medium">{Founders[founder].para}</h4>
+          <p className="text-base font-body font-normal">{Founders[founder].subpara}</p>
         </div>
       </div>
     </section>

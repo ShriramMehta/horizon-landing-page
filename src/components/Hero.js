@@ -11,7 +11,7 @@ const Hero = () => {
         <div class="flex lg:w-1/2 flex-col justify-center items-center text-left px-3 gap-4 mx-auto lg:ml-[-5px] lg:mt-10">
           <div className="flex flex-col justify-start items-start gap-5">
           <h2
-            class="mt-4 text-6xl text-black font-bold p-3 font-heading"
+            class="mt-4 text-4xl md:text-6xl text-black font-bold p-3 font-heading"
           >
             <span
               style={{
@@ -26,7 +26,7 @@ const Hero = () => {
             </span>
             <span style={{ color: "#9E9EFF" }}>Your Way.</span>
           </h2>
-          <h4 class="text-2xl text-[#1C048DFF] font-bold p-3 text-left w-full font-heading">
+          <h4 class="text-xl md:text-2xl text-[#1C048DFF] font-bold p-3 text-left w-full font-heading">
             Your journey to mental well-being starts here.
             <br /> Let's create a happier, healthier you - together!
           </h4>

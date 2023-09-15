@@ -31,7 +31,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="py-10 mt-10 " data-scroll-section>
+    <section className="mx-auto py-10 mt-10 " data-scroll-section>
       <h1 className="py-6 text-2xl text-center md:text-4xl font-medium p-3 font-heading text-[#1C048DFF]">
         Testimonials
       </h1>
@@ -48,18 +48,18 @@ const Testimonial = () => {
           },
           480:{
               slidesPerView: 1,
-              spaceBetween:20,
+              spaceBetween:10,
           },
           768:{
               slidesPerView: 1,
-              spaceBetween:0,
+              spaceBetween:10,
           },
           1024:{
-              slidesPerView: 1.5,
+              slidesPerView: 1,
               spaceBetween:10,
           },
           1280:{
-              slidesPerView: 1.8,
+              slidesPerView: 1,
               spaceBetween:10,
           }
       }}
