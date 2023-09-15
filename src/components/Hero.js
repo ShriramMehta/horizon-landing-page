@@ -37,7 +37,7 @@ const Hero = () => {
           </h4>
           </div>
         </div>
-        <div class="blob  lg:absolute lg:top-0 lg:right-[-10rem] xl:right-0  xl:top-[-2rem] w-[700px] xl:w-[600px] xl:h-[700px] z-[-1] flex justify-center items-center h-auto">
+        <div class="blob w-[600px] lg:absolute lg:top-0 lg:right-0 xl:right-0  xl:top-[-2rem] lg:w-[500px] lg:h-[800px]  xl:w-[600px] xl:h-[700px] z-[-1] flex justify-center items-center h-auto">
           <img
             src="./images/hero.png"
             className="w-full object-cover"

@@ -31,7 +31,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="py-10 " data-scroll-section>
+    <section className="py-10 mt-10 " data-scroll-section>
       <h1 className="py-6 text-2xl text-center md:text-4xl font-medium p-3 font-heading text-[#1C048DFF]">
         Testimonials
       </h1>
