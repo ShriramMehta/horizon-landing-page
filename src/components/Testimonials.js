@@ -69,7 +69,7 @@ const Testimonial = () => {
             <div className="px-4 mx-auto flex justify-center items-center">
               <div className="flex flex-col justify-center items-center mx-auto my-10">
                 <div className="glowing-background relative w-[350px] h-[350px] md:w-[800px] md:h-[450px] flex justify-center items-center bg-white">
-                  <div className="absolute w-[500px] md:w-[700px] md:h-[400px] text-center text-[30px] leading-[42px] text-[#171A1FFF] md:px-3">
+                  <div className="absolute top-[44px] md:top-[22px] w-[300px] h-[700px] md:w-[700px] md:h-[400px] text-center text-[15px] md:text-[30px] leading-[24px] md:leading-[42px] text-[#171A1FFF] md:px-3">
                     " {testimonial.content} "
                   </div>
                 </div>
