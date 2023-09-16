@@ -28,7 +28,7 @@ const Carousel = () => {
       grabCursor={true}
       spaceBetween={5}
       pagination={{ clickable: true }}
-      className="my-5 xl:mt-[-6rem] bg-white z-3"
+      className="my-5 bg-white z-3"
       breakpoints={{
         0: {
           slidesPerView: 1,
@@ -48,7 +48,7 @@ const Carousel = () => {
       }}
     >
       {data.map((item, index) => (
-        <SwiperSlide key={index} className="pt-5">
+        <SwiperSlide key={index} className="pt-[5rem]">
           <div className="flex flex-col justify-center items-center mx-6">
             <img
               src={item.image}
