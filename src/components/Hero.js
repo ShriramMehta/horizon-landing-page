@@ -34,7 +34,7 @@ const Hero = () => {
           </h4>
           </div>
             <div className='w-full md:w-1/2 lg:w-1/4 xl:w-1/2 flex justify-end items-end pl-4'>
-                <img src='./images/image 6.png' alt='hero' className='w-full md:absolute md:w-1/2 h-auto top-[10rem] lg:top-[-8rem] xl:top-[-14rem]  z-[-1]'/>
+                <img src='./images/hero_back1.png' alt='hero' className='w-full md:absolute md:w-1/2 h-auto top-[10rem] lg:top-[-8rem] xl:top-[-14rem]  z-[-1]'/>
                 <img src='./images/hero.png' alt='mind' className='absolute top-[18rem] md:top-[18rem] lg:top-10 xl:top-0 w-full md:w-1/2 z-[1]'/>
             </div>
         </div>
