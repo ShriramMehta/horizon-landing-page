@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
       <div className="py-5 md:mr-20 text-center">
         Copyright @ 2023 by{" "}
-        <span className="text-primaryIndigo font-bold">Adapt</span> | all rights
+        <span className="text-headingColor font-bold">Adapt</span> | all rights
         reserved!
       </div>
     </footer>
