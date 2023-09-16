@@ -8,6 +8,7 @@ const Carousel = () => {
       grabCursor={true}
       spaceBetween={5}
       pagination={{ clickable: true }}
+      className="my-5 xl:mt-[-6rem] bg-white z-3"
       breakpoints={{
         0: {
           slidesPerView: 1,
@@ -26,7 +27,7 @@ const Carousel = () => {
         },
       }}
     >
-      <SwiperSlide className="my-20">
+      <SwiperSlide className="pt-5">
         <div className="flex flex-col justify-center items-center mx-6">
           <img
             src="./images/Feat1.png"
@@ -40,7 +41,7 @@ const Carousel = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide className="my-20">
+      <SwiperSlide className="pt-5">
         <div className="flex flex-col justify-center items-center mx-6">
           <img
             src="./images/Feat2.png"
@@ -54,7 +55,7 @@ const Carousel = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide className="my-20">
+      <SwiperSlide className="pt-5">
         <div className="flex flex-col justify-center items-center mx-6">
           <img
             src="./images/Feat3.png"
