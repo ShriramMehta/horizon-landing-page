@@ -12,11 +12,11 @@ const AboutMain = () => {
         />
       </div>
       <div className="w-full flex flex-col gap-8 z-[3] md:ml-[-10rem] p-5">
-        <div className="text-[40px] leading-[50px] text-[#1C048DFF] font-[700]">
+        <div className="text-[40px] leading-[50px] text-headingColor font-[700]">
           Mental health care that fits
           <br /> seamlessly into your daily routine.{" "}
         </div>
-        <div className="text-[26px] leading-[40px] text-[#171A1FFF] font-medium">
+        <div className="text-[26px] leading-[40px] text-textColor font-medium">
           We help you <span className="italic">adapt</span> to difficult
           situations while we <br /> <span className="italic">adapt</span> to
           your unique needs.

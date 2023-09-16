@@ -16,6 +16,8 @@ module.exports = {
         errorRed: "#E50000",
         successGreen: "#00C853",
         lightIndigo: "#9E9EFF",
+        headingColor: '#1C048DFF',
+        textColor : '#171A1FFF',
       },
       fontFamily: {
         body: ["poppins"],

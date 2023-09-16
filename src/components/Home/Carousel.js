@@ -55,9 +55,9 @@ const Carousel = () => {
               alt="itemimage"
               className=" object-cover relative w-full"
             />
-            <div className="absolute flex flex-col text-center font-medium text-[22px] text-[#171A1FFF] leading-[40px]">
+            <div className="absolute flex flex-col text-center font-medium text-[22px] text-textColor leading-[40px]">
               {item.topContent}
-              <span className="text-[#1C048DFF] text-[30px] py-2">
+              <span className="text-headingColor text-[30px] py-2">
                 {" "}
                 {item.value}{" "}
               </span>

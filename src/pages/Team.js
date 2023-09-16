@@ -34,7 +34,7 @@ const Team = () => {
       data-scroll-section
     >
       <div className="mb-3">
-        <h1 className="text-center text-3xl font-bold font-heading text-[#1C048DFF]">
+        <h1 className="text-center text-3xl font-bold font-heading text-headingColor">
           Founders
         </h1>
       </div>
@@ -58,7 +58,7 @@ const Team = () => {
           ))}
           </div>
         </div>
-        <div className="flex flex-col justify-center p-6 text-left gap-3 w-full">
+        <div className="flex text-textColor flex-col justify-center p-6 text-left gap-3 w-full">
           <h1 className="text-4xl font-heading font-bold my-6">
             {Founders[founder].name}
           </h1>
