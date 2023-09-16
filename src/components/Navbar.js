@@ -43,7 +43,7 @@ const Navbar = () => {
               <li key={link.name}>
                 <Link
                   to={link.link}
-                  className="inline-block text-[#171A1FFF] text-xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-lightBlue transform transition-transform duration-300 hover:scale-90"
+                  className="inline-block text-textColor text-xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-headingColor transform transition-transform duration-300 hover:scale-90"
                   onClick={() => setOpen(!open)}
                 >
                   {link.name}
