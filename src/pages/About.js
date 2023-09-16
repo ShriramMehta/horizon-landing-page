@@ -1,6 +1,6 @@
 import React from "react";
 import Testimonial from "../components/About/Testimonials";
-import Features from "../components/About/Features";
+import Features from "../components/GetApp/Features";
 import AboutMain from "../components/About/AboutMain";
 
 const About = () => {
@@ -40,7 +40,6 @@ const About = () => {
     >
     <AboutMain/>
     <Testimonial/>
-    <Features/>
     </section>
   );
 };
