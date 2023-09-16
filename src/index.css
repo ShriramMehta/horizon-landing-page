@@ -15,3 +15,31 @@ body {
   font-family: 'Poppins';
   overflow-x: hidden;
 }
+.blob {
+  background-image: linear-gradient(to right,#9C85EF, #A289F1, #BC98FB, #C5A3FD, #D3C1FD, #DCD3FE);
+  border-radius: 45% 10% 10% 42% / 50% 0% 0% 46%;
+}
+.section-background-bottom{
+  background-image: linear-gradient(to right top,#b88ffa, #D8C5F6, #ECE3FB, #FFFFFF 50%);
+}
+.section-background-top{
+  background-image: linear-gradient(to left bottom, #b88ffa, #dfcefa,#ECE3FB , #ffffff 50%);
+}
+
+.glowing-background {
+  box-shadow: 0px 0px 70px 20px#fcffc7;
+  background-image: radial-gradient(#feffea);
+  border-radius: 50px;
+}
+
+.mySwiper{
+  padding: 20px 20px;
+}
+
+.ModalContainer {
+  border-radius: 50px;
+  box-shadow: 10px 10px 60px 10px #b29dde;
+}
+.section-background-app{
+  background-image: linear-gradient(to right, #D0DBF9, #E6ECFC, #F4F7FE, #FFFFFF 48%);
+}

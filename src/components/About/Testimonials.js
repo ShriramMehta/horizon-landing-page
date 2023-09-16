@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "./Components.css";
 
 const Testimonial = () => {
   const testimonial = [
@@ -41,34 +40,14 @@ const Testimonial = () => {
         centeredSlides={true}
         pagination={{ clickable: true }}
         modules={[Pagination]}
-        breakpoints={{
-          0:{
-              slidesPerView: 1,
-              spaceBetween:10,
-          },
-          480:{
-              slidesPerView: 1,
-              spaceBetween:10,
-          },
-          768:{
-              slidesPerView: 1,
-              spaceBetween:10,
-          },
-          1024:{
-              slidesPerView: 1,
-              spaceBetween:10,
-          },
-          1280:{
-              slidesPerView: 1,
-              spaceBetween:10,
-          }
-      }}
+        slidesPerView={1}
+        spaceBetween={10}
       >
         {testimonial.map((testimonial, index) => (
           <SwiperSlide key={index}>
             <div className="px-4 mx-auto flex justify-center items-center">
               <div className="flex flex-col justify-center items-center mx-auto my-10">
-                <div className="glowing-background relative w-[350px] h-[350px] md:w-[800px] md:h-[450px] flex justify-center items-center bg-white">
+                <div className="glowing-background relative w-[350px] h-[350px] md:w-[800px] md:h-[450px] flex justify-center items-center bg-white z-1">
                   <div className="absolute top-[44px] md:top-[22px] w-[300px] h-[700px] md:w-[700px] md:h-[400px] text-center text-[15px] md:text-[30px] leading-[24px] md:leading-[42px] text-[#171A1FFF] md:px-3">
                     " {testimonial.content} "
                   </div>

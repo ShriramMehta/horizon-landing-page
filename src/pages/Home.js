@@ -1,6 +1,6 @@
 import React from 'react'
-import Carousel from '../components/Carousel'
-import Hero from '../components/Hero'
+import Carousel from '../components/Home/Carousel'
+import Hero from '../components/Home/Hero'
 
 const Home = () => {
   return (
@@ -9,7 +9,6 @@ const Home = () => {
       data-scroll-section
       className='overflow-x-hidden'
     >
-    {/* <Hero/> */}
     <Hero/>
     <Carousel />
     </section>

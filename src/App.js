@@ -5,11 +5,10 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import "./App.css";
+import Main from "./pages/Main";
 import Home from "./pages/Home";
 import Team from "./pages/Team";
 import GetApp from "./pages/GetApp";
-import Testimonial from "./components/Testimonials";
-import Features from "./components/Features";
 import Privacy from "./pages/Privacy";
 import DeleteAccount from "./pages/DeleteAccount";
 
@@ -46,12 +45,7 @@ const App = () => {
           path: "/",
           element: (
             <>
-              <Home />
-              <About />
-              <Testimonial />
-              <GetApp />
-              <Features />
-              <Team />
+              <Main />
             </>
           ),
         },
@@ -64,8 +58,6 @@ const App = () => {
           element: (
             <>
               <About />
-              <Testimonial />
-              <Features />
             </>
           ),
         },
@@ -75,7 +67,7 @@ const App = () => {
         },
         {
           path: "/getApp",
-          element: <GetApp/>,
+          element: <GetApp />,
         },
       ],
     },
