@@ -48,7 +48,7 @@ const GetAppMain = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-center items-center">
+        <div className="relative w-full flex justify-center items-center">
           <img src="./images/App.png" alt="app" className="w-full h-auto object-cover"/>
         </div>
       </div>
