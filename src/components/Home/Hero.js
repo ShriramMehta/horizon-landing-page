@@ -13,11 +13,12 @@ const Hero = () => {
                 "-webkit-background-clip": "text",
                 "background-clip": "text",
                 color: "transparent",
+                fontFamily: 'serif'
               }}
             >
               Wellness,
             </span>
-            <span style={{ color: "#9E9EFF" }}>Your Way.</span>
+            <span style={{ color: "#9E9EFF", fontFamily: 'serif' }}>Your Way.</span>
           </h2>
           {/* <img src="./images/header.png" alt="header" className="w-full object-cover h-[50px] md:h-[100px]" /> */}
           <h4 class="ml-2 my-2 text-[24px] text-headingColor font-[700] p-3 text-left font-body leading-[36px]">
