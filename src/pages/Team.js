@@ -38,7 +38,7 @@ const Team = () => {
           Founders
         </h1>
       </div>
-      <div className="flex flex-col md:flex-row w-full justify-center items-center p-6 ModalContainer ">
+      <div className="flex flex-col md:flex-row w-full justify-center items-center p-6 rounded-[50px] shadow-purpleShadow ">
         <div className="md:p-6 relative flex  gap-6 justify-between items-center w-full">
           <div className="flex flex-row flex-wrap gap-6 justify-center items-center">
           {Founders.map((founderData, index) => (

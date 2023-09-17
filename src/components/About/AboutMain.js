@@ -27,8 +27,8 @@ const AboutMain = () => {
         </div>
       </div>
     </div>
-    <div className="w-[200px] h-[600px] absolute section-background-bottom z-[1] bottom-0"></div>
-    <div className="w-[400px] h-[400px] absolute section-background-top z-[1] top-0 right-0"></div>
+    <div className="w-[200px] h-[600px] absolute bg-purplegradientTop z-[1] bottom-0"></div>
+    <div className="w-[400px] h-[400px] absolute bg-purplegradientBottom z-[1] top-0 right-0"></div>
   </section>
   )
 }
