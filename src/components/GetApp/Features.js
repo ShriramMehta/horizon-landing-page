@@ -3,7 +3,7 @@ import React from "react";
 const features = [
   {
     image: "./images/Thearpy.png",
-    content: "Thearpy",
+    content: "Therapy",
   },
   {
     image: "./images/Meditation.png",
@@ -15,7 +15,7 @@ const features = [
   },
   {
     image: "./images/Workout.png",
-    content: "Guided Workout",
+    content: "Guided Workouts",
   },
 ];
 
