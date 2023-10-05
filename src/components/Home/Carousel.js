@@ -1,4 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+// import SwiperCore, { autoplay } from 'swiper/css/autoplay'
+// SwiperCore.use([autoplay])
+import { pagination, Autoplay } from "swiper/modules";
 
 const data = [
   {
@@ -27,31 +30,37 @@ const Carousel = () => {
       freeMode={true}
       grabCursor={true}
       spaceBetween={5}
+      autoplay={true}
       pagination={{ clickable: true }}
       className="my-5 bg-white z-3"
       breakpoints={{
         0: {
           slidesPerView: 1,
-          autoplay:{
-            delay:1000,
-          }
+          // autoplay: true,
+          // autoplay:{
+          //   delay:1000,
+          // }
         },
         480: {
           slidesPerView: 1.8,
-          autoplay: false,
+          // autoplay:{
+          //   delay:1000,
+          // }
 
         },
         768: {
           slidesPerView: 2,
-          autoplay: false,
+          // autoplay:{
+          //   delay:1000,
+          // }
         },
         1024: {
           slidesPerView: 2.5,
-          autoplay: false,
+          // autoplay: false,
         },
         1280: {
           slidesPerView: 3,
-          autoplay: false,
+          // autoplay: false,
         },
       }}
     >
