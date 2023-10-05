@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer class="my-3 flex flex-col gap-3 mx-auto items-center justify-between px-6 md:px-16">
       <div className="flex py-2 gap-6 flex-col md:flex-row justify-between items-center">
-        <div class="w-[30%] md:w-[10%]">
+        <div class="w-[25%] md:w-[8%]">
           <img src="./images/nav_logo.jpg" alt="footer logo" />
         </div>
         <div class="flex justify-center items-center gap-3">
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
           <Link
             to="/delete-account"
-            className="mt-5 underline text-lightIndigo "
+            className="text-xs mt-5 underline text-lightIndigo "
           >
             Delete Account
           </Link>

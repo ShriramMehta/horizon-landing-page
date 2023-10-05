@@ -62,7 +62,7 @@ const Hero = () => {
                 ease: "anticipate",
               },
             }}
-            class="ml-2 my-2 text-[24px] text-headingColor font-[700] p-3 text-left font-body leading-[36px]"
+            class="ml-2 my-2 text-[22px] text-headingColor font-[700] p-3 text-left font-body leading-[36px]"
           >
             Your journey to mental well-being starts here.
             <br />
@@ -70,7 +70,6 @@ const Hero = () => {
           </m.h4>
           <h4 class="ml-2 my-1 text-[22px] font-normal text-textColor p-3 text-left font-body leading-[36px]">
             Wellness isn’t a one size fits all concept.
-            <br />
             We are here to help you find what helps you in your journey towards
             mental wellness.
           </h4>

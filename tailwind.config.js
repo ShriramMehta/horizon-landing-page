@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // primaryIndigo: "#7B3CF3",
-        // darkIndigo: "#4E139F",
+        primaryIndigo: "#7B3CF3",
+        darkIndigo: "#4E139F",
         // darkWhite: "#ECE7FE",
         // lightBlue: "#6C63FF",
         // radicalRed: "#FF2D55",
