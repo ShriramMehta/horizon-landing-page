@@ -40,7 +40,7 @@ const Team = () => {
       </div>
       <div className="flex flex-col md:flex-col w-full justify-center text-center items-center p-6 rounded-[50px] shadow-purpleShadow ">
         <div className="md:p-6 relative flex  justify-between items-center w-full gap-6">
-          <div className="w-full flex flex-row flex-wrap gap-12 justify-center items-center">
+          <div className="w-full flex flex-row flex-wrap gap-16 justify-center items-center">
           {Founders.map((founderData, index) => (
             <div
               key={index}
