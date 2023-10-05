@@ -17,7 +17,7 @@ const data = [
     image: "./images/Feat3.png",
     topContent: "We have conducted over",
     value: "10,000",
-    belowContent: "sessions",
+    belowContent: "sessions.",
   },
 ];
 
