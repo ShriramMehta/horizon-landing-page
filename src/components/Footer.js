@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="bg-lightIndigo hover:bg-primaryIndigo px-1 py-1 rounded-full transition-colors duration-300 text-white">
                 <Link href="/"><FontAwesomeIcon icon={faTwitter} className="text-3xl p-1"/></Link>
             </div> */}
-          <div className="bg-lightIndigo hover:bg-primaryIndigo px-2 py-1 rounded-full transition-colors duration-300 text-white">
+          {/* <div className="bg-lightIndigo hover:bg-primaryIndigo px-2 py-1 rounded-full transition-colors duration-300 text-white">
             <Link to="https://www.linkedin.com/company/myndcare/">
               <FontAwesomeIcon icon={faLinkedinIn} className="text-3xl p-1" />
             </Link>
@@ -31,7 +31,7 @@ const Footer = () => {
             <Link to="https://instagram.com/adaptwellness.in?igshid=MzRlODBiNWFlZA==">
               <FontAwesomeIcon icon={faInstagram} className="text-3xl p-1" />
             </Link>
-          </div>
+          </div> */}
         </div>
         <div class="flex flex-col justify-center items-center">
           <div className="flex justify-center items-center gap-6">
