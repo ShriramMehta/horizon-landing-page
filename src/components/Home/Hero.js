@@ -66,12 +66,12 @@ const Hero = () => {
           >
             Your journey to mental well-being starts here.
             <br />
-            Let's create a happier, healthier you - together!
+            Let's create a happier, healthier you - together.
           </m.h4>
           <h4 class="ml-2 my-1 text-[22px] font-normal text-textColor p-3 text-left font-body leading-[36px]">
             Wellness isn’t a one size fits all concept.
-            We are here to help you find what helps you in your journey towards
-            mental wellness.
+            We are<br/> here to help you find what helps you in your<br/> journey towards
+            mental wellness!
           </h4>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/2 flex justify-end items-end pl-4">
