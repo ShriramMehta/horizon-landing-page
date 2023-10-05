@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const GetAppMain = () => {
   return (
-    <section className="py-10 bg-bluegradient">
+    <section className="md:py-10 bg-bluegradient">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8  md:px-8 md:pb-0">
         <div className="w-3/4 flex flex-col justify-center items-center gap-16 md:gap-16 md:p-3">
           <div className="text-[24px] md:text-[30px] text-headingColor font-medium">
