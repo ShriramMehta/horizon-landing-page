@@ -36,7 +36,7 @@ const Footer = () => {
         <div class="flex flex-col justify-center items-center">
           <div className="flex justify-center items-center gap-6">
             <Link
-              to="https://play.google.com/store/apps/details?id=com.mynd.adapt"
+              to="https://apps.apple.com/us/app/adapt-wellness/id6463197623?platform=iphone"
               target="_"
             >
               <img
