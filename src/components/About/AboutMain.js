@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutMain = () => {
   return (
-    <section className="relative my-10">
+    <section className="relative md:my-10">
       <div className="flex flex-col md:flex-row justify-center items-center md:gap-0 pt-5 px-5">
         <div className="w-full md:w-5/6 flex justify-center items-center">
           <img

@@ -30,7 +30,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <section className="mx-auto my-20 py-20 bg-[#feffea]" data-scroll-section>
+    <section className="mx-auto md:my-20 py-20 bg-[#feffea]" data-scroll-section>
       <h1 className="text-[36px] leading-[50px] font-bold font-heading text-headingColor text-center">
         Testimonials
       </h1>

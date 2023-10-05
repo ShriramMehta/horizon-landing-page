@@ -21,7 +21,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="w-full mx-auto pb-10 pt-10 my-20">
+    <section id="features" className="w-full mx-auto py-10 md:my-20">
       <div className="my-3 text-center text-[32px] font-bold font-heading text-headingColor">
         Get access to
       </div>
