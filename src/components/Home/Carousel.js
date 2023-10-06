@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-// import SwiperCore, { autoplay } from 'swiper/css/autoplay'
-// SwiperCore.use([autoplay])
+import SwiperCore from "swiper";
 import { pagination, Autoplay } from "swiper/modules";
+SwiperCore.use([Autoplay]);
 
 const data = [
   {
@@ -46,7 +46,6 @@ const Carousel = () => {
           // autoplay:{
           //   delay:1000,
           // }
-
         },
         768: {
           slidesPerView: 2,
