@@ -19,7 +19,7 @@ const GetAppMain = () => {
                 className="min-w-[100px] w-full h-auto"
               />
               <Link
-                to="https://play.google.com/store/apps/details?id=com.mynd.adapt"
+                to="https://apps.apple.com/us/app/adapt-wellness/id6463197623?platform=iphone"
                 target="_"
               >
                 <img
@@ -49,7 +49,11 @@ const GetAppMain = () => {
           </div>
         </div>
         <div className="relative w-full flex justify-center items-center">
-          <img src="./images/App.png" alt="app" className="w-full h-auto object-cover"/>
+          <img
+            src="./images/App.png"
+            alt="app"
+            className="w-full h-auto object-cover"
+          />
         </div>
       </div>
     </section>
