@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: "About", link: "/about" },
     { name: "Team", link: "/team" },
     { name: "Get App", link: "/getApp" },
+    { name: "Therapist", link: "/therapist" },
   ];
   return (
     <section className="my-3" data-scroll-section>

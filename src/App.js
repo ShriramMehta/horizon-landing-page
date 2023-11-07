@@ -11,6 +11,7 @@ import Team from "./pages/Team";
 import GetApp from "./pages/GetApp";
 import Privacy from "./pages/Privacy";
 import DeleteAccount from "./pages/DeleteAccount";
+import { Therapist } from "./pages/Therapist";
 
 const Layout = () => {
   return (
@@ -68,6 +69,10 @@ const App = () => {
         {
           path: "/getApp",
           element: <GetApp />,
+        },
+        {
+          path: "/therapist",
+          element: <Therapist/>,
         },
       ],
     },
