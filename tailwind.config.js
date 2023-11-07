@@ -7,7 +7,7 @@ module.exports = {
         primaryIndigo: "#7B3CF3",
         darkIndigo: "#4E139F",
         // darkWhite: "#ECE7FE",
-        // lightBlue: "#6C63FF",
+        lightBlue: "#6C63FF",
         // radicalRed: "#FF2D55",
         // Backgroundwhite: "#FFFFFF",
         // lightBlack: "#333333",
