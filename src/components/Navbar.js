@@ -39,7 +39,11 @@ const Navbar = () => {
             open ? "top-25 " : "top-[-490px]"
           }`}
         >
-          <ul className="grid sm:grid-flow-col gap-4 lg:gap-6 justify-center items-center text-center">
+          <ul className="grid sm:grid-flow-col gap-4 lg:gap-6 justify-center items-center text-center"
+            style={{
+              zIndex: "4"
+            }}   
+                   >
             {Links.map((link) => (
               <li key={link.name}>
                 <Link
@@ -51,6 +55,15 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                to="/login"
+                className="inline-block text-textColor text-xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-primaryIndigo transform transition-transform duration-300 hover:scale-90"
+                onClick={() => setOpen(!open)}
+              >
+                Login
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

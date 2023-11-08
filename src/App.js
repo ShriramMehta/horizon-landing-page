@@ -1,5 +1,10 @@
-import React, { useEffect } from "react";
-import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  Outlet,
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
 import LocomotiveScroll from "locomotive-scroll";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
@@ -12,6 +17,9 @@ import GetApp from "./pages/GetApp";
 import Privacy from "./pages/Privacy";
 import DeleteAccount from "./pages/DeleteAccount";
 import { Therapist } from "./pages/Therapist";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import PrivateRoute from "./components/PrivateRoute";
 
 const Layout = () => {
   return (
@@ -24,18 +32,7 @@ const Layout = () => {
 };
 
 const App = () => {
-  // useEffect(() => {
-  //   const scroll = new LocomotiveScroll({
-  //     el: document.querySelector("[data-scroll-container]"),
-  //     smooth: true,
-  //     tablet: { smooth: true },
-  //     smartphone: { smooth: true }
-  //   });
-
-  //   return () => {
-  //     scroll.destroy();
-  //   };
-  // }, []);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   const router = createBrowserRouter([
     {
@@ -72,7 +69,11 @@ const App = () => {
         },
         {
           path: "/therapist",
-          element: <Therapist/>,
+          element: <Therapist />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
         },
       ],
     },
@@ -84,7 +85,15 @@ const App = () => {
       path: "/delete-account",
       element: <DeleteAccount />,
     },
+    {
+      path: "/dashboard",
+      element: <PrivateRoute isLoggedIn={isLoggedIn} element={<Dashboard />} />,
+    },
   ]);
+
+  // <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
+  //   <Route path="/dashboard" element={<Dashboard />}></Route>
+  // </Route>;
 
   return (
     <div className="app">
