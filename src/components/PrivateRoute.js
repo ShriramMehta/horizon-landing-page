@@ -1,14 +1,12 @@
-import React from 'react'
-import { Route, useNavigate } from 'react-router'
+import React from "react";
+import {Navigate } from "react-router-dom";
+import Dashboard from "../pages/Dashboard";
 
-const PrivateRoute = ({isLoggedIn,  ...props}) => {
-    const navigate = useNavigate();
+const PrivateRoute = () => {
+  const token = localStorage.getItem('token');
+  const isAuthenticated = token !== null;
 
-    if(!isLoggedIn){
-        navigate('/login')
-        return null
-    }
-  return <Route {...props}/>
-}
+  return isAuthenticated ? <Dashboard /> : <Navigate to="/login" />;
+};
 
-export default PrivateRoute
+export default PrivateRoute;

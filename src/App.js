@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from "react";
-import {
-  Outlet,
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-} from "react-router-dom";
-import LocomotiveScroll from "locomotive-scroll";
+import React, { useState } from "react";
+import { createBrowserRouter, RouterProvider, Routes, Route, Navigate, Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Footer from "./components/Footer";
-import "./App.css";
 import Main from "./pages/Main";
-import Home from "./pages/Home";
 import Team from "./pages/Team";
 import GetApp from "./pages/GetApp";
 import Privacy from "./pages/Privacy";
@@ -39,61 +31,26 @@ const App = () => {
       path: "/",
       element: <Layout />,
       children: [
-        {
-          path: "/",
-          element: (
-            <>
-              <Main />
-            </>
-          ),
-        },
-        {
-          path: "/home",
-          element: <Main />,
-        },
-        {
-          path: "/about",
-          element: (
-            <>
-              <About />
-            </>
-          ),
-        },
-        {
-          path: "/team",
-          element: <Team />,
-        },
-        {
-          path: "/getApp",
-          element: <GetApp />,
-        },
-        {
-          path: "/therapist",
-          element: <Therapist />,
-        },
-        {
-          path: "/login",
-          element: <Login />,
-        },
+        { path: "/", element: <Main /> },
+        { path: "/home", element: <Main /> },
+        { path: "/about", element: <About /> },
+        { path: "/team", element: <Team /> },
+        { path: "/getApp", element: <GetApp /> },
+        { path: "/therapist", element: <Therapist /> },
+        { path: "/login", element: <Login setIsLoggedIn={setIsLoggedIn} /> },
       ],
     },
-    {
-      path: "/privacy-policy",
-      element: <Privacy />,
-    },
-    {
-      path: "/delete-account",
-      element: <DeleteAccount />,
-    },
+    { path: "/privacy-policy", element: <Privacy /> },
+    { path: "/delete-account", element: <DeleteAccount /> },
     {
       path: "/dashboard",
-      element: <PrivateRoute isLoggedIn={isLoggedIn} element={<Dashboard />} />,
+      element: (
+        <PrivateRoute>
+          <Dashboard />
+        </PrivateRoute>
+      ),
     },
   ]);
-
-  // <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
-  //   <Route path="/dashboard" element={<Dashboard />}></Route>
-  // </Route>;
 
   return (
     <div className="app">
@@ -101,4 +58,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;

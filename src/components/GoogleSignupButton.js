@@ -25,9 +25,16 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
 };
 
 
-const GoogleSignupButton = () => {
+const GoogleSignupButton = ({setIsLoggedIn}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
+
+  useEffect(() => {
+    let token = localStorage.getItem("token");
+    if (token) {
+      navigate("/dashboard");
+    }
+  }, []);
 
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID Token " + response.credential);
@@ -39,7 +46,6 @@ const GoogleSignupButton = () => {
       navigate("/dashboard");
     } else {
       console.log("Login First");
-      // navigate("/login")
     }
   }
 

@@ -6,12 +6,13 @@ const Dashboard = () => {
 
   const signOut = () => {
     localStorage.removeItem('token');
+    console.log("log out success")
     navigate('/login');
   };
 
   return (
     <div>
-      <h2>Dashboard (Only accessible when user is logged in)</h2>
+      <h2>Dashboard (Only accessible when the user is logged in)</h2>
       <button onClick={signOut}>Sign Out</button>
     </div>
   );
