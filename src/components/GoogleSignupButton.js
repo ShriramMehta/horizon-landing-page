@@ -32,7 +32,7 @@ const GoogleSignupButton = ({setIsLoggedIn}) => {
   useEffect(() => {
     let token = localStorage.getItem("token");
     if (token) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, []);
 
@@ -43,7 +43,7 @@ const GoogleSignupButton = ({setIsLoggedIn}) => {
     setUser(userObject);
     localStorage.setItem("token", response.credential);
     if (userObject) {
-      navigate("/dashboard");
+      navigate("/");
     } else {
       console.log("Login First");
     }
