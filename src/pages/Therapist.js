@@ -11,6 +11,7 @@ const Therapist = () => {
       navigate("/bookSession")
     }else{
       console.log("user is not looged in")
+      navigate("/login")
     }
   }
 

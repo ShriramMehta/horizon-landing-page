@@ -2,7 +2,7 @@ import React from "react";
 // import {ArrowForwardIosIcon} from '@mui/icons-material';ss
 
 const BookSession = () => {
-  const repeatDiv = Array(4)
+  const repeatDivCal = Array(4)
     .fill(null)
     .map((_, idx) => (
       <div className="flex flex-col gap-0 justify-center items-center max-w-[76px] w-full max-h-[82px] h-full rounded-[16px] border-[1px] border-[#EAECF0] bg-[#EAECF0]">
@@ -18,12 +18,22 @@ const BookSession = () => {
       </div>
     ));
 
+  const repeatDivTime = Array(4)
+    .fill(null)
+    .map((_, idx) => (
+      <div className="max-w-[82px] w-full max-h-[30px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] bg-[#EAECF0] border-[1px] border-[##EAECF0]">
+        <p className="text-sm font-normal text-[#4E139F] text-center">
+          12.00pm
+        </p>
+      </div>
+    ));
+
   return (
     <div className="flex flex-col max-w-screen-lg h-screen mx-auto">
       <div>Book Session</div>
       <div className="shadow-xl flex flex-col gap-4 p-6">
         <div className="flex justify-center items-center">
-          <div className="flex justify-center items-center gap-4 max-w-1/2 w-full shadow-lg p-4">
+          <div className="flex justify-center items-center gap-4 max-w-1/2 w-full h-5/6 shadow-lg p-4">
             <img
               className="w-36 h-36 object-cover rounded-full shadow-lg"
               src="./images/img2.png"
@@ -38,32 +48,51 @@ const BookSession = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col max-w-full w-full p-4">
+          <div className="flex flex-col max-w-full w-full p-4 gap-4">
             <div className="flex flex-col gap-4">
               <p className="text-[#101828] text-xl font-semibold">
                 Available Dates
               </p>
-              <div className="flex flex-row w-full gap-4">{repeatDiv}</div>
-              <div>
-                <svg
-                  height="512px"
-                  id="Layer_1"
-                  style="enable-background:new 0 0 512 512;"
-                  version="1.1"
-                  viewBox="0 0 512 512"
-                  width="512px"
-                  xml:space="preserve"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <polygon points="160,128.4 192.3,96 352,256 352,256 352,256 192.3,416 160,383.6 287.3,256 " />
-                </svg>
+              <div className="flex flex-row items-center justify-start w-full gap-4">
+                {repeatDivCal}
+                <div className="flex justify-end mx-auto">
+                  <img
+                    src="./images/Chevron right.png"
+                    alt="right"
+                    className="w-[30px] h-[30px]"
+                  />
+                </div>
               </div>
             </div>
-            <div>Available Time Slots</div>
+            <div className="flex flex-col gap-4">
+              <p className="text-[#101828] text-lg font-semibold">
+                Available Time Slots
+              </p>
+              <div className="flex flex-row items-center justify-start w-full gap-4">
+                {repeatDivTime}
+              </div>
+            </div>
           </div>
         </div>
-        <div>Session Pricing</div>
+        <div className="flex flex-col gap-4">
+          <p className="text-[#101828] text-xl font-semibold">
+            Session Pricing
+          </p>
+          <div className="flex gap-4">
+            <div className="flex flex-row justify-center items-center font-semibold text-[#101828]">
+              <img src="./images/currency-rupee.png" alt="rupee" />
+              <span>800/hr</span>
+            </div>
+            <div className="max-w-[130px] w-full max-h-[30px] h-full rounded-[16px] flex justify-center items-center py-[2px] px-[6px] bg-[#F0F0FE] border-[1px] border-[##EAECF0]">
+              <div className="flex flex-row justify-start items-center gap-2">
+                <p className="text-xs font-semibold text-[#4E139F] text-center">
+                  Student Status
+                </p>
+                <img src="./images/Check Circle.png" alt="check" />
+              </div>
+            </div>
+          </div>
+        </div>
         <div>
           <hr></hr>
         </div>
