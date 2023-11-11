@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { createBrowserRouter, RouterProvider, Routes, Route, Navigate, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Footer from "./components/Footer";
@@ -14,7 +21,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import Signup from "./pages/Signup";
 import BookSession from "./pages/BookSession";
 import ConfirmBooking from "./pages/ConfirmBooking";
-import Payment from "./Payment";
 
 const Layout = () => {
   return (
@@ -39,15 +45,19 @@ const App = () => {
         { path: "/about", element: <About /> },
         { path: "/team", element: <Team /> },
         { path: "/getApp", element: <GetApp /> },
-        { path: "/therapist", element: <Therapist/> },
-        {path: "/bookSession", element: <PrivateRoute component={BookSession} />},
-        {path: "/confirmBooking", element: <PrivateRoute  component={ConfirmBooking} />},
-        {path: "/payment", element: <PrivateRoute  component={Payment} />}
-
+        { path: "/therapist", element: <Therapist /> },
+        {
+          path: "/bookSession",
+          element: <PrivateRoute component={BookSession} />,
+        },
+        {
+          path: "/confirmBooking",
+          element: <PrivateRoute component={ConfirmBooking} />,
+        },
       ],
     },
     { path: "/login", element: <Login /> },
-    { path: "/signup", element: <Signup/> },
+    { path: "/signup", element: <Signup /> },
     { path: "/privacy-policy", element: <Privacy /> },
     { path: "/delete-account", element: <DeleteAccount /> },
   ]);

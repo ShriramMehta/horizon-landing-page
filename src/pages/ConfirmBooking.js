@@ -2,19 +2,18 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 const ConfirmBooking = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  function handleClick(){
+  function handleClick() {
     // navigate('/payment')
-    console.log("Open modal")
+    console.log("Open modal");
   }
 
   return (
-    <div className="flex flex-col max-w-screen-lg h-screen mx-auto">
+    <div className="flex flex-col max-w-screen-lg h-full mx-auto">
       <div className="shadow-xl flex flex-col gap-4 p-6">
         <div className="flex flex-col md:flex-row justify-center items-center">
-          <div className="flex justify-center items-center gap-4 max-w-1/2 w-full h-5/6 shadow-lg p-4 pb-8">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 max-w-1/2 w-full h-5/6 shadow-lg p-4 pb-8">
             <img
               className="w-36 h-36 object-cover rounded-full shadow-lg"
               src="./images/img2.png"
@@ -27,7 +26,9 @@ const ConfirmBooking = () => {
               <p className="text-[#475467] text-base font-normal">
                 Stress, Depression, Anxiety, Sleep Help
               </p>
-              <div><hr></hr></div>
+              <div>
+                <hr></hr>
+              </div>
               <div className="w-full flex flex-col gap-4 justify-center items-center">
                 <div className="w-full flex flex-row gap-2 justify-start items-center">
                   <img src="./images/calendar.png" alt="calender" />
@@ -62,7 +63,7 @@ const ConfirmBooking = () => {
               </div>
               <div className="w-full md:w-auto mt-5">
                 <button
-                  onClick={()=>handleClick()}
+                  onClick={() => handleClick()}
                   className="w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"
                 >
                   Pay Rs. 800
@@ -104,7 +105,7 @@ const ConfirmBooking = () => {
                   <img
                     src="./images/Chevron right.png"
                     alt="right"
-                    className="w-[100px] md:w-[25px] h-[25px]"
+                    className="w-[25px] h-[25px]"
                   />
                 </div>
               </div>
@@ -119,7 +120,7 @@ const ConfirmBooking = () => {
                   <img
                     src="./images/Chevron right.png"
                     alt="right"
-                    className="w-[100px] md:w-[25px] h-[25px]"
+                    className="w-[25px] h-[25px]"
                   />
                 </div>
               </div>

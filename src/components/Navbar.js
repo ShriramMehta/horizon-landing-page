@@ -68,7 +68,7 @@ const Navbar = () => {
             <li>
               {user ? (
                 <Link
-                  className="inline-block text-textColor text-xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-primaryIndigo transform transition-transform duration-300 hover:scale-90"
+                  className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex justify-between items-center"
                   onClick={signOut}
                 >
                   Logout
@@ -76,7 +76,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   to="/login"
-                  className="inline-block text-textColor text-xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-primaryIndigo transform transition-transform duration-300 hover:scale-90"
+                  className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex justify-between items-center"
                   onClick={() => setOpen(!open)}
                 >
                   Login
