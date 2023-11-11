@@ -12,6 +12,7 @@ import { Therapist } from "./pages/Therapist";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
+import Signup from "./pages/Signup";
 
 const Layout = () => {
   return (
@@ -37,9 +38,10 @@ const App = () => {
         { path: "/team", element: <Team /> },
         { path: "/getApp", element: <GetApp /> },
         { path: "/therapist", element: <Therapist /> },
-        { path: "/login", element: <Login setIsLoggedIn={setIsLoggedIn} /> },
       ],
     },
+    { path: "/login", element: <Login setIsLoggedIn={setIsLoggedIn} /> },
+    { path: "/signup", element: <Signup/> },
     { path: "/privacy-policy", element: <Privacy /> },
     { path: "/delete-account", element: <DeleteAccount /> },
     {
