@@ -1,6 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
-export const Therapist = () => {
+const Therapist = () => {
+  const navigate = useNavigate()
+
+  function handleBookSession(){
+    const token = localStorage.getItem("token")
+    if(token){
+      console.log("user is logged in")
+      navigate("/bookSession")
+    }else{
+      console.log("user is not looged in")
+    }
+  }
+
   return (
     <div className="md:flex mx-auto">
       <div className="w-full md:w-1/3 bg-white shadow-lg rounded-2xl overflow-hidden mt-10 mx-auto">
@@ -27,7 +40,10 @@ export const Therapist = () => {
 
           </div> */}
           <div className="mt-4">
-            <button className="bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2">
+            <button className="bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
+              onClick={()=>{handleBookSession()}}
+            
+            >
               Book a Session
             </button>
             <button className="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full">
@@ -36,8 +52,6 @@ export const Therapist = () => {
           </div>
         </div>
       </div>
-
-
       <div className="w-full md:w-1/3 bg-white shadow-lg rounded-2xl overflow-hidden mt-10 mx-auto">
         <div className="flex flex-col relative mb-0">
           <div className="absolute top-3 left-3 bg-white rounded-full p-2 ">
@@ -78,3 +92,5 @@ export const Therapist = () => {
     </div>
   );
 };
+
+export default Therapist;

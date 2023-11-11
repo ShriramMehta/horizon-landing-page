@@ -25,7 +25,7 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
 };
 
 
-const GoogleSignupButton = ({setIsLoggedIn}) => {
+const GoogleSignupButton = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
 

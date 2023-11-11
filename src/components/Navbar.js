@@ -17,7 +17,7 @@ const Navbar = () => {
   const signOut = () => {
     localStorage.removeItem("token");
     console.log("log out success");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -68,11 +68,9 @@ const Navbar = () => {
             <li>
               {user ? (
                 <Link
-                  // to="/"
                   className="inline-block text-textColor text-xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-primaryIndigo transform transition-transform duration-300 hover:scale-90"
                   onClick={signOut}
                 >
-                  {/* {user? "Login" : "Logout"} */}
                   Logout
                 </Link>
               ) : (
@@ -81,7 +79,6 @@ const Navbar = () => {
                   className="inline-block text-textColor text-xl font-medium px-4 py-2 border-4 border-double border-transparent hover:text-primaryIndigo transform transition-transform duration-300 hover:scale-90"
                   onClick={() => setOpen(!open)}
                 >
-                  {/* {user? "Login" : "Logout"} */}
                   Login
                 </Link>
               )}
