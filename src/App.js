@@ -14,6 +14,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Signup from "./pages/Signup";
 import BookSession from "./pages/BookSession";
 import ConfirmBooking from "./pages/ConfirmBooking";
+import Payment from "./Payment";
 
 const Layout = () => {
   return (
@@ -40,7 +41,8 @@ const App = () => {
         { path: "/getApp", element: <GetApp /> },
         { path: "/therapist", element: <Therapist/> },
         {path: "/bookSession", element: <PrivateRoute component={BookSession} />},
-        {path: "/confirmBooking", element: <PrivateRoute  component={ConfirmBooking} />}
+        {path: "/confirmBooking", element: <PrivateRoute  component={ConfirmBooking} />},
+        {path: "/payment", element: <PrivateRoute  component={Payment} />}
 
       ],
     },
