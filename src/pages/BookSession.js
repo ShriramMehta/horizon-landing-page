@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router";
 // import {ArrowForwardIosIcon} from '@mui/icons-material';ss
 
 const BookSession = () => {
+  const navigate = useNavigate();
+  function handleClick(){
+    navigate("/confirmBooking")
+  }
+
   const repeatDivCal = Array(4)
     .fill(null)
     .map((_, idx) => (
@@ -102,7 +108,10 @@ const BookSession = () => {
             </div>
           </div>
           <div className="w-full md:w-auto">
-            <button className="text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-center items-center w-full  md:w-auto">
+            <button
+              onClick={()=>handleClick()}
+              className="text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-center items-center w-full  md:w-auto"
+            >
               Book a Session
               <img
                 src="./images/Chevron right white.png"

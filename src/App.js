@@ -10,10 +10,10 @@ import Privacy from "./pages/Privacy";
 import DeleteAccount from "./pages/DeleteAccount";
 import Therapist from "./pages/Therapist";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import Signup from "./pages/Signup";
 import BookSession from "./pages/BookSession";
+import ConfirmBooking from "./pages/ConfirmBooking";
 
 const Layout = () => {
   return (
@@ -39,21 +39,15 @@ const App = () => {
         { path: "/team", element: <Team /> },
         { path: "/getApp", element: <GetApp /> },
         { path: "/therapist", element: <Therapist/> },
-        {path: "/bookSession", element: <BookSession/>}
+        {path: "/bookSession", element: <PrivateRoute component={BookSession} />},
+        {path: "/confirmBooking", element: <PrivateRoute  component={ConfirmBooking} />}
+
       ],
     },
     { path: "/login", element: <Login /> },
     { path: "/signup", element: <Signup/> },
     { path: "/privacy-policy", element: <Privacy /> },
     { path: "/delete-account", element: <DeleteAccount /> },
-    {
-      path: "/dashboard",
-      element: (
-        <PrivateRoute>
-          <Dashboard />
-        </PrivateRoute>
-      ),
-    },
   ]);
 
   return (
