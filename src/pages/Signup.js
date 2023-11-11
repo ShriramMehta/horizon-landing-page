@@ -2,7 +2,7 @@ import React from "react";
 import GoogleSignupButton from "../components/GoogleSignupButton";
 import { Link } from "react-router-dom";
 
-const Signup = ({ setIsLoggedIn }) => {
+const Signup = () => {
   return (
     <div className="max-w-full h-screen flex flex-col justify-center items-center">
       <div className="flex flex-col justify-center items-center shadow-xl p-6">
@@ -15,7 +15,7 @@ const Signup = ({ setIsLoggedIn }) => {
                 Your wellness journey starts<br/> here. Let's begin!
               </p>
               <p className="mt-10 mb-3">
-                <GoogleSignupButton setIsLoggedIn={setIsLoggedIn} />
+                <GoogleSignupButton />
               </p>
             </div>
             <div className="flex flex-col justify-start items-center mt-2 text-left">
