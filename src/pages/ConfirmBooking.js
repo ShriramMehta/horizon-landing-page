@@ -1,16 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import Modal from "../components/Modal";
+import { useState } from "react";
 
 const ConfirmBooking = () => {
   const navigate = useNavigate();
 
-  function handleClick() {
-    // navigate('/payment')
-    console.log("Open modal");
-  }
+  const [openModal, setOpenModal] = useState(false)
 
   return (
-    <div className="flex flex-col max-w-screen-lg h-full mx-auto">
+    <div className="flex flex-col max-w-screen-lg h-full mx-auto ">
       <div className="shadow-xl flex flex-col gap-4 p-6">
         <div className="flex flex-col md:flex-row justify-center items-center">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 max-w-1/2 w-full h-5/6 shadow-lg p-4 pb-8">
@@ -63,7 +62,7 @@ const ConfirmBooking = () => {
               </div>
               <div className="w-full md:w-auto mt-5">
                 <button
-                  onClick={() => handleClick()}
+                  onClick={() => setOpenModal(true)}
                   className="w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"
                 >
                   Pay Rs. 800
@@ -127,6 +126,7 @@ const ConfirmBooking = () => {
             </div>
           </div>
         </div>
+        {openModal && <Modal closeModal={setOpenModal} />}
       </div>
     </div>
   );
