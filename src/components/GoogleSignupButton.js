@@ -1,13 +1,13 @@
+// GoogleSignupButton.js
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate, Link, Navigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const GoogleSignInButton = ({ handleCallbackResponse }) => {
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
-      client_id:
-        "391468099908-moch0ner8tsmhnnomel8qjsl4thbtk13.apps.googleusercontent.com",
+      client_id: "391468099908-moch0ner8tsmhnnomel8qjsl4thbtk13.apps.googleusercontent.com",
       callback: handleCallbackResponse,
     });
 
@@ -21,13 +21,13 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
     google.accounts.id.prompt();
   }, [handleCallbackResponse]);
 
-  return <div id="signInDiv"/>;
+  return <div id="signInDiv" />;
 };
-
 
 const GoogleSignupButton = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let token = localStorage.getItem("token");
@@ -41,20 +41,31 @@ const GoogleSignupButton = () => {
     var userObject = jwtDecode(response.credential);
     console.log(userObject);
     setUser(userObject);
-    localStorage.setItem("token", response.credential);
-    if (userObject) {
-      navigate("/");
-    } else {
-      console.log("Login First");
+
+
+    // Check if the user is already signed up based on email
+    const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
+    const isDuplicate = existingUsers.some((existingUser) => existingUser.email === userObject.email);
+
+    if (isDuplicate) {
+      setError("User is already signed up and completed signup with us.");
+      return;
     }
+
+    // If the user is not already signed up, proceed with signup
+    localStorage.setItem("token", response.credential);
+    existingUsers.push(userObject);
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+    navigate("/");
   }
 
   return (
     <div>
+      {error && <p>{error}</p>}
       <GoogleSignInButton handleCallbackResponse={handleCallbackResponse} />
     </div>
   );
 };
-
 
 export default GoogleSignupButton;

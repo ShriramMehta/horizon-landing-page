@@ -2,9 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router";
 import Modal from "../components/Modal";
 import { useState } from "react";
+// import { useParams } from "react-router-dom";
 
 const ConfirmBooking = () => {
   const navigate = useNavigate();
+  // const { selectedDateIdx, selectedTimeIdx } = useParams();
 
   const [openModal, setOpenModal] = useState(false)
 

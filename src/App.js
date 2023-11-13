@@ -51,7 +51,8 @@ const App = () => {
           element: <PrivateRoute component={BookSession} />,
         },
         {
-          path: "/confirmBooking",
+          // path: "confirmBooking/:selectedDateIdx/:selectedTimeIdx",
+          path:"confirmBooking",
           element: <PrivateRoute component={ConfirmBooking} />,
         },
       ],
