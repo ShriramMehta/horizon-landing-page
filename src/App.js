@@ -21,6 +21,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Signup from "./pages/Signup";
 import BookSession from "./pages/BookSession";
 import ConfirmBooking from "./pages/ConfirmBooking";
+import viewDetails from "./pages/viewDetails";
 
 const Layout = () => {
   return (
@@ -49,6 +50,10 @@ const App = () => {
         {
           path: "/bookSession",
           element: <PrivateRoute component={BookSession} />,
+        },
+        {
+          path: "/viewDetails",
+          element: <PrivateRoute component={viewDetails} />,
         },
         {
           // path: "confirmBooking/:selectedDateIdx/:selectedTimeIdx",

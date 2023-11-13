@@ -2,16 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 const Therapist = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  function handleBookSession(){
-    const token = localStorage.getItem("token")
-    if(token){
-      console.log("user is logged in")
-      navigate("/bookSession")
-    }else{
-      console.log("user is not looged in")
-      navigate("/login")
+  function handleBookSession() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      console.log("user is logged in");
+      navigate("/bookSession");
+    } else {
+      console.log("user is not looged in");
+      navigate("/login");
     }
   }
 
@@ -27,13 +27,19 @@ const Therapist = () => {
             />
           </div>
           <h2 className="text-xl font-semibold ml-52 mt-10 ">Dr. John Smith</h2>
-          <p className="text-gray-600 mx-auto ml-48 mb-4">Experience: 10+ years</p>
+          <p className="text-gray-600 mx-auto ml-48 mb-4">
+            Experience: 10+ years
+          </p>
           <p className="text-gray-600 mx-auto ml-48">Hourly Fees: $100</p>
         </div>
         <div className="p-4">
           <h1 className="text-black font-semibold mb-1 mt-2">Best help for:</h1>
-          <p className="text-gray-600 mb-2">Stress,Relationship,Self development,Anxiety,Work related,Sleep help</p>
-          <p className="text-gray-600 mx-auto">Appoitment mode:Online via google meet</p>
+          <p className="text-gray-600 mb-2">
+            Stress,Relationship,Self development,Anxiety,Work related,Sleep help
+          </p>
+          <p className="text-gray-600 mx-auto">
+            Appoitment mode:Online via google meet
+          </p>
 
           {/* <div className="flex flex-row">
             <p className="text-gray-600 mr-7">Hourly Fees: $100</p>
@@ -41,13 +47,18 @@ const Therapist = () => {
 
           </div> */}
           <div className="mt-4">
-            <button className="bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
-              onClick={()=>{handleBookSession()}}
-            
+            <button
+              className="bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
+              onClick={() => {
+                handleBookSession();
+              }}
             >
               Book a Session
             </button>
-            <button className="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full">
+            <button
+              onClick={() => navigate("/viewDetails")}
+              className="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
+            >
               View Details
             </button>
           </div>
@@ -63,16 +74,18 @@ const Therapist = () => {
             />
           </div>
           <h2 className="text-xl font-semibold ml-48 mt-10 ">Dr. John Smith</h2>
-          <p className="text-gray-600 mx-auto ml-48 mb-2">Experience: 10+ years</p>
+          <p className="text-gray-600 mx-auto ml-48 mb-2">
+            Experience: 10+ years
+          </p>
           <p className="text-gray-600 mx-auto ml-48">Hourly Fees: $100</p>
           <p className="text-gray-600 mx-auto ml-48">Appoitment mode:</p>
           <p className="text-gray-600 mx-auto ml-48">Online via google meet</p>
-
-
         </div>
         <div className="p-4">
           <h1 className="text-black font-semibold mb-1">Best help for:</h1>
-          <p className="text-gray-600 mb-2">Stress,Relationship,Self development,Anxiety,Work related,Sleep help</p>
+          <p className="text-gray-600 mb-2">
+            Stress,Relationship,Self development,Anxiety,Work related,Sleep help
+          </p>
           {/* <div className="flex flex-row">
             <p className="text-gray-600 mr-7">Hourly Fees: $100</p>
         <p className="text-gray-600 mx-auto ml-48">Appoitment mode:Online via google meet</p>
@@ -88,8 +101,6 @@ const Therapist = () => {
           </div>
         </div>
       </div>
-
-  
     </div>
   );
 };
