@@ -1,6 +1,8 @@
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const viewDetails = () => {
+  // const navigate = useNavigate()
   return (
     <div className="max-w-screen-lg mx-auto h-full felx flex-col justify-center items-center px-10">
       <div className="flex flex-col lg:flex-row w-full gap-12 justify-center">
@@ -69,7 +71,10 @@ const viewDetails = () => {
             <div className="text-[#344054] text-lg">English, Hindi</div>
           </div>
           <div className="w-full">
-            <button className="text-center bg-primaryIndigo hover-bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center w-full md:w-auto">
+            <button
+              // onClick={() => navigate("/bookSession")}
+              className="text-center bg-primaryIndigo hover-bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center w-full md:w-auto"
+            >
               Book a Session
               <img src="./images/Chevron right white.png" alt="right" />
             </button>

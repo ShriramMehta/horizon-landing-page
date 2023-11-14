@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router";
 
 const AvailableDates = [
@@ -43,6 +43,18 @@ const BookSession = () => {
   const navigate = useNavigate();
   const [selectedDateIdx, setselectedDateIdx] = useState(null);
   const [selectedTimeIdx, setselectedTimeIdx] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      console.log("User is logged in");
+      // navigate("/bookSession");
+    } else {
+      console.log("User is not logged in");
+      navigate("/login");
+    }
+  }, [navigate]);
 
   const handleClick = () => {
     console.log(selectedDateIdx, selectedTimeIdx);
