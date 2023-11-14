@@ -7,7 +7,6 @@ const Signup = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-
     if (token) {
       // User is already signed up, show a message and redirect to home
       console.log("User is already signed up and completed signup with us.");
