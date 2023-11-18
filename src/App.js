@@ -18,6 +18,7 @@ import DeleteAccount from "./pages/DeleteAccount";
 import Therapist from "./pages/Therapist";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
+import Profile from "./components/Profile";
 import Signup from "./pages/Signup";
 import BookSession from "./pages/BookSession";
 import ConfirmBooking from "./pages/ConfirmBooking";
@@ -66,6 +67,10 @@ const App = () => {
     { path: "/signup", element: <Signup /> },
     { path: "/privacy-policy", element: <Privacy /> },
     { path: "/delete-account", element: <DeleteAccount /> },
+    {
+      path:"/profile",
+      element: <Profile/>,
+    },
   ]);
 
   return (
