@@ -5,14 +5,14 @@ import GoogleSignupButton from "../components/GoogleSignupButton";
 const Signup = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      // User is already signed up, show a message and redirect to home
-      console.log("User is already signed up and completed signup with us.");
-      navigate("/");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     // User is already signed up, show a message and redirect to home
+  //     console.log("User is already signed up and completed signup with us.");
+  //     navigate("/");
+  //   }
+  // }, [navigate]);
 
   return (
     <div className="max-w-full h-screen flex flex-col justify-center items-center">

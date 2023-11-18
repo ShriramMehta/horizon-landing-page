@@ -44,17 +44,17 @@ const BookSession = () => {
   const [selectedDateIdx, setselectedDateIdx] = useState(null);
   const [selectedTimeIdx, setselectedTimeIdx] = useState(null);
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
 
-    if (token) {
-      console.log("User is logged in");
-      // navigate("/bookSession");
-    } else {
-      console.log("User is not logged in");
-      navigate("/login");
-    }
-  }, [navigate]);
+  //   if (token) {
+  //     console.log("User is logged in");
+  //     // navigate("/bookSession");
+  //   } else {
+  //     console.log("User is not logged in");
+  //     navigate("/login");
+  //   }
+  // }, [navigate]);
 
   const handleClick = () => {
     console.log(selectedDateIdx, selectedTimeIdx);

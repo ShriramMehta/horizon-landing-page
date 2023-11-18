@@ -5,14 +5,14 @@ const Therapist = () => {
   const navigate = useNavigate();
 
   function handleBookSession() {
-    const token = localStorage.getItem("token");
-    if (token) {
-      console.log("user is logged in");
-      navigate("/bookSession");
-    } else {
-      console.log("user is not looged in");
-      navigate("/login");
-    }
+    // const token = localStorage.getItem("token");
+    // if (token) {
+    //   console.log("user is logged in");
+    //   navigate("/bookSession");
+    // } else {
+    //   console.log("user is not looged in");
+    //   navigate("/login");
+    // }
   }
 
   return (

@@ -1,6 +1,6 @@
-// GoogleSignupButton.js
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
+import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import PhoneModal from "./Modals/PhoneModal";
 
@@ -25,19 +25,13 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
 
   return <div id="signInDiv" />;
 };
+// ... (your imports)
 
 const GoogleSignupButton = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [error, setError] = useState(null);
   const [openModal, setOpenModal] = useState(false);
-
-  useEffect(() => {
-    let token = localStorage.getItem("token");
-    if (token) {
-      navigate("/");
-    }
-  }, []);
 
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID Token " + response.credential);
@@ -52,25 +46,29 @@ const GoogleSignupButton = () => {
 
     console.log(name, email, imageUrl);
 
-    // Check if the user is already signed up based on email
-    // const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
-    // const isDuplicate = existingUsers.some(
-    //   (existingUser) => existingUser.email === userObject.email
-    // );
-
-    // if (isDuplicate) {
-    //   setError("User is already signed up and completed signup with us.");
-    //   return;
-    // }
-
-    // If the user is not already signed up, proceed with signup
-    localStorage.setItem("token", response.credential);
-    // existingUsers.push(userObject);
-    // localStorage.setItem("users", JSON.stringify(existingUsers));
-
-    setOpenModal(true);
+    // Make a POST request to your backend API
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/client/onboard`, {
+      name,
+      email,
+      phone: "123456789", // No phone data provided in the Google response
+      imageUrl,
+    })    
+    .then((response) => {
+      if (response && response.data) {
+        console.log(response.data);
+        // Handle successful response, e.g., redirect to another page
+        setOpenModal(true);
+      } else {
+        console.error("Response or response.data is undefined");
+        setError("Error during onboarding. Please try again.");
+      }
+    })
+    .catch((error) => {
+      console.log(process.env.REACT_APP_BACKEND_URL);
+      console.error("Error during onboarding:", error.response ? error.response.data.error : error.message);
+      setError("Error during onboarding. Please try again.");
+    });
   }
-  
 
   return (
     <div>
