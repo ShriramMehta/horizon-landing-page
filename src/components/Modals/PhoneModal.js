@@ -17,6 +17,7 @@ const PhoneModal = ({ closeModal }) => {
 
     // Validate phone number or perform any other necessary checks
     // If valid, show the OTP form
+    console.log(phoneNumber)
     setShowOTPForm(true);
   };
 
@@ -99,13 +100,13 @@ const PhoneModal = ({ closeModal }) => {
           ) : (
             <form onSubmit={handleFormSubmit} className="flex flex-col gap-12">
               <PhoneInput
-                international
-                defaultCountry="US"
-                value={phoneNumber}
-                onChange={handlePhoneNumberChange}
-                // ... (other props)
-                className="border px-8 py-2 border-black"
-              />
+              international
+              defaultCountry="US"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+              required
+              className="border px-8 py-2 border-black"
+            />
               <button
                 type="submit"
                 className="py-3 w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"

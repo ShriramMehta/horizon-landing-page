@@ -22,7 +22,7 @@ import Profile from "./components/Profile";
 import Signup from "./pages/Signup";
 import BookSession from "./pages/BookSession";
 import ConfirmBooking from "./pages/ConfirmBooking";
-import viewDetails from "./pages/viewDetails";
+import ViewDetails from "./pages/ViewDetails";
 
 const Layout = () => {
   return (
@@ -50,17 +50,17 @@ const App = () => {
         { path: "/therapist", element: <Therapist /> },
         {
           path: "/bookSession",
-          element: <PrivateRoute component={BookSession} />,
-        },
-        {
-          path: "/viewDetails",
-          element: <PrivateRoute component={viewDetails} />,
+          element: <BookSession />,
         },
         {
           // path: "confirmBooking/:selectedDateIdx/:selectedTimeIdx",
-          path:"confirmBooking",
-          element: <PrivateRoute component={ConfirmBooking} />,
+          path: "/confirmBooking",
+          element: <ConfirmBooking />,
         },
+        {
+          path: "/viewDetails",
+          element: <ViewDetails/>
+        }
       ],
     },
     { path: "/login", element: <Login /> },
@@ -68,8 +68,8 @@ const App = () => {
     { path: "/privacy-policy", element: <Privacy /> },
     { path: "/delete-account", element: <DeleteAccount /> },
     {
-      path:"/profile",
-      element: <Profile/>,
+      path: "/profile",
+      element: <Profile />,
     },
   ]);
 

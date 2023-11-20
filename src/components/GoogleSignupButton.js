@@ -1,3 +1,5 @@
+// GoogleSignupButton.js
+
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
@@ -25,7 +27,6 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
 
   return <div id="signInDiv" />;
 };
-// ... (your imports)
 
 const GoogleSignupButton = () => {
   const navigate = useNavigate();
@@ -46,28 +47,23 @@ const GoogleSignupButton = () => {
 
     console.log(name, email, imageUrl);
 
-    // Make a POST request to your backend API
-    axios.post(`${process.env.REACT_APP_BACKEND_URL}/client/onboard`, {
-      name,
-      email,
-      phone: "123456789", // No phone data provided in the Google response
-      imageUrl,
-    })    
+    // Check if the user is already signed up based on email
+    // ... (previous code)
+
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/client/isAuthCompleted/${email}`)
     .then((response) => {
-      if (response && response.data) {
-        console.log(response.data);
-        // Handle successful response, e.g., redirect to another page
-        setOpenModal(true);
+      if (response && response.data && response.data.success) {
+        // User is already signed up, navigate to home page
+        navigate("/");
       } else {
-        console.error("Response or response.data is undefined");
-        setError("Error during onboarding. Please try again.");
+        // User needs to sign up
+        console.log("Signup is necessary");
       }
     })
     .catch((error) => {
-      console.log(process.env.REACT_APP_BACKEND_URL);
-      console.error("Error during onboarding:", error.response ? error.response.data.error : error.message);
-      setError("Error during onboarding. Please try again.");
+      console.error("Error checking user signup status:", error.response ? error.response.data.error : error.message);
     });
+    
   }
 
   return (

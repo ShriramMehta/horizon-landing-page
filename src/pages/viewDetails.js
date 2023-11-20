@@ -1,8 +1,64 @@
 import React from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore from "swiper";
+import { pagination, Autoplay } from "swiper/modules";
+SwiperCore.use([Autoplay]);
 
-const viewDetails = () => {
-  // const navigate = useNavigate()
+const reviewData = [
+  {
+    name: "Anisha Kumar",
+    time: "2 days ago",
+    rating: "4.8",
+    review:
+      "“I am so grateful to work with Ms. Shivangi because I was able to tackle my issues about social anxiety and really work on these.”",
+  },
+  {
+    name: "Anisha Kumar",
+    time: "2 days ago",
+    rating: "4.8",
+    review:
+      "“I am so grateful to work with Ms. Shivangi because I was able to tackle my issues about social anxiety and really work on these.”",
+  },
+  {
+    name: "Anisha Kumar",
+    time: "2 days ago",
+    rating: "4.8",
+    review:
+      "“I am so grateful to work with Ms. Shivangi because I was able to tackle my issues about social anxiety and really work on these.”",
+  },
+  {
+    name: "Anisha Kumar",
+    time: "2 days ago",
+    rating: "4.8",
+    review:
+      "“I am so grateful to work with Ms. Shivangi because I was able to tackle my issues about social anxiety and really work on these.”",
+  },
+  {
+    name: "Anisha Kumar",
+    time: "2 days ago",
+    rating: "4.8",
+    review:
+      "“I am so grateful to work with Ms. Shivangi because I was able to tackle my issues about social anxiety and really work on these.”",
+  },
+  {
+    name: "Anisha Kumar",
+    time: "2 days ago",
+    rating: "4.8",
+    review:
+      "“I am so grateful to work with Ms. Shivangi because I was able to tackle my issues about social anxiety and really work on these.”",
+  },
+  {
+    name: "Anisha Kumar",
+    time: "2 days ago",
+    rating: "4.8",
+    review:
+      "“I am so grateful to work with Ms. Shivangi because I was able to tackle my issues about social anxiety and really work on these.”",
+  },
+];
+
+const ViewDetails = () => {
+  const navigate = useNavigate();
   return (
     <div className="max-w-screen-lg mx-auto h-full felx flex-col justify-center items-center px-10">
       <div className="flex flex-col lg:flex-row w-full gap-12 justify-center">
@@ -72,7 +128,7 @@ const viewDetails = () => {
           </div>
           <div className="w-full">
             <button
-              // onClick={() => navigate("/bookSession")}
+              onClick={() => navigate("/bookSession")}
               className="text-center bg-primaryIndigo hover-bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center w-full md:w-auto"
             >
               Book a Session
@@ -93,10 +149,65 @@ const viewDetails = () => {
           </span>
           20 Reviews
         </div>
-        <div>Swiper</div>
+        <div>
+          <Swiper
+            freeMode={true}
+            grabCursor={true}
+            spaceBetween={5}
+            autoplay={true}
+            pagination={{ clickable: true }}
+            className="my-5 bg-white z-3"
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              480: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 2.5,
+              },
+              1280: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+           {
+            reviewData.map((item, idx)=>(
+              <SwiperSlide key={idx}>
+              <div className="p-[16px] gap-2 flex flex-col border w-[300px] h-[250px] rounded-[16px]">
+                <div className="flex gap-4 items-center">
+                  <p className="text-[#1D2939] text-lg font-semibold">
+                    {item.name}
+                  </p>
+                  <p className="text-[#EAECF0] text-base">|</p>
+                  <p className="text-[#667085] text-base font-normal">
+                  {item.time}
+                  </p>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <img
+                    src="./images/star-01 (1).png"
+                    alt="star"
+                    className="w-5 h-auto object-cover"
+                  />
+                  <p className="text-[#1D2939] text-lg font-medium">{item.rating}</p>
+                </div>
+                <div className="mt-5 text-[#344054] text-base">
+                  {item.review}
+                </div>
+              </div>
+            </SwiperSlide>
+            ))
+           }
+          </Swiper>
+        </div>
       </div>
     </div>
   );
 };
 
-export default viewDetails;
+export default ViewDetails;
