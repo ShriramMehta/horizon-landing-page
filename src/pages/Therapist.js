@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import TherapistFilterModal from "../components/TherapistFilterModal";
+// import TherapistFilterModal from "../components/TherapistFilterModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter } from "@fortawesome/free-solid-svg-icons";
-
+import FilterModal from "../components/Modals/FilterModal";
 
 const TherapistData = [
   {
@@ -60,6 +60,8 @@ const Therapist = () => {
   const navigate = useNavigate();
   const [filteredTherapists, setFilteredTherapists] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [openModal, setOpenModal] = useState(false);
+
   function handleBookSession() {
     navigate("/bookSession");
   }
@@ -79,25 +81,26 @@ const Therapist = () => {
   return (
     <div className="p-3 max-w-screen-xl h-full flex flex-col justify-center items-center gap-12 mx-auto">
       <div className="flex flex-row gap-4 w-full justify-center">
-      <div className="relative">
-        <input
-          placeholder="Search Thearpist"
-          className="relative border px-10 py-3 rounded-[16px] border-black"
-          value={searchTerm}
-          onChange={handleInputChange}
-        />
-        <FontAwesomeIcon
-          icon={faSearch}
-          className="absolute left-[10px] top-[16px] text-gray-500"
-        />
-      </div>
-      <div className="cursor-pointer relative flex gap-3 items-center border-black border px-4 py-2 rounded-[16px]">
-        <FontAwesomeIcon
-          icon={faFilter}
-          className="text-gray-500"
-        />
-        <p>Filters</p>
-      </div>
+        <div className="relative">
+          <input
+            placeholder="Search Thearpist"
+            className="relative border px-10 py-3 rounded-[16px] border-black"
+            value={searchTerm}
+            onChange={handleInputChange}
+          />
+          <FontAwesomeIcon
+            icon={faSearch}
+            className="absolute left-[10px] top-[16px] text-gray-500"
+          />
+        </div>
+        <div
+          onClick={() => setOpenModal(true)}
+          className="cursor-pointer relative flex gap-3 items-center border-black border px-4 py-2 rounded-[16px]"
+        >
+          <FontAwesomeIcon icon={faFilter} className="text-gray-500" />
+          <p>Filters</p>
+        </div>
+        {openModal && <FilterModal closeModal={setOpenModal} />}
       </div>
       <div className="flex p-3 flex-row gap-8 md:gap-4 justify-center xl:justify-between flex-wrap w-full">
         {filteredTherapists.length > 0
