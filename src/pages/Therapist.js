@@ -9,50 +9,43 @@ const TherapistData = [
   {
     img: "./images/img2.png",
     name: "Dr. John Smith",
-    exp: "10+ years",
+    exp: 1,
     fees: "$100",
-    special:
-      "Stress,Relationship,Self development,Anxiety,Work related,Sleep help",
+    special: ["Stress", "Relationship", "Self development", "Anxiety", "Work related", "Sleep help"],
   },
   {
     img: "./images/img2.png",
     name: "Dr. John Smith",
-    exp: "5+ years",
+    exp: 5,
     fees: "$100",
-    special:
-      "Stress,Relationship,Self development,Anxiety,Work related,Sleep help",
+    special: ["Self development", "Anxiety", "Work related", "Sleep help"],
   },
   {
     img: "./images/img2.png",
     name: "Dr. John Smith",
-    exp: "10+ years",
+    exp: 4,
     fees: "$100",
-    special:
-      "Stress,Relationship,Self development,Anxiety,Work related,Sleep help",
+    special: ["Stress", "Relationship",  "Anxiety", "Work related"],
   },
   {
     img: "./images/img2.png",
     name: "Dr. John Smith",
-    exp: "10+ years",
+    exp: 10,
     fees: "$100",
-    special:
-      "Stress,Relationship,Self development,Anxiety,Work related,Sleep help",
+    special: ["Stress", "Relationship", "Self development", "Anxiety", "Work related", "Sleep help"],
   },
   {
     img: "./images/img2.png",
     name: "Dr. Siddhi ABC",
-    exp: "10+ years",
+    exp: 8,
     fees: "$100",
-    special:
-      "Stress,Relationship,Self development,Anxiety,Work related,Sleep help",
-  },
+    special: ["Stress", "Relationship", "Self development", "Anxiety", "Work related", "Sleep help"],  },
   {
     img: "./images/img2.png",
     name: "Dr. John Smith",
-    exp: "10+ years",
+    exp: 6,
     fees: "$100",
-    special:
-      "Stress,Relationship,Self development,Anxiety,Work related,Sleep help",
+    special: ["Stress", "Relationship", "Anxiety",  "Sleep help"],
   },
 ];
 
@@ -69,18 +62,41 @@ const Therapist = () => {
     navigate("/viewDetails");
   }
 
+  const applyFilters = (filters) => {
+    console.log(filters.experience);
+    console.log(filters.areaOfFocus);
+    const filteredData = TherapistData.filter((therapist) => {
+      return (
+        // therapist.special.includes(filters.areaOfFocus) &&
+        parseFloat(therapist.exp) >= filters.experience
+                // (filters.gender === "" || therapist.gender === filters.gender) &&
+        // (filters.languages.length === 0 || filters.languages.includes(therapist.languages)) &&
+        // (filters.approach.length === 0 || filters.approach.some(approach => therapist.approach.includes(approach)))
+      );
+    });
+
+    setFilteredTherapists(filteredData);
+  };
+
   const handleInputChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
-    const filtered = TherapistData.filter((therapist) =>
-      String(therapist.name).toLowerCase().includes(term.toLowerCase())
-    );
-    setFilteredTherapists(filtered);
+  
+    if (term.trim() === "") {
+      // If search term is empty, set filteredTherapists to the original data
+      setFilteredTherapists(TherapistData);
+    } else {
+      // If there is a search term, filter the data based on the name
+      const filtered = TherapistData.filter((therapist) =>
+        String(therapist.name).toLowerCase().includes(term.toLowerCase())
+      );
+      setFilteredTherapists(filtered);
+    }
   };
 
   return (
     <div className="p-3 max-w-screen-xl h-full flex flex-col justify-center items-center gap-12 mx-auto">
-      <div className="flex flex-row gap-4 w-full justify-center">
+      <div className="p-3 flex flex-row gap-4 w-full justify-center">
         <div className="relative">
           <input
             placeholder="Search Thearpist"
@@ -100,9 +116,11 @@ const Therapist = () => {
           <FontAwesomeIcon icon={faFilter} className="text-gray-500" />
           <p>Filters</p>
         </div>
-        {openModal && <FilterModal closeModal={setOpenModal} />}
+        {openModal && (
+          <FilterModal closeModal={setOpenModal} applyFilters={applyFilters} />
+        )}
       </div>
-      <div className="flex p-3 flex-row gap-8 md:gap-4 justify-center xl:justify-between flex-wrap w-full">
+      <div className="flex p-3 flex-row gap-8 md:gap-4 justify-center xl:justify-center flex-wrap w-full">
         {filteredTherapists.length > 0
           ? filteredTherapists.map((item, idx) => (
               <div
@@ -121,7 +139,7 @@ const Therapist = () => {
                         {item.name}
                       </p>
                       <p className="text-[#475467] text-base font-normal">
-                        Experience: {item.exp}
+                        Experience: {item.exp}+ years
                       </p>
                       <p className="text-[#475467] text-base font-normal">
                         Hourly Fees: {item.fees}
@@ -133,7 +151,7 @@ const Therapist = () => {
                   </div>
                   <div className="px-4">
                     <h1 className="text-black font-semibold">Best help for:</h1>
-                    <p className="text-gray-600 mb-2">{item.special}</p>
+                    <p className="text-gray-600 mb-2">{item.special.join(", ")} </p>
                     <button
                       className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
                       onClick={() => {
@@ -169,7 +187,7 @@ const Therapist = () => {
                         {item.name}
                       </p>
                       <p className="text-[#475467] text-base font-normal">
-                        Experience: {item.exp}
+                        Experience: {item.exp}+ years
                       </p>
                       <p className="text-[#475467] text-base font-normal">
                         Hourly Fees: {item.fees}
@@ -181,7 +199,7 @@ const Therapist = () => {
                   </div>
                   <div className="px-4">
                     <h1 className="text-black font-semibold">Best help for:</h1>
-                    <p className="text-gray-600 mb-2">{item.special}</p>
+                    <p className="text-gray-600 mb-2">{item.special.join(", ")}</p>
                     <button
                       className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
                       onClick={() => {
