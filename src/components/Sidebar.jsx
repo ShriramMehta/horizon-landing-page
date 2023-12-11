@@ -128,8 +128,8 @@ function SidebarItem({
                   setIsSidebarOpen(false);
                 }}
               >
-                <Icon color="white" />
-                <p className="text-white">{childName}</p>
+                <Icon color="black" />
+                <p className="text-black">{childName}</p>
               </div>
             )
           )}
