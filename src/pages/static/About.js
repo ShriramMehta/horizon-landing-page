@@ -1,7 +1,7 @@
 import React from "react";
-import Testimonial from "../components/About/Testimonials";
-import Features from "../components/GetApp/Features";
-import AboutMain from "../components/About/AboutMain";
+import Testimonial from "../../components/About/Testimonials";
+import Features from "../../components/GetApp/Features";
+import AboutMain from "../../components/About/AboutMain";
 
 const About = () => {
   return (
@@ -33,13 +33,9 @@ const About = () => {
     //     </div>
     //   </div>
     // </section>
-    <section
-      id="about"
-      data-scroll-section
-      className='overflow-x-hidden'
-    >
-    <AboutMain/>
-    <Testimonial/>
+    <section id="about" data-scroll-section className="overflow-x-hidden">
+      <AboutMain />
+      <Testimonial />
     </section>
   );
 };

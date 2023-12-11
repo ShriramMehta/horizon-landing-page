@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import PhoneModal from "./Modals/PhoneModal";
+import PhoneModal from "../../components/Modals/PhoneModal";
 
 const GoogleSignInButton = ({ handleCallbackResponse }) => {
   useEffect(() => {
@@ -50,20 +50,25 @@ const GoogleSignupButton = () => {
     // Check if the user is already signed up based on email
     // ... (previous code)
 
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/client/isAuthCompleted/${email}`)
-    .then((response) => {
-      if (response && response.data && response.data.success) {
-        // User is already signed up, navigate to home page
-        navigate("/");
-      } else {
-        // User needs to sign up
-        console.log("Signup is necessary");
-      }
-    })
-    .catch((error) => {
-      console.error("Error checking user signup status:", error.response ? error.response.data.error : error.message);
-    });
-    
+    axios
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/client/isAuthCompleted/${email}`
+      )
+      .then((response) => {
+        if (response && response.data && response.data.success) {
+          // User is already signed up, navigate to home page
+          navigate("/");
+        } else {
+          // User needs to sign up
+          console.log("Signup is necessary");
+        }
+      })
+      .catch((error) => {
+        console.error(
+          "Error checking user signup status:",
+          error.response ? error.response.data.error : error.message
+        );
+      });
   }
 
   return (

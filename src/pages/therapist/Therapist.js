@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 // import TherapistFilterModal from "../components/TherapistFilterModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter } from "@fortawesome/free-solid-svg-icons";
-import FilterModal from "../components/Modals/FilterModal";
+import FilterModal from "./FilterModal";
 
 const TherapistData = [
   {
@@ -11,7 +11,14 @@ const TherapistData = [
     name: "Dr. John Smith",
     exp: 1,
     fees: "$100",
-    special: ["Stress", "Relationship", "Self development", "Anxiety", "Work related", "Sleep help"],
+    special: [
+      "Stress",
+      "Relationship",
+      "Self development",
+      "Anxiety",
+      "Work related",
+      "Sleep help",
+    ],
   },
   {
     img: "./images/img2.png",
@@ -25,27 +32,42 @@ const TherapistData = [
     name: "Dr. John Smith",
     exp: 4,
     fees: "$100",
-    special: ["Stress", "Relationship",  "Anxiety", "Work related"],
+    special: ["Stress", "Relationship", "Anxiety", "Work related"],
   },
   {
     img: "./images/img2.png",
     name: "Dr. John Smith",
     exp: 10,
     fees: "$100",
-    special: ["Stress", "Relationship", "Self development", "Anxiety", "Work related", "Sleep help"],
+    special: [
+      "Stress",
+      "Relationship",
+      "Self development",
+      "Anxiety",
+      "Work related",
+      "Sleep help",
+    ],
   },
   {
     img: "./images/img2.png",
     name: "Dr. Siddhi ABC",
     exp: 8,
     fees: "$100",
-    special: ["Stress", "Relationship", "Self development", "Anxiety", "Work related", "Sleep help"],  },
+    special: [
+      "Stress",
+      "Relationship",
+      "Self development",
+      "Anxiety",
+      "Work related",
+      "Sleep help",
+    ],
+  },
   {
     img: "./images/img2.png",
     name: "Dr. John Smith",
     exp: 6,
     fees: "$100",
-    special: ["Stress", "Relationship", "Anxiety",  "Sleep help"],
+    special: ["Stress", "Relationship", "Anxiety", "Sleep help"],
   },
 ];
 
@@ -69,7 +91,7 @@ const Therapist = () => {
       return (
         // therapist.special.includes(filters.areaOfFocus) &&
         parseFloat(therapist.exp) >= filters.experience
-                // (filters.gender === "" || therapist.gender === filters.gender) &&
+        // (filters.gender === "" || therapist.gender === filters.gender) &&
         // (filters.languages.length === 0 || filters.languages.includes(therapist.languages)) &&
         // (filters.approach.length === 0 || filters.approach.some(approach => therapist.approach.includes(approach)))
       );
@@ -81,7 +103,7 @@ const Therapist = () => {
   const handleInputChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
-  
+
     if (term.trim() === "") {
       // If search term is empty, set filteredTherapists to the original data
       setFilteredTherapists(TherapistData);
@@ -151,7 +173,9 @@ const Therapist = () => {
                   </div>
                   <div className="px-4">
                     <h1 className="text-black font-semibold">Best help for:</h1>
-                    <p className="text-gray-600 mb-2">{item.special.join(", ")} </p>
+                    <p className="text-gray-600 mb-2">
+                      {item.special.join(", ")}{" "}
+                    </p>
                     <button
                       className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
                       onClick={() => {
@@ -199,7 +223,9 @@ const Therapist = () => {
                   </div>
                   <div className="px-4">
                     <h1 className="text-black font-semibold">Best help for:</h1>
-                    <p className="text-gray-600 mb-2">{item.special.join(", ")}</p>
+                    <p className="text-gray-600 mb-2">
+                      {item.special.join(", ")}
+                    </p>
                     <button
                       className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
                       onClick={() => {

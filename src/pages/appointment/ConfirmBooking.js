@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import Modal from "../components/Modal";
+import Modal from "../../components/Modal";
 import { useState } from "react";
 // import { useParams } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const ConfirmBooking = () => {
   const navigate = useNavigate();
   // const { selectedDateIdx, selectedTimeIdx } = useParams();
 
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="flex flex-col max-w-screen-lg h-full mx-auto ">

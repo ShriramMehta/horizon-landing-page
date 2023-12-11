@@ -6,23 +6,27 @@ import {
   Route,
   Navigate,
   Outlet,
+  BrowserRouter,
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
+import About from "./pages/static/About";
 import Footer from "./components/Footer";
 import Main from "./pages/Main";
-import Team from "./pages/Team";
-import GetApp from "./pages/GetApp";
-import Privacy from "./pages/Privacy";
-import DeleteAccount from "./pages/DeleteAccount";
-import Therapist from "./pages/Therapist";
-import Login from "./pages/Login";
+import Team from "./pages/static/Team";
+import GetApp from "./pages/static/GetApp";
+import Privacy from "./pages/static/Privacy";
+import DeleteAccount from "./pages/static/DeleteAccount";
+import Therapist from "./pages/therapist/Therapist";
+import Login from "./pages/auth/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import Profile from "./components/Profile";
-import Signup from "./pages/Signup";
-import BookSession from "./pages/BookSession";
-import ConfirmBooking from "./pages/ConfirmBooking";
-import ViewDetails from "./pages/ViewDetails";
+import Signup from "./pages/auth/Signup";
+import BookSession from "./pages/appointment/BookSession";
+import ConfirmBooking from "./pages/appointment/ConfirmBooking";
+import ViewDetails from "./pages/therapist/ViewDetails";
+import Dashboard from "./pages/profile/Dashboard";
+import Schedule from "./pages/profile/Schedule";
+import { DashboardLayout } from "./layouts/index";
 
 const Layout = () => {
   return (
@@ -37,45 +41,33 @@ const Layout = () => {
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        { path: "/", element: <Main /> },
-        { path: "/home", element: <Main /> },
-        { path: "/about", element: <About /> },
-        { path: "/team", element: <Team /> },
-        { path: "/getApp", element: <GetApp /> },
-        { path: "/therapist", element: <Therapist /> },
-        {
-          path: "/bookSession",
-          element: <BookSession />,
-        },
-        {
-          // path: "confirmBooking/:selectedDateIdx/:selectedTimeIdx",
-          path: "/confirmBooking",
-          element: <ConfirmBooking />,
-        },
-        {
-          path: "/viewDetails",
-          element: <ViewDetails/>
-        }
-      ],
-    },
-    { path: "/login", element: <Login /> },
-    { path: "/signup", element: <Signup /> },
-    { path: "/privacy-policy", element: <Privacy /> },
-    { path: "/delete-account", element: <DeleteAccount /> },
-    {
-      path: "/profile",
-      element: <Profile />,
-    },
-  ]);
-
   return (
     <div className="app">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/home" element={<Main />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/getApp" element={<GetApp />} />
+            <Route path="/therapist" element={<Therapist />} />
+            <Route path="/bookSession" element={<BookSession />} />
+            <Route path="/confirmBooking" element={<ConfirmBooking />} />
+            <Route path="/viewDetails" element={<ViewDetails />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+          <Route path="/signin" element={<Login />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
+
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="schedule" element={<Schedule />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

@@ -1,11 +1,31 @@
 // Login.js
 import React from "react";
-import GoogleSignupButton from "../components/GoogleSignupButton";
-import { Link, useNavigate } from "react-router-dom";
+import GoogleSignupButton from "./GoogleSignupButton";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import Button from "../../components/global/Button";
+import { useAuth } from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { user, updateUser } = useAuth();
 
+  const handleSubmit = async () => {
+    try {
+      updateUser({
+        user: "shriram",
+        token: "response?.data?.token",
+      });
+      navigate("/profile");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
+  };
+
+  if (user) {
+    return <Navigate to="/profile" />;
+  }
   const handleLogin = () => {
     // Check if the user is present in the database based on some criteria
     // For example, check if the email exists in your database
@@ -45,11 +65,15 @@ const Login = () => {
             </div>
             <div className="flex flex-col justify-center items-center mt-5">
               <p className="text-xs text-gray-600 font-medium">
-                Don't have an account?
+                Don't have an account?{" "}
                 <Link to="/signup">
                   <span className="text-purple-700 font-medium">Sign Up</span>
                 </Link>
               </p>
+            </div>
+
+            <div className="w-full mt-6">
+              <Button onClick={handleSubmit}>Sign In</Button>
             </div>
           </div>
         </div>

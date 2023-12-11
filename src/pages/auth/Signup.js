@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import GoogleSignupButton from "../components/GoogleSignupButton";
+import GoogleSignupButton from "./GoogleSignupButton";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Signup = () => {
             <div className="flex flex-col gap-3">
               <p className="text-2xl text-black font-black">Sign Up</p>
               <p className="text-base text-gray-500 font-medium">
-                Your wellness journey starts <br/> here. Let's begin!
+                Your wellness journey starts <br /> here. Let's begin!
               </p>
               <p className="mt-10 mb-3">
                 <GoogleSignupButton />
