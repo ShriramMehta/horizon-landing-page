@@ -45,16 +45,16 @@ const Login = () => {
               <p className="text-base text-gray-500 font-medium">
                 We are happy to have you back!
               </p>
-              <p className="mt-6 mb-3">
+              {/* <p className="mt-6 mb-3">
                 <GoogleSignupButton />
-              </p>
+              </p> */}
             </div>
-            <div className="flex justify-center items-center gap-1 w-full">
+            {/* <div className="flex justify-center items-center gap-1 w-full">
               <div className="w-full h-[1px] bg-gray-300"></div>
               <div>OR</div>
               <div className="w-full h-[1px] bg-gray-300"></div>
-            </div>
-            <div className="flex flex-col justify-center items-center gap-2 mt-2 w-full">
+            </div> */}
+            {/* <div className="flex flex-col justify-center items-center gap-2 mt-2 w-full">
               <div>Mobile Number</div>
               <button
                 className="bg-purple-600 text-white w-full px-3 py-2 rounded-lg"
@@ -62,6 +62,10 @@ const Login = () => {
               >
                 Get OTP
               </button>
+            </div> */}
+
+            <div className="w-full mt-6">
+              <button onClick={handleSubmit}>Sign In</button>
             </div>
             <div className="flex flex-col justify-center items-center mt-5">
               <p className="text-xs text-gray-600 font-medium">
@@ -70,10 +74,6 @@ const Login = () => {
                   <span className="text-purple-700 font-medium">Sign Up</span>
                 </Link>
               </p>
-            </div>
-
-            <div className="w-full mt-6">
-              <Button onClick={handleSubmit}>Sign In</Button>
             </div>
           </div>
         </div>
