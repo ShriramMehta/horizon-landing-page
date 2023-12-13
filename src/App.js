@@ -14,19 +14,21 @@ import Footer from "./components/Footer";
 import Main from "./pages/Main";
 import Team from "./pages/static/Team";
 import GetApp from "./pages/static/GetApp";
-import Privacy from "./pages/static/Privacy";
 import DeleteAccount from "./pages/static/DeleteAccount";
-import Therapist from "./pages/therapist/Therapist";
 import Login from "./pages/auth/Login";
-import PrivateRoute from "./components/PrivateRoute";
-import Profile from "./components/Profile";
 import Signup from "./pages/auth/Signup";
 import BookSession from "./pages/appointment/BookSession";
 import ConfirmBooking from "./pages/appointment/ConfirmBooking";
-import ViewDetails from "./pages/therapist/ViewDetails";
+import ViewDetails from "./pages/profile/Thearpist/ViewDetails";
 import Dashboard from "./pages/profile/Dashboard";
 import Schedule from "./pages/profile/Schedule";
 import { DashboardLayout } from "./layouts/index";
+import Settings from "./pages/profile/seetingsPgs/Settings";
+import Concern from "./pages/profile/seetingsPgs/Concern";
+import TermsCond from "./pages/profile/knowMore/TermsCond";
+import PrivacyPol from "./pages/profile/knowMore/PrivacyPol";
+import Faq from "./pages/profile/knowMore/Faq";
+import Therapist from "./pages/profile/Thearpist/Therapist";
 
 const Layout = () => {
   return (
@@ -51,21 +53,24 @@ const App = () => {
             <Route path="/home" element={<Main />} />
             <Route path="/team" element={<Team />} />
             <Route path="/getApp" element={<GetApp />} />
-            <Route path="/therapist" element={<Therapist />} />
             <Route path="/bookSession" element={<BookSession />} />
             <Route path="/confirmBooking" element={<ConfirmBooking />} />
             <Route path="/viewDetails" element={<ViewDetails />} />
-            {/* <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/therapist" element={<Therapist/>} />
           </Route>
           <Route path="/signin" element={<Login />} />
-          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
 
-          <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="schedule" element={<Schedule />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="concerns" element={<Concern />} />
           </Route>
+          <Route path="faq" element={<Faq />} />
+          <Route path="terms-and-conditions" element={<TermsCond />} />
+          <Route path="privacy-policy" element={<PrivacyPol />} />
         </Routes>
       </BrowserRouter>
     </div>

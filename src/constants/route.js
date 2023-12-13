@@ -19,7 +19,7 @@ const routes = [
   },
   {
     name: "Therapists",
-    route: "/profile/therapists",
+    route: "/therapist",
     icon: DashboardIcon,
   },
   {
@@ -39,18 +39,18 @@ const routes = [
     childNavs: [
       {
         name: "FAQs",
-        route: "/profile/faq",
+        route: "/faq",
         icon: BiSolidNotepad,
       },
       {
         name: "Terms and Conditions",
-        route: "/profile/teram-and-conditions",
+        route: "/terms-and-conditions",
         icon: BiSolidNotepad,
       },
 
       {
         name: "Privacy Policy",
-        route: "/profile/privacy-policy",
+        route: "/privacy-policy",
         icon: BiSolidNotepad,
       },
     ],

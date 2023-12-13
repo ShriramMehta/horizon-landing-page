@@ -1,6 +1,6 @@
 import React from "react";
 
-const Privacy = () => {
+const PrivacyPol = () => {
   return (
     <section className="flex flex-col justify-center items-center mx-auto p-6">
       <h1 className="text-5xl my-6 underline font-heading font-bold">
@@ -399,4 +399,4 @@ const Privacy = () => {
   );
 };
 
-export default Privacy;
+export default PrivacyPol;

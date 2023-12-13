@@ -28,7 +28,7 @@ export default function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
             <img
               src={Logo}
               alt="Logo Image"
-              className="w-[80%] h-full object-contain"
+              className="w-[100%] h-full object-contain"
               onClick={() => handleNavigate("/")}
             />
           </div>

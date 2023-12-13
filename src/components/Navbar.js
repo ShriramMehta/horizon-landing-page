@@ -10,7 +10,7 @@ const Navbar = () => {
     { name: "About", link: "/about" },
     { name: "Team", link: "/team" },
     { name: "Get App", link: "/getApp" },
-    { name: "Therapist", link: "/therapist" },
+    // { name: "Therapist", link: "/therapist" },
   ];
 
   const user = localStorage.getItem("token");
