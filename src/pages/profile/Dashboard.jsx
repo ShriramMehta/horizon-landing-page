@@ -6,8 +6,10 @@ import { ImHappy } from "react-icons/im";
 import { RiEmotionNormalLine } from "react-icons/ri";
 import { RiEmotionUnhappyLine } from "react-icons/ri";
 import { RiEmotionSadLine } from "react-icons/ri";
+import { useNavigate } from "react-router";
 
 const Dashboard = () => {
+  const navigate = useNavigate()
   return (
     <div className="max-w-screen-xl flex flex-col">
       <div>
@@ -21,10 +23,10 @@ const Dashboard = () => {
               Book a session with therapists matched to your selected concerns
             </div>
           </div>
-          <div className="mx-auto flex gap-4 justify-center items-center text-white cursor-pointer bg-[#7B3CF3] px-8 py-2 font-medium rounded-xl">
+          <button onClick={()=> {navigate("/therapist")}} className="mx-auto flex gap-4 justify-center items-center text-white cursor-pointer bg-[#7B3CF3] px-8 py-2 font-medium rounded-xl">
             <p>See my therapist </p>
             <span className="text-2xl"> {" > "}</span>
-          </div>
+          </button>
         </div>
       </div>
       <div>
@@ -91,23 +93,23 @@ const Dashboard = () => {
             </div>
             <div className="mt-4 flex justify-center mx-auto gap-16 items-center w-full">
               <div className="flex flex-col justify-center items-center gap-4">
-                <RiEmotionHappyLine className="text-7xl cursor-pointer" />
+                <RiEmotionHappyLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                 <p>Ecstatic</p>
               </div>
               <div className="flex flex-col justify-center items-center gap-4">
-                <ImHappy className="text-6xl cursor-pointer" />
+                <ImHappy className="text-6xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                 <p>Happy</p>
               </div>
               <div className="flex flex-col justify-center items-center gap-4">
-                <RiEmotionNormalLine className="text-7xl cursor-pointer" />
+                <RiEmotionNormalLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                 <p>Good</p>
               </div>
               <div className="flex flex-col justify-center items-center gap-4">
-                <RiEmotionUnhappyLine className="text-7xl cursor-pointer" />
+                <RiEmotionUnhappyLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                 <p>Unhappy</p>
               </div>
               <div className="flex flex-col justify-center items-center gap-4">
-                <RiEmotionSadLine className="text-7xl cursor-pointer" />
+                <RiEmotionSadLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300 " />
                 <p>Distressed</p>
               </div>
             </div>
