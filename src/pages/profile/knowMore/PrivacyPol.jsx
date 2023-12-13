@@ -7,8 +7,8 @@ const PrivacyPol = () => {
         PRIVACY POLICY
       </h1>
       <p className="text-md">
-        1. About your privacy and this Privacy Policy Your privacy is extremely
-        important to us at Mynd (“Organisation/We/Our”). We are constantly
+        About your privacy and this Privacy Policy Your privacy is extremely
+        important to us at Adapt (“Organisation/We/Our”). We are constantly
         putting a great deal of thought, effort, tools, resources and procedures
         in place in order to protect and safeguard your privacy. This document
         is our “Privacy Policy” and it contains details on issues related to
@@ -18,36 +18,36 @@ const PrivacyPol = () => {
         Policy applies to the visitors to our website or app (collectively, the
         “Platform”) and the individuals who utilise our Services. The Privacy
         Policy must be read together with the Terms and Conditions which can be
-        found here at _______. When you use our Platform, you accept and agree
-        to both the Terms and Conditions and to the Privacy Policy. If you do
-        not agree to be bound to the Privacy Policy you should stop using the
+        found here at Adapt. When you use our Platform, you accept and agree to
+        both the Terms and Conditions and to the Privacy Policy. If you do not
+        agree to be bound to the Privacy Policy you should stop using the
         Platform immediately. By accessing and using our Platform you affirm
         that you have read the Terms and Conditions and the Privacy Policy and
         that you understand, agree and acknowledge to all the terms contained in
         both of them. 2. Definitions and Interpretations 2.1. The terms defined
         above have their assigned meanings, and each of the following terms has
         the meaning assigned to it: 2.1.1. “Business Day” means all the days of
-        the week except Saturday, Sunday, and National Holidays. 2.1.2.
+        the week except Saturday, Sunday, and National Holidays.[JC1] 2.1.2.
         "Confidential Information" means any information whether of a personal
-        nature or otherwise, that is designated as confidential and shared with
-        our Experts in the course of discharge of our Services. Our Confidential
-        Information includes the Services and content; and Confidential
-        Information of each party includes the terms and conditions of this
-        Agreement and all order forms (including pricing), as well as business
-        and marketing plans, technology and technical information, product plans
-        and designs, and business processes disclosed by such party. 2.1.3.
-        "Consent Form" means a document that individuals under the age of 18
-        years must get signed or attested by their parent or legal guardian in
-        order to avail to the services of the Organisation. 2.1.4. "Dispute"
-        means any disagreement that may arise out of or in relation to this
-        Privacy Policy, including any for tort, negligence or wilful wrong which
-        includes without limitation, the breach of the terms hereunder, validity
-        or invalidity thereof. 2.1.5. "Experts" means the subject-matter
-        professionals employed or hired by the Organisation to provide
-        counselling or therapy services as part of its operations. 2.1.6.
-        "Minor" means a person under the age of 18 years. 2.1.7. "Personal
-        Information" means any information that relates to a natural person,
-        which, either directly or indirectly, in combination with other
+        nature or otherwise, that is designated as confidential and[JC2] shared
+        with our Experts in the course of discharge of our Services. Our
+        Confidential Information includes the Services and content; and
+        Confidential Information of each party includes the terms and conditions
+        of this Agreement and all order forms (including pricing), as well as
+        business and marketing plans, technology and technical information,
+        product plans and designs, and business processes disclosed by such
+        party. 2.1.3. "Consent Form" means a document that individuals under the
+        age of 18 years must get signed or attested by their parent or legal
+        guardian in order to avail to the services of the Organisation. 2.1.4.
+        "Dispute" means any disagreement that may arise out of or in relation to
+        this Privacy Policy, including any for tort, negligence or wilful wrong
+        which includes without limitation, the breach of the terms hereunder,
+        validity or invalidity thereof. 2.1.5. "Experts" means the
+        subject-matter professionals employed or hired by the Organisation to
+        provide counselling or therapy services as part of its operations.
+        2.1.6. "Minor" means a person under the age of 18 years. 2.1.7.
+        "Personal Information" means any information that relates to a natural
+        person, which, either directly or indirectly, in combination with other
         information available or likely to be available with a body corporate,
         is capable of identifying such person. 2.1.8. "Sensitive Personal
         Information" means Personal Information which consists of information
@@ -342,27 +342,27 @@ const PrivacyPol = () => {
         consent to such modifications. You agree to periodically review the
         current version of the Privacy Policy provided herein. 15. Dispute
         resolution 15.1. In the event of any Dispute, the User and the
-        Organisation shall to the best of their abilities resolve any Dispute
-        arising of this Privacy Policy in the manner prescribed below: 15.1.1.
-        Negotiation – The User and the Organisation shall attempt to amicably
-        resolve and negotiate any Dispute within ten (10) Calendar Days,
-        commencing from the date of a written notice (emails permitted) from one
-        party to the other claiming that a Dispute has arisen. 15.1.2. Mediation
-        – If the Dispute cannot be settled via negotiation under Clause 15.1.1
-        of the Privacy Policy, the Organisation and the User shall in good faith
-        attempt to settle the Dispute by mediation, as administered in
-        accordance with the Mediation and Conciliation Rules laid down by the
-        Centre for Mediation and Conciliation (CMC), Mumbai under the Bombay
-        Chamber of Commerce and Industry. 15.1.3. Arbitration – If the Dispute
-        cannot be resolved through the manner prescribed by negotiation and
-        mediation as detailed above, then the Organisation and the User shall
-        submit the Dispute to a mutually appointed sole arbitrator. The
-        arbitration shall be governed by the Arbitration and Conciliation Act,
-        1996 including any ancillary rules or amendments in force at that time.
-        The sole arbitrator shall conduct the proceedings and pass an award
-        within thirty (30) Calendar Days, commencing from the date the
-        arbitrator was appointed. 15.1.3.1. The seat and venue of the
-        arbitration will be Mumbai and the proceedings will be conducted in
+        Organisation [JC3] shall to the best of their abilities resolve any
+        Dispute arising of this Privacy Policy in the manner prescribed below:
+        15.1.1. Negotiation – The User and the Organisation shall attempt to
+        amicably resolve and negotiate any Dispute within ten (10) Calendar
+        Days, commencing from the date of a written notice (emails permitted)
+        from one party to the other claiming that a Dispute has arisen. 15.1.2.
+        Mediation – If the Dispute cannot be settled via negotiation under
+        Clause 15.1.1 of the Privacy Policy, the Organisation and the User shall
+        in good faith attempt to settle the Dispute by mediation, as
+        administered in accordance with the Mediation and Conciliation Rules
+        laid down by the Centre for Mediation and Conciliation (CMC), Mumbai
+        under the Bombay Chamber of Commerce and Industry. 15.1.3. Arbitration –
+        If the Dispute cannot be resolved through the manner prescribed by
+        negotiation and mediation as detailed above, then the Organisation and
+        the User shall submit the Dispute to a mutually appointed sole
+        arbitrator. The arbitration shall be governed by the Arbitration and
+        Conciliation Act, 1996 including any ancillary rules or amendments in
+        force at that time. The sole arbitrator shall conduct the proceedings
+        and pass an award within thirty (30) Calendar Days, commencing from the
+        date the arbitrator was appointed.[JC4] 15.1.3.1. The seat and venue of
+        the arbitration will be Mumbai and the proceedings will be conducted in
         English. 15.1.3.2. The award of the sole arbitrator will be binding on
         the parties to the Dispute. 15.1.3.3. The cost for the arbitration shall
         be borne by the User alone. 15.1.3.4. The substantive law governing the
@@ -387,13 +387,27 @@ const PrivacyPol = () => {
         relation to this Privacy Policy, without regard to its conflict of laws
         principles. 17.2. The Courts of Mumbai shall have the exclusive
         jurisdiction over all matters stemming from or in relation to the
-        Privacy Policy. 18. Grievance Redressal 18.1. Should you require any
-        clarification or have any query with regards to this Privacy Policy or
-        the Organisation’s information collection, use and disclosure practices,
-        you may reach out to our Grievance Officer. The contact details of our
-        Grievance Officer have been provided hereunder: Name :
+        Privacy Policy.[JC5] 18. Grievance Redressal 18.1. Should you require
+        any clarification or have any query with regards to this Privacy Policy
+        or the Organisation’s information collection, use and disclosure
+        practices, you may reach out to our Grievance Officer. The contact
+        details of our Grievance Officer have been provided hereunder: Name :
         ___________________ Email Id : ___________________ Phone No :
-        ___________________ Address : ___________________
+        __________________ Address : ___________________ [JC1]Should mention
+        timing as well. Also, include bank holidays if ya’ll are looking at that
+        too. “Business Day” means days falling between Monday to Friday,
+        including such days from __ am to __ pm and excluding any national
+        holidays. [JC2]“any information” makes the ambit too broad, therefore
+        added “designated as confidential” [JC3]Assuming that Adapt can also be
+        aggrieved in case of breach of privacy policy by the User.
+        [JC4]Arbitration may not be the best option since it works on its own
+        pace and works best if both parties are amicable and not hostile towards
+        each other. An alternate to this could be litigation. Proposed clause:
+        Any and all disputes arising between the User and the Organisation with
+        regards to this Policy, including the interpretation of the terms of
+        this Policy shall be subject to the exclusive jurisdiction of the courts
+        at Mumbai, India. [JC5]Adding arbitration as dispute resolution and then
+        mentioning Mumbai courts having exclusive jurisdiction is contradictory.
       </p>
     </section>
   );

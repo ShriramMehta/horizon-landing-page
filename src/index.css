@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
   outline: none;
   border: none;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   overflow-x: hidden;
 }
 
@@ -20,7 +20,7 @@ body {
   width: 90%;
   margin: 0 auto;
   height: 4px;
-  background-color: #7B3CF3;
+  background-color: #7b3cf3;
 }
 
 .horizontal-slider {
@@ -31,10 +31,11 @@ body {
   height: 15px;
   width: 15px;
   line-height: 80px;
-  background-color: #7B3CF3;
+  background-color: #7b3cf3;
   border-radius: 50%;
   cursor: grab;
   position: absolute;
-  top: -7px;;
+  top: -7px;
   border: none;
 }
+
