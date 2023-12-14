@@ -57,6 +57,9 @@ const App = () => {
             <Route path="/confirmBooking" element={<ConfirmBooking />} />
             <Route path="/viewDetails" element={<ViewDetails />} />
             <Route path="/therapist" element={<Therapist/>} />
+            <Route path="/faq" element={<Faq />} />
+          <Route path="/terms-and-conditions" element={<TermsCond />} />
+          <Route path="/privacy-policy" element={<PrivacyPol />} />/
           </Route>
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -68,9 +71,6 @@ const App = () => {
             <Route path="settings" element={<Settings />} />
             <Route path="concerns" element={<Concern />} />
           </Route>
-          <Route path="faq" element={<Faq />} />
-          <Route path="terms-and-conditions" element={<TermsCond />} />
-          <Route path="privacy-policy" element={<PrivacyPol />} />
         </Routes>
       </BrowserRouter>
     </div>
