@@ -13,11 +13,6 @@ const Dashboard = () => {
   const [showEmotionContent, setShowEmotionContent] = useState(true);
   const [selectedEmotion, setSelectedEmotion] = useState(null);
 
-  const handleEmotionClick = (emotionId) => {
-    setSelectedEmotion(emotionId);
-    setShowEmotionContent(false);
-  };
-
   const handleHelloWorldClick = () => {
     setShowEmotionContent(true);
   };
