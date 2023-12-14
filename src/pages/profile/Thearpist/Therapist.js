@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter } from "@fortawesome/free-solid-svg-icons";
 import FilterModal from "./FilterModal";
+import therapistService from "../../../services/therapistService";
 
 const TherapistData = [
   {
@@ -82,6 +83,16 @@ const Therapist = () => {
   function handleViewDetials() {
     navigate("/viewDetails");
   }
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await therapistService.getAllThearapists();
+        console.log(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   const applyFilters = (filters) => {
     console.log(filters.experience);
@@ -144,67 +155,79 @@ const Therapist = () => {
       <div className="flex p-3 flex-row gap-8 md:gap-4 justify-center xl:justify-center flex-wrap w-full">
         {filteredTherapists.length > 0
           ? filteredTherapists.map((item, idx) => (
-            <div
-            key={idx}
-            className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
-          >
-            <div className="flex flex-col">
-              <div className="flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
-                <img
-                  className="w-40 h-40 object-cover"
-                  src={item.img}
-                  alt="Therapist Photo"
-                />
-                <div className="max-w-1/2 w-full flex flex-col gap-1">
-                  <p className="text-[#101828] text-xl font-bold my-4">
-                    {item.name}
-                  </p>
-                  <p className="text-[#475467] text-base font-normal">
-                    Experience: <span className="font-semibold">{"  "}{item.exp}+ years</span>
-                  </p>
-                  <p className="text-[#475467] text-base font-normal">
-                    Hourly Fees:  <span className="font-semibold">{"  "} {item.fees}</span>
-                  </p>
-                  <p className="text-[#475467] text-base font-normal">
-                    Mode: <span className="font-semibold">{"  "}Online via google meet</span>
-                  </p>
-                </div>
-              </div>
-              <div className="px-4">
-                <div className="flex gap-4 items-center">
-                <h1 className="text-black font-semibold mx-8">Expertise:</h1>
-                <div className="flex flex-wrap gap-2 w-full">
-                  {item.special.map((specialization, index) => (
-                    <div
-                      key={index}
-                      className={
-                        "cursor-pointer max-w-[90px] w-full max-h-[35px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
-                      }
-                    >
-                      <p className="text-xs text-black font-medium text-[#344054] text-center">
-                        {specialization}
+              <div
+                key={idx}
+                className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
+              >
+                <div className="flex flex-col">
+                  <div className="flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
+                    <img
+                      className="w-40 h-40 object-cover"
+                      src={item.img}
+                      alt="Therapist Photo"
+                    />
+                    <div className="max-w-1/2 w-full flex flex-col gap-1">
+                      <p className="text-[#101828] text-xl font-bold my-4">
+                        {item.name}
+                      </p>
+                      <p className="text-[#475467] text-base font-normal">
+                        Experience:{" "}
+                        <span className="font-semibold">
+                          {"  "}
+                          {item.exp}+ years
+                        </span>
+                      </p>
+                      <p className="text-[#475467] text-base font-normal">
+                        Hourly Fees:{" "}
+                        <span className="font-semibold">
+                          {"  "} {item.fees}
+                        </span>
+                      </p>
+                      <p className="text-[#475467] text-base font-normal">
+                        Mode:{" "}
+                        <span className="font-semibold">
+                          {"  "}Online via google meet
+                        </span>
                       </p>
                     </div>
-                  ))}
+                  </div>
+                  <div className="px-4">
+                    <div className="flex gap-4 items-center">
+                      <h1 className="text-black font-semibold mx-8">
+                        Expertise:
+                      </h1>
+                      <div className="flex flex-wrap gap-2 w-full">
+                        {item.special.map((specialization, index) => (
+                          <div
+                            key={index}
+                            className={
+                              "cursor-pointer max-w-[90px] w-full max-h-[35px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                            }
+                          >
+                            <p className="text-xs text-black font-medium text-[#344054] text-center">
+                              {specialization}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <button
+                      className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
+                      onClick={() => {
+                        handleBookSession();
+                      }}
+                    >
+                      Book a Session
+                    </button>
+                    <button
+                      onClick={() => navigate("/viewDetails")}
+                      className="my-4 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
+                    >
+                      View Details
+                    </button>
+                  </div>
                 </div>
-                </div>
-                <button
-                  className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
-                  onClick={() => {
-                    handleBookSession();
-                  }}
-                >
-                  Book a Session
-                </button>
-                <button
-                  onClick={() => navigate("/viewDetails")}
-                  className="my-4 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
-                >
-                  View Details
-                </button>
               </div>
-            </div>
-          </div>
             ))
           : TherapistData.map((item, idx) => (
               <div
@@ -223,33 +246,45 @@ const Therapist = () => {
                         {item.name}
                       </p>
                       <p className="text-[#475467] text-base font-normal">
-                        Experience: <span className="font-semibold">{"  "}{item.exp}+ years</span>
+                        Experience:{" "}
+                        <span className="font-semibold">
+                          {"  "}
+                          {item.exp}+ years
+                        </span>
                       </p>
                       <p className="text-[#475467] text-base font-normal">
-                        Hourly Fees:  <span className="font-semibold">{"  "} {item.fees}</span>
+                        Hourly Fees:{" "}
+                        <span className="font-semibold">
+                          {"  "} {item.fees}
+                        </span>
                       </p>
                       <p className="text-[#475467] text-base font-normal">
-                        Mode: <span className="font-semibold">{"  "}Online via google meet</span>
+                        Mode:{" "}
+                        <span className="font-semibold">
+                          {"  "}Online via google meet
+                        </span>
                       </p>
                     </div>
                   </div>
                   <div className="px-4">
                     <div className="flex gap-4 items-center">
-                    <h1 className="text-black font-semibold mx-8">Expertise:</h1>
-                    <div className="flex flex-wrap gap-2 w-full">
-                      {item.special.map((specialization, index) => (
-                        <div
-                          key={index}
-                          className={
-                            "cursor-pointer max-w-[90px] w-full max-h-[35px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
-                          }
-                        >
-                          <p className="text-xs text-black font-medium text-[#344054] text-center">
-                            {specialization}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+                      <h1 className="text-black font-semibold mx-8">
+                        Expertise:
+                      </h1>
+                      <div className="flex flex-wrap gap-2 w-full">
+                        {item.special.map((specialization, index) => (
+                          <div
+                            key={index}
+                            className={
+                              "cursor-pointer max-w-[90px] w-full max-h-[35px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                            }
+                          >
+                            <p className="text-xs text-black font-medium text-[#344054] text-center">
+                              {specialization}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                     <button
                       className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
