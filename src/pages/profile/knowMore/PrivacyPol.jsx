@@ -2,8 +2,8 @@ import React from "react";
 
 const PrivacyPol = () => {
   return (
-    <section className="flex flex-col justify-center items-center mx-auto p-6">
-      <h1 className="text-5xl my-6 underline font-heading font-bold">
+    <section className="flex flex-col justify-center text-justify items-center mx-auto p-6">
+      <h1 className="text-3xl my-6 font-heading font-bold">
         PRIVACY POLICY
       </h1>
       <p className="text-md">
