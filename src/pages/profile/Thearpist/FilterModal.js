@@ -1,44 +1,14 @@
 import React, { useState, useEffect } from "react";
-import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { useNavigate } from "react-router";
 import ReactSlider from "react-slider";
+import {
+  ApprochesData,
+  FocusData,
+  LanguagesData,
+  genderData,
+} from "../../../constants/filtersData";
 
-const genderData = ["Female", "Male", "Non Binary", "Others"];
-
-const FocusData = [
-  "Stress",
-  "Anxiety",
-  "Depression",
-  "Sleep Help",
-  "Grief and loss",
-  "Self development",
-  "Relationships",
-  "Family",
-  "Work related",
-];
-
-const LanguagesData = [
-  "English",
-  "Hindi",
-  "Marathi",
-  "Gujarati",
-  "Bengali",
-  "Tamil",
-  "Telgu",
-  "Punjabi",
-];
-
-const ApprochesData = [
-  "CBT",
-  "DBT",
-  "RBT",
-  "Psychodynamic",
-  "Humanistic",
-  "Mindfulness based",
-];
-
-const FilterModal = ({ closeModal , applyFilters }) => {
+const FilterModal = ({ closeModal, applyFilters }) => {
   const [experience, setExperience] = useState(1);
   const [gender, setGender] = useState("");
   const [languages, setLanguages] = useState([]);
@@ -88,15 +58,15 @@ const FilterModal = ({ closeModal , applyFilters }) => {
 
   const handleApplyFilters = () => {
     const filters = {
-      // gender,
-      // languages,
-      areaOfFocus,
-      experience,
-      // approach: selectedApproaches,
+      genders: gender,
+      languages,
+      concerns: areaOfFocus,
+      yearsOfExperience: experience,
+      approaches: selectedApproaches,
     };
 
     applyFilters(filters);
-    console.log(filters)
+    console.log(filters);
     closeModal(false);
   };
 
@@ -106,8 +76,7 @@ const FilterModal = ({ closeModal , applyFilters }) => {
     setLanguages([]);
     setAreaOfFocus([]);
     setSelectedApproaches([]);
-  }
-
+  };
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -162,7 +131,8 @@ const FilterModal = ({ closeModal , applyFilters }) => {
                     areaOfFocus.includes(item)
                       ? "bg-[#ECE7FE] text-white border-[#4E139F]"
                       : "bg-white"
-                  }`}                  onClick={() => handleAreaofFocus(item)}
+                  }`}
+                  onClick={() => handleAreaofFocus(item)}
                 >
                   <p className="text-xs font-normal text-[#344054] text-center">
                     {item}
@@ -208,7 +178,8 @@ const FilterModal = ({ closeModal , applyFilters }) => {
                     gender === item
                       ? "bg-[#ECE7FE] text-white border-[#4E139F]"
                       : "bg-white"
-                  }`}                  onClick={() => setGender(item)}
+                  }`}
+                  onClick={() => setGender(item)}
                 >
                   <p className="text-xs font-normal text-[#344054] text-center">
                     {item}
@@ -229,7 +200,8 @@ const FilterModal = ({ closeModal , applyFilters }) => {
                     languages.includes(item)
                       ? "bg-[#ECE7FE] text-white border-[#4E139F]"
                       : "bg-white"
-                  }`}                  onClick={() => handleLanguageClick(item)}
+                  }`}
+                  onClick={() => handleLanguageClick(item)}
                 >
                   <p className="text-xs font-normal text-[#344054] text-center">
                     {item}
@@ -258,8 +230,9 @@ const FilterModal = ({ closeModal , applyFilters }) => {
         </div>
         <div className="flex justify-center w-full items-center">
           <button
-          onClick={()=> handleClearAll()}
-          className="my-4 bg-gray-300  text-black px-12 py-2 rounded-full mr-2">
+            onClick={() => handleClearAll()}
+            className="my-4 bg-gray-300  text-black px-12 py-2 rounded-full mr-2"
+          >
             Clear All
           </button>
           <button

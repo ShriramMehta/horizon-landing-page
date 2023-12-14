@@ -7,6 +7,10 @@ const getAllThearapists = () => {
 const getFilteredTherapists = (data) => {
   return axios.post(`/therapy/therapists/by-all-filters`, data);
 };
+
+const getThearpistByName = (name) => {
+  return axios.get(`therapists/by-name/${name}`);
+};
 const therapistService = {
   getFilteredTherapists,
   getAllThearapists,

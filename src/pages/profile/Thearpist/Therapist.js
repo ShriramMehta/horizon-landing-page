@@ -12,18 +12,11 @@ const Therapist = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
-  function handleBookSession() {
-    navigate("/bookSession");
-  }
-  function handleViewDetials() {
-    navigate("/viewDetails");
-  }
   useEffect(() => {
     (async () => {
       try {
         const response = await therapistService.getAllThearapists();
         if (response.data.success) {
-          console.log(response.data.data);
           // Parse the JSON-formatted strings into arrays
           const therapistsData = response.data.data.map((item) => {
             try {
@@ -43,8 +36,8 @@ const Therapist = () => {
               return null; // Return the original item if parsing fails
             }
           });
-          console.log(therapistsData);
           setFilteredTherapists(therapistsData);
+          setTherapistData(therapistsData);
         }
       } catch (error) {
         console.log(error);
@@ -52,20 +45,47 @@ const Therapist = () => {
     })();
   }, []);
 
-  const applyFilters = (filters) => {
-    console.log(filters.experience);
-    console.log(filters.areaOfFocus);
-    const filteredData = therapistData.filter((therapist) => {
-      return (
-        // therapist.specialisationInThearapyTypes.includes(filters.areaOfFocus) &&
-        parseFloat(therapist.exp) >= filters.experience
-        // (filters.gender === "" || therapist.gender === filters.gender) &&
-        // (filters.languages.length === 0 || filters.languages.includes(therapist.languages)) &&
-        // (filters.approach.length === 0 || filters.approach.some(approach => therapist.approach.includes(approach)))
-      );
-    });
-
-    setFilteredTherapists(filteredData);
+  const applyFilters = async (filters) => {
+    console.log(filters);
+    // const filteredData = therapistData.filter((therapist) => {
+    //   return (
+    //     therapist.specialisationInThearapyTypes.includes(filters.areaOfFocus) &&
+    //     parseFloat(therapist?.yearsOfExperience) >= filters.experience
+    //     (filters.gender === "" || therapist.gender === filters.gender) &&
+    //     // (filters.languages.length === 0 || filters.languages.includes(therapist.languages)) &&
+    //     // (filters.approach.length === 0 || filters.approach.some(approach => therapist.approach.includes(approach)))
+    //   );
+    // });
+    try {
+      const response = await therapistService.getFilteredTherapists(filters);
+      if (response.data.success) {
+        // Parse the JSON-formatted strings into arrays
+        const therapistsData = response.data.data.map((item) => {
+          try {
+            // Replace escaped double quotes with regular double quotes
+            const fixedJsonString = item?.specialisationInThearapyTypes.replace(
+              /\\"/g,
+              '"'
+            );
+            return {
+              ...item,
+              specialisationInThearapyTypes: JSON.parse(fixedJsonString),
+            };
+          } catch (error) {
+            console.error(
+              `Error parsing JSON for therapist with ID ${item?.therapistId}:`,
+              error
+            );
+            // return item; // Return the original item if parsing fails
+            return null; // Return the original item if parsing fails
+          }
+        });
+        setFilteredTherapists(therapistsData);
+        setTherapistData(therapistsData);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -131,20 +151,17 @@ const Therapist = () => {
                     <p className="text-[#475467] text-base font-normal">
                       Experience:{" "}
                       <span className="font-semibold">
-                        {"  "}
                         {item?.yearsOfExperience}+ years
                       </span>
                     </p>
                     <p className="text-[#475467] text-base font-normal">
                       Hourly Fees:{" "}
-                      <span className="font-semibold">
-                        {"  "} {item?.fees}
-                      </span>
+                      <span className="font-semibold">{item?.fees}</span>
                     </p>
                     <p className="text-[#475467] text-base font-normal">
                       Mode:{" "}
                       <span className="font-semibold">
-                        {"  "}Online via google meet
+                        Online via google meet
                       </span>
                     </p>
                   </div>
@@ -173,9 +190,7 @@ const Therapist = () => {
                   </div>
                   <button
                     className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
-                    onClick={() => {
-                      handleBookSession();
-                    }}
+                    onClick={() => navigate("/bookSession")}
                   >
                     Book a Session
                   </button>
