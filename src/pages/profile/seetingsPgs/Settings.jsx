@@ -5,15 +5,31 @@ import { IoCallOutline } from "react-icons/io5";
 import { CiCalendar } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
+import { CiFileOn } from "react-icons/ci";
+import { CiLock } from "react-icons/ci";
+import { CiLogin } from "react-icons/ci";
+import { useNavigate } from "react-router";
+import { useAuth } from "../../../hooks/useAuth";
 
 const SelectedConcerns = ["Stress", "Anxiety", "Depression", "Sleep Help"];
 
 const Settings = () => {
+  
+  const navigate = useNavigate();
+  
+  const { user, logOutUser } = useAuth()
+
+  const handleLogout = () => {
+    logOutUser();
+    navigate("/signin");
+  };
+
   return (
-    <div className="flex flex-col justify-center max-w-screen-xl mx-auto">
+    <div className="flex flex-col justify-center max-w-screen-xl mx-auto my-16">
       <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-4 w-[600px] rounded-2xl p-4  bg-gradient-to-t from-[#EDE9FF] via-[#E8DBF9] to-[#E7EDFF]">
-          <div className="flex justify-between m-4">
+        <div className="flex flex-col gap-4 w-[600px] rounded-2xl p-4 h-[400px]  bg-gradient-to-t from-[#EDE9FF] via-[#E8DBF9] to-[#E7EDFF]">
+          <div className="flex justify-between m-4 my-6">
             <div className=" flex flex-col gap-4 items-center">
               <div className="w-24 h-24 rounded-full bg-gray-500"></div>
               <div className="text-[#101828] text-lg font-semibold">
@@ -24,7 +40,7 @@ const Settings = () => {
               <MdOutlineEdit className="text-2xl mt-6 cursor-pointer text-[#344054]" />
             </div>
           </div>
-          <div className="flex flex-col mx-4 mb-4 gap-4 max-w-[500px]">
+          <div className="flex flex-col mx-4 my-4 gap-4 max-w-[500px]">
             <div className="flex gap-20 mx-4">
               <div className="flex items-center gap-4">
                 <CiSquareInfo className="text-2xl cursor-pointer text-[#344054]" />
@@ -51,7 +67,7 @@ const Settings = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8 w-full">
+        {/* <div className="flex flex-col gap-8 w-full">
           <div className="flex flex-col gap-4 w-[600px] rounded-2xl p-4  bg-white border border-1 border-gray-200 shadow-xl">
             <div className="flex flex-col gap-8 justify-center">
               <div className="flex gap-4 items-center">
@@ -97,6 +113,66 @@ const Settings = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </div> */}
+        <div className="bg-[#FFFFFF] w-[600px] rounded-2xl h-[400px] shadow-xl flex flex-col gap-4 justify-center items-center p-4">
+          <div
+            onClick={() => {
+              navigate("/profile/schedule");
+            }}
+            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
+          >
+            <div className="flex gap-4">
+              <CiCalendar className="text-2xl cursor-pointer text-[#344054]" />
+              <p className="text-[#101828] ">Schedule</p>
+            </div>
+            <IoIosArrowForward className="text-[#101828] text-xl" />
+          </div>
+          <div
+            onClick={() => {
+              navigate("/contactus");
+            }}
+            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
+          >
+            <div className="flex gap-4">
+              <IoCallOutline className="text-2xl cursor-pointer text-[#344054]" />
+              <p className="text-[#101828] ">Contact Us</p>
+            </div>
+            <IoIosArrowForward className="text-[#101828] text-xl" />
+          </div>
+          <div
+            onClick={() => {
+              navigate("/terms-and-conditions");
+            }}
+            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
+          >
+            <div className="flex gap-4">
+              <CiFileOn className="text-2xl cursor-pointer text-[#344054]" />
+              <p className="text-[#101828] ">Terms and Conditions</p>
+            </div>
+            <IoIosArrowForward className="text-[#101828] text-xl" />
+          </div>
+          <div
+            onClick={() => {
+              navigate("/privacy-policy");
+            }}
+            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
+          >
+            <div className="flex gap-4">
+              <CiLock className="text-2xl cursor-pointer text-[#344054]" />
+              <p className="text-[#101828] ">Privacy Policy</p>
+            </div>
+            <IoIosArrowForward className="text-[#101828] text-xl" />
+          </div>
+          <div
+            onClick={handleLogout}
+            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
+          >
+            <div className="flex gap-4">
+              <CiLogin className="text-2xl cursor-pointer text-[#344054]" />
+              <p className="text-[#101828] ">Log Out</p>
+            </div>
+            <IoIosArrowForward className="text-[#101828] text-xl" />
           </div>
         </div>
       </div>
