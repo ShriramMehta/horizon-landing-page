@@ -5,76 +5,10 @@ import { faSearch, faFilter } from "@fortawesome/free-solid-svg-icons";
 import FilterModal from "./FilterModal";
 import therapistService from "../../../services/therapistService";
 
-const TherapistData = [
-  {
-    img: "./images/img2.png",
-    name: "Dr. John Smith",
-    exp: 1,
-    fees: "$100",
-    special: [
-      "Stress",
-      "Relationship",
-      "Self development",
-      "Anxiety",
-      "Work related",
-      "Sleep help",
-      "Anxiety",
-    ],
-  },
-  {
-    img: "./images/img2.png",
-    name: "Dr. John Smith",
-    exp: 5,
-    fees: "$100",
-    special: ["Self development", "Anxiety", "Work related", "Sleep help"],
-  },
-  {
-    img: "./images/img2.png",
-    name: "Dr. John Smith",
-    exp: 4,
-    fees: "$100",
-    special: ["Stress", "Relationship", "Anxiety", "Work related"],
-  },
-  {
-    img: "./images/img2.png",
-    name: "Dr. John Smith",
-    exp: 10,
-    fees: "$100",
-    special: [
-      "Stress",
-      "Relationship",
-      "Self development",
-      "Anxiety",
-      "Work related",
-      "Sleep help",
-    ],
-  },
-  {
-    img: "./images/img2.png",
-    name: "Dr. Siddhi ABC",
-    exp: 8,
-    fees: "$100",
-    special: [
-      "Stress",
-      "Relationship",
-      "Self development",
-      "Anxiety",
-      "Work related",
-      "Sleep help",
-    ],
-  },
-  {
-    img: "./images/img2.png",
-    name: "Dr. John Smith",
-    exp: 6,
-    fees: "$100",
-    special: ["Stress", "Relationship", "Anxiety", "Sleep help"],
-  },
-];
-
 const Therapist = () => {
   const navigate = useNavigate();
   const [filteredTherapists, setFilteredTherapists] = useState([]);
+  const [therapistData, setTherapistData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
@@ -88,7 +22,30 @@ const Therapist = () => {
     (async () => {
       try {
         const response = await therapistService.getAllThearapists();
-        console.log(response?.data);
+        if (response.data.success) {
+          console.log(response.data.data);
+          // Parse the JSON-formatted strings into arrays
+          const therapistsData = response.data.data.map((item) => {
+            try {
+              // Replace escaped double quotes with regular double quotes
+              const fixedJsonString =
+                item?.specialisationInThearapyTypes.replace(/\\"/g, '"');
+              return {
+                ...item,
+                specialisationInThearapyTypes: JSON.parse(fixedJsonString),
+              };
+            } catch (error) {
+              console.error(
+                `Error parsing JSON for therapist with ID ${item?.therapistId}:`,
+                error
+              );
+              // return item; // Return the original item if parsing fails
+              return null; // Return the original item if parsing fails
+            }
+          });
+          console.log(therapistsData);
+          setFilteredTherapists(therapistsData);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -98,9 +55,9 @@ const Therapist = () => {
   const applyFilters = (filters) => {
     console.log(filters.experience);
     console.log(filters.areaOfFocus);
-    const filteredData = TherapistData.filter((therapist) => {
+    const filteredData = therapistData.filter((therapist) => {
       return (
-        // therapist.special.includes(filters.areaOfFocus) &&
+        // therapist.specialisationInThearapyTypes.includes(filters.areaOfFocus) &&
         parseFloat(therapist.exp) >= filters.experience
         // (filters.gender === "" || therapist.gender === filters.gender) &&
         // (filters.languages.length === 0 || filters.languages.includes(therapist.languages)) &&
@@ -117,10 +74,10 @@ const Therapist = () => {
 
     if (term.trim() === "") {
       // If search term is empty, set filteredTherapists to the original data
-      setFilteredTherapists(TherapistData);
+      setFilteredTherapists(therapistData);
     } else {
       // If there is a search term, filter the data based on the name
-      const filtered = TherapistData.filter((therapist) =>
+      const filtered = therapistData.filter((therapist) =>
         String(therapist.name).toLowerCase().includes(term.toLowerCase())
       );
       setFilteredTherapists(filtered);
@@ -154,161 +111,84 @@ const Therapist = () => {
         )}
       </div>
       <div className="overflow-auto h-screen flex p-3 flex-row gap-8 md:gap-4 justify-center xl:justify-center flex-wrap w-full">
-        {filteredTherapists.length > 0
-          ? filteredTherapists.map((item, idx) => (
-              <div
-                key={idx}
-                className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
-              >
-                <div className="flex flex-col">
-                  <div className="flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
-                    <img
-                      className="w-40 h-40 object-cover"
-                      src={item.img}
-                      alt="Therapist Photo"
-                    />
-                    <div className="max-w-1/2 w-full flex flex-col gap-1">
-                      <p className="text-[#101828] text-xl font-bold my-4">
-                        {item.name}
-                      </p>
-                      <p className="text-[#475467] text-base font-normal">
-                        Experience:{" "}
-                        <span className="font-semibold">
-                          {"  "}
-                          {item.exp}+ years
-                        </span>
-                      </p>
-                      <p className="text-[#475467] text-base font-normal">
-                        Hourly Fees:{" "}
-                        <span className="font-semibold">
-                          {"  "} {item.fees}
-                        </span>
-                      </p>
-                      <p className="text-[#475467] text-base font-normal">
-                        Mode:{" "}
-                        <span className="font-semibold">
-                          {"  "}Online via google meet
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="px-4">
-                    <div className="flex gap-4 items-center">
-                      <h1 className="text-black font-semibold mx-8">
-                        Expertise:
-                      </h1>
-                      <div className="ml-10 flex flex-wrap gap-2 w-full">
-                        {item.special
-                          .slice(0, 5)
-                          .map((specialization, index) => (
-                            <div
-                              key={index}
-                              className={
-                                "cursor-pointer max-w-[112px] w-full max-h-[38px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
-                              }
-                            >
-                              <p className="text-xs text-black font-medium text-[#344054] text-center">
-                                {specialization}
-                              </p>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                    <button
-                      className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
-                      onClick={() => {
-                        handleBookSession();
-                      }}
-                    >
-                      Book a Session
-                    </button>
-                    <button
-                      onClick={() => navigate("/viewDetails")}
-                      className="my-4 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
-                    >
-                      View Details
-                    </button>
+        {filteredTherapists.length > 0 &&
+          filteredTherapists.map((item, idx) => (
+            <div
+              key={idx}
+              className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
+            >
+              <div className="flex flex-col">
+                <div className="flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
+                  <img
+                    className="w-40 h-40 object-cover"
+                    src={item?.imgUrl}
+                    alt="Therapist Photo"
+                  />
+                  <div className="max-w-1/2 w-full flex flex-col gap-1">
+                    <p className="text-[#101828] text-xl font-bold my-4">
+                      {item?.name}
+                    </p>
+                    <p className="text-[#475467] text-base font-normal">
+                      Experience:{" "}
+                      <span className="font-semibold">
+                        {"  "}
+                        {item?.yearsOfExperience}+ years
+                      </span>
+                    </p>
+                    <p className="text-[#475467] text-base font-normal">
+                      Hourly Fees:{" "}
+                      <span className="font-semibold">
+                        {"  "} {item?.fees}
+                      </span>
+                    </p>
+                    <p className="text-[#475467] text-base font-normal">
+                      Mode:{" "}
+                      <span className="font-semibold">
+                        {"  "}Online via google meet
+                      </span>
+                    </p>
                   </div>
                 </div>
-              </div>
-            ))
-          : TherapistData.map((item, idx) => (
-              <div
-                key={idx}
-                className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
-              >
-                <div className="flex flex-col">
-                  <div className="flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
-                    <img
-                      className="w-40 h-40 object-cover"
-                      src={item.img}
-                      alt="Therapist Photo"
-                    />
-                    <div className="max-w-1/2 w-full flex flex-col gap-1">
-                      <p className="text-[#101828] text-xl font-bold my-4">
-                        {item.name}
-                      </p>
-                      <p className="text-[#475467] text-base font-normal">
-                        Experience:{" "}
-                        <span className="font-semibold">
-                          {"  "}
-                          {item.exp}+ years
-                        </span>
-                      </p>
-                      <p className="text-[#475467] text-base font-normal">
-                        Hourly Fees:{" "}
-                        <span className="font-semibold">
-                          {"  "} {item.fees}
-                        </span>
-                      </p>
-                      <p className="text-[#475467] text-base font-normal">
-                        Mode:{" "}
-                        <span className="font-semibold">
-                          {"  "}Online via google meet
-                        </span>
-                      </p>
+                <div className="px-4">
+                  <div className="flex gap-4 items-center">
+                    <h1 className="text-black font-semibold mx-8">
+                      Expertise:
+                    </h1>
+                    <div className="ml-10 flex flex-wrap gap-2 w-full">
+                      {item?.specialisationInThearapyTypes
+                        .slice(0, 5)
+                        .map((specialisationInThearapyTypesization, index) => (
+                          <div
+                            key={index}
+                            className={
+                              "cursor-pointer max-w-[112px] w-full max-h-[38px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                            }
+                          >
+                            <p className="text-xs text-black font-medium text-[#344054] text-center">
+                              {specialisationInThearapyTypesization}
+                            </p>
+                          </div>
+                        ))}
                     </div>
                   </div>
-                  <div className="px-4">
-                    <div className="flex gap-4 items-center">
-                      <h1 className="text-black font-semibold mx-8">
-                        Expertise:
-                      </h1>
-                      <div className="ml-10 flex flex-wrap gap-2 w-full">
-                        {item.special
-                          .slice(0, 5)
-                          .map((specialization, index) => (
-                            <div
-                              key={index}
-                              className={
-                                "cursor-pointer max-w-[112px] max-h-[38px] w-full h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
-                              }
-                            >
-                              <p className="text-xs text-black font-medium text-[#344054] text-center">
-                                {specialization}
-                              </p>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                    <button
-                      className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
-                      onClick={() => {
-                        handleBookSession();
-                      }}
-                    >
-                      Book a Session
-                    </button>
-                    <button
-                      onClick={() => navigate("/viewDetails")}
-                      className="my-4 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
-                    >
-                      View Details
-                    </button>
-                  </div>
+                  <button
+                    className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
+                    onClick={() => {
+                      handleBookSession();
+                    }}
+                  >
+                    Book a Session
+                  </button>
+                  <button
+                    onClick={() => navigate("/viewDetails")}
+                    className="my-4 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
       </div>
     </div>
   );
