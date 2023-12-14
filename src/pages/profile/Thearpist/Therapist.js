@@ -17,6 +17,7 @@ const TherapistData = [
       "Anxiety",
       "Work related",
       "Sleep help",
+      "Anxiety",
     ],
   },
   {
@@ -116,8 +117,8 @@ const Therapist = () => {
   };
 
   return (
-    <div className="mx-auto p-3 max-w-screen-xl h-full flex flex-row gap-20 mx-auto">
-      <div className="p-3 flex flex-row gap-4 w-1/4 h-fit">
+    <div className="mx-auto p-3 max-w-screen-xl h-full flex flex-row gap-20 mx-auto items-center">
+      <div className="p-3 flex flex-row gap-4 w-1/4 pb-24">
         <div className="relative">
           <input
             placeholder="Search Thearpist"
@@ -141,10 +142,10 @@ const Therapist = () => {
           <FilterModal closeModal={setOpenModal} applyFilters={applyFilters} />
         )}
       </div>
-      <div className="flex p-3 flex-row gap-8 md:gap-4 justify-center xl:justify-center flex-wrap w-full">
+      <div className="overflow-auto h-screen flex p-3 flex-row gap-8 md:gap-4 justify-center xl:justify-center flex-wrap w-full">
         {filteredTherapists.length > 0
           ? filteredTherapists.map((item, idx) => (
-            <div
+            <div  
             key={idx}
             className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
           >
@@ -173,12 +174,12 @@ const Therapist = () => {
               <div className="px-4">
                 <div className="flex gap-4 items-center">
                 <h1 className="text-black font-semibold mx-8">Expertise:</h1>
-                <div className="flex flex-wrap gap-2 w-full">
-                  {item.special.map((specialization, index) => (
+                <div className="ml-10 flex flex-wrap gap-2 w-full">
+                  {item.special.slice(0, 5).map((specialization, index) => (
                     <div
                       key={index}
                       className={
-                        "cursor-pointer max-w-[90px] w-full max-h-[35px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                        "cursor-pointer max-w-[112px] w-full max-h-[38px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
                       }
                     >
                       <p className="text-xs text-black font-medium text-[#344054] text-center">
@@ -236,12 +237,12 @@ const Therapist = () => {
                   <div className="px-4">
                     <div className="flex gap-4 items-center">
                     <h1 className="text-black font-semibold mx-8">Expertise:</h1>
-                    <div className="flex flex-wrap gap-2 w-full">
-                      {item.special.map((specialization, index) => (
+                    <div className="ml-10 flex flex-wrap gap-2 w-full">
+                      {item.special.slice(0, 5).map((specialization, index) => (
                         <div
                           key={index}
                           className={
-                            "cursor-pointer max-w-[90px] w-full max-h-[35px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                            "cursor-pointer max-w-[112px] max-h-[38px] w-full h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
                           }
                         >
                           <p className="text-xs text-black font-medium text-[#344054] text-center">
