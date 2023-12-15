@@ -24,14 +24,14 @@ export default function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
     >
       <div className="flex flex-col justify-between items-center h-full w-full">
         <div className={clsx("flex flex-col space-y-10 w-full items-center")}>
-          <div className="cursor-pointer h-14 px-1 w-14 md:h-16 xl:h-18 md:w-16 xl:w-18 2xl:w-20 2xl:h-20 rounded-full bg-white flex items-center justify-center">
-            <img
-              src={Logo}
-              alt="Logo Image"
-              className="w-[100%] h-full object-contain"
-              onClick={() => handleNavigate("/")}
-            />
-          </div>
+          {/* <div className="cursor-pointer h-14 px-1 w-14 md:h-16 xl:h-18 md:w-16 xl:w-18 2xl:w-20 2xl:h-20 rounded-full bg-white flex items-center justify-center"> */}
+          <img
+              src="./images/nav_logo.jpg"
+              class="w-16 cursor-pointer object-cover"
+              alt="nav logo"
+              onClick={()=> handleNavigate('/')}
+/>
+          {/* </div> */}
           <div className="flex flex-col items-center space-y-6 w-full pl-4">
             {routes.map((el, index) => (
               <SidebarItem
@@ -100,7 +100,7 @@ function SidebarItem({
           <img src={icon} alt={name} className="w-4 md:w-7 h-auto " />
           {isSidebarOpen && <p className="text-black">{name}</p>}
         </div>
-        {isSidebarOpen && childNavs?.length > 0 && (
+        {/* {isSidebarOpen && childNavs?.length > 0 && (
           <MdKeyboardArrowLeft
             className={clsx("text-black cursor-pointer", {
               "-rotate-90": activeRoute === route,
@@ -110,7 +110,7 @@ function SidebarItem({
               handleRoute(route);
             }}
           />
-        )}
+        )} */}
       </div>
       {activeRoute === route && childNavs?.length > 0 && (
         <div className="w-full flex flex-col items-start space-y-4 mt-3">

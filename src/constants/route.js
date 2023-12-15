@@ -33,6 +33,11 @@ const routes = [
     icon: ChatIcon,
   },
   {
+    name: "Settings",
+    route: "/profile/settings",
+    icon: SettingIcon,
+  },
+  {
     name: "Know More",
     route: "/profile/tnc",
     icon: DebitIcon,
@@ -52,23 +57,6 @@ const routes = [
         name: "Privacy Policy",
         route: "/privacy-policy",
         icon: BiSolidNotepad,
-      },
-    ],
-  },
-  {
-    name: "Settings",
-    route: "/profile/settings",
-    icon: SettingIcon,
-    childNavs: [
-      {
-        name: "Profile",
-        route: "/profile/settings",
-        icon: FaUser,
-      },
-      {
-        name: "Concerns",
-        route: "/profile/concerns",
-        icon: FaUser,
       },
     ],
   },
