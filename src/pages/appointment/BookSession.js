@@ -49,7 +49,7 @@ const BookSession = () => {
 
   //   if (token) {
   //     console.log("User is logged in");
-  //     // navigate("/bookSession");
+  //     // navigate("/book-session/:therapistId");
   //   } else {
   //     console.log("User is not logged in");
   //     navigate("/login");
@@ -58,7 +58,7 @@ const BookSession = () => {
 
   const handleClick = () => {
     console.log(selectedDateIdx, selectedTimeIdx);
-    navigate("/confirmBooking")
+    navigate("/confirmBooking");
     // if (selectedDateIdx !== null && selectedTimeIdx !== null) {
     //   navigate(`/confirmBooking/${selectedDateIdx}/${selectedTimeIdx}`);
     // }

@@ -128,7 +128,7 @@ const ViewDetails = () => {
           </div>
           <div className="w-full">
             <button
-              onClick={() => navigate("/bookSession")}
+              onClick={() => navigate("/book-session/:therapistId")}
               className="text-center bg-primaryIndigo hover-bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center w-full md:w-auto"
             >
               Book a Session
@@ -175,34 +175,34 @@ const ViewDetails = () => {
               },
             }}
           >
-           {
-            reviewData.map((item, idx)=>(
+            {reviewData.map((item, idx) => (
               <SwiperSlide key={idx}>
-              <div className="p-[16px] gap-2 flex flex-col border w-[300px] h-[250px] rounded-[16px]">
-                <div className="flex gap-4 items-center">
-                  <p className="text-[#1D2939] text-lg font-semibold">
-                    {item.name}
-                  </p>
-                  <p className="text-[#EAECF0] text-base">|</p>
-                  <p className="text-[#667085] text-base font-normal">
-                  {item.time}
-                  </p>
+                <div className="p-[16px] gap-2 flex flex-col border w-[300px] h-[250px] rounded-[16px]">
+                  <div className="flex gap-4 items-center">
+                    <p className="text-[#1D2939] text-lg font-semibold">
+                      {item.name}
+                    </p>
+                    <p className="text-[#EAECF0] text-base">|</p>
+                    <p className="text-[#667085] text-base font-normal">
+                      {item.time}
+                    </p>
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <img
+                      src="./images/star-01 (1).png"
+                      alt="star"
+                      className="w-5 h-auto object-cover"
+                    />
+                    <p className="text-[#1D2939] text-lg font-medium">
+                      {item.rating}
+                    </p>
+                  </div>
+                  <div className="mt-5 text-[#344054] text-base">
+                    {item.review}
+                  </div>
                 </div>
-                <div className="flex gap-2 items-center">
-                  <img
-                    src="./images/star-01 (1).png"
-                    alt="star"
-                    className="w-5 h-auto object-cover"
-                  />
-                  <p className="text-[#1D2939] text-lg font-medium">{item.rating}</p>
-                </div>
-                <div className="mt-5 text-[#344054] text-base">
-                  {item.review}
-                </div>
-              </div>
-            </SwiperSlide>
-            ))
-           }
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

@@ -53,10 +53,13 @@ const App = () => {
             <Route path="/home" element={<Main />} />
             <Route path="/team" element={<Team />} />
             <Route path="/getApp" element={<GetApp />} />
-            <Route path="/bookSession" element={<BookSession />} />
+            <Route
+              path="/book-session/:therapistId"
+              element={<BookSession />}
+            />
             <Route path="/confirmBooking" element={<ConfirmBooking />} />
             <Route path="/viewDetails" element={<ViewDetails />} />
-            <Route path="/therapist" element={<Therapist/>} />
+            <Route path="/therapist" element={<Therapist />} />
             <Route path="/faq" element={<Faq />} />
           <Route path="/terms-and-conditions" element={<TermsCond />} />
           <Route path="/privacy-policy" element={<PrivacyPol />} />/
@@ -69,7 +72,9 @@ const App = () => {
           <Route path="/profile" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="schedule" element={<Schedule />} />
-            <Route path="settings" element={<Settings />} />            
+            <Route path="settings" element={<Settings />} />
+            <Route path="concerns" element={<Concern />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>
