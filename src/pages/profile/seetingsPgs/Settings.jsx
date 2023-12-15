@@ -105,7 +105,6 @@ const Settings = () => {
               {selectedConcerns.map((item, idx) => (
                 <div
                   key={idx}
-                  // onClick={() => handleRemoveSelectedConcern(item)}
                   className="cursor-pointer mx-auto max-w-[110px] w-full max-h-[25px] h-full rounded-[16px] flex justify-center items-center py-[18px] px-[6px] border-[1px] 
               bg-[#ECE7FE] text-[#4E139F]"
                 >

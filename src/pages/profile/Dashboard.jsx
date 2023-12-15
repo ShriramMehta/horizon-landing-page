@@ -82,7 +82,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="mt-4">
-        <div className="mt-4">Thoughts for you!</div>
+        {/* <div className="mt-4">Thoughts for you!</div>
         <div className="w-full bg-[#DFCCFB] my-8 rounded-xl px-12 py-8 items-center flex justify-between">
           <div className="flex flex-col gap-4 mx-auto ">
             <div className="text-xl font-bold text-[#101828]">
@@ -96,7 +96,7 @@ const Dashboard = () => {
             <p>See my therapist </p>
             <span className="text-2xl"> {" > "}</span>
           </div>
-        </div>
+        </div> */}
         <div className="shadow-xl w-full bg-[#EEEDED] my-8 rounded-xl px-8 py-8 items-center flex justify-center">
           <div className="flex flex-col gap-4 w-full">
             <div className="text-xl font-bold text-[#101828] w-full text-left">
@@ -133,7 +133,7 @@ const Dashboard = () => {
                    <RiEmotionHappyLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                    <p className="text-xl font-semibold text-gray-500">Ecstatic</p>
                    <p className="text-lg">Amazing! Find a good purpose with Ikiguide cards.</p>
-                  <button className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Start setting goal</button>
+                  <button onClick={()=>{navigate('/therapist')}} className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Start setting goal</button>
                  </div>
                 )}
                 {selectedEmotion === "Happy" && (
@@ -141,7 +141,7 @@ const Dashboard = () => {
                   <ImHappy className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                   <p className="text-xl font-semibold text-gray-500">Happy</p>
                   <p className="text-lg">Nice! Write about your feelings in a doodle book.</p>
-                 <button className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Start Journaling</button>
+                 <button onClick={()=>{navigate('/therapist')}} className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Start Journaling</button>
                 </div>
                 )}
                 {selectedEmotion === "Good" && (
@@ -149,7 +149,7 @@ const Dashboard = () => {
                   <RiEmotionNormalLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                   <p className="text-xl font-semibold text-gray-500">Good</p>
                   <p className="text-lg">Take a wellbeing test to understand why you may feel like this!</p>
-                 <button className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Know Yourself</button>
+                 <button onClick={()=>{navigate('/therapist')}} className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Know Yourself</button>
                 </div>
                 )}
                 {selectedEmotion === "Unhappy" && (
@@ -157,7 +157,7 @@ const Dashboard = () => {
                  <RiEmotionUnhappyLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                  <p className="text-xl font-semibold text-gray-500">Unhappy</p>
                  <p className="text-lg">Navigate through difficult days with expert support and feel better!</p>
-                <button className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2" onClick={()=> navigate('/therapist')}>Talk to experts</button>
+                <button onClick={()=>{navigate('/therapist')}} className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Talk to experts</button>
                </div>
                 )}
                 {selectedEmotion === "Distressed" && (
@@ -165,7 +165,7 @@ const Dashboard = () => {
                   <RiEmotionSadLine className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                   <p className="text-xl font-semibold text-gray-500">Distressed</p>
                   <p className="text-lg">It's alright, we've got you. Seek support today.</p>
-                 <button className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2" onClick={()=> navigate('/therapist')}>Get support</button>
+                 <button onClick={()=>{navigate('/therapist')}} className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2">Get support</button>
                 </div>
                 )}
                 <button
