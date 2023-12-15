@@ -72,9 +72,7 @@ const App = () => {
           <Route path="/profile" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="schedule" element={<Schedule />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="concerns" element={<Concern />} />
-            
+            <Route path="settings" element={<Settings />} />            
           </Route>
         </Routes>
       </BrowserRouter>
