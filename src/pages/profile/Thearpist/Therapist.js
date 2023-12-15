@@ -138,14 +138,14 @@ const Therapist = () => {
               className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
             >
               <div className="flex flex-col">
-                <div className="flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
+                <div className="py-8 flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
                   <img
-                    className="w-40 h-40 object-cover"
+                    className="w-40 h-40 object-cover rounded-xl"
                     src={item?.imgUrl}
                     alt="Therapist Photo"
                   />
-                  <div className="max-w-1/2 w-full flex flex-col gap-1">
-                    <p className="text-[#101828] text-xl font-bold my-4">
+                  <div className="max-w-1/2 w-full flex flex-col justify-center gap-1">
+                    <p className="text-[#101828] text-xl font-bold mb-4">
                       {item?.name}
                     </p>
                     <p className="text-[#475467] text-base font-normal">
@@ -166,9 +166,9 @@ const Therapist = () => {
                     </p>
                   </div>
                 </div>
-                <div className="px-4">
+                <div className="px-2 pb-8">
                   <div className="flex gap-4 items-center">
-                    <h1 className="text-black font-semibold mx-8">
+                    <h1 className="text-black font-semibold mx-8 text-xl">
                       Expertise:
                     </h1>
                     <div className="ml-10 flex flex-wrap gap-2 w-full">
@@ -178,7 +178,7 @@ const Therapist = () => {
                           <div
                             key={index}
                             className={
-                              "cursor-pointer max-w-[112px] w-full max-h-[38px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                              "cursor-pointer max-w-[130px] w-full max-h-[50px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
                             }
                           >
                             <p className="text-xs text-black font-medium text-[#344054] text-center">
