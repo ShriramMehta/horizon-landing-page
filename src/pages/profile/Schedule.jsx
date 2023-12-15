@@ -9,7 +9,14 @@ import { FaRegStar } from "react-icons/fa";
 
 const Schedule = () => {
   const [showFeedback, setShowFeedback] = useState(false);
+  const [reviewSubmitted, setReviewSubmitted] = useState(false);
+  const [starStates, setStarStates] = useState(
+    Array.from({ length: 5 }).fill(false)
+  );
 
+  const handleStarClick = (index) => {
+    setStarStates((prev) => prev.map((_, i) => (i <= index ? true : false)));
+  };
   return (
     <div className="flex flex-col gap-16 max-w-screen-xl mx-auto mb-8">
       <div className="flex flex-col gap-8 mx-6">
@@ -162,37 +169,57 @@ const Schedule = () => {
                   <button
                     onClick={() => {
                       setShowFeedback(false);
+                      setReviewSubmitted(false);
                     }}
                     className="bg-[#F0F0FE] text-[#0E0079] font-bold rounded-full flex flex-row justify-center gap-0 items-center max-w-fit h-5 w-5 p-4"
                   >
                     X
                   </button>
                 </div>
+        
+                {reviewSubmitted ? (
+                    <>
+                      <div className="my-2 text-center w-full text-[#344054] text-lg font-semibold">
+                        Thank you for your feedback!
+                      </div>
+                    </>
+                ):(
+                <>
                 <div className="flex justify-center items-center">
-                <TextField
-          id="filled-multiline-static"
-          label="Write your feedback here"
-          multiline
-          rows={4}
-          variant="outlined"
-          className="w-full rounded-xl"
-        />
+                  <TextField
+                    id="filled-multiline-static"
+                    label="Write your feedback here"
+                    multiline
+                    rows={4}
+                    variant="outlined"
+                    className="w-full rounded-xl"
+                  />
                 </div>
                 <div className="my-2 text-center w-full text-[#344054] text-lg font-semibold">
                   Rate Your session
                 </div>
+                
                 <div className="flex gap-8 items-center justify-center">
-                  <FaRegStar />
-                  <FaRegStar />
-                  <FaRegStar />
-                  <FaRegStar />
-                  <FaRegStar />
+                  {starStates.map((state, idx) => (
+                    <FaRegStar
+                      key={idx}
+                      className={`text-2xl cursor-pointer ${
+                        state ? "text-yellow-500" : ""
+                      }`}
+                      onClick={() => handleStarClick(idx)}
+                    />
+                  ))}
                 </div>
                 <button
-          type="button"
-          className="my-2 text-[#FFFFFF] bg-gray-300 hover:bg-purple-200 hover:text-[#FFFFFF] rounded-lg text-sm w-full ms-auto inline-flex py-2 justify-center items-center dark:hover:bg-purple-600 dark:hover:text-white"
-          data-modal-hide="default-modal"
-        >Submit Review</button>
+                  type="button"
+                  className="my-2 text-[#FFFFFF] bg-gray-300 hover:bg-purple-200 hover:text-[#FFFFFF] rounded-lg text-sm w-full ms-auto inline-flex py-2 justify-center items-center dark:hover:bg-purple-600 dark:hover:text-white"
+                  data-modal-hide="default-modal"
+                  onClick={()=>{setReviewSubmitted(true)}}
+                >
+                  Submit Review
+                </button>
+                </>
+                )}
               </div>
             ) : (
               <div className="flex flex-col gap-4">
