@@ -106,7 +106,7 @@ const Therapist = () => {
 
   return (
     <div className="mx-auto p-3 max-w-screen-xl h-full flex flex-row gap-20 mx-auto items-center">
-      <div className="p-3 flex flex-row gap-4 w-1/4 pb-24">
+      <div className="p-3 flex flex-row gap-4 w-1/4 mb-24 pb-24">
         <div className="relative">
           <input
             placeholder="Search Thearpist"
