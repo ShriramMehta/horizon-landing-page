@@ -29,6 +29,7 @@ import TermsCond from "./pages/profile/knowMore/TermsCond";
 import PrivacyPol from "./pages/profile/knowMore/PrivacyPol";
 import Faq from "./pages/profile/knowMore/Faq";
 import Therapist from "./pages/profile/Thearpist/Therapist";
+import Contact from "./pages/profile/Contact";
 
 const Layout = () => {
   return (
@@ -60,6 +61,7 @@ const App = () => {
             <Route path="/faq" element={<Faq />} />
           <Route path="/terms-and-conditions" element={<TermsCond />} />
           <Route path="/privacy-policy" element={<PrivacyPol />} />/
+          <Route path="/contact" element={<Contact/>} />/
           </Route>
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -70,6 +72,7 @@ const App = () => {
             <Route path="schedule" element={<Schedule />} />
             <Route path="settings" element={<Settings />} />
             <Route path="concerns" element={<Concern />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>
