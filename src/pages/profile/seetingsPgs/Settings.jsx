@@ -12,24 +12,50 @@ import { CiLogin } from "react-icons/ci";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../../hooks/useAuth";
 
-const SelectedConcerns = ["Stress", "Anxiety", "Depression", "Sleep Help"];
+let concerns = [
+  "Stress",
+  "Anxiety",
+  "Depression",
+  "Sleep Help",
+  "Grief and loass",
+  "Self Esteem",
+  "Family",
+  "Burnout",
+  "Realtionships",
+];
 
 const Settings = () => {
-  
   const navigate = useNavigate();
-  
-  const { user, logOutUser } = useAuth()
+
+  const { user, logOutUser } = useAuth();
+  const [selectedConcerns, setSelectedConcerns] = React.useState([
+    "Stress",
+    "Anxiety",
+    "Depression",
+    "Sleep Help",
+  ]);
 
   const handleLogout = () => {
     logOutUser();
     navigate("/signin");
   };
 
+  const handleConcernSelect = (concern) => {
+    // Remove the selected concern from the 'concerns' array
+    const updatedConcerns = concerns.filter((item) => item !== concern);
+
+    // Add the selected concern to the 'selectedConcerns' array
+    setSelectedConcerns([...selectedConcerns, concern]);
+
+    // Update the 'concerns' array without the selected concern
+    concerns = updatedConcerns;
+  };
+
   return (
-    <div className="flex flex-col justify-center max-w-screen-xl mx-auto my-16">
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-4 w-[600px] rounded-2xl p-4 h-[400px]  bg-gradient-to-t from-[#EDE9FF] via-[#E8DBF9] to-[#E7EDFF]">
-          <div className="flex justify-between m-4 my-6">
+    <div className="flex flex-col justify-center max-w-screen-xl mx-auto my-16 w-full">
+      <div className="w-full flex justify-center gap-16 items-center">
+        <div className="flex flex-col justify-center gap-4 max-w-[550px] rounded-2xl px-4 py-2 h-[400px]  bg-gradient-to-t from-[#EDE9FF] via-[#E8DBF9] to-[#E7EDFF]">
+          <div className="flex justify-between gap-24 mb-6">
             <div className=" flex flex-col gap-4 items-center">
               <div className="w-24 h-24 rounded-full bg-gray-500"></div>
               <div className="text-[#101828] text-lg font-semibold">
@@ -37,11 +63,11 @@ const Settings = () => {
               </div>
             </div>
             <div>
-              <MdOutlineEdit className="text-2xl mt-6 cursor-pointer text-[#344054]" />
+              <MdOutlineEdit className="text-2xl mr-8 mt-4 cursor-pointer text-[#344054]" />
             </div>
           </div>
-          <div className="flex flex-col mx-4 my-4 gap-4 max-w-[500px]">
-            <div className="flex gap-20 mx-4">
+          <div className="flex flex-col mx-2 mt-2 gap-4">
+            <div className="flex gap-20 ">
               <div className="flex items-center gap-4">
                 <CiSquareInfo className="text-2xl cursor-pointer text-[#344054]" />
                 <p className="text-[#101828] text-lg font-medium">Female</p>
@@ -51,7 +77,7 @@ const Settings = () => {
                 <p className="text-[#101828] text-lg font-medium">9898987777</p>
               </div>
             </div>
-            <div className="flex mx-4 gap-8">
+            <div className="flex gap-8">
               <div className="flex items-center gap-6">
                 <CiCalendar className="text-2xl cursor-pointer text-[#344054]" />
                 <p className="text-[#101828] text-lg font-medium">
@@ -67,112 +93,49 @@ const Settings = () => {
             </div>
           </div>
         </div>
-        {/* <div className="flex flex-col gap-8 w-full">
-          <div className="flex flex-col gap-4 w-[600px] rounded-2xl p-4  bg-white border border-1 border-gray-200 shadow-xl">
-            <div className="flex flex-col gap-8 justify-center">
-              <div className="flex gap-4 items-center">
-                <FaHeart className="text-xl" />
-                <p className="text-[#101828] font-semibold text-xl">
-                  Selected concerns
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                {SelectedConcerns.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="cursor-pointer mx-auto max-w-[110px] w-full max-h-[25px] h-full rounded-[16px] flex justify-center items-center py-[18px] px-[6px] border-[1px] 
-                      bg-[#ECE7FE] text-[#4E139F]"
-                  >
-                    <p className="text-base font-medium text-[#4E139F] text-center">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
+        <div className="flex flex-col gap-8 max-w-[550px] rounded-2xl p-4  bg-white shadow-xl">
+          <div className="flex flex-col gap-4  justify-center border border-1 border-gray-200 p-4">
+            <div className="flex gap-4 items-center">
+              <FaHeart className="text-xl" />
+              <p className="text-[#101828] font-semibold text-xl">
+                Selected concerns
+              </p>
+            </div>
+            <div className="flex flex-wrap max-w-[500px] gap-2 items-center">
+              {selectedConcerns.map((item, idx) => (
+                <div
+                  key={idx}
+                  // onClick={() => handleRemoveSelectedConcern(item)}
+                  className="cursor-pointer mx-auto max-w-[110px] w-full max-h-[25px] h-full rounded-[16px] flex justify-center items-center py-[18px] px-[6px] border-[1px] 
+              bg-[#ECE7FE] text-[#4E139F]"
+                >
+                  <p className="text-sm font-medium text-[#4E139F] text-center">
+                    {item}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-[600px] rounded-2xl p-4  bg-white border border-1 border-gray-200 shadow-xl">
-            <div className="flex flex-col gap-8 justify-center">
-              <div className="flex gap-4 items-center">
-                <FaHeart className="text-xl" />
-                <p className="text-[#101828] font-semibold text-xl">
-                  select your concerns
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                {SelectedConcerns.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="cursor-pointer mx-auto max-w-[110px] w-full max-h-[25px] h-full rounded-[16px] flex justify-center items-center py-[18px] px-[6px] border-[1px] 
-                      bg-[#ECE7FE] text-[#4E139F]"
-                  >
-                    <p className="text-base font-medium text-[#4E139F] text-center">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          <div className="flex flex-col gap-4 justify-center mx-2">
+            <div className="flex gap-4 items-center">
+              <FaHeart className="text-xl" />
+              <p className="text-[#101828] font-semibold text-xl my-2">
+                select your concerns
+              </p>
             </div>
-          </div>
-        </div> */}
-        <div className="bg-[#FFFFFF] w-[600px] rounded-2xl h-[400px] shadow-xl flex flex-col gap-4 justify-center items-center p-4">
-          <div
-            onClick={() => {
-              navigate("/profile/schedule");
-            }}
-            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
-          >
-            <div className="flex gap-4">
-              <CiCalendar className="text-2xl cursor-pointer text-[#344054]" />
-              <p className="text-[#101828] ">Schedule</p>
+            <div className="flex flex-wrap max-w-[500px] gap-2 items-center ">
+              {concerns.map((item, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => handleConcernSelect(item)}
+                  className="cursor-pointer mx-auto max-w-[110px] w-full max-h-[25px] h-full rounded-[16px] flex justify-center items-center py-[18px] px-[6px] border-[1px] bg-[#FFFFFF] border-[#D0D5DD]"
+                >
+                  <p className="text-sm font-medium text-[#344054] text-center">
+                    {item}
+                  </p>
+                </div>
+              ))}
             </div>
-            <IoIosArrowForward className="text-[#101828] text-xl" />
-          </div>
-          <div
-            onClick={() => {
-              navigate("/contactus");
-            }}
-            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
-          >
-            <div className="flex gap-4">
-              <IoCallOutline className="text-2xl cursor-pointer text-[#344054]" />
-              <p className="text-[#101828] ">Contact Us</p>
-            </div>
-            <IoIosArrowForward className="text-[#101828] text-xl" />
-          </div>
-          <div
-            onClick={() => {
-              navigate("/terms-and-conditions");
-            }}
-            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
-          >
-            <div className="flex gap-4">
-              <CiFileOn className="text-2xl cursor-pointer text-[#344054]" />
-              <p className="text-[#101828] ">Terms and Conditions</p>
-            </div>
-            <IoIosArrowForward className="text-[#101828] text-xl" />
-          </div>
-          <div
-            onClick={() => {
-              navigate("/privacy-policy");
-            }}
-            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
-          >
-            <div className="flex gap-4">
-              <CiLock className="text-2xl cursor-pointer text-[#344054]" />
-              <p className="text-[#101828] ">Privacy Policy</p>
-            </div>
-            <IoIosArrowForward className="text-[#101828] text-xl" />
-          </div>
-          <div
-            onClick={handleLogout}
-            className="cursor-pointer flex flex-row justify-between w-full mx-auto items-center border mx-auto border-3 rounded-xl p-3 border-[#EAECF0]"
-          >
-            <div className="flex gap-4">
-              <CiLogin className="text-2xl cursor-pointer text-[#344054]" />
-              <p className="text-[#101828] ">Log Out</p>
-            </div>
-            <IoIosArrowForward className="text-[#101828] text-xl" />
           </div>
         </div>
       </div>
