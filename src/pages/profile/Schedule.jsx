@@ -1,7 +1,12 @@
 import React from "react";
 
 const Schedule = () => {
-  return <div>Scheule</div>;
+  return(
+    <div>
+    <div>Upcoming sessions</div>
+    <div></div>
+    </div>
+)
 };
 
 export default Schedule;
