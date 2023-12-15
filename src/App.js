@@ -24,7 +24,6 @@ import Dashboard from "./pages/profile/Dashboard";
 import Schedule from "./pages/profile/Schedule";
 import { DashboardLayout } from "./layouts/index";
 import Settings from "./pages/profile/seetingsPgs/Settings";
-import Concern from "./pages/profile/seetingsPgs/Concern";
 import TermsCond from "./pages/profile/knowMore/TermsCond";
 import PrivacyPol from "./pages/profile/knowMore/PrivacyPol";
 import Faq from "./pages/profile/knowMore/Faq";
@@ -70,9 +69,7 @@ const App = () => {
           <Route path="/profile" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="schedule" element={<Schedule />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="concerns" element={<Concern />} />
-            
+            <Route path="settings" element={<Settings />} />            
           </Route>
         </Routes>
       </BrowserRouter>

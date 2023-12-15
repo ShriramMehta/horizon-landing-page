@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineEdit } from "react-icons/md";
 import { CiSquareInfo } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
@@ -11,6 +11,7 @@ import { CiLock } from "react-icons/ci";
 import { CiLogin } from "react-icons/ci";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../../hooks/useAuth";
+import ProfileModal from "./ProfileModal";
 
 let concerns = [
   "Stress",
@@ -28,7 +29,7 @@ const Settings = () => {
   const navigate = useNavigate();
 
   const { user, logOutUser } = useAuth();
-  const [selectedConcerns, setSelectedConcerns] = React.useState([
+  const [selectedConcerns, setSelectedConcerns] = useState([
     "Stress",
     "Anxiety",
     "Depression",
@@ -51,6 +52,8 @@ const Settings = () => {
     concerns = updatedConcerns;
   };
 
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className="flex flex-col justify-center max-w-screen-xl mx-auto my-16 w-full">
       <div className="w-full flex justify-center gap-16 items-center">
@@ -63,7 +66,10 @@ const Settings = () => {
               </div>
             </div>
             <div>
-              <MdOutlineEdit className="text-2xl mr-8 mt-4 cursor-pointer text-[#344054]" />
+              <MdOutlineEdit
+                onClick={() => setOpenModal(true)}
+                className="text-2xl mr-8 mt-4 cursor-pointer text-[#344054]"
+              />
             </div>
           </div>
           <div className="flex flex-col mx-2 mt-2 gap-4">
@@ -138,6 +144,7 @@ const Settings = () => {
           </div>
         </div>
       </div>
+      {openModal && <ProfileModal closeModal={setOpenModal} />}
     </div>
   );
 };
