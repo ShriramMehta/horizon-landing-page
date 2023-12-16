@@ -15,27 +15,3 @@ body {
   font-family: "Poppins";
   overflow-x: hidden;
 }
-
-.slider-container {
-  width: 90%;
-  margin: 0 auto;
-  height: 4px;
-  background-color: #7b3cf3;
-}
-
-.horizontal-slider {
-  width: 100%;
-}
-
-.example-thumb {
-  height: 15px;
-  width: 15px;
-  line-height: 80px;
-  background-color: #7b3cf3;
-  border-radius: 50%;
-  cursor: grab;
-  position: absolute;
-  top: -7px;
-  border: none;
-}
-

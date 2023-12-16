@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "react-phone-number-input/style.css";
-import ReactSlider from "react-slider";
+import Slider from "@mui/material/Slider";
+
 import {
   ApprochesData,
   FocusData,
@@ -14,6 +15,10 @@ const FilterModal = ({ closeModal, applyFilters }) => {
   const [languages, setLanguages] = useState([]);
   const [areaOfFocus, setAreaOfFocus] = useState([]);
   const [selectedApproaches, setSelectedApproaches] = useState([]);
+
+  const progressBarStyle = {
+    width: `${(experience / 10) * 90 + 10}%`,
+  };
 
   const handleCheckboxChange = (selectedApproach) => {
     // Check if the approach is already selected
@@ -141,7 +146,7 @@ const FilterModal = ({ closeModal, applyFilters }) => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-6 md:w-1/2">
+          <div className="flex flex-col gap-4 md:w-1/2">
             <div className="flex justify-between px-4 mb-8">
               <div className="text-[#101828] font-semibold text-lg">
                 Years of Experience
@@ -150,16 +155,17 @@ const FilterModal = ({ closeModal, applyFilters }) => {
                 {experience} years
               </div>
             </div>
-            <div className="slider-container flex justify-center items-center">
-              <ReactSlider
-                className="horizontal-slider"
-                thumbClassName="example-thumb"
-                min={1}
-                max={10}
-                value={experience}
-                onChange={(val) => setExperience(val)}
-              />
-            </div>
+            <Slider
+              className="w-full"
+              value={experience}
+              onChange={(event, val) => setExperience(val)}
+              valueLabelDisplay="auto"
+              valueLabelFormat={(val) => `${val} year${val !== 1 ? "s" : ""}`}
+              min={1}
+              max={10}
+              defaultValue={1}
+              sx={{ color: "#7b3cf3" }}
+            />
             <div className="text-sm text-[#344054] flex justify-between w-full px-4">
               <p>1 year</p>
               <p>10 year</p>
