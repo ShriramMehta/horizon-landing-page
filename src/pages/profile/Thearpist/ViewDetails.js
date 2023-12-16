@@ -69,10 +69,10 @@ const ViewDetails = () => {
     const fetchTherapistDetails = async () => {
       try {
         const response = await therapistService.getThearpistById(id);
-        console.log(response);
+        // console.log(response);
         if (response.data.success) {
           // Update the component state or perform other actions based on the therapist details
-          console.log("Therapist details:", response.data.data);
+          // console.log("Therapist details:", response.data.data);
           setTherapistData(response.data.data);
         } else {
           console.error("Failed to fetch therapist details");
@@ -85,6 +85,22 @@ const ViewDetails = () => {
     if (id) {
       fetchTherapistDetails(); // Fetch therapist details when the component mounts
     }
+
+    const ReviewDetails = async () => {
+      try {
+        const response = await therapistService.getFeedbackById(id);
+        console.log(response);
+        if (response.data.success) {
+          // Update the component state or perform other actions based on the therapist details
+          console.log("Review details:", response.data.data);
+          setTherapistData(response.data.data);
+        } else {
+          console.error("Failed to fetch Review details");
+        }
+      } catch (error) {
+        console.error("Error fetching therapist details:", error);
+      }
+    };
   }, [id]);
 
   return (

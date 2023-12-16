@@ -15,10 +15,18 @@ const getThearpistById = (Id) => {
 const getThearpistByName = (name) => {
   return axios.get(`therapists/by-name/${name}`);
 };
+
+const getFeedbackById = (Id) => {
+  return axios.get(`/feedback/${Id}`)
+
+}
+
+
 const therapistService = {
   getFilteredTherapists,
   getAllThearapists,
   getThearpistById,
+  getFeedbackById,
 };
 
 export default therapistService;
