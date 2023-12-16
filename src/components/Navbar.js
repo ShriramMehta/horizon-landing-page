@@ -26,7 +26,7 @@ const Navbar = () => {
         <div class="p-5 flex justify-between items-center">
           <Link to="/">
             <img
-              src="./images/nav_logo.jpg"
+              src="/images/nav_logo.jpg"
               class="w-20 cursor-pointer object-cover"
               alt="nav logo"
               data-scroll-to

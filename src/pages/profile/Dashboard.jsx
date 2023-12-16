@@ -55,7 +55,7 @@ const Dashboard = () => {
             </div>
             <div>
               <img
-                src="./images/beach.jpg"
+                src="/images/beach.jpg"
                 className="rounded-xl max-w-[300px] max-h-[150px] "
                 alt="mountain"
               />
@@ -73,7 +73,7 @@ const Dashboard = () => {
             </div>
             <div>
               <img
-                src="./images/Mountain.jpg"
+                src="/images/Mountain.jpg"
                 className="rounded-xl max-w-[300px] max-h-[150px] "
                 alt="mountain"
               />

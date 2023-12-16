@@ -126,7 +126,7 @@ const BookSession = () => {
           <div className="flex justify-center items-center gap-4 max-w-1/2 w-full h-5/6 shadow-lg p-4">
             <img
               className="w-36 h-36 object-cover rounded-full shadow-lg"
-              src="./images/img2.png"
+              src="/images/img2.png"
               alt="Therapist Photo"
             />
             <div className="max-w-1/2 w-full flex flex-col gap-4">
@@ -147,7 +147,7 @@ const BookSession = () => {
                 {repeatDivCal}
                 <div className="flex justify-end mx-auto">
                   <img
-                    src="./images/Chevron right.png"
+                    src="/images/Chevron right.png"
                     alt="right"
                     className="w-[100px] md:w-[30px] h-[30px]"
                   />
@@ -174,7 +174,7 @@ const BookSession = () => {
             </p>
             <div className="flex gap-4">
               <div className="flex flex-row justify-center items-center font-semibold text-[#101828]">
-                <img src="./images/currency-rupee.png" alt="rupee" />
+                <img src="/images/currency-rupee.png" alt="rupee" />
                 <span>800/hr</span>
               </div>
               <div className="max-w-[130px] w-full max-h-[30px] h-full rounded-[16px] flex justify-center items-center py-[2px] px-[6px] bg-[#F0F0FE] border-[1px] border-[##EAECF0]">
@@ -182,7 +182,7 @@ const BookSession = () => {
                   <p className="text-xs font-semibold text-[#4E139F] text-center">
                     Student Status
                   </p>
-                  <img src="./images/Check Circle.png" alt="check" />
+                  <img src="/images/Check Circle.png" alt="check" />
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ const BookSession = () => {
               disabled={selectedDateIdx === null || selectedTimeIdx === null}
             >
               Book a Session
-              <img src="./images/Chevron right white.png" alt="right" />
+              <img src="/images/Chevron right white.png" alt="right" />
             </button>
           </div>
         </div>

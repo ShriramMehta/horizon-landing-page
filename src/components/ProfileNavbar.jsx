@@ -51,10 +51,10 @@ export default function Navbar() {
 
             {isDropdownOpen && (
               <div className="absolute top-10 z-50 sm:top-14 font-normal bg-white rounded shadow-sm mt-2 py-2 w-40 md:w-52 right-0 text-sm">
-                <div className="cursor-pointer px-3 py-1.5 hover:bg-gray-200">
+                <div onClick={()=> handleNavigate('/profile/settings')} className="cursor-pointer px-3 py-1.5 hover:bg-gray-200">
                   Settings
                 </div>
-                <div className="cursor-pointer px-3 py-1.5 hover:bg-gray-200">
+                <div onClick={()=> handleNavigate('/contact')} className="cursor-pointer px-3 py-1.5 hover:bg-gray-200">
                   Help & Support
                 </div>
                 <div
