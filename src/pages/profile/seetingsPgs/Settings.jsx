@@ -29,6 +29,7 @@ const Settings = () => {
   const navigate = useNavigate();
 
   const { user, logOutUser } = useAuth();
+  // console.log(user)
   const [selectedConcerns, setSelectedConcerns] = useState([
     "Stress",
     "Anxiety",
@@ -53,6 +54,13 @@ const Settings = () => {
   };
 
   const [openModal, setOpenModal] = useState(false);
+  const [userDetails, setUserDetails] = useState({
+    fullName: user.fullName || "ABC",
+    gender: user.gender || "Female",
+    dateOfBirth: user.dateOfBirth || "05 May 2001",
+    mobileNumber: user.mobileNumber || "9898987777",
+    email: user.email || "anishakumar@gmail.com",
+  });
 
   return (
     <div className="flex flex-col justify-center max-w-screen-xl mx-auto my-16 w-full">
@@ -62,7 +70,7 @@ const Settings = () => {
             <div className=" flex flex-col gap-4 items-center">
               <div className="w-24 h-24 rounded-full bg-gray-500"></div>
               <div className="text-[#101828] text-lg font-semibold">
-                ABC DEF
+                {userDetails.fullName}
               </div>
             </div>
             <div>
@@ -76,24 +84,24 @@ const Settings = () => {
             <div className="flex gap-20 ">
               <div className="flex items-center gap-4">
                 <CiSquareInfo className="text-2xl cursor-pointer text-[#344054]" />
-                <p className="text-[#101828] text-lg font-medium">Female</p>
+                <p className="text-[#101828] text-lg font-medium">{userDetails.gender}</p>
               </div>
               <div className="flex items-center gap-4">
                 <IoCallOutline className="text-2xl cursor-pointer text-[#344054]" />
-                <p className="text-[#101828] text-lg font-medium">9898987777</p>
+                <p className="text-[#101828] text-lg font-medium">{userDetails.mobileNumber}</p>
               </div>
             </div>
             <div className="flex gap-8">
               <div className="flex items-center gap-6">
                 <CiCalendar className="text-2xl cursor-pointer text-[#344054]" />
                 <p className="text-[#101828] text-lg font-medium">
-                  05 May 2001
+                  {userDetails.dateOfBirth}
                 </p>
               </div>
               <div className="flex items-center gap-4">
                 <CiMail className="text-2xl cursor-pointer text-[#344054]" />
                 <p className="text-[#101828] text-lg font-medium">
-                  anishakumar@gmail.com
+                  {userDetails.email}
                 </p>
               </div>
             </div>
@@ -144,8 +152,13 @@ const Settings = () => {
           </div>
         </div>
       </div>
-      {openModal && <ProfileModal closeModal={setOpenModal} />}
-    </div>
+      {openModal && (
+  <ProfileModal
+    closeModal={setOpenModal}
+    userDetails={userDetails}
+    updateUserDetails={setUserDetails}
+  />
+)}    </div>
   );
 };
 
