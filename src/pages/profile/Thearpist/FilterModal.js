@@ -11,14 +11,10 @@ import {
 
 const FilterModal = ({ closeModal, applyFilters }) => {
   const [experience, setExperience] = useState(1);
-  const [gender, setGender] = useState("");
+  const [genderChoose, setGenderChoose] = useState("");
   const [languages, setLanguages] = useState([]);
   const [areaOfFocus, setAreaOfFocus] = useState([]);
   const [selectedApproaches, setSelectedApproaches] = useState([]);
-
-  const progressBarStyle = {
-    width: `${(experience / 10) * 90 + 10}%`,
-  };
 
   const handleCheckboxChange = (selectedApproach) => {
     // Check if the approach is already selected
@@ -63,7 +59,7 @@ const FilterModal = ({ closeModal, applyFilters }) => {
 
   const handleApplyFilters = () => {
     const filters = {
-      genders: gender,
+      gender: genderChoose,
       languages,
       concerns: areaOfFocus,
       yearsOfExperience: experience,
@@ -77,7 +73,7 @@ const FilterModal = ({ closeModal, applyFilters }) => {
 
   const handleClearAll = () => {
     setExperience(1);
-    setGender("");
+    setGenderChoose("");
     setLanguages([]);
     setAreaOfFocus([]);
     setSelectedApproaches([]);
@@ -181,11 +177,11 @@ const FilterModal = ({ closeModal, applyFilters }) => {
                 <div
                   key={idx}
                   className={`cursor-pointer max-w-[82px] w-full max-h-[30px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] ${
-                    gender === item
+                    genderChoose === item
                       ? "bg-[#ECE7FE] text-white border-[#4E139F]"
                       : "bg-white"
                   }`}
-                  onClick={() => setGender(item)}
+                  onClick={() => setGenderChoose(item)}
                 >
                   <p className="text-xs font-normal text-[#344054] text-center">
                     {item}

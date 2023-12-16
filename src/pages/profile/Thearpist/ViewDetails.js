@@ -169,7 +169,7 @@ const ViewDetails = () => {
           <div className="w-full flex flex-col gap-1">
             {thearpistData.approach === null
               ? ""
-              : `            <div className="text-[#101828] text-xl font-semibold">Approach</div>
+              : `<div className="text-[#101828] text-xl font-semibold">Approach</div>
 `}
             {thearpistData.approach &&
               JSON.parse(thearpistData.approach).map((item, idx, array) => (
