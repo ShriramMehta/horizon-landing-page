@@ -16,6 +16,7 @@ const Therapist = () => {
     (async () => {
       try {
         const response = await therapistService.getAllThearapists();
+        // console.log(response)
         if (response.data.success) {
           // Parse the JSON-formatted strings into arrays
           const therapistsData = response.data.data.map((item) => {
@@ -197,7 +198,7 @@ const Therapist = () => {
                     Book a Session
                   </button>
                   <button
-                    onClick={() => navigate("/viewDetails")}
+                    onClick={() => navigate(`/view-details/${item?.therapistId}`)}
                     className="my-4 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
                   >
                     View Details

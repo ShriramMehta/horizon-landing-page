@@ -58,7 +58,7 @@ const App = () => {
               element={<BookSession />}
             />
             <Route path="/confirmBooking" element={<ConfirmBooking />} />
-            <Route path="/viewDetails" element={<ViewDetails />} />
+            <Route path="/view-details/:id" element={<ViewDetails />} />
             <Route path="/therapist" element={<Therapist />} />
             <Route path="/faq" element={<Faq />} />
           <Route path="/terms-and-conditions" element={<TermsCond />} />

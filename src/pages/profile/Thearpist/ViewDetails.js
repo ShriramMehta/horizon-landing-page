@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useParams } from "react-router-dom";
 import SwiperCore from "swiper";
 import { pagination, Autoplay } from "swiper/modules";
+import therapistService from "../../../services/therapistService";
 SwiperCore.use([Autoplay]);
 
 const reviewData = [
@@ -59,38 +61,66 @@ const reviewData = [
 
 const ViewDetails = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const [thearpistData, setTherapistData] = useState([]);
+
+  useEffect(() => {
+    // Use the therapist ID obtained from the URL (id) to fetch therapist details
+    const fetchTherapistDetails = async () => {
+      try {
+        const response = await therapistService.getThearpistById(id);
+        console.log(response);
+        if (response.data.success) {
+          // Update the component state or perform other actions based on the therapist details
+          console.log("Therapist details:", response.data.data);
+          setTherapistData(response.data.data);
+        } else {
+          console.error("Failed to fetch therapist details");
+        }
+      } catch (error) {
+        console.error("Error fetching therapist details:", error);
+      }
+    };
+
+    if (id) {
+      fetchTherapistDetails(); // Fetch therapist details when the component mounts
+    }
+  }, [id]);
+
   return (
-    <div className="max-w-screen-lg mx-auto h-full felx flex-col justify-center items-center px-10">
-      <div className="flex flex-col lg:flex-row w-full gap-12 justify-center">
+    <div className="max-w-screen-xl mx-auto h-full felx flex-col justify-center items-center p-4">
+      <div className="flex flex-col lg:flex-row w-full gap-12 justify-center shadow-xl p-4 px-8 rounded-xl">
         <div className="w-full flex flex-col gap-4 justify-center">
           <div className="w-full flex flex-col justify-center items-center relative">
             <img
-              src="./images/FrameBg.png"
+              src="/images/FrameBg.png"
               alt="frame"
               className="relative w-full h-full"
             />
-            <div className="flex flex-col absolute top-[15px] md:top-[80px] lg:top-[30px] lg:left-[140px] max-w-[300px] lg:max-w-[400px] max-h-[150px] gap-1">
+            <div className="flex flex-col items-center absolute top-[15px] md:top-[80px] lg:top-[30px] mx-auto max-w-[300px] lg:max-w-[400px] max-h-[150px] gap-1">
               <div className="text-[#101828] font-semibold text-xl text-center">
-                Shivangi Khatter
+                {thearpistData.name}
               </div>
               <div className="text-[#475467] text-lg text-center">
-                4+ years of experience
+                {thearpistData.yearsOfExperience} + years of experience
               </div>
               <div className="flex justify-center max-w-60">
                 <img
-                  src="./images/Main Therapist Pic.png"
+                  src={thearpistData.imgUrl}
                   alt="img1"
-                  className="w-5/6 md:w-full lg:h-auto lg:object-cover"
+                  className="object-cover rounded-full w-40 h-40"
                 />
               </div>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row mt-[8rem] md:mt-[6rem] lg:mt-[8rem] gap-8 w-full">
-            <div className="flex flex-col w-full">
+          <div className="flex flex-col items-center lg:flex-row mt-[8rem] md:mt-[6rem] lg:mt-[4rem] gap-8 w-full">
+            <div className="flex flex-col w-1/2">
               <div className="text-[#101828] font-semibold text-xl">Bio</div>
-              <div className="text-[#344054] text-base">Gender: Female</div>
               <div className="text-[#344054] text-base">
-                Pronouns: She/her/hers
+                Gender: {thearpistData.gender}
+              </div>
+              <div className="text-[#344054] text-base">
+                Pronouns: {thearpistData.genderPronoun}
               </div>
             </div>
             <div className="flex flex-col w-full">
@@ -98,7 +128,7 @@ const ViewDetails = () => {
                 Education
               </div>
               <div className="text-[#344054] text-base">
-                MA In Clinical Psychology, PHD in Psychology/Counselling
+                {thearpistData.educationalBg}
               </div>
             </div>
           </div>
@@ -108,23 +138,46 @@ const ViewDetails = () => {
             <div className="text-[#101828] text-xl font-semibold">
               All Specialisations
             </div>
-            <div className="text-[#344054] text-lg">
-              Anxiety, Depression, Anger Management, Grief and Loss,
-              Relationship and Family Issues, Career and Work Issues,
-              Self-Esteem and Self-Worth, Stress and Burnout
+            <div className="flex flex-row gap-2 justify-start items-center max-w-5/6 flex-wrap">
+              {thearpistData.concernSpecialisation &&
+                JSON.parse(thearpistData.concernSpecialisation).map(
+                  (item, idx, array) => (
+                    <div key={idx} className="text-[#344054] text-lg">
+                      {item}
+                      {idx < array.length - 1 && ","}
+                    </div>
+                  )
+                )}
             </div>
           </div>
           <div className="w-full flex flex-col gap-1">
-            <div className="text-[#101828] text-xl font-semibold">Approach</div>
-            <div className="text-[#344054] text-lg">
-              CBT, Humanistic, Mindfulness Based
-            </div>
+            {thearpistData.approach === null
+              ? ""
+              : `            <div className="text-[#101828] text-xl font-semibold">Approach</div>
+`}
+            {thearpistData.approach &&
+              JSON.parse(thearpistData.approach).map((item, idx, array) => (
+                <div key={idx} className="text-[#344054] text-lg">
+                  {item}
+                  {idx < array.length - 1 && ","}
+                </div>
+              ))}
           </div>
           <div className="w-full flex flex-col gap-1">
             <div className="text-[#101828] text-xl font-semibold">
               Languages
             </div>
-            <div className="text-[#344054] text-lg">English, Hindi</div>
+            <div className="flex flex-row gap-2 justify-start items-center">
+              {thearpistData.languageFluency &&
+                JSON.parse(thearpistData.languageFluency).map(
+                  (item, idx, array) => (
+                    <div key={idx} className="text-[#344054] text-lg">
+                      {item}
+                      {idx < array.length - 1 && ","}
+                    </div>
+                  )
+                )}
+            </div>
           </div>
           <div className="w-full">
             <button
@@ -132,7 +185,7 @@ const ViewDetails = () => {
               className="text-center bg-primaryIndigo hover-bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center w-full md:w-auto"
             >
               Book a Session
-              <img src="./images/Chevron right white.png" alt="right" />
+              <img src="/images/Chevron right white.png" alt="right" />
             </button>
           </div>
         </div>
@@ -141,11 +194,11 @@ const ViewDetails = () => {
       <div className="flex flex-col">
         <div className="flex w-full items-center gap-2 text-[#101828] text-xl font-semibold">
           <span>
-            <img src="./images/star-01.png" alt="star" />
+            <img src="/images/star-01.png" alt="star" />
           </span>
           4.9
           <span>
-            <img src="./images/Status Dot.png" alt="star" />
+            <img src="/images/Status Dot.png" alt="star" />
           </span>
           20 Reviews
         </div>
@@ -189,7 +242,7 @@ const ViewDetails = () => {
                   </div>
                   <div className="flex gap-2 items-center">
                     <img
-                      src="./images/star-01 (1).png"
+                      src="/images/star-01 (1).png"
                       alt="star"
                       className="w-5 h-auto object-cover"
                     />
