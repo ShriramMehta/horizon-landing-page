@@ -3,7 +3,7 @@ import React from "react";
 const TermsCond = () => {
   return (
     <section className="flex flex-col justify-center text-justify items-center mx-auto p-6">
-      <h1 className="text-3xl my-6 font-heading font-bold">
+      <h1 className="text-3xl mb-6  font-heading font-bold">
         Terms and conditions
       </h1>
       <h6 className="text-md my-4 font-semibold text-xl">For All users</h6>

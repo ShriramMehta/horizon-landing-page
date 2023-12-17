@@ -4,11 +4,11 @@ import { useNavigate } from "react-router";
 const Faq = () => {
   const navigate = useNavigate()
   return (
-    <div className="mx-auto my-24 gap-4 max-w-screen-xl flex flex-col justify-center items-center w-full">
-      <div className="text-[#101828] font-semibold text-3xl">
+    <div className="mx-auto mb-24 my-6 gap-4 max-w-screen-xl flex flex-col justify-center items-center w-full">
+      <div className="px-4 text-[#101828] font-semibold text-3xl">
         We’re here to help
       </div>
-      <div className="text-center text-[#667085] text-xl">
+      <div className="px-4 text-center text-[#667085] text-xl">
         Please find the most commonly asked questions <br />
         answered below! If you have more questions you can always reach out to
         us!
@@ -18,7 +18,7 @@ const Faq = () => {
           Contact us
         </button>
       </div>
-      <div className="mt-4 mx-12 flex flex-col text-justify justify-center gap-12 items-center">
+      <div className="mt-4 mx-6 md:mx-12 flex flex-col text-justify justify-center gap-12 items-center">
         <div className="text-lg flex flex-col gap-2">
           <h1 className="text-[#000000] font-semibold text-xl">
             How to book a therapy session?{" "}

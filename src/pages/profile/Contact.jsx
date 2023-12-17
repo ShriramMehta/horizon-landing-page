@@ -5,10 +5,10 @@ import { CiMail } from "react-icons/ci";
 
 const Contact = () => {
   return (
-    <div className="max-w-screen-xl w-full flex flex-col justify-center items-center mx-auto">
+    <div className="mb-10 max-w-screen-xl w-full flex flex-col justify-center items-center mx-auto">
       <div className="mb-4 mt-2 text-2xl text-black font-bold">Contact Us</div>
-      <div className="w-full flex justify-center items-center gap-8 m-4">
-        <div className="w-[600px] shadow-xl flex flex-col gap-4 justify-center p-8 rounded-xl">
+      <div className="mx-auto w-full flex flex-col md:flex-row justify-center items-center gap-8 m-4 ">
+        <div className="w-[400px] md:w-[600px] shadow-xl flex flex-col gap-4 justify-center p-8 rounded-xl">
           <div className="text-black-400 font-semibold text-xl my-2">
             Write to us and we will reach out to you
           </div>
@@ -21,7 +21,7 @@ const Contact = () => {
             className="w-full rounded-xl"
           />{" "}
         </div>
-        <div className="w-[600px] shadow-xl flex flex-col gap-4 justify-center p-8 rounded-xl">
+        <div className="w-[400px] md:w-[600px] shadow-xl flex flex-col gap-4 justify-center p-8 rounded-xl">
           <div className="text-black-400 font-semibold text-xl my-2">
             Support
           </div>

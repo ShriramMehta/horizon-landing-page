@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full mb-2">
+    <div className=" max-w-screen-xl w-full mb-2">
       <div className="flex flex-row justify-between items-center">
         <h1 className="font-semibold text-2xl sm:text-4xl  sm:mb-0">
           {/* Hi, {user?.user?.name.split(" ")[0]}! */}

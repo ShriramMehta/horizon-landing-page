@@ -64,9 +64,9 @@ const Settings = () => {
 
   return (
     <div className="flex flex-col justify-center max-w-screen-xl mx-auto my-16 w-full">
-      <div className="w-full flex justify-center gap-16 items-center">
-        <div className="flex flex-col justify-center gap-4 max-w-[550px] rounded-2xl px-4 py-2 h-[400px]  bg-gradient-to-t from-[#EDE9FF] via-[#E8DBF9] to-[#E7EDFF]">
-          <div className="flex justify-between gap-24 mb-6">
+      <div className="w-full flex flex-col md:flex-row justify-center gap-16 items-center">
+        <div className="overflow-x-auto flex flex-col justify-center gap-4 max-w-[380px] md:max-w-[550px] w-full rounded-2xl p-4 h-auto md:h-[400px]  bg-gradient-to-t from-[#EDE9FF] via-[#E8DBF9] to-[#E7EDFF]">
+          <div className="flex justify-between md:gap-24 md:mb-6">
             <div className=" flex flex-col gap-4 items-center">
               <div className="w-24 h-24 rounded-full bg-gray-500"></div>
               <div className="text-[#101828] text-lg font-semibold">
@@ -80,27 +80,27 @@ const Settings = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col mx-2 mt-2 gap-4">
-            <div className="flex gap-20 ">
-              <div className="flex items-center gap-4">
-                <CiSquareInfo className="text-2xl cursor-pointer text-[#344054]" />
-                <p className="text-[#101828] text-lg font-medium">{userDetails.gender}</p>
+          <div className="flex flex-col mx-2 mt-2 gap-4 max-w-[200px] w-full">
+            <div className="flex gap-10 md:gap-20 ">
+              <div className="flex items-center gap-4 max-w-[200px]">
+                <CiSquareInfo className="text-xl md:text-2xl cursor-pointer text-[#344054]" />
+                <p className="text-[#101828] text-base md:text-lg font-medium">{userDetails.gender}</p>
               </div>
-              <div className="flex items-center gap-4">
-                <IoCallOutline className="text-2xl cursor-pointer text-[#344054]" />
-                <p className="text-[#101828] text-lg font-medium">{userDetails.mobileNumber}</p>
+              <div className="flex items-center gap-4 max-w-[200px]">
+                <IoCallOutline className="text-xl md:text-2xl cursor-pointer text-[#344054]" />
+                <p className="text-[#101828] text-base md:text-lg font-medium">{userDetails.mobileNumber}</p>
               </div>
             </div>
-            <div className="flex gap-8">
-              <div className="flex items-center gap-6">
-                <CiCalendar className="text-2xl cursor-pointer text-[#344054]" />
-                <p className="text-[#101828] text-lg font-medium">
+            <div className="flex gap-4 md:gap-8 ">
+              <div className="flex items-center gap-4 md:gap-4">
+                <CiCalendar className="text-3xl md:text-5xl cursor-pointer text-[#344054]" />
+                <p className="text-[#101828] text-sm md:text-lg font-medium">
                   {userDetails.dateOfBirth}
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <CiMail className="text-2xl cursor-pointer text-[#344054]" />
-                <p className="text-[#101828] text-lg font-medium">
+                <CiMail className="text-xl md:text-2xl cursor-pointer text-[#344054]" />
+                <p className="text-[#101828] text-base md:text-lg font-medium">
                   {userDetails.email}
                 </p>
               </div>

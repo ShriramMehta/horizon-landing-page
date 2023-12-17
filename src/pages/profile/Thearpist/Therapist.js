@@ -106,8 +106,8 @@ const Therapist = () => {
   };
 
   return (
-    <div className="mx-auto p-3 max-w-screen-xl h-full flex flex-row gap-20 mx-auto items-center">
-      <div className="p-3 flex flex-row gap-4 w-1/4 mb-24 pb-24">
+    <div className="mx-auto p-3 max-w-screen-xl h-full flex flex-col md:flex-row gap-10 justify-center md:gap-20 mx-auto items-center">
+      <div className="p-3 flex flex-row gap-4 w-full md:w-1/4 md:mb-24 md:pb-24">
         <div className="relative">
           <input
             placeholder="Search Thearpist"
@@ -139,7 +139,7 @@ const Therapist = () => {
               className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
             >
               <div className="flex flex-col">
-                <div className="py-8 flex justify-center items-center gap-12 max-w-1/2 w-full h-5/6 p-4">
+                <div className="py-8 flex justify-center items-center gap-6 md:gap-12 max-w-1/2 w-full h-5/6 p-4">
                   <img
                     className="w-40 h-40 object-cover rounded-xl"
                     src={item?.imgUrl}
@@ -168,8 +168,8 @@ const Therapist = () => {
                   </div>
                 </div>
                 <div className="px-2 pb-8">
-                  <div className="flex gap-4 items-center">
-                    <h1 className="text-black font-semibold mx-8 text-xl">
+                  <div className="flex md:gap-4 items-center">
+                    <h1 className="text-black font-semibold mx-8 text-xl w-1/6">
                       Expertise:
                     </h1>
                     <div className="ml-10 flex flex-wrap gap-2 w-full">

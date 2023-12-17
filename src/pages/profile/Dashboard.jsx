@@ -20,8 +20,8 @@ const Dashboard = () => {
     <div className="max-w-screen-xl flex flex-col">
       <div>
         <div>Hi Username!</div>
-        <div className="w-full bg-[#D0BFFF] my-8 rounded-xl px-12 py-8 items-center flex justify-between">
-          <div className="flex flex-col gap-4 mx-auto ">
+        <div className="w-full bg-[#D0BFFF] my-8 rounded-xl px-6 md:px-12 py-8 items-center flex flex-col md:flex-row justify-between">
+          <div className="flex flex-col gap-4 mx-auto  ">
             <div className="text-xl font-bold text-[#101828]">
               Take your first step today!
             </div>
@@ -33,7 +33,7 @@ const Dashboard = () => {
             onClick={() => {
               navigate("/therapist");
             }}
-            className="mx-auto flex gap-4 justify-center items-center text-white cursor-pointer bg-[#7B3CF3] px-8 py-2 font-medium rounded-xl"
+            className="mt-4 md:mt-0 mx-auto flex gap-4 justify-center items-center text-white cursor-pointer bg-[#7B3CF3] px-8 py-2 font-medium rounded-xl"
           >
             <p>See my therapist </p>
             <span className="text-2xl"> {" > "}</span>
@@ -42,13 +42,13 @@ const Dashboard = () => {
       </div>
       <div>
         <div>Flow for you!</div>
-        <div className="mt-4 flex justify-center gap-12 w-full">
-          <div className="bg-[#EEF296] flex justify-between gap-16 items-center py-6 px-4 rounded-xl w-1/2">
+        <div className="mt-4 flex flex-col md:flex-row justify-center gap-12 w-full">
+          <div className="bg-[#EEF296] flex justify-between gap-4 md:gap-16 items-center py-6 px-4 rounded-xl w-full md:w-1/2">
             <div className="flex flex-col gap-4">
               <MdOutlineWbSunny />
-              <p className="text-xl font-bold">
+              <p className="text-base md:text-xl font-bold">
                 Anxiety Relief Exercises
-                <p className="text-lg font-medium text-[#383f4d]">
+                <p className="text-base md:text-lg font-medium text-[#383f4d]">
                   Quick & Powerful relationships
                 </p>
               </p>
@@ -56,17 +56,17 @@ const Dashboard = () => {
             <div>
               <img
                 src="/images/beach.jpg"
-                className="rounded-xl max-w-[300px] max-h-[150px] "
+                className="rounded-xl max-w-[200px] md:max-w-[300px] max-h-[150px] "
                 alt="mountain"
               />
             </div>
           </div>
-          <div className="bg-[#DFCCFB] flex justify-between gap-16 items-center py-6 px-4 rounded-xl w-1/2">
+          <div className="bg-[#DFCCFB] flex justify-between gap-4 md:gap-16 items-center py-6 px-4 rounded-xl w-full md:w-1/2">
             <div className="flex flex-col gap-4">
               <FiMoon />
-              <p className="text-xl font-bold">
+              <p className="text-base md:text-xl font-bold">
                 Conflict Resolution
-                <p className="text-lg font-medium text-[#383f4d]">
+                <p className="text-base md:text-lg font-medium text-[#383f4d]">
                   Build healthy relationships
                 </p>
               </p>
@@ -74,7 +74,7 @@ const Dashboard = () => {
             <div>
               <img
                 src="/images/Mountain.jpg"
-                className="rounded-xl max-w-[300px] max-h-[150px] "
+                className="rounded-xl max-w-[200px] md:max-w-[300px] max-h-[150px] "
                 alt="mountain"
               />
             </div>
@@ -97,13 +97,13 @@ const Dashboard = () => {
             <span className="text-2xl"> {" > "}</span>
           </div>
         </div> */}
-        <div className="shadow-xl w-full bg-[#EEEDED] my-8 rounded-xl px-8 py-8 items-center flex justify-center">
+        <div className="mx-auto shadow-xl w-full bg-[#EEEDED] my-8 rounded-xl px-8 py-8 items-center flex justify-center">
           <div className="flex flex-col gap-4 w-full">
             <div className="text-xl font-bold text-[#101828] w-full text-left">
               How are you feeling today?
             </div>
             {showEmotionContent ? (
-            <div className="mt-4 flex justify-center mx-auto gap-16 items-center w-full">
+            <div className="mt-4 flex flex-wrap justify-center mx-auto gap-16 items-center w-full">
               <div className="flex flex-col justify-center items-center gap-4">
                 <RiEmotionHappyLine onClick={()=>{setSelectedEmotion("Ecstatic"); setShowEmotionContent(false)}} className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300" />
                 <p>Ecstatic</p>
@@ -170,7 +170,7 @@ const Dashboard = () => {
                 )}
                 <button
                   onClick={handleHelloWorldClick}
-                  className="absolute right-0 top-[-2rem] text-white  cursor-pointer bg-[#7B3CF3] w-[20px] h-[20px] font-medium rounded-full"
+                  className="absolute right-0 top-[0rem] md:top-[-2rem] text-white  cursor-pointer bg-[#7B3CF3] w-[20px] h-[20px] font-medium rounded-full"
                 >
                  X
                 </button>

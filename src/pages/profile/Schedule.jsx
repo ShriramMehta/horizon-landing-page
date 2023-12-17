@@ -19,28 +19,28 @@ const Schedule = () => {
   };
   return (
     <div className="flex flex-col gap-16 max-w-screen-xl mx-auto mb-8">
-      <div className="flex flex-col gap-8 mx-6">
+      <div className="flex flex-col gap-8 mx-2 md:mx-6">
         <h1 className="text-[#101828] text-2xl font-semibold">
           Upcoming Sessions
         </h1>
-        <div className="py-4 px-8 flex gap-4 flex-col p-4 bg-white border-1 border-gray-300 border rounded-xl shadow-lg">
+        <div className="py-4 px-4 md:px-8 flex gap-4 flex-col p-4 bg-white border-1 border-gray-300 border rounded-xl shadow-lg">
           <div className="bg-[#ECFDF3] rounded-full flex flex-row justify-center gap-0 items-center max-w-fit py-1 px-1">
             <BsDot className="text-3xl text-[#027A48] font-bold " />
             <p className="text-[#027A48] mr-2 font-bold">Upcoming</p>
           </div>
-          <div className="flex gap-12 items-center mt-2">
+          <div className="flex gap-6 md:gap-12 items-center mt-2">
             <div>
               <img
-                className="w-28 h-28 object-cover rounded-full shadow-lg"
+                className="w-16 h-16 md:w-28 md:h-28 object-cover rounded-full shadow-lg"
                 src="/images/img2.png"
                 alt="Therapist Photo"
               />
             </div>
             <div className="flex flex-col gap-2 justify-center">
-              <h1 className="text-[#101828] text-xl font-semibold">
+              <h1 className="text-[#101828] text-base md:text-xl font-semibold">
                 Session with Shivangi Khatter
               </h1>
-              <h2 className="text-[#475467] text-xl font-medium">
+              <h2 className="text-[#475467] text-base md:text-xl font-medium">
                 Stress, Depression, Anxiety, Sleep Help
               </h2>
             </div>
@@ -48,24 +48,24 @@ const Schedule = () => {
           <div className="flex gap-4 items-center mt-4">
             <div className="flex gap-2 items-center">
               <CiCalendar className="text-[#344054] text-2xl" />
-              <div className="text-[#040000] font-semibold text-lg">
+              <div className="text-[#040000] font-semibold text-base md:text-lg">
                 Sat, 17 June
               </div>
             </div>
-            <div className="text-[#475467] font-medium text-lg">
+            <div className="text-[#475467] font-medium text-base md:text-lg">
               Afternoon, 12pm
             </div>
           </div>
           <div className="flex gap-4 items-center">
             <div className="flex gap-2 items-center">
               <FiClock className="text-[#344054] text-2xl" />
-              <div className="text-[#040000] font-semibold text-lg">1 hour</div>
+              <div className="text-[#040000] font-semibold text-base md:text-lg">1 hour</div>
             </div>
-            <div className="text-[#475467] font-medium text-lg">
+            <div className="text-[#475467] font-medium text-base md:text-lg">
               Online via Google Meet
             </div>
           </div>
-          <div className="flex gap-4 items-center mt-4">
+          <div className="flex flex-col md:flex-row gap-4 items-center  mt-4">
             <button className="flex gap-4 py-3 px-4 border border-1 border-gray-300 rounded-xl items-center ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,39 +99,39 @@ const Schedule = () => {
                   d="M185.788 0H59.984v59.984h84.838v45.338l58.52-48.49V17.555c0-9.69-7.864-17.554-17.554-17.554"
                 />
               </svg>
-              <div className="text-[#000000] text-lg font-normal">
+              <div className="text-[#000000] text-base md:text-lg font-normal">
                 Copy Meeting Link
               </div>
             </button>{" "}
             <button className="flex gap-4 py-3 px-4 border border-1 border-gray-300 rounded-xl items-center ">
               <TbCopy className="text-[#475467] text-3xl" />
-              <div className="text-[#000000] text-lg font-normal">
+              <div className="text-[#000000] text-base md:text-lg font-normal">
                 Copy Meeting Link
               </div>
             </button>
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 mx-6">
+      <div className="flex flex-col gap-8 mx-2 md:mx-6">
         <h1 className="text-[#101828] text-2xl font-semibold">
           Previous Sessions
         </h1>
-        <div className="w-full flex flex-row items-center justify-center gap-8">
-          <div className="py-4 px-8 max-w-[600px] flex gap-4 flex-col p-4 bg-white border-1 border-gray-300 border rounded-xl shadow-lg">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="py-4 px-4 md:px-8 max-w-[600px] flex gap-4 flex-col p-4 bg-white border-1 border-gray-300 border rounded-xl shadow-lg">
             <div className="bg-[#FFFAEB] rounded-full flex flex-row justify-center gap-0 items-center max-w-fit py-2 px-2">
               <p className="text-[#DC6803] font-bold">Cancelled</p>
             </div>
             <div className="flex gap-8 items-center mt-2">
               <img
-                className="w-28 h-28 object-cover rounded-full shadow-lg"
+                className="w-16 h-16 md:w-28 md:h-28 object-cover rounded-full shadow-lg"
                 src="/images/img2.png"
                 alt="Therapist Photo"
               />
               <div className="flex flex-col gap-2 justify-center">
-                <h1 className="text-[#101828] text-xl font-semibold">
+                <h1 className="text-[#101828] text-base md:text-xl font-semibold">
                   Session with Shivangi Khatter
                 </h1>
-                <h2 className="text-[#475467] text-xl font-medium">
+                <h2 className="text-[#475467] text-base md:text-xl font-medium">
                   Stress, Depression, Anxiety, Sleep Help
                 </h2>
               </div>
@@ -139,27 +139,27 @@ const Schedule = () => {
             <div className="flex gap-4 items-center mt-4">
               <div className="flex gap-2 items-center">
                 <CiCalendar className="text-[#344054] text-2xl" />
-                <div className="text-[#040000] font-semibold text-lg">
+                <div className="text-[#040000] font-semibold text-base md:text-lg">
                   Sat, 17 June
                 </div>
               </div>
-              <div className="text-[#475467] font-medium text-lg">
+              <div className="text-[#475467] font-medium text-base md:text-lg">
                 Afternoon, 12pm
               </div>
             </div>
             <div className="flex gap-4 items-center mb-4">
               <div className="flex gap-2 items-center">
                 <FiClock className="text-[#344054] text-2xl" />
-                <div className="text-[#040000] font-semibold text-lg">
+                <div className="text-[#040000] font-semibold text-base md:text-lg">
                   1 hour
                 </div>
               </div>
-              <div className="text-[#475467] font-medium text-lg">
+              <div className="text-[#475467] font-medium text-base md:text-lg">
                 Online via Google Meet
               </div>
             </div>
           </div>
-          <div className="py-4 px-8 max-w-[600px] flex gap-4 flex-col p-4 bg-white border-1 border-gray-300 border rounded-xl shadow-lg">
+          <div className="py-4 px-4 md:px-8 max-w-[600px] flex gap-4 flex-col p-4 bg-white border-1 border-gray-300 border rounded-xl shadow-lg">
             {showFeedback ? (
               <div className="flex flex-col gap-4 justify-center">
                 <div className="flex justify-between gap-16 items-center">
@@ -238,15 +238,15 @@ const Schedule = () => {
                 </div>
                 <div className="flex gap-8 items-center mt-2">
                   <img
-                    className="w-28 h-28 object-cover rounded-full shadow-lg"
+                    className="w-16 h-16 md:w-28 md:h-28 object-cover rounded-full shadow-lg"
                     src="/images/img2.png"
                     alt="Therapist Photo"
                   />
                   <div className="flex flex-col gap-2 justify-center">
-                    <h1 className="text-[#101828] text-xl font-semibold">
+                    <h1 className="text-[#101828] text-base md:text-xl font-semibold">
                       Session with Shivangi Khatter
                     </h1>
-                    <h2 className="text-[#475467] text-xl font-medium">
+                    <h2 className="text-[#475467] text-base md:text-xl font-medium">
                       Stress, Depression, Anxiety, Sleep Help
                     </h2>
                   </div>
@@ -254,22 +254,22 @@ const Schedule = () => {
                 <div className="flex gap-4 items-center mt-4">
                   <div className="flex gap-2 items-center">
                     <CiCalendar className="text-[#344054] text-2xl" />
-                    <div className="text-[#040000] font-semibold text-lg">
+                    <div className="text-[#040000] font-semibold text-base md:text-lg">
                       Sat, 17 June
                     </div>
                   </div>
-                  <div className="text-[#475467] font-medium text-lg">
+                  <div className="text-[#475467] font-medium text-base md:text-lg">
                     Afternoon, 12pm
                   </div>
                 </div>
                 <div className="flex gap-4 items-center mb-4">
                   <div className="flex gap-2 items-center">
                     <FiClock className="text-[#344054] text-2xl" />
-                    <div className="text-[#040000] font-semibold text-lg">
+                    <div className="text-[#040000] font-semibold text-base md:text-lg">
                       1 hour
                     </div>
                   </div>
-                  <div className="text-[#475467] font-medium text-lg">
+                  <div className="text-[#475467] font-medium text-base md:text-lg">
                     Online via Google Meet
                   </div>
                 </div>
