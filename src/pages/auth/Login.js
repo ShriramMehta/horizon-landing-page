@@ -45,9 +45,9 @@ const Login = () => {
               <p className="text-base text-gray-500 font-medium">
                 We are happy to have you back!
               </p>
-              {/* <p className="mt-6 mb-3">
+              <p className="mt-6 mb-3">
                 <GoogleSignupButton />
-              </p> */}
+              </p>
             </div>
             {/* <div className="flex justify-center items-center gap-1 w-full">
               <div className="w-full h-[1px] bg-gray-300"></div>
@@ -64,9 +64,6 @@ const Login = () => {
               </button>
             </div> */}
 
-            <div className="w-full mt-6">
-              <button onClick={handleSubmit}>Sign In</button>
-            </div>
             <div className="flex flex-col justify-center items-center mt-5">
               <p className="text-xs text-gray-600 font-medium">
                 Don't have an account?{" "}
@@ -83,3 +80,8 @@ const Login = () => {
 };
 
 export default Login;
+{
+  /* <div className="w-full mt-6">
+  <button onClick={handleSubmit}>Sign In</button>
+</div>; */
+}

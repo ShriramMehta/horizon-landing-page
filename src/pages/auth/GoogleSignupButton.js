@@ -2,9 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
-import PhoneModal from "../../components/Modals/OnboardingModal";
+import { useNavigate } from "react-router-dom";
+import PhoneModal from "../../components/Modals/PhoneModal";
+import userService from "../../services/userService";
+import { useAuth } from "../../hooks/useAuth";
+import OnboardingModal from "../../components/Modals/OnboardingModal";
 
 const GoogleSignInButton = ({ handleCallbackResponse }) => {
   useEffect(() => {
@@ -30,53 +32,105 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
 
 const GoogleSignupButton = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({});
   const [error, setError] = useState(null);
-  const [openModal, setOpenModal] = useState(false);
-
-  function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID Token " + response.credential);
+  const [openPhoneModal, setOpenPhoneModal] = useState(false);
+  const [googleModal, setGoogleModal] = useState(true);
+  const [openInfoModal, setOpenInfoModal] = useState(false);
+  const { user, updateUser } = useAuth();
+  const [userObject, setUserObject] = useState([]);
+  const [clientId, setClientId] = useState();
+  const [token, setToken] = useState();
+  const handleCallbackResponse = async (response) => {
     var userObject = jwtDecode(response.credential);
     console.log(userObject);
-    setUser(userObject);
+    setUserObject(userObject);
 
-    // User information:
-    const name = userObject.name;
-    const email = userObject.email;
-    const imageUrl = userObject.picture;
+    try {
+      const res = await userService.getAuthStatus(userObject?.email);
+      console.log(res, res?.data?.success);
+      if (res?.data?.success) {
+        navigate("/signin");
+        updateUser({
+          email: res?.data?.data?.email,
+          type: res?.data?.data?.userType,
+          token: res?.data?.token,
+          id: res?.data?.data?.clientId,
+        });
+      } else {
+        setGoogleModal(false);
+        setOpenPhoneModal(true);
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setGoogleModal(false);
+    }
+  };
 
-    console.log(name, email, imageUrl);
+  const handleCreateClient = async (data) => {
+    console.log(data, userObject);
 
-    // Check if the user is already signed up based on email
-    // ... (previous code)
+    const res = await userService.createClient({
+      name: userObject?.name,
+      email: userObject?.email,
+      phone: data,
+      imageUrl: userObject?.picture,
+      isWebsite: true,
+    });
+    console.log(res);
+    if (res?.data?.success) {
+      setClientId(res?.data?.data?.clientId);
+      setToken(res?.data?.token);
+    } else {
+      // setOpenPhoneModal(true);
+    }
+    setOpenPhoneModal(false);
+    setOpenInfoModal(true);
+  };
+  const handleOnboardingData = async (data) => {
+    console.log(data, userObject);
+    const res = await userService.addOnboardingData({
+      clientType: data?.student,
+      email: userObject?.email,
+      birthDate: data?.date,
+      gender: data?.selectedGender,
+      concerns: data?.selectedConcerns,
+    });
 
-    // axios
-    //   .get(
-    //     `${process.env.REACT_APP_BACKEND_URL}/client/isAuthCompleted/${email}`
-    //   )
-    //   .then((response) => {
-    //     if (response && response.data && response.data.success) {
-    //       // User is already signed up, navigate to home page
-    //       navigate("/signin");
-    //     } else {
-    //       // User needs to sign up
-    //       console.log("Signup is necessary");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error(
-    //       "Error checking user signup status:",
-    //       error.response ? error.response.data.error : error.message
-    //     );
-    //   });
-    setOpenModal(true)
-  }
+    console.log(res);
+    if (res?.data?.success) {
+      updateUser({
+        type: data?.student,
+        email: userObject?.email,
+        token: token,
+        id: clientId,
+      });
+      navigate("/profile");
+    } else {
+      // setOpenPhoneModal(true);
+    }
+    setOpenPhoneModal(false);
+    setOpenInfoModal(true);
+  };
 
   return (
     <div>
       {error && <p>{error}</p>}
-      <GoogleSignInButton handleCallbackResponse={handleCallbackResponse} />
-      {openModal && <PhoneModal closeModal={setOpenModal} />}
+      {googleModal && (
+        <GoogleSignInButton handleCallbackResponse={handleCallbackResponse} />
+      )}
+      {openPhoneModal && (
+        <PhoneModal
+          closeModal={setOpenPhoneModal}
+          handleCreateClient={handleCreateClient}
+        />
+      )}
+      {openInfoModal && (
+        <OnboardingModal
+          closeModal={setOpenInfoModal}
+          handleOnboardingData={handleOnboardingData}
+        />
+      )}
     </div>
   );
 };

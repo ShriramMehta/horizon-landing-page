@@ -40,7 +40,7 @@ const Dashboard = () => {
           </button>
         </div>
       </div>
-      <div>
+      {/* <div>
         <div>Flow for you!</div>
         <div className="mt-4 flex flex-col md:flex-row justify-center gap-12 w-full">
           <div className="bg-[#EEF296] flex justify-between gap-4 md:gap-16 items-center py-6 px-4 rounded-xl w-full md:w-1/2">
@@ -80,7 +80,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="mt-4">
         {/* <div className="mt-4">Thoughts for you!</div>
         <div className="w-full bg-[#DFCCFB] my-8 rounded-xl px-12 py-8 items-center flex justify-between">

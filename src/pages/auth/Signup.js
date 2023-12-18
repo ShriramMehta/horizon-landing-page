@@ -26,9 +26,9 @@ const Signup = () => {
                 Your wellness journey starts <br /> here. Let's begin!
               </p>
               <p className="mt-10 mb-3">
-                {/* <GoogleSignupButton /> */}
-                <button onClick={()=> setOpenModal(true)}>Signup</button>
-                {openModal && <OnboardingModal closeModal={setOpenModal} />}
+                <GoogleSignupButton />
+                {/* <button onClick={() => setOpenModal(true)}>Signup</button>
+                {openModal && <OnboardingModal closeModal={setOpenModal} />} */}
               </p>
             </div>
             <div className="flex flex-col justify-start items-center mt-2 text-left">

@@ -3,6 +3,14 @@ import axios from "./axios";
 const updateUserDetails = (user, data) => {
   return axios.put(`/users/edit/user/${user?.user?.userId}`, data);
 };
+const addOnboardingData = (data) => {
+  console.log(data);
+  return axios.put(`/client/onboard`, data);
+};
+const createClient = (user) => {
+  console.log(user);
+  return axios.post(`/client/create`, user);
+};
 
 const getUserData = (user) => {
   return axios.get(`/users/${user?.user?.userId}?email=${user?.user?.email}`);
@@ -24,10 +32,17 @@ const updateUserSecurityPin = (data, user) => {
   });
 };
 
+const getAuthStatus = (email) => {
+  return axios.get(`/client/isAuthCompletedWebsite/${email}`);
+};
+
 const userService = {
   updateUserDetails,
   getUserData,
   updateUserPassword,
   updateUserSecurityPin,
+  getAuthStatus,
+  createClient,
+  addOnboardingData,
 };
 export default userService;
