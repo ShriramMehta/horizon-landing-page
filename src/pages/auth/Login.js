@@ -1,39 +1,15 @@
 // Login.js
 import React from "react";
 import GoogleSignupButton from "./GoogleSignupButton";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import Button from "../../components/global/Button";
+import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-import toast from "react-hot-toast";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { user, updateUser } = useAuth();
-
-  const handleSubmit = async () => {
-    try {
-      updateUser({
-        user: "shriram",
-        token: "response?.data?.token",
-      });
-      navigate("/profile");
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong");
-    }
-  };
+  const { user } = useAuth();
 
   if (user) {
     return <Navigate to="/profile" />;
   }
-  const handleLogin = () => {
-    // Check if the user is present in the database based on some criteria
-    // For example, check if the email exists in your database
-    // If the user is present, allow them to sign in
-    // If not, navigate to the signup page
-    // For demonstration, navigate to signup always
-    navigate("/signup");
-  };
 
   return (
     <div className="max-w-full h-screen flex flex-col justify-center items-center">

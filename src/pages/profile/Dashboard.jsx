@@ -7,19 +7,26 @@ import { RiEmotionNormalLine } from "react-icons/ri";
 import { RiEmotionUnhappyLine } from "react-icons/ri";
 import { RiEmotionSadLine } from "react-icons/ri";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../hooks/useAuth";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [showEmotionContent, setShowEmotionContent] = useState(true);
   const [selectedEmotion, setSelectedEmotion] = useState(null);
-
+ const { user } = useAuth();
   const handleHelloWorldClick = () => {
-    setShowEmotionContent(true);
+    setShowEmotionContent(true); 
   };
   return (
     <div className="max-w-screen-xl flex flex-col">
       <div>
-        <div>Hi Username!</div>
+        <div className="font-bold text-2xl">
+      {user ? (
+        <div>Hi { user?.name?.split(' ')[0]}!</div>
+      ) : (
+        <div>Hi Guest! </div>
+      )}
+    </div>
         <div className="w-full bg-[#D0BFFF] my-8 rounded-xl px-6 md:px-12 py-8 items-center flex flex-col md:flex-row justify-between">
           <div className="flex flex-col gap-4 mx-auto  ">
             <div className="text-xl font-bold text-[#101828]">

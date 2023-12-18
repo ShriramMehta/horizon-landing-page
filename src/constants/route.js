@@ -33,7 +33,7 @@ const routes = [
     icon: ChatIcon,
   },
   {
-    name: "Settings",
+    name: "Profile",
     route: "/profile/settings",
     icon: SettingIcon,
   },

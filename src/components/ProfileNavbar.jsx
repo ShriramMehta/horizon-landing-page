@@ -47,7 +47,7 @@ export default function Navbar() {
             className="flex items-center space-x-4 cursor-pointer"
             onClick={toggleDropdown}
           >
-            <div className="h-10 w-10 sm:h-12 sm:w-12 bg-white rounded-full cursor-pointer" />
+            {/* <div className="h-10 w-10 sm:h-12 sm:w-12 bg-white rounded-full cursor-pointer" /> */}
 
             {isDropdownOpen && (
               <div className="absolute top-10 z-50 sm:top-14 font-normal bg-white rounded shadow-sm mt-2 py-2 w-40 md:w-52 right-0 text-sm">
@@ -70,7 +70,7 @@ export default function Navbar() {
               <p className="text-[#272727] font-semibold text-sm sm:text-base tracking-[0.00563rem]">
                 {user?.user?.name}
               </p>
-              <p className="text-xs sm:text-sm font-normal">Customer</p>
+              <p className="text-xs sm:text-sm font-normal">Settings</p>
             </div>
             <MdKeyboardArrowDown
               size={16}

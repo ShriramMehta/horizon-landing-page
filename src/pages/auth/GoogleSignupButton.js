@@ -32,14 +32,14 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
 
 const GoogleSignupButton = () => {
   const navigate = useNavigate();
-  const [error, setError] = useState(null);
   const [openPhoneModal, setOpenPhoneModal] = useState(false);
   const [googleModal, setGoogleModal] = useState(true);
   const [openInfoModal, setOpenInfoModal] = useState(false);
-  const { user, updateUser } = useAuth();
+  const { updateUser } = useAuth();
   const [userObject, setUserObject] = useState([]);
   const [clientId, setClientId] = useState();
   const [token, setToken] = useState();
+
   const handleCallbackResponse = async (response) => {
     var userObject = jwtDecode(response.credential);
     console.log(userObject);
@@ -52,6 +52,7 @@ const GoogleSignupButton = () => {
         navigate("/signin");
         updateUser({
           email: res?.data?.data?.email,
+          name: res?.data?.data?.name,
           type: res?.data?.data?.userType,
           token: res?.data?.token,
           id: res?.data?.data?.clientId,
@@ -87,6 +88,7 @@ const GoogleSignupButton = () => {
     setOpenPhoneModal(false);
     setOpenInfoModal(true);
   };
+
   const handleOnboardingData = async (data) => {
     console.log(data, userObject);
     const res = await userService.addOnboardingData({
@@ -104,6 +106,7 @@ const GoogleSignupButton = () => {
         email: userObject?.email,
         token: token,
         id: clientId,
+        name: userObject?.name,
       });
       navigate("/profile");
     } else {
@@ -115,7 +118,6 @@ const GoogleSignupButton = () => {
 
   return (
     <div>
-      {error && <p>{error}</p>}
       {googleModal && (
         <GoogleSignInButton handleCallbackResponse={handleCallbackResponse} />
       )}
