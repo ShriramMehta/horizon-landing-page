@@ -77,56 +77,6 @@ const ConfirmBooking = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col max-w-full w-full gap-4 p-6">
-            <div className="flex flex-col gap-4">
-              <p className="text-[#101828] text-xl font-semibold">
-                Choose Payment Method
-              </p>
-              <div className="flex flex-row items-center justify-start w-full gap-4 mt-4">
-                <div className="w-5/6 flex flex-col gap-2">
-                  <p className="text-[#101828] text-base font-semibold">UPI </p>
-                  <div className="w-full cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px] hover:bg-[#A581FF] hover:border-[#A581FF] hover:text-white">
-                    <img src="/images/GPay Icon.png" alt="gpay" />
-                    <p>Google Pay</p>
-                  </div>
-                  <div className="w-full cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px] hover:bg-[#A581FF] hover:border-[#A581FF] hover:text-white">
-                    <img src="/images/Phone Pay Icon.png" alt="phonepay" />
-                    <p>Phone Pay</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-row items-center justify-start w-full gap-4 mt-3">
-              <div className="w-5/6 flex flex-col gap-2">
-                <p className="text-[#101828] text-base font-semibold">
-                  Card Payment{" "}
-                </p>
-                <div className="w-full flex justify-between cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px]">
-                  <p className="text-[#101828]">Debit/Credit Card</p>
-                  <img
-                    src="/images/Chevron right.png"
-                    alt="right"
-                    className="w-[25px] h-[25px]"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-row items-center justify-start w-full gap-4 mt-3">
-              <div className="w-5/6 flex flex-col gap-2">
-                <p className="text-[#101828] text-base font-semibold">
-                  Net Banking{" "}
-                </p>
-                <div className="w-full cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px] flex justify-between">
-                  <p className="text-[#101828]">Select Bank</p>
-                  <img
-                    src="/images/Chevron right.png"
-                    alt="right"
-                    className="w-[25px] h-[25px]"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         {openModal && <Modal closeModal={setOpenModal} />}
       </div>
@@ -135,3 +85,49 @@ const ConfirmBooking = () => {
 };
 
 export default ConfirmBooking;
+//  <div className="flex flex-col max-w-full w-full gap-4 p-6">
+//    <div className="flex flex-col gap-4">
+//      <p className="text-[#101828] text-xl font-semibold">
+//        Choose Payment Method
+//      </p>
+//      <div className="flex flex-row items-center justify-start w-full gap-4 mt-4">
+//        <div className="w-5/6 flex flex-col gap-2">
+//          <p className="text-[#101828] text-base font-semibold">UPI </p>
+//          <div className="w-full cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px] hover:bg-[#A581FF] hover:border-[#A581FF] hover:text-white">
+//            <img src="/images/GPay Icon.png" alt="gpay" />
+//            <p>Google Pay</p>
+//          </div>
+//          <div className="w-full cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px] hover:bg-[#A581FF] hover:border-[#A581FF] hover:text-white">
+//            <img src="/images/Phone Pay Icon.png" alt="phonepay" />
+//            <p>Phone Pay</p>
+//          </div>
+//        </div>
+//      </div>
+//    </div>
+//    <div className="flex flex-row items-center justify-start w-full gap-4 mt-3">
+//      <div className="w-5/6 flex flex-col gap-2">
+//        <p className="text-[#101828] text-base font-semibold">Card Payment </p>
+//        <div className="w-full flex justify-between cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px]">
+//          <p className="text-[#101828]">Debit/Credit Card</p>
+//          <img
+//            src="/images/Chevron right.png"
+//            alt="right"
+//            className="w-[25px] h-[25px]"
+//          />
+//        </div>
+//      </div>
+//    </div>
+//    <div className="flex flex-row items-center justify-start w-full gap-4 mt-3">
+//      <div className="w-5/6 flex flex-col gap-2">
+//        <p className="text-[#101828] text-base font-semibold">Net Banking </p>
+//        <div className="w-full cursor-pointer flex gap-3 px-[12px] py-[8px] border-[1px] border-[#EAECF0] rounded-[8px] flex justify-between">
+//          <p className="text-[#101828]">Select Bank</p>
+//          <img
+//            src="/images/Chevron right.png"
+//            alt="right"
+//            className="w-[25px] h-[25px]"
+//          />
+//        </div>
+//      </div>
+//    </div>
+//  </div>;
