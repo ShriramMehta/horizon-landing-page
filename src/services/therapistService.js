@@ -9,24 +9,27 @@ const getFilteredTherapists = (data) => {
 };
 
 const getThearpistById = (Id) => {
-  return axios.get(`/therapists/${Id}`)
-}
+  return axios.get(`/therapists/${Id}`);
+};
+const getThearpistAvailibiltyById = (id) => {
+  console.log(id);
+  return axios.get(`/availability/getAvailabilityById/${id}`);
+};
 
 const getThearpistByName = (name) => {
   return axios.get(`therapists/by-name/${name}`);
 };
 
 const getFeedbackById = (Id) => {
-  return axios.get(`/feedback/${Id}`)
-
-}
-
+  return axios.get(`/feedback/${Id}`);
+};
 
 const therapistService = {
   getFilteredTherapists,
   getAllThearapists,
   getThearpistById,
   getFeedbackById,
+  getThearpistAvailibiltyById,
 };
 
 export default therapistService;

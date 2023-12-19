@@ -1,60 +1,68 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
+import therapistService from "../../services/therapistService";
+const transformToAvailableDates = (slotData) => {
+  const transformedDates = {};
 
-const AvailableDates = [
-  {
-    day: "Sat",
-    date: "11",
-    month: "June",
-  },
-  {
-    day: "Mon",
-    date: "13",
-    month: "June",
-  },
-  {
-    day: "Thur",
-    date: "16",
-    month: "June",
-  },
-  {
-    day: "Sat",
-    date: "18",
-    month: "June",
-  },
-];
+  // Iterate through slotData
+  slotData.forEach((slot) => {
+    const date = new Date(slot.slot_date);
+    const day = date.toLocaleDateString("en-US", { weekday: "short" });
+    const dateString = date.getDate().toString();
+    const month = date.toLocaleDateString("en-US", { month: "short" });
 
-const AvailableTime = [
-  {
-    time: "10.00am",
-  },
-  {
-    time: "12.00pm",
-  },
-  {
-    time: "2.00pm",
-  },
-  {
-    time: "8.00pm",
-  },
-];
+    // Format the start_time to 12-hour format
+    const startTime = formatStartTime(slot.start_time);
+
+    // Create or update the transformedDates object
+    if (!transformedDates[dateString]) {
+      transformedDates[dateString] = { day, date: dateString, month, time: [] };
+    }
+
+    // Add the formatted start_time to the time array
+    transformedDates[dateString].time.push(startTime);
+  });
+
+  // Convert the transformedDates object to an array
+  const transformedDatesArray = Object.values(transformedDates);
+
+  return transformedDatesArray;
+};
+
+// Function to format the start_time to 12-hour format
+const formatStartTime = (startTime) => {
+  const [hours, minutes] = startTime.split(":");
+  const formattedHours = parseInt(hours) % 12 || 12;
+  const period = parseInt(hours) >= 12 ? "pm" : "am";
+  return `${formattedHours}:${minutes} ${period}`;
+};
 
 const BookSession = () => {
   const navigate = useNavigate();
-  const [selectedDateIdx, setselectedDateIdx] = useState(null);
+  const [selectedDateIdx, setSelectedDateIdx] = useState(0);
+  const [slotData, setSlotData] = useState([]);
   const [selectedTimeIdx, setselectedTimeIdx] = useState(null);
+  const { id } = useParams();
+  const [therapistData, setTherapistData] = useState([]);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
+  useEffect(() => {
+    (async () => {
+      try {
+        console.log(id);
 
-  //   if (token) {
-  //     console.log("User is logged in");
-  //     // navigate("/book-session/:therapistId");
-  //   } else {
-  //     console.log("User is not logged in");
-  //     navigate("/login");
-  //   }
-  // }, [navigate]);
+        const response = await therapistService.getThearpistAvailibiltyById(id);
+        if (response.data.success) {
+          setSlotData(transformToAvailableDates(response?.data?.data));
+          console.log(transformToAvailableDates(response?.data?.data));
+        }
+        const response1 = await therapistService.getThearpistById(id);
+
+        setTherapistData(response1.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   const handleClick = () => {
     console.log(selectedDateIdx, selectedTimeIdx);
@@ -64,7 +72,21 @@ const BookSession = () => {
     // }
   };
 
-  const repeatDivCal = AvailableDates.map((item, idx) => (
+  const handleNextDate = () => {
+    const nextDateIdx = (selectedDateIdx + 1) % slotData.length;
+    setSelectedDateIdx(nextDateIdx);
+    setselectedTimeIdx(null); // Reset selected time
+  };
+  // Function to format time slots for a selected date
+  const getTimeSlotsForSelectedDate = () => {
+    console.log(slotData[selectedDateIdx]?.time);
+    if (selectedDateIdx !== null) {
+      return slotData[selectedDateIdx]?.time || [];
+    }
+    return [];
+  };
+  const maxTimeSlotsPerRow = 4;
+  const repeatDivCal = slotData.map((item, idx) => (
     <div
       key={idx}
       className={`cursor-pointer flex flex-col gap-0 justify-center items-center max-w-[76px] w-full max-h-[82px] h-full rounded-[16px] border-[1px] ${
@@ -73,7 +95,7 @@ const BookSession = () => {
           : ""
       }`}
       onClick={() => {
-        setselectedDateIdx(idx);
+        setSelectedDateIdx(idx);
         setselectedTimeIdx(null); // Reset selected time
       }}
     >
@@ -99,25 +121,27 @@ const BookSession = () => {
     </div>
   ));
 
-  const repeatDivTime = AvailableTime.map((item, idx) => (
-    <div
-      key={idx}
-      className={`cursor-pointer max-w-[82px] w-full max-h-[30px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] ${
-        selectedTimeIdx === idx
-          ? "bg-[#ECE7FE] text-white border-[#4E139F]"
-          : "bg-white"
-      }`}
-      onClick={() => setselectedTimeIdx(idx)}
-    >
-      <p
-        className={`text-sm font-normal text-[#4E139F] text-center ${
-          selectedTimeIdx === idx ? "text-[#4E139F]" : ""
+  const repeatDivTime = getTimeSlotsForSelectedDate()?.map((item, idx) => {
+    return (
+      <div
+        key={idx}
+        className={`cursor-pointer w-[100px]  max-h-[30px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] ${
+          selectedTimeIdx === idx
+            ? "bg-[#ECE7FE] text-white border-[#4E139F]"
+            : "bg-white"
         }`}
+        onClick={() => setselectedTimeIdx(idx)}
       >
-        {item.time}
-      </p>
-    </div>
-  ));
+        <p
+          className={`text-sm font-normal text-[#4E139F] text-center ${
+            selectedTimeIdx === idx ? "text-[#4E139F]" : ""
+          }`}
+        >
+          {item}
+        </p>
+      </div>
+    );
+  });
 
   return (
     <div className="flex flex-col max-w-screen-lg h-screen mx-auto">
@@ -126,19 +150,19 @@ const BookSession = () => {
           <div className="flex justify-center items-center gap-4 max-w-1/2 w-full h-5/6 shadow-lg p-4">
             <img
               className="w-36 h-36 object-cover rounded-full shadow-lg"
-              src="/images/img2.png"
+              src={therapistData.imgUrl}
               alt="Therapist Photo"
             />
             <div className="max-w-1/2 w-full flex flex-col gap-4">
               <p className="text-[#101828] text-lg font-semibold">
-                Session with Shivangi Khatter
+                Session with {therapistData?.name}
               </p>
               <p className="text-[#475467] text-base font-normal">
                 Stress, Depression, Anxiety, Sleep Help
               </p>
             </div>
           </div>
-          <div className="flex flex-col max-w-full w-full p-4 gap-4">
+          <div className="flex flex-col max-w-1/2 w-1/2 p-4 gap-4">
             <div className="flex flex-col gap-4">
               <p className="text-[#101828] text-xl font-semibold">
                 Available Dates
@@ -147,6 +171,7 @@ const BookSession = () => {
                 {repeatDivCal}
                 <div className="flex justify-end mx-auto">
                   <img
+                    onClick={handleNextDate}
                     src="/images/Chevron right.png"
                     alt="right"
                     className="w-[100px] md:w-[30px] h-[30px]"
@@ -154,11 +179,11 @@ const BookSession = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 max-w-full">
               <p className="text-[#101828] text-lg font-semibold">
                 Available Time Slots
               </p>
-              <div className="flex flex-row items-center justify-start w-full gap-4">
+              <div className="flex flex-row flex-wrap items-center justify-start w-full gap-4">
                 {repeatDivTime}
               </div>
             </div>

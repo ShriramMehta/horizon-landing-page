@@ -59,7 +59,7 @@ const FilterModal = ({ closeModal, applyFilters }) => {
 
   const handleApplyFilters = () => {
     const filters = {
-      gender: genderChoose,
+      genders: genderChoose,
       languages,
       concerns: areaOfFocus,
       yearsOfExperience: experience,

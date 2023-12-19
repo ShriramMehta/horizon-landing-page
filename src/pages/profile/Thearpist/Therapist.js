@@ -198,7 +198,9 @@ const Therapist = () => {
                     Book a Session
                   </button>
                   <button
-                    onClick={() => navigate(`/view-details/${item?.therapistId}`)}
+                    onClick={() =>
+                      navigate(`/view-details/${item?.therapistId}`)
+                    }
                     className="my-4 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-full"
                   >
                     View Details

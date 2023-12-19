@@ -49,7 +49,6 @@ const GoogleSignupButton = () => {
       const res = await userService.getAuthStatus(userObject?.email);
       console.log(res, res?.data?.success);
       if (res?.data?.success) {
-        navigate("/signin");
         updateUser({
           email: res?.data?.data?.email,
           name: res?.data?.data?.name,
@@ -57,6 +56,7 @@ const GoogleSignupButton = () => {
           token: res?.data?.token,
           id: res?.data?.data?.clientId,
         });
+        navigate("/signin");
       } else {
         setGoogleModal(false);
         setOpenPhoneModal(true);
