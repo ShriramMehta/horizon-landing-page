@@ -197,7 +197,9 @@ const ViewDetails = () => {
           </div>
           <div className="w-full">
             <button
-              onClick={() => navigate("/book-session/:therapistId")}
+              onClick={() =>
+                navigate(`/book-session/${thearpistData.therapistId}`)
+              }
               className="text-center bg-primaryIndigo hover-bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center w-full md:w-auto"
             >
               Book a Session
