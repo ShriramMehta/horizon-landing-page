@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router";
 import therapistService from "../../services/therapistService";
 import { useAuth } from "../../hooks/useAuth";
+import Modal from "../../components/Modal";
+import e from "express";
+
 const transformToAvailableDates = (slotData) => {
   const transformedDates = {};
 
@@ -48,8 +51,24 @@ const BookSession = () => {
   const { id } = useParams();
   const [therapistData, setTherapistData] = useState([]);
   const [type, setType] = useState("");
+  const [bookingData, setBookingData] = useState([
+    { date: "", time: "", zone: "", status: "", day: "", rate: "" },
+  ]);
 
   const [isDateLoaded, setIsDataLoaded] = useState(false);
+  const getTimePeriod = (time) => {
+    const hour = parseInt(time.split(":")[0]);
+
+    if (hour >= 5 && hour < 12) {
+      return "Morning";
+    } else if (hour >= 12 && hour < 17) {
+      return "Afternoon";
+    } else if (hour >= 17 && hour < 20) {
+      return "Evening";
+    } else {
+      return "Night";
+    }
+  };
   useEffect(() => {
     (async () => {
       try {
@@ -62,7 +81,7 @@ const BookSession = () => {
         }
         const response1 = await therapistService.getThearpistById(id);
         console.log(type);
-        setType(user?.user?.type === "student" ? "Student" : "Non Student");
+        setType(user?.user?.type === "non-student" ? "Non Student" : "Student");
 
         setTherapistData(response1.data.data);
       } catch (error) {
@@ -74,10 +93,26 @@ const BookSession = () => {
   }, []);
 
   const handleClick = () => {
-    console.log(selectedDateIdx, selectedTimeIdx);
-    navigate("/confirmBooking");
-    // if (selectedDateIdx !== null && selectedTimeIdx !== null) {
-    //   navigate(`/confirmBooking/${selectedDateIdx}/${selectedTimeIdx}`);
+    // if (user) {
+    const selectedDate = slotData[selectedDateIdx];
+    const selectedTime = getTimeSlotsForSelectedDate()[selectedTimeIdx];
+    const timePeriod = getTimePeriod(selectedTime);
+
+    setBookingData([
+      {
+        ...bookingData[0],
+        day: selectedDate?.day,
+        date: `${selectedDate.date} ${selectedDate?.month}`,
+        time: selectedTime,
+        zone: timePeriod,
+        status: type,
+        rate: type === "Non Student" ? 1500 : 800,
+      },
+    ]);
+
+    setOpenModal(true);
+    // } else {
+    // navigate("/login");
     // }
   };
 
@@ -149,6 +184,7 @@ const BookSession = () => {
       </div>
     );
   });
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="flex flex-col max-w-screen-lg h-screen mx-auto">
@@ -229,7 +265,7 @@ const BookSession = () => {
               <div className="flex gap-4">
                 <div className="flex flex-row  justify-center items-center font-semibold text-[#101828]">
                   <img src="/images/currency-rupee.png" alt="rupee" />
-                  <span>{type === "Student" ? 800 : 1500}/hr</span>
+                  <span>{type === "Non Student" ? 1500 : 800}/hr</span>
                 </div>
                 <div className="  px-2 py-4 rounded-[16px] flex justify-center items-center  bg-[#F0F0FE] border-[1px] border-[##EAECF0]">
                   <div className="flex flex-row justify-start items-center gap-2">
@@ -263,6 +299,13 @@ const BookSession = () => {
             after the payment is completed.
           </div>
         </div>
+      )}
+      {openModal && (
+        <Modal
+          closeModal={setOpenModal}
+          bookingData={bookingData}
+          therapistData={therapistData}
+        />
       )}
     </div>
   );

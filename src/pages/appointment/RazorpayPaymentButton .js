@@ -3,13 +3,33 @@ import axios from "axios";
 
 const RazorpayPaymentButton = () => {
   const [order, setOrder] = useState(null);
-
+  function loadScript(src) {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  }
   useEffect(() => {
     const createOrder = async () => {
+      const res = await loadScript(
+        "https://checkout.razorpay.com/v1/checkout.js"
+      );
+
+      if (!res) {
+        alert("Razorpay SDK failed to load. Are you online?");
+        return;
+      }
       try {
         // Make a request to your server to create a Razorpay order
         const response = await axios.post(
-          //   "http://localhost:5000/api/payment/createOrder",
+          // "http://localhost:5000/api/payment/createOrder",
           {
             amountToPay: 100, // Replace with your actual amount
             notes: {
@@ -25,23 +45,33 @@ const RazorpayPaymentButton = () => {
         setOrder(order_id);
 
         // Initialize the Razorpay button
-        initializeRazorpay(key);
+        initializeRazorpay(key, order_id);
       } catch (error) {
         console.error("Error creating order:", error);
       }
     };
 
-    const initializeRazorpay = (key) => {
+    const initializeRazorpay = async (key, order_id) => {
+      console.log(key, order_id);
       const options = {
         key: key,
         amount: 100, // Amount in paise (change to match your actual amount)
         currency: "INR", // Change to match your actual currency
-        name: "Your Company Name",
+        name: "AVP Mynd Healthcare",
         description: "Payment for Service",
-        order_id: order,
-        handler: (response) => {
+        image:
+          "https://drive.google.com/file/d/1u_zI52RfKogcxHLLmPoxiAAo1Dv1MtFg/view?usp=sharing",
+        order_id: order_id,
+        handler: async (response) => {
           console.log(response);
-          // Handle the successful payment response
+          const data = {
+            orderCreationId: order_id,
+            razorpayPaymentId: response.razorpay_payment_id,
+            razorpayOrderId: response.razorpay_order_id,
+            razorpaySignature: response.razorpay_signature,
+          };
+
+          // const result = await axios.post('/payment/success', data);
         },
         prefill: {
           name: "John Doe", // Replace with user's name
@@ -56,13 +86,8 @@ const RazorpayPaymentButton = () => {
         },
       };
 
-      const razorpay = new window.Razorpay(options);
-
-      // Create the payment button
-      const paymentButton = document.getElementById("payment-button");
-      paymentButton.addEventListener("click", () => {
-        razorpay.open();
-      });
+      const paymentObject = new window.Razorpay(options);
+      paymentObject.open();
     };
 
     createOrder();
@@ -73,11 +98,7 @@ const RazorpayPaymentButton = () => {
     };
   }, []);
 
-  return (
-    <div>
-      <button id="payment-button">Pay Now</button>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default RazorpayPaymentButton;

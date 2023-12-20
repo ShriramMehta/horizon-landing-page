@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
-const Modal = ({ closeModal }) => {
+const Modal = ({ closeModal, bookingData, therapistData }) => {
+  console.log(bookingData);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -34,8 +36,80 @@ const Modal = ({ closeModal }) => {
           </svg>
           <span class="sr-only">Close modal</span>
         </button>
-        <div className="text-xl font-semibold mb-4">
-          Complete Payment Process
+        <div className="flex flex-col md:flex-row justify-center items-center">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 max-w-1/2 w-full h-5/6 shadow-lg p-4 pb-8">
+            <img
+              className="w-36 h-36 object-cover rounded-full shadow-lg"
+              src={therapistData?.imgUrl}
+              alt="Therapist Photo"
+            />
+            <div className="max-w-1/2 w-full flex flex-col gap-4">
+              <p className="text-[#101828] text-lg font-semibold">
+                Session with {therapistData?.name}
+              </p>
+              <p className="text-[#475467] text-base font-normal">
+                {therapistData?.concerns &&
+                  JSON.parse(therapistData?.concernSpecialisation).map(
+                    (item, idx, array) => (
+                      <span key={idx}>
+                        {item}
+                        {idx < array.length - 1 && ","}
+                      </span>
+                    )
+                  )}
+              </p>
+              <div>
+                <hr></hr>
+              </div>
+              <div className="w-full flex flex-col gap-4 justify-center items-center">
+                <div className="w-full flex flex-row gap-2 justify-start items-center">
+                  <img src="/images/calendar.png" alt="calender" />
+                  <p className="text-[#101828] text-base font-semibold">
+                    {bookingData[0]?.day}, {bookingData[0]?.date}
+                  </p>
+                  <p className="text-[#475467] text-base">
+                    {bookingData[0]?.zone}, {bookingData[0]?.time}
+                  </p>
+                </div>
+                <div className="w-full flex flex-row gap-2 justify-start items-center">
+                  <img src="/images/clock.png" alt="calender" />
+                  <p className="text-[#101828] text-base font-semibold">
+                    1 hour
+                  </p>
+                  <p className="text-[#475467] text-base">
+                    Online via Google Meet
+                  </p>
+                </div>
+                <div className="w-full flex flex-row gap-2 justify-start items-center">
+                  <img src="/images/currency-rupee.png" alt="rupee" />
+                  <p className="text-[#101828] text-base font-semibold">
+                    {bookingData[0]?.rate}
+                  </p>{" "}
+                  <div className="max-w-[130px] w-full max-h-[30px] h-full rounded-[16px] flex justify-center items-center py-[2px] px-[6px] bg-[#F0F0FE] border-[1px] border-[##EAECF0]">
+                    <div className="flex flex-row justify-start items-center gap-2">
+                      <p className="text-xs font-semibold text-[#4E139F] text-center">
+                        {bookingData[0]?.status} Status
+                      </p>
+                      <img src="/images/Check Circle.png" alt="check" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full md:w-auto mt-5">
+                <button
+                  // onClick={() => setOpenModal(true)}
+                  className="w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"
+                >
+                  Pay Rs. {bookingData[0]?.rate}
+                  <img
+                    src="/images/Chevron right white.png"
+                    alt="right"
+                    // className="w-[30px] h-[30px]"
+                  />
+                </button>{" "}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
