@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 const Navbar = () => {
-  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const Links = [
     { name: "Home", link: "/home" },
@@ -12,13 +12,7 @@ const Navbar = () => {
     { name: "Get App", link: "/getApp" },
     { name: "Therapist", link: "/therapist" },
   ];
-
-  const user = localStorage.getItem("token");
-  const signOut = () => {
-    localStorage.removeItem("token");
-    console.log("log out success");
-    navigate("/");
-  };
+  const { user } = useAuth();
 
   return (
     <section className="my-3" data-scroll-section>
@@ -44,12 +38,12 @@ const Navbar = () => {
           </div>
         </div>
         <nav
-          className={`sm:flex w-full text-center gap-6 sm:items-center justify-center sm:pb-0 pb-12 absolute sm:static bg-white md:bg-transparent sm:z-auto z-[10] left-0  sm:w-auto sm:pl-0 pl-9 transition-all duration-500 ease-in ${
-            open ? "top-25 " : "top-[-490px]"
+          className={`sm:flex text-center gap-6 sm:items-center sm:justify-center md:justify-start sm:pb-0 pb-12 absolute sm:static bg-white md:bg-transparent sm:z-auto z-[10] left-0  sm:pl-0 pl-9 transition-all duration-500 ease-in ${
+            open ? "top-25 " : "top-[-490px] sm:w-[100%]"
           }`}
         >
           <ul
-            className="grid sm:grid-flow-col gap-4 lg:gap-6 justify-center items-center text-center"
+            className="grid sm:grid-flow-col gap-4 lg:gap-6 sm:justify-center md:justify-start items-center text-center sm:w-full md:w-[90%]"
             style={{
               zIndex: "4",
             }}
@@ -65,23 +59,16 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+          </ul>
+          <ul className="justify-end">
             <li>
-              {user ? (
-                <Link
-                  className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex justify-between items-center"
-                  onClick={signOut}
-                >
-                  Logout
-                </Link>
-              ) : (
-                <Link
-                  to="/signin"
-                  className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex justify-between items-center"
-                  onClick={() => setOpen(!open)}
-                >
-                  Login
-                </Link>
-              )}
+              <Link
+                to="/signin"
+                className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex justify-between items-center"
+                onClick={() => setOpen(!open)}
+              >
+                {user ? "Profile" : "Login"}
+              </Link>
             </li>
           </ul>
         </nav>
