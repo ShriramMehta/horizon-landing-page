@@ -4,12 +4,13 @@ const updateUserDetails = (user, data) => {
   return axios.put(`/users/edit/user/${user?.user?.userId}`, data);
 };
 const addOnboardingData = (data) => {
-  console.log(data);
   return axios.put(`/client/onboard`, data);
 };
 const createClient = (user) => {
-  console.log(user);
   return axios.post(`/client/create`, user);
+};
+const bookAppointment = (data) => {
+  return axios.post(`/appointments`, data);
 };
 
 const getUserData = (user) => {
@@ -44,5 +45,6 @@ const userService = {
   getAuthStatus,
   createClient,
   addOnboardingData,
+  bookAppointment,
 };
 export default userService;

@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../../hooks/useAuth";
+import userService from "../../services/userService";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   function loadScript(src) {
     return new Promise((resolve) => {
@@ -87,7 +91,22 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
           razorpaySignature: response.razorpay_signature,
         };
         console.log(data);
-        // const result = await axios.post('/payment/success', data);
+        try {
+          const res = await userService.bookAppointment(data);
+          if (res?.data?.success) {
+            toast.success("Appointment Successful");
+            closeModal(true);
+            navigate("/profile/schedule");
+          } else {
+            toast.error("Something went wrong");
+          }
+        } catch (err) {
+          console.log(err);
+          closeModal(true);
+          toast.error("Something went wrong");
+        } finally {
+          closeModal(true);
+        }
       },
       prefill: {
         name: user?.name, // Replace with user's name
