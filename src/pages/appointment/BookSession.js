@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import therapistService from "../../services/therapistService";
 import { useAuth } from "../../hooks/useAuth";
 import Modal from "../../components/Modal";
-import e from "express";
-
+import { toast } from "react-hot-toast";
 const transformToAvailableDates = (slotData) => {
   const transformedDates = {};
 
@@ -14,17 +13,53 @@ const transformToAvailableDates = (slotData) => {
     const day = date.toLocaleDateString("en-US", { weekday: "short" });
     const dateString = date.getDate().toString();
     const month = date.toLocaleDateString("en-US", { month: "short" });
-
     // Format the start_time to 12-hour format
     const startTime = formatStartTime(slot.start_time);
 
+    // Convert start_time to a numerical value (hours) for addition
+    const startHour = parseInt(slot.start_time.split(":")[0]);
+
+    // Calculate endHour, considering the possibility of exceeding 24 hours
+    const endHour = (startHour + 1) % 24;
+
+    // Calculate the next day if endHour is 0 (midnight)
+    const nextDay =
+      endHour === 0 ? new Date(date.getTime() + 24 * 60 * 60 * 1000) : date;
+
+    // Format start and end times
+    const startTimeString = `${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${dateString}T${slot.start_time}`;
+    const endTimeString = `${nextDay.getFullYear()}-${(nextDay.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${nextDay
+      .getDate()
+      .toString()
+      .padStart(2, "0")}T${endHour.toString().padStart(2, "0")}:${
+      slot.start_time.split(":")[1]
+    }:00`;
     // Create or update the transformedDates object
     if (!transformedDates[dateString]) {
-      transformedDates[dateString] = { day, date: dateString, month, time: [] };
+      transformedDates[dateString] = {
+        appointmentDate: `${date.getFullYear().toString()}-${date
+          .getMonth()
+          .toString()}-${dateString}`,
+        day,
+        date: dateString,
+        month,
+        time: [],
+        slots: [],
+        startTimes: [],
+        endTimes: [],
+        slot_date: slot?.slot_date,
+      };
     }
 
     // Add the formatted start_time to the time array
     transformedDates[dateString].time.push(startTime);
+    transformedDates[dateString].slots.push(slot?.slot_id);
+    transformedDates[dateString].startTimes.push(startTimeString);
+    transformedDates[dateString].endTimes.push(endTimeString);
   });
 
   // Convert the transformedDates object to an array
@@ -56,8 +91,8 @@ const BookSession = () => {
   ]);
 
   const [isDateLoaded, setIsDataLoaded] = useState(false);
-  const getTimePeriod = (time) => {
-    const hour = parseInt(time.split(":")[0]);
+  const getTimePeriod = (dateTimeString) => {
+    const hour = new Date(dateTimeString).getHours();
 
     if (hour >= 5 && hour < 12) {
       return "Morning";
@@ -75,6 +110,7 @@ const BookSession = () => {
         setIsDataLoaded(false);
 
         const response = await therapistService.getThearpistAvailibiltyById(id);
+        console.log(response);
         if (response.data.success) {
           setSlotData(transformToAvailableDates(response?.data?.data));
           console.log(transformToAvailableDates(response?.data?.data));
@@ -93,27 +129,32 @@ const BookSession = () => {
   }, []);
 
   const handleClick = () => {
-    // if (user) {
-    const selectedDate = slotData[selectedDateIdx];
-    const selectedTime = getTimeSlotsForSelectedDate()[selectedTimeIdx];
-    const timePeriod = getTimePeriod(selectedTime);
+    if (user) {
+      const selectedDate = slotData[selectedDateIdx];
+      const selectedTime = getTimeSlotsForSelectedDate()[selectedTimeIdx];
+      const startTime = slotData[selectedDateIdx]?.startTimes[selectedTimeIdx];
+      console.log(slotData[selectedDateIdx]);
+      setBookingData([
+        {
+          ...bookingData[0],
+          day: selectedDate?.day,
+          slot_id: slotData[selectedDateIdx]?.slots[selectedTimeIdx],
+          date: `${selectedDate.date} ${selectedDate?.month}`,
+          time: selectedTime,
+          zone: getTimePeriod(startTime),
+          startTime: startTime,
+          endTime: slotData[selectedDateIdx]?.endTimes[selectedTimeIdx],
+          status: type,
+          appointmentDate: selectedDate?.appointmentDate,
+          rate: type === "Non Student" ? 1500 : 800,
+        },
+      ]);
 
-    setBookingData([
-      {
-        ...bookingData[0],
-        day: selectedDate?.day,
-        date: `${selectedDate.date} ${selectedDate?.month}`,
-        time: selectedTime,
-        zone: timePeriod,
-        status: type,
-        rate: type === "Non Student" ? 1500 : 800,
-      },
-    ]);
-
-    setOpenModal(true);
-    // } else {
-    // navigate("/login");
-    // }
+      setOpenModal(true);
+    } else {
+      toast.error("Please sign in first");
+      navigate("/signin");
+    }
   };
 
   const handleNextDate = () => {
@@ -207,7 +248,7 @@ const BookSession = () => {
                       (item, idx, array) => (
                         <span key={idx}>
                           {item}
-                          {idx < array.length - 1 && ","}
+                          {idx < array.length - 1 && ", "}
                         </span>
                       )
                     )}

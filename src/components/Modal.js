@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import RazorpayPaymentButton from "../pages/appointment/RazorpayPaymentButton ";
 
 const Modal = ({ closeModal, bookingData, therapistData }) => {
   console.log(bookingData);
-
+  const [paymentModalOpen, setPaymentModalOpen] = useState(false);
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -97,7 +98,7 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
               </div>
               <div className="w-full md:w-auto mt-5">
                 <button
-                  // onClick={() => setOpenModal(true)}
+                  onClick={() => setPaymentModalOpen(true)}
                   className="w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"
                 >
                   Pay Rs. {bookingData[0]?.rate}
@@ -112,6 +113,13 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
           </div>
         </div>
       </div>
+      {paymentModalOpen && (
+        <RazorpayPaymentButton
+          closeModal={closeModal}
+          therapistData={therapistData}
+          bookingData={bookingData}
+        />
+      )}
     </div>
   );
 };

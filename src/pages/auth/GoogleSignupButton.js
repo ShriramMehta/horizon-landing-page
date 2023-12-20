@@ -39,7 +39,7 @@ const GoogleSignupButton = () => {
   const [userObject, setUserObject] = useState([]);
   const [clientId, setClientId] = useState();
   const [token, setToken] = useState();
-
+  const [phoneNumber, setPhonNumber] = useState("");
   const handleCallbackResponse = async (response) => {
     var userObject = jwtDecode(response.credential);
     console.log(userObject);
@@ -55,6 +55,7 @@ const GoogleSignupButton = () => {
           type: res?.data?.data?.userType,
           token: res?.data?.token,
           id: res?.data?.data?.clientId,
+          phone: res?.data?.data?.phone,
         });
         navigate("/signin");
       } else {
@@ -70,7 +71,7 @@ const GoogleSignupButton = () => {
 
   const handleCreateClient = async (data) => {
     console.log(data, userObject);
-
+    setPhonNumber(data);
     const res = await userService.createClient({
       name: userObject?.name,
       email: userObject?.email,
@@ -107,6 +108,7 @@ const GoogleSignupButton = () => {
         token: token,
         id: clientId,
         name: userObject?.name,
+        phone: phoneNumber,
       });
       navigate("/profile");
     } else {

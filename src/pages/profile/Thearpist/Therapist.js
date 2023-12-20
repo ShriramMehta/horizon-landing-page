@@ -16,17 +16,19 @@ const Therapist = () => {
     (async () => {
       try {
         const response = await therapistService.getAllThearapists();
-        // console.log(response)
+        // console.log(response);
         if (response.data.success) {
           // Parse the JSON-formatted strings into arrays
           const therapistsData = response.data.data.map((item) => {
             try {
               // Replace escaped double quotes with regular double quotes
-              const fixedJsonString =
-                item?.specialisationInThearapyTypes.replace(/\\"/g, '"');
+              const fixedJsonString = item?.concernSpecialisation.replace(
+                /\\"/g,
+                '"'
+              );
               return {
                 ...item,
-                specialisationInThearapyTypes: JSON.parse(fixedJsonString),
+                concernSpecialisation: JSON.parse(fixedJsonString),
               };
             } catch (error) {
               console.error(
@@ -64,13 +66,13 @@ const Therapist = () => {
         const therapistsData = response.data.data.map((item) => {
           try {
             // Replace escaped double quotes with regular double quotes
-            const fixedJsonString = item?.specialisationInThearapyTypes.replace(
+            const fixedJsonString = item?.concernSpecialisation.replace(
               /\\"/g,
               '"'
             );
             return {
               ...item,
-              specialisationInThearapyTypes: JSON.parse(fixedJsonString),
+              concernSpecialisation: JSON.parse(fixedJsonString),
             };
           } catch (error) {
             console.error(
@@ -106,8 +108,8 @@ const Therapist = () => {
   };
 
   return (
-    <div className="mx-auto p-3 max-w-screen-xl h-full flex flex-col md:flex-row gap-10 justify-center md:gap-20 mx-auto items-center">
-      <div className="p-3 flex flex-row gap-4 w-full md:w-1/4 md:mb-24 md:pb-24">
+    <div className="mx-auto p-3 max-w-screen-xl h-full flex flex-col md:flex-col gap-2 justify-center md:gap-2 mx-auto items-center">
+      <div className="p-3 flex flex-row gap-4 w-full md:w-1/4 md:mb-2 md:pb-2">
         <div className="relative">
           <input
             placeholder="Search Thearpist"
@@ -156,39 +158,57 @@ const Therapist = () => {
                       </span>
                     </p>
                     <p className="text-[#475467] text-base font-normal">
-                      Hourly Fees:{" "}
-                      <span className="font-semibold">{item?.fees}</span>
+                      Starting at <span className="font-semibold">Rs. 800</span>
                     </p>
+                    <div className="flex items-center  w-full">
+                      <p className="text-[#475467] text-base font-normal w-1/6">
+                        Best help for:
+                      </p>
+                      <div className="flex flex-wrap gap-2 w-5/6">
+                        {item?.concernSpecialisation
+                          .slice(0, 5)
+                          .map((specialization, index) => (
+                            <div
+                              key={index}
+                              className="cursor-pointer max-w-[115px] w-full max-h-[50px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                            >
+                              <p className="text-xs text-black font-medium text-[#344054] text-center">
+                                {specialization}
+                              </p>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="w-1/4">
                     <p className="text-[#475467] text-base font-normal">
-                      Mode:{" "}
-                      <span className="font-semibold">
-                        Online via google meet
-                      </span>
+                      Mode: <span className="font-semibold">Online</span>
                     </p>
                   </div>
                 </div>
                 <div className="px-2 pb-8">
-                  <div className="flex md:gap-4 items-center">
+                  {/* <div className="flex md:gap-4 items-center">
                     <h1 className="text-black font-semibold mx-8 text-xl w-1/6">
-                      Expertise:
+                      Best help for:
                     </h1>
                     <div className="ml-10 flex flex-wrap gap-2 w-full">
-                      {item?.specialisationInThearapyTypes
+                      {item?.concernSpecialisation
                         .slice(0, 5)
-                        .map((specialisationInThearapyTypesization, index) => (
+                        .map((item, index) => (
                           <div
                             key={index}
                             className={
-                              "cursor-pointer max-w-[130px] w-full max-h-[50px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
+                              "cursor-pointer max-w-[115px] w-full max-h-[50px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
                             }
                           >
                             <p className="text-xs text-black font-medium text-[#344054] text-center">
-                              {specialisationInThearapyTypesization}
+                              {item}
                             </p>
                           </div>
                         ))}
                     </div>
-                  </div>
+                  </div> */}
                   <button
                     className="my-4 bg-primaryIndigo hover:bg-blue-600 text-white px-4 py-2 rounded-full mr-2"
                     onClick={() =>
