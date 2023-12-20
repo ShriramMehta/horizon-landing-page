@@ -17,6 +17,10 @@ const getUserData = (user) => {
   return axios.get(`/users/${user?.user?.userId}?email=${user?.user?.email}`);
 };
 
+const getAppointmentsByClientId = (userId) => {
+  return axios.get(`/appointments/client/${userId}`);
+};
+
 const updateUserPassword = (data, user) => {
   return axios.put("/users/updatePassword", {
     ...data,
@@ -46,5 +50,6 @@ const userService = {
   createClient,
   addOnboardingData,
   bookAppointment,
+  getAppointmentsByClientId,
 };
 export default userService;

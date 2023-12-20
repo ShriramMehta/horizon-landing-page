@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faWindowClose } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -60,7 +60,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <ul className="justify-end">
+          <ul className="justify-end sm:z-auto md:z-[10] ">
             <li>
               <Link
                 to="/signin"

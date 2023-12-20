@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsDot } from "react-icons/bs";
 import { CiCalendar } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
@@ -6,6 +6,8 @@ import { TbCopy } from "react-icons/tb";
 // import { Textarea } from "@material-tailwind/component";
 import TextField from "@mui/material/TextField";
 import { FaRegStar } from "react-icons/fa";
+import userService from "../../services/userService";
+import { useAuth } from "../../hooks/useAuth";
 
 const Schedule = () => {
   const [showFeedback, setShowFeedback] = useState(false);
@@ -13,6 +15,17 @@ const Schedule = () => {
   const [starStates, setStarStates] = useState(
     Array.from({ length: 5 }).fill(false)
   );
+  const { user } = useAuth();
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await userService.getAppointmentsByClientId(user?.id);
+        console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
 
   const handleStarClick = (index) => {
     setStarStates((prev) => prev.map((_, i) => (i <= index ? true : false)));
@@ -59,7 +72,9 @@ const Schedule = () => {
           <div className="flex gap-4 items-center">
             <div className="flex gap-2 items-center">
               <FiClock className="text-[#344054] text-2xl" />
-              <div className="text-[#040000] font-semibold text-base md:text-lg">1 hour</div>
+              <div className="text-[#040000] font-semibold text-base md:text-lg">
+                1 hour
+              </div>
             </div>
             <div className="text-[#475467] font-medium text-base md:text-lg">
               Online via Google Meet
@@ -176,49 +191,51 @@ const Schedule = () => {
                     X
                   </button>
                 </div>
-        
+
                 {reviewSubmitted ? (
-                    <>
-                      <div className="my-2 text-center w-full text-[#344054] text-lg font-semibold">
-                        Thank you for your feedback!
-                      </div>
-                    </>
-                ):(
-                <>
-                <div className="flex justify-center items-center">
-                  <TextField
-                    id="filled-multiline-static"
-                    label="Write your feedback here"
-                    multiline
-                    rows={4}
-                    variant="outlined"
-                    className="w-full rounded-xl"
-                  />
-                </div>
-                <div className="my-2 text-center w-full text-[#344054] text-lg font-semibold">
-                  Rate Your session
-                </div>
-                
-                <div className="flex gap-8 items-center justify-center">
-                  {starStates.map((state, idx) => (
-                    <FaRegStar
-                      key={idx}
-                      className={`text-2xl cursor-pointer ${
-                        state ? "text-yellow-500" : ""
-                      }`}
-                      onClick={() => handleStarClick(idx)}
-                    />
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  className="my-2 text-[#FFFFFF] bg-gray-300 hover:bg-purple-200 hover:text-[#FFFFFF] rounded-lg text-sm w-full ms-auto inline-flex py-2 justify-center items-center dark:hover:bg-purple-600 dark:hover:text-white"
-                  data-modal-hide="default-modal"
-                  onClick={()=>{setReviewSubmitted(true)}}
-                >
-                  Submit Review
-                </button>
-                </>
+                  <>
+                    <div className="my-2 text-center w-full text-[#344054] text-lg font-semibold">
+                      Thank you for your feedback!
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex justify-center items-center">
+                      <TextField
+                        id="filled-multiline-static"
+                        label="Write your feedback here"
+                        multiline
+                        rows={4}
+                        variant="outlined"
+                        className="w-full rounded-xl"
+                      />
+                    </div>
+                    <div className="my-2 text-center w-full text-[#344054] text-lg font-semibold">
+                      Rate Your session
+                    </div>
+
+                    <div className="flex gap-8 items-center justify-center">
+                      {starStates.map((state, idx) => (
+                        <FaRegStar
+                          key={idx}
+                          className={`text-2xl cursor-pointer ${
+                            state ? "text-yellow-500" : ""
+                          }`}
+                          onClick={() => handleStarClick(idx)}
+                        />
+                      ))}
+                    </div>
+                    <button
+                      type="button"
+                      className="my-2 text-[#FFFFFF] bg-gray-300 hover:bg-purple-200 hover:text-[#FFFFFF] rounded-lg text-sm w-full ms-auto inline-flex py-2 justify-center items-center dark:hover:bg-purple-600 dark:hover:text-white"
+                      data-modal-hide="default-modal"
+                      onClick={() => {
+                        setReviewSubmitted(true);
+                      }}
+                    >
+                      Submit Review
+                    </button>
+                  </>
                 )}
               </div>
             ) : (
