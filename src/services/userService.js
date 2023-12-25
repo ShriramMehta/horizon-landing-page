@@ -1,7 +1,11 @@
 import axios from "./axios";
 
-const updateUserDetails = (user, data) => {
-  return axios.put(`/users/edit/user/${user?.user?.userId}`, data);
+const updateClientDetails = (userId, data) => {
+  return axios.put(`/client/${userId}`, data);
+};
+const updateClientConcerns = (userId, data) => {
+  console.log(data);
+  return axios.put(`/client/concerns/${userId}`, data);
 };
 const addOnboardingData = (data) => {
   return axios.put(`/client/onboard`, data);
@@ -14,7 +18,7 @@ const bookAppointment = (data) => {
 };
 
 const getUserData = (user) => {
-  return axios.get(`/users/${user?.user?.userId}?email=${user?.user?.email}`);
+  return axios.get(`/client/${user?.id}`);
 };
 
 const getAppointmentsByClientId = (userId) => {
@@ -42,12 +46,13 @@ const getAuthStatus = (email) => {
 };
 
 const userService = {
-  updateUserDetails,
+  updateClientDetails,
   getUserData,
   updateUserPassword,
   updateUserSecurityPin,
   getAuthStatus,
   createClient,
+  updateClientConcerns,
   addOnboardingData,
   bookAppointment,
   getAppointmentsByClientId,

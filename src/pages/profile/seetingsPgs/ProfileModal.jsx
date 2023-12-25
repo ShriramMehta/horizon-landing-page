@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import userService from "../../../services/userService";
+import { useAuth } from "../../../hooks/useAuth";
 
-const ProfileModal = ({ closeModal, userDetails, updateUserDetails }) => {
+const ProfileModal = ({ closeModal, userDetails, setRender }) => {
   const [modifiedUserDetails, setModifiedUserDetails] = useState(userDetails);
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    // Check if userDetails is defined before setting modifiedUserDetails
-    if (userDetails) {
-      setModifiedUserDetails(userDetails);
-    }
-
-    return () => {
-      document.body.style.overflow = "visible";
-    };
-  }, [userDetails]);
 
   const handleInputChange = (field, value) => {
     setModifiedUserDetails({
@@ -21,16 +12,47 @@ const ProfileModal = ({ closeModal, userDetails, updateUserDetails }) => {
       [field]: value,
     });
   };
+  const { user } = useAuth(ProfileModal);
+  const handleSaveChanges = async () => {
+    try {
+      const data = {
+        name: modifiedUserDetails.name,
+        gender: modifiedUserDetails.gender,
+        phone: modifiedUserDetails.phone,
+        birthDate: modifiedUserDetails.birthDate,
+      };
+      console.log(data);
+      const res = await userService.updateClientDetails(user?.id, data);
+      console.log(res.data.data);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setRender((prev) => !prev);
+      closeModal(false);
+    }
+  };
+  const [selectedGender, setSelectedGender] = useState(userDetails?.gender);
 
-  const handleSaveChanges = () => {
-    // Perform any necessary validation
-    // Update user details in the Settings component
-    updateUserDetails(modifiedUserDetails);
-    toast.success("Profile Updated")
-    // Close the modal
-    closeModal(false);
+  const handleGenderSelect = (gender) => {
+    setSelectedGender(gender);
   };
 
+  const mapGenderToDisplay = (gender) => {
+    switch (gender) {
+      case "female":
+        return "Female";
+      case "male":
+        return "Male";
+      case "non-binary":
+        return "Non binary";
+      case "other":
+        return "Others";
+      case "preferred-not-to-say":
+        return "I prefer not to say";
+      default:
+        return "";
+    }
+  };
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 ">
       <div className="fixed inset-0 bg-black opacity-60"></div>
@@ -64,18 +86,33 @@ const ProfileModal = ({ closeModal, userDetails, updateUserDetails }) => {
             <input
               className="py-2 px-4 rounded-xl border border-1 border-gray-300"
               placeholder="Name"
-              value={modifiedUserDetails.fullName || ""}
-              onChange={(e) => handleInputChange("fullName", e.target.value)}
+              value={modifiedUserDetails.name || ""}
+              onChange={(e) => handleInputChange("name", e.target.value)}
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
             <p className="text-[#1D2939] font-semibold text-base">Gender</p>
-            <input
-              className="py-2 px-4 rounded-xl border border-1 border-gray-300"
-              placeholder="Gender"
-              value={modifiedUserDetails.gender || ""}
-              onChange={(e) => handleInputChange("gender", e.target.value)}
-            />
+            <div className="gap-4 mt-2 mb-4 flex flex-col justify-center items-center w-full">
+              {[
+                "female",
+                "male",
+                "non-binary",
+                "other",
+                "preferred-not-to-say",
+              ].map((gender) => (
+                <button
+                  key={gender}
+                  onClick={() => handleGenderSelect(gender)}
+                  className={`rounded-lg w-full py-2 px-12 text-center text-black ${
+                    selectedGender === gender
+                      ? "bg-[#F4F2FF] border border-1 text-[#7B3CF3] border-[#7B3CF3]"
+                      : "border border-1 text-[#7B3CF3] border-[#D0D5DD]"
+                  } text-sm`}
+                >
+                  {mapGenderToDisplay(gender)}
+                </button>
+              ))}
+            </div>
           </div>
           <div className="flex flex-col gap-2 justify-center">
             <p className="text-[#1D2939] font-semibold text-base">
@@ -84,8 +121,8 @@ const ProfileModal = ({ closeModal, userDetails, updateUserDetails }) => {
             <input
               className="py-2 px-4 rounded-xl border border-1 border-gray-300"
               placeholder="Date of Birth"
-              value={modifiedUserDetails.dateOfBirth || ""}
-              onChange={(e) => handleInputChange("dateOfBirth", e.target.value)}
+              value={modifiedUserDetails.birthDate || ""}
+              onChange={(e) => handleInputChange("birthDate", e.target.value)}
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
@@ -95,10 +132,8 @@ const ProfileModal = ({ closeModal, userDetails, updateUserDetails }) => {
             <input
               className="py-2 px-4 rounded-xl border border-1 border-gray-300"
               placeholder="Mobile Number"
-              value={modifiedUserDetails.mobileNumber || ""}
-              onChange={(e) =>
-                handleInputChange("mobileNumber", e.target.value)
-              }
+              value={modifiedUserDetails.phone || ""}
+              onChange={(e) => handleInputChange("phone", e.target.value)}
             />
           </div>
           <div className="flex flex-col gap-2 justify-center">
