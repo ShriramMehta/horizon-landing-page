@@ -7,6 +7,9 @@ const getAllThearapists = () => {
 const getFilteredTherapists = (data) => {
   return axios.post(`/therapy/therapists/by-all-filters`, data);
 };
+const addFeedback = (data) => {
+  return axios.post(`/feedback`, data);
+};
 
 const getThearpistById = (Id) => {
   return axios.get(`/therapists/${Id}`);
@@ -30,6 +33,7 @@ const therapistService = {
   getThearpistById,
   getFeedbackById,
   getThearpistAvailibiltyById,
+  addFeedback,
 };
 
 export default therapistService;
