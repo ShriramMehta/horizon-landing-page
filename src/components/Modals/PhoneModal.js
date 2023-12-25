@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import toast from "react-hot-toast";
+import { auth } from "./firebase";
+import ButtonLoader from "../loaders/ButtonLoader";
 
 const PhoneModal = ({ closeModal, handleCreateClient }) => {
   const [phoneModal, setPhoneModal] = useState(true);
-
+  const [verificationCode, setVerificationCode] = useState("");
+  const [OTP, setOTP] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [OTPloading, setOTPLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState();
   const [showOTPForm, setShowOTPForm] = useState(false);
 
@@ -12,17 +19,42 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
     setPhoneNumber(value);
   };
 
-  const handleMobileNumSubmit = (e) => {
+  const handleSendOTP = async (e) => {
     e.preventDefault();
-    console.log(phoneNumber);
-    setPhoneModal(false);
-    setShowOTPForm(true);
+    try {
+      setLoading(true);
+      const appVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+        size: "invisible",
+        callback: () => {},
+      });
+      const confirmationResult = await signInWithPhoneNumber(
+        auth,
+        phoneNumber,
+        appVerifier
+      );
+      // Store the confirmation result for later use
+      setVerificationCode(confirmationResult);
+      setPhoneModal(false);
+      setShowOTPForm(true);
+      toast.success("OTP sent successfully");
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
   };
-
-  const handleOTPVerification = (e) => {
+  const handleOTPVerification = async (e) => {
     e.preventDefault();
-    setShowOTPForm(false);
-    handleCreateClient(phoneNumber);
+    try {
+      setOTPLoading(true);
+      const credential = await verificationCode.confirm(OTP);
+      toast.success("OTP verified successfully");
+      setShowOTPForm(false);
+      handleCreateClient(phoneNumber);
+    } catch (error) {
+      toast.error("Error verifying OTP");
+    } finally {
+      setOTPLoading(false);
+    }
   };
 
   return (
@@ -63,24 +95,28 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
               </div>
             </div>
             <div className="flex flex-col gap-12 mt-10">
-              <form
-                onSubmit={handleMobileNumSubmit}
-                className="flex flex-col gap-12"
-              >
+              <form className="flex flex-col gap-12">
+                <div id="recaptcha-container"></div>
+
                 <PhoneInput
                   international
-                  defaultCountry="US"
+                  defaultCountry="IN"
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
                   required
                   className="border px-8 py-2 border-black"
                 />
+
                 <button
                   type="submit"
-                  className="py-3 w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"
+                  onClick={handleSendOTP}
+                  disabled={loading}
+                  className={` w-full bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                 >
-                  Continue
-                </button>{" "}
+                  {loading ? <ButtonLoader /> : "Continue"}
+                </button>
               </form>
             </div>
           </div>
@@ -102,7 +138,8 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
                   type="text"
                   placeholder="Enter OTP"
                   className="px-8 py-4 border border-black border-1"
-                  // Add necessary props and styling
+                  value={OTP}
+                  onChange={(e) => setOTP(e.target.value)}
                 />
                 <div className="flex justify-between text-sm text-[#667085]">
                   <div>Did not receive OTP? Resend</div>
@@ -110,9 +147,12 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
                 </div>
                 <button
                   type="submit"
-                  className="py-3 w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"
+                  disabled={OTPloading}
+                  className={` w-full bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full flex justify-center items-center ${
+                    OTPloading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                 >
-                  Verify OTP
+                  {OTPloading ? <ButtonLoader /> : " Verify OTP"}
                 </button>
               </form>
             </div>
