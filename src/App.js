@@ -30,6 +30,7 @@ import Faq from "./pages/profile/knowMore/Faq";
 import Therapist from "./pages/profile/Thearpist/Therapist";
 import Contact from "./pages/profile/Contact";
 import RazorpayPaymentButton from "./pages/appointment/RazorpayPaymentButton ";
+import SendOTP from "./pages/auth/SendOTP";
 
 const Layout = () => {
   return (
@@ -66,6 +67,7 @@ const App = () => {
           </Route>
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/send-otp" element={<SendOTP />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
 
           <Route path="/profile" element={<DashboardLayout />}>
