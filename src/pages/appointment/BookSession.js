@@ -228,17 +228,17 @@ const BookSession = () => {
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <div className="flex flex-col max-w-screen-lg h-screen mx-auto">
+    <div className="flex flex-col max-w-screen-lg  mx-auto">
       {isDateLoaded && (
         <div className="shadow-xl flex flex-col gap-4 p-6">
           <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex justify-center items-center gap-4 max-w-1/2 w-1/2 h-5/6 shadow-lg p-4">
+            <div className="flex flex-col md:flex-rowjustify-center items-center gap-4 max-w-1/2 w-full md:w-1/2 h-5/6 shadow-lg p-2 md:p-4">
               <img
                 className="w-36 h-36 object-cover rounded-full shadow-lg"
                 src={therapistData.imgUrl}
                 alt="Therapist Photo"
               />
-              <div className="max-w-1/2 w-full flex flex-col gap-4">
+              <div className="max-w-1/2 w-full flex flex-row md:flex-col gap-4">
                 <p className="text-[#101828] text-lg font-semibold">
                   Session with {therapistData?.name}
                 </p>
@@ -256,7 +256,7 @@ const BookSession = () => {
               </div>
             </div>
             {slotData.length > 0 ? (
-              <div className="flex flex-col max-w-1/2 w-1/2 p-4 gap-4">
+              <div className="flex flex-col max-w-1/2 w-full md:w-1/2 p-4 gap-4">
                 <div className="flex flex-col gap-4">
                   <p className="text-[#101828] text-xl font-semibold">
                     Available Dates
@@ -318,7 +318,7 @@ const BookSession = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-auto">
+            <div className="w-full md:w-auto ">
               <button
                 onClick={handleClick}
                 className="text-center bg-primaryIndigo hover-bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-center items-center w-full md:w-auto"
@@ -335,7 +335,7 @@ const BookSession = () => {
               </button>
             </div>
           </div>
-          <div className="my-2 md:my-0 text-sm text-[#667085] h-[20px] bg-white w-full text-center rounded-br-[16px] rounded-bl-[16px]">
+          <div className="my-2 md:my-0 text-sm text-[#667085] h-[20px] bg-white w-full text-center rounded-br-[16px] rounded-bl-[16px] ">
             Please Note: You will receive the Google Meet link for the session
             after the payment is completed.
           </div>

@@ -209,7 +209,7 @@ const ViewDetails = () => {
         </div>
       </div>
       <hr className="my-8"></hr>
-      <div className="flex flex-col">
+      {/* <div className="flex flex-col">
         <div className="flex w-full items-center gap-2 text-[#101828] text-xl font-semibold">
           <span>
             <img src="/images/star-01.png" alt="star" />
@@ -276,7 +276,7 @@ const ViewDetails = () => {
             ))}
           </Swiper>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

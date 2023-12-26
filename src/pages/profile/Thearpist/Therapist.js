@@ -141,7 +141,7 @@ const Therapist = () => {
               className="w-full bg-[#F7F7F7] shadow-xl rounded-2xl overflow-hidden"
             >
               <div className="flex flex-col">
-                <div className="py-8 flex justify-center items-center gap-6 md:gap-12 max-w-1/2 w-full h-5/6 p-4">
+                <div className="py-8 flex  flex-col md:flex-row justify-center items-center gap-6 md:gap-12 max-w-1/2 w-full h-5/6 p-4">
                   <img
                     className="w-40 h-40 object-cover rounded-xl"
                     src={item?.imgUrl}
@@ -181,10 +181,10 @@ const Therapist = () => {
                     </div>
                   </div>
 
-                  <div className="w-1/4">
-                    <p className="text-[#475467] text-base font-normal">
+                  <div className="w-full md:w-1/4">
+                    <span className="text-[#475467] text-base font-normal">
                       Mode: <span className="font-semibold">Online</span>
-                    </p>
+                    </span>
                   </div>
                 </div>
                 <div className="px-2 pb-8">
