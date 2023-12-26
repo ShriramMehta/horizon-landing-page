@@ -38,9 +38,11 @@ const Navbar = () => {
           </div>
         </div>
         <nav
-          className={`sm:flex text-center gap-6 sm:items-center sm:justify-center md:justify-start sm:pb-0 pb-12 absolute sm:static bg-white md:bg-transparent sm:z-auto z-[10] left-0  sm:pl-0 pl-9 transition-all duration-500 ease-in ${
-            open ? "top-25 " : "top-[-490px] sm:w-[100%]"
-          }`}
+          className={`sm:flex text-center gap-6 sm:items-center sm:justify-center md:justify-start sm:pb-0 pb-12 
+                      absolute sm:static bg-white md:bg-transparent sm:z-auto z-[10] left-0 p-2 md:p-0 sm:pl-0 pl-0 
+                      md:pl-9 transition-all duration-500 ease-in w-[100%] ${
+                        open ? "top-25 " : "top-[-490px]  "
+                      }`}
         >
           <ul
             className="grid sm:grid-flow-col gap-4 lg:gap-6 sm:justify-center md:justify-start items-center text-center sm:w-full md:w-[90%]"
