@@ -13,6 +13,7 @@ export default function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
+    console.log("clicked")
     setDropdownOpen(!isDropdownOpen);
   };
 
@@ -66,7 +67,7 @@ export default function Navbar() {
               </div>
             )}
 
-            <div className="cursor-pointer hidden lg:block">
+            <div className="cursor-pointer ">
               <p className="text-[#272727] font-semibold text-sm sm:text-base tracking-[0.00563rem]">
                 {user?.user?.name}
               </p>

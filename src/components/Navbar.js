@@ -66,7 +66,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/signin"
-                className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex justify-between items-center"
+                className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex items-center"
                 onClick={() => setOpen(!open)}
               >
                 {user ? "Profile" : "Login"}

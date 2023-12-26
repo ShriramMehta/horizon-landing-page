@@ -11,8 +11,13 @@ export default function DrawerProvider({ toggleDrawer, isOpen }) {
   const handleNavigate = useNavigate();
   const [activeRoute, setActiveRoute] = useState("");
 
-  const handleRoute = (route) => {
-    setActiveRoute(route === activeRoute ? null : route);
+  const handleRoute = (route,childNavs) => {
+    console.log(route,childNavs,route === activeRoute ? null : route)
+    if (childNavs?.length > 0) {
+      setActiveRoute(route === activeRoute ? null : route);
+    } else {
+      handleNavigate(route);
+    }
   };
 
   return (
@@ -38,7 +43,7 @@ export default function DrawerProvider({ toggleDrawer, isOpen }) {
               <div
                 key={index}
                 className="w-full flex items-center justify-between px-[15px] cursor-pointer"
-                onClick={() => handleRoute(route)}
+                onClick={() => handleRoute(route,childNavs)}
               >
                 <div className="w-full flex items-center space-x-4 ">
                   <img
@@ -46,7 +51,7 @@ export default function DrawerProvider({ toggleDrawer, isOpen }) {
                     alt={name}
                     className="w-6 h-auto cursor-pointer"
                   />
-                  <p className="text-white">{name}</p>
+                  <p className="text-black">{name}</p>
                 </div>
                 <MdKeyboardArrowLeft
                   className={clsx("text-white", {
@@ -65,13 +70,13 @@ export default function DrawerProvider({ toggleDrawer, isOpen }) {
                       <div
                         key={childIndex}
                         className="w-full flex items-center space-x-4 px-7 cursor-pointer"
-                        onClick={() => {
+                        onClick={() => {  handleNavigate(childNavs?.length > 0 ? childRoute : route);
                           handleNavigate(childRoute);
                           toggleDrawer();
                         }}
                       >
-                        <Icon color="white" />
-                        <p className="text-white">{childName}</p>
+                        <Icon color="black" />
+                        <p className="text-black">{childName}</p>
                       </div>
                     )
                   )}
