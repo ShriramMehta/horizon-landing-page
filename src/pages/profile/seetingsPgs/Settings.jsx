@@ -102,7 +102,7 @@ const Settings = () => {
                 />
               </div>
               <div className="text-[#101828] text-lg font-semibold">
-                {userDetails.name}
+                {userDetails?.name}
               </div>
             </div>
             <div>
@@ -138,7 +138,7 @@ const Settings = () => {
               <div className="flex items-center gap-4">
                 <CiMail className="text-xl md:text-2xl cursor-pointer text-[#344054]" />
                 <p className="text-[#101828] text-base md:text-lg font-medium">
-                  {userDetails.email}
+                  {userDetails?.email}
                 </p>
               </div>
             </div>

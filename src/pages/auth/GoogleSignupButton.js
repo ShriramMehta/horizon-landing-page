@@ -13,7 +13,7 @@ const GoogleSignInButton = ({ handleCallbackResponse }) => {
     /* global google */
     google.accounts.id.initialize({
       client_id:
-        "391468099908-moch0ner8tsmhnnomel8qjsl4thbtk13.apps.googleusercontent.com",
+        "500708960003-2mm46cdpsush5qd4qb7b9e4cajosjggb.apps.googleusercontent.com",
       callback: handleCallbackResponse,
     });
 
