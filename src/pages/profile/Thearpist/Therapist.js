@@ -16,7 +16,7 @@ const Therapist = () => {
     (async () => {
       try {
         const response = await therapistService.getAllThearapists();
-        // console.log(response);
+        console.log(response);
         if (response.data.success) {
           // Parse the JSON-formatted strings into arrays
           const therapistsData = response.data.data.map((item) => {
