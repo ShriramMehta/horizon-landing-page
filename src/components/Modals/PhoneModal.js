@@ -39,6 +39,7 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
       setShowOTPForm(true);
       toast.success("OTP sent successfully");
     } catch (error) {
+      console.error("Error sending OTP:", error);
     } finally {
       setLoading(false);
     }
