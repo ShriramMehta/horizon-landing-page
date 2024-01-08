@@ -128,7 +128,7 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
             <div className="flex flex-col">
               <div className="text-2xl font-semibold mb-4">Enter OTP</div>
               <div className="text-lg text-[#475467]">
-                Please enter the 4 digit OTP sent to your on +123456789
+                Please enter the 4 digit OTP sent on your phone
               </div>
             </div>
             <div className="flex flex-col gap-12 mt-10">
@@ -143,10 +143,10 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
                   value={OTP}
                   onChange={(e) => setOTP(e.target.value)}
                 />
-                <div className="flex justify-between text-sm text-[#667085]">
+                {/* <div className="flex justify-between text-sm text-[#667085]">
                   <div>Did not receive OTP? Resend</div>
                   <div>30 sec</div>
-                </div>
+                </div> */}
                 <button
                   type="submit"
                   disabled={OTPloading}
