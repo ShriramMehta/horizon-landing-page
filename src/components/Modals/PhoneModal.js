@@ -27,6 +27,7 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
         size: "invisible",
         callback: () => {},
       });
+      console.log(appVerifier, auth);
       const confirmationResult = await signInWithPhoneNumber(
         auth,
         phoneNumber,
@@ -91,7 +92,7 @@ const PhoneModal = ({ closeModal, handleCreateClient }) => {
                 Enter Mobile Number
               </div>
               <div className="text-lg text-[#475467]">
-                Please enter your mobile number to receive an OTP"
+                Please enter your mobile number to receive an OTP
               </div>
             </div>
             <div className="flex flex-col gap-12 mt-10">
