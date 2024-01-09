@@ -150,14 +150,14 @@ const PreviousSessions = ({ appointment }) => {
               <h1 className="text-[#101828] text-base md:text-xl font-semibold">
                 Session with {appointment?.therapistName}
               </h1>
-              <span className="text-[#475467] text-base md:text-xl font-medium flex ">
+              <h2 className="text-[#475467] text-base md:text-xl font-medium">
                 {appointment?.concerns &&
                   JSON.parse(appointment?.concerns).map((item, idx, array) => (
                     <div key={idx} className="text-[#344054] text-lg">
-                      {item} {idx < array.length - 1 && ","}{" "}
+                      {item} {idx < array.length - 1 && ","}
                     </div>
                   ))}
-              </span>
+              </h2>
             </div>
           </div>
           <div className="flex gap-4 items-center mt-4">
