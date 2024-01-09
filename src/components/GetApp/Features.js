@@ -2,19 +2,19 @@ import React from "react";
 
 const features = [
   {
-    image: "./images/Thearpy.png",
+    image: "/images/Thearpy.png",
     content: "Therapy",
   },
   {
-    image: "./images/Meditation.png",
+    image: "/images/Meditation.png",
     content: "Meditations & Breathwork",
   },
   {
-    image: "./images/flows.png",
+    image: "/images/flows.png",
     content: "Personalized Flows",
   },
   {
-    image: "./images/Workout.png",
+    image: "/images/Workout.png",
     content: "Guided Workouts",
   },
 ];

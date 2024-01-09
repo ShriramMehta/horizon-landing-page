@@ -50,7 +50,7 @@ const Hero = () => {
               </span>
             </h2>
           </m.h1>
-          {/* <img src="./images/header.png" alt="header" className="w-full object-cover h-[50px] md:h-[100px]" /> */}
+          {/* <img src="/images/header.png" alt="header" className="w-full object-cover h-[50px] md:h-[100px]" /> */}
           <m.h4
             initial={{ x: -40, opacity: 0 }}
             whileInView={{
@@ -69,9 +69,9 @@ const Hero = () => {
             Let's create a happier, healthier you - together.
           </m.h4>
           <h4 class="ml-2 my-1 text-[22px] font-normal text-textColor p-3 text-left font-body leading-[36px]">
-            Wellness isn’t a one size fits all concept.
-            We are<br/> here to help you find what helps you in your<br/> journey towards
-            mental wellness!
+            Wellness isn’t a one size fits all concept. We are
+            <br /> here to help you find what helps you in your
+            <br /> journey towards mental wellness!
           </h4>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/2 flex justify-end items-end pl-4">
@@ -83,7 +83,7 @@ const Hero = () => {
               delay: 1.1,
               ease: "anticipate",
             }}
-            src="./images/hero_back1.png"
+            src="/images/hero_back1.png"
             alt="hero"
             className="w-full md:absolute md:w-1/2 h-auto top-[10rem] lg:top-[-8rem] xl:top-[-14rem]  z-[-1]"
           />
@@ -95,7 +95,7 @@ const Hero = () => {
               delay: 1.5,
               ease: "anticipate",
             }}
-            src="./images/hero.png"
+            src="/images/hero.png"
             alt="mind"
             className="absolute top-[16rem] md:top-[18rem] lg:top-10 xl:top-0 w-full md:w-1/2"
           />

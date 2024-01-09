@@ -17,7 +17,7 @@ const About = () => {
     //   </div>
     //   <div className="flex flex-col md:flex-row justify-center items-center gap-3 w-full p-3 mt-3">
     //     <div className="w-full flex justify-center items-center">
-    //       <img src="./images/Get_App.png" alt="app" className="w-[400px] h-auto" />
+    //       <img src="/images/Get_App.png" alt="app" className="w-[400px] h-auto" />
     //     </div>
     //     <div className="w-full flex flex-col justify-center items-center gap-6 p-3">
     //       <h1 className="text-2xl font-semibold text-lightBlack">

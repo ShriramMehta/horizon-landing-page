@@ -5,56 +5,6 @@ import { CiCalendar } from "react-icons/ci";
 import { FiClock } from "react-icons/fi";
 import { TbCopy } from "react-icons/tb";
 const UpcomingSession = ({ appointment }) => {
-  console.log(appointment);
-  // Assuming 'startTime' is a string representing the appointment start time
-  const startTimeString = appointment?.startTime;
-
-  // Create a Date object from the startTimeString
-  const startTime = new Date(startTimeString);
-
-  // Define an array of month names
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const dayNames = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  // Get day, month, and time components
-  const dayOfWeek = dayNames[startTime.getDay()];
-  // Get day, month, and time components
-  const day = startTime.getDate();
-  const month = monthNames[startTime.getMonth()];
-  const time = startTime.toLocaleTimeString([], {
-    hour: "numeric",
-    minute: "2-digit",
-  });
-
-  // Determine if it's morning or afternoon
-  const period = startTime.getHours() < 12 ? "Morning" : "Afternoon";
-  // Create the formatted string
-  const formattedString = `${dayOfWeek}, ${day} ${month} ${period}, ${time}`;
-
-  // Render the result
-  //   console.log(formattedString); // Output: "Thursday, 22 December Morning, 8:30 AM"
-
   const handleOpenLink = () => {
     // Open the meeting link in a new tab
     window.open(appointment?.meetLink, "_blank");
@@ -103,7 +53,7 @@ const UpcomingSession = ({ appointment }) => {
           </div>
         </div>
         <div className="text-[#475467] font-medium text-base md:text-lg">
-          {appointment?.formattedDateTime?.period},
+          {appointment?.formattedDateTime?.period},{" "}
           {appointment?.formattedDateTime?.formattedTime}
         </div>
       </div>
@@ -176,3 +126,53 @@ const UpcomingSession = ({ appointment }) => {
 };
 
 export default UpcomingSession;
+/* logic for handling in fronend  console.log(appointment);
+  // Assuming 'startTime' is a string representing the appointment start time
+  const startTimeString = appointment?.startTime;
+
+  // Create a Date object from the startTimeString
+  const startTime = new Date(startTimeString);
+
+  // Define an array of month names
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  // Get day, month, and time components
+  const dayOfWeek = dayNames[startTime.getDay()];
+  // Get day, month, and time components
+  const day = startTime.getDate();
+  const month = monthNames[startTime.getMonth()];
+  const time = startTime.toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "2-digit",
+  });
+
+  // Determine if it's morning or afternoon
+  const period = startTime.getHours() < 12 ? "Morning" : "Afternoon";
+  // Create the formatted string
+  const formattedString = `${dayOfWeek}, ${day} ${month} ${period}, ${time}`;
+
+  // Render the result
+  //   console.log(formattedString); // Output: "Thursday, 22 December Morning, 8:30 AM"
+  */

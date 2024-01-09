@@ -14,7 +14,7 @@ const GetAppMain = () => {
           <div className="w-full flex flex-row justify-between lg:justify-center gap-6 items-center">
             <div className="flex flex-col justify-center items-center gap-3">
               <img
-                src="./images/scanner.jpg"
+                src="/images/scanner.jpg"
                 alt="scanner"
                 className="min-w-[100px] w-full h-auto"
               />
@@ -23,7 +23,7 @@ const GetAppMain = () => {
                 target="_"
               >
                 <img
-                  src="./images/app-store.svg"
+                  src="/images/app-store.svg"
                   alt="app-store"
                   className="cursor-pointer  h-auto"
                 />
@@ -31,7 +31,7 @@ const GetAppMain = () => {
             </div>
             <div className="flex flex-col justify-center items-center gap-3 p-1">
               <img
-                src="./images/scanner.jpg"
+                src="/images/scanner.jpg"
                 alt="scanner"
                 className="min-w-[100px] w-full h-auto"
               />
@@ -40,7 +40,7 @@ const GetAppMain = () => {
                 target="_"
               >
                 <img
-                  src="./images/google-play.svg"
+                  src="/images/google-play.svg"
                   alt="google-play-store"
                   className="cursor-pointer h-auto"
                 />
@@ -50,7 +50,7 @@ const GetAppMain = () => {
         </div>
         <div className="relative w-full flex justify-center items-center">
           <img
-            src="./images/App.png"
+            src="/images/App.png"
             alt="app"
             className="w-full h-auto object-cover"
           />

@@ -5,19 +5,19 @@ SwiperCore.use([Autoplay]);
 
 const data = [
   {
-    image: "./images/Feat1.png",
+    image: "/images/Feat1.png",
     topContent: "We have helped",
     value: "4,000",
     belowContent: "people.",
   },
   {
-    image: "./images/Feat2.png",
+    image: "/images/Feat2.png",
     topContent: "You can choose from",
     value: "30+",
     belowContent: "therapists.",
   },
   {
-    image: "./images/Feat3.png",
+    image: "/images/Feat3.png",
     topContent: "We have conducted over",
     value: "10,000",
     belowContent: "sessions.",

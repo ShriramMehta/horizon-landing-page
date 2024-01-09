@@ -6,7 +6,7 @@ const AboutMain = () => {
       <div className="flex flex-col md:flex-row justify-center items-center md:gap-0 pt-5 px-5">
         <div className="w-full md:w-5/6 flex justify-center items-center">
           <img
-            src="./images/1.png"
+            src="/images/1.png"
             alt="hand"
             className="w-full h-auto object-cover z-[2] md:ml-[-10rem]"
           />

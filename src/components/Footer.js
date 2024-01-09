@@ -13,7 +13,7 @@ const Footer = () => {
     <footer class="my-3 flex flex-col gap-3 mx-auto items-center justify-between px-6 md:px-16">
       <div className="flex py-2 gap-6 flex-col md:flex-row justify-between items-center">
         <div class="w-[25%] md:w-[8%]">
-          <img src="./images/nav_logo.jpg" alt="footer logo" />
+          <img src="/images/nav_logo.jpg" alt="footer logo" />
         </div>
         <div class="flex justify-center items-center gap-3">
           {/* <div className="bg-lightIndigo hover:bg-primaryIndigo px-3 py-1 rounded-full transition-colors duration-300 text-white">
@@ -40,7 +40,7 @@ const Footer = () => {
               target="_"
             >
               <img
-                src="./images/app-store.svg"
+                src="/images/app-store.svg"
                 alt="app-store"
                 className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"
               />
@@ -50,7 +50,7 @@ const Footer = () => {
               target="_"
             >
               <img
-                src="./images/google-play.svg"
+                src="/images/google-play.svg"
                 alt="google-play-store"
                 className="transform transition-transform duration-300 hover:scale-110 cursor-pointer"
               />
