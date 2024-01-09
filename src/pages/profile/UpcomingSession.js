@@ -97,11 +97,14 @@ const UpcomingSession = ({ appointment }) => {
         <div className="flex gap-2 items-center">
           <CiCalendar className="text-[#344054] text-2xl" />
           <div className="text-[#040000] font-semibold text-base md:text-lg">
-            {dayOfWeek}, {day} {month}
+            {appointment?.formattedDateTime?.dayOfWeek},{" "}
+            {appointment?.formattedDateTime?.dayOfMonth}{" "}
+            {appointment?.formattedDateTime?.month}
           </div>
         </div>
         <div className="text-[#475467] font-medium text-base md:text-lg">
-          {period}, {time}
+          {appointment?.formattedDateTime?.period},
+          {appointment?.formattedDateTime?.formattedTime}
         </div>
       </div>
       <div className="flex gap-4 items-center">
