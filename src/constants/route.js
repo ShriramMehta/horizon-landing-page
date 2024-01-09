@@ -18,7 +18,7 @@ const routes = [
     icon: HomeIcon,
   },
   {
-    name: "Therapists",
+    name: "Therapy",
     route: "/therapist",
     icon: DashboardIcon,
   },

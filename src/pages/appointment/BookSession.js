@@ -25,7 +25,7 @@ const transformToAvailableDates = (slotData) => {
     // Calculate the next day if endHour is 0 (midnight)
     const nextDay =
       endHour === 0 ? new Date(date.getTime() + 24 * 60 * 60 * 1000) : date;
-
+    const status = slot?.status;
     // Format start and end times
     const startTimeString = `${date.getFullYear()}-${(date.getMonth() + 1)
       .toString()
@@ -52,6 +52,7 @@ const transformToAvailableDates = (slotData) => {
         startTimes: [],
         endTimes: [],
         slot_date: slot?.slot_date,
+        slotsStatus: [],
       };
     }
 
@@ -60,6 +61,7 @@ const transformToAvailableDates = (slotData) => {
     transformedDates[dateString].slots.push(slot?.slot_id);
     transformedDates[dateString].startTimes.push(startTimeString);
     transformedDates[dateString].endTimes.push(endTimeString);
+    transformedDates[dateString].slotsStatus.push(status);
   });
 
   // Convert the transformedDates object to an array
@@ -78,7 +80,6 @@ const formatStartTime = (startTime) => {
 
 const BookSession = () => {
   const { user } = useAuth();
-
   const navigate = useNavigate();
   const [selectedDateIdx, setSelectedDateIdx] = useState(0);
   const [slotData, setSlotData] = useState([]);
@@ -116,8 +117,7 @@ const BookSession = () => {
           console.log(transformToAvailableDates(response?.data?.data));
         }
         const response1 = await therapistService.getThearpistById(id);
-        console.log(type);
-        setType(user?.user?.type === "non-student" ? "Non Student" : "Student");
+        setType(user?.type === "non-student" ? "Non Student" : "Student");
 
         setTherapistData(response1.data.data);
       } catch (error) {
@@ -205,6 +205,7 @@ const BookSession = () => {
   ));
 
   const repeatDivTime = getTimeSlotsForSelectedDate()?.map((item, idx) => {
+    const isBooked = slotData[selectedDateIdx]?.slotsStatus[idx] === "booked";
     return (
       <div
         key={idx}
@@ -212,8 +213,8 @@ const BookSession = () => {
           selectedTimeIdx === idx
             ? "bg-[#ECE7FE] text-white border-[#4E139F]"
             : "bg-white"
-        }`}
-        onClick={() => setselectedTimeIdx(idx)}
+        } ${isBooked ? "opacity-50 cursor-not-allowed" : ""}`}
+        onClick={() => !isBooked && setselectedTimeIdx(idx)}
       >
         <p
           className={`text-sm font-normal text-[#4E139F] text-center ${
@@ -225,6 +226,7 @@ const BookSession = () => {
       </div>
     );
   });
+
   const [openModal, setOpenModal] = useState(false);
 
   return (
