@@ -4,10 +4,33 @@ import { useAuth } from "../../hooks/useAuth";
 import userService from "../../services/userService";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { io } from "socket.io-client";
 
 const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  useEffect(() => {
+    const socket = io("http://localhost:5000");
+    // const socket = io("http://13.49.115.88:5000");
+    socket.on("webhookReceived", (data) => {
+      console.log(data);
+      if ((data = "booked")) {
+        toast.success("Your appointment has been successfully booked!");
+
+        closeModal(true);
+        navigate("/profile/schedule");
+      } else if ((data = "cancelled")) {
+        toast.error("Your appointment couldn't be booked. Please try again!");
+
+        closeModal(true);
+        navigate("/therapist");
+      }
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
 
   function loadScript(src) {
     return new Promise((resolve) => {
@@ -34,14 +57,22 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
     try {
       // Make a request to your server to create a Razorpay order
       const response = await axios.post(
-        "https://adaptwellness.in/api/payment/createOrder",
-        // "http://localhost:5000/api/payment/createOrder",
+        // "https://adaptwellness.in/api/payment/createOrder",
+        "http://localhost:5000/api/payment/website-create-order",
         {
-          amountToPay: bookingData[0]?.rate, // Replace with your actual amount
-          notes: {
-            phone: user?.phone,
-            email: user?.email,
-          },
+          slotId: bookingData[0]?.slot_id,
+
+          clientId: user?.id,
+          therapistId: therapistData?.therapistId,
+          startTime: bookingData[0]?.startTime,
+          endTime: bookingData[0]?.endTime,
+          appointmentDate: bookingData[0]?.appointmentDate,
+          amountToPay: bookingData[0]?.rate,
+
+          therapistEmail: therapistData?.email,
+          clientEmail: user?.email,
+          couponCode: null,
+          clientType: user?.type,
         }
       );
 
@@ -79,35 +110,35 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
           appointmentDate: bookingData[0]?.appointmentDate,
           orderId: order_id,
           amount: bookingData[0]?.rate,
-          method: "GPAY",
-          status: "confirmed",
+
           therapistEmail: therapistData?.email,
           clientEmail: user?.email,
           couponCode: null,
           clientType: user?.type,
-
+          method: "GPAY",
+          status: "confirmed",
           razorpayPaymentId: response.razorpay_payment_id,
 
           razorpayOrderId: response.razorpay_order_id,
           razorpaySignature: response.razorpay_signature,
         };
         console.log(data);
-        try {
-          const res = await userService.bookAppointment(data);
-          if (res?.data?.success) {
-            toast.success("Appointment Successful");
-            closeModal(true);
-            navigate("/profile/schedule");
-          } else {
-            toast.error("Something went wrong");
-          }
-        } catch (err) {
-          console.log(err);
-          closeModal(true);
-          toast.error("Something went wrong");
-        } finally {
-          closeModal(true);
-        }
+        // try {
+        //   const res = await userService.bookAppointment(data);
+        //   if (res?.data?.success) {
+        //     toast.success("Appointment Successful");
+        //     closeModal(true);
+        //     navigate("/profile/schedule");
+        //   } else {
+        //     toast.error("Something went wrong");
+        //   }
+        // } catch (err) {
+        //   console.log(err);
+        //   closeModal(true);
+        //   toast.error("Something went wrong");
+        // } finally {
+        //   closeModal(true);
+        // }
       },
       prefill: {
         name: user?.name, // Replace with user's name
