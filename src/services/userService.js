@@ -1,60 +1,48 @@
 import axios from "./axios";
-
-const updateClientDetails = (userId, data) => {
-  return axios.put(`/client/${userId}`, data);
-};
-const updateClientConcerns = (userId, data) => {
-  console.log(data);
-  return axios.put(`/client/concerns/${userId}`, data);
-};
+//auth -open
 const addOnboardingData = (data) => {
   return axios.put(`/client/onboard`, data);
 };
 const createClient = (user) => {
   return axios.post(`/client/create`, user);
 };
-const bookAppointment = (data) => {
-  return axios.post(`/appointments`, data);
+const getAuthStatus = (email) => {
+  return axios.get(`/client/isAuthCompletedWebsite/${email}`);
+};
+const checkCouponCode = (code) => {
+  return axios.get(`/coupons/validate-coupon/${code}`);
+};
+//private
+const updateClientDetails = (userId, data) => {
+  return axios.put(`/client/update/${userId}`, data);
+};
+const updateClientConcerns = (userId, data) => {
+  console.log(data);
+  return axios.put(`/client/update-concerns/${userId}`, data);
 };
 
 const getUserData = (user) => {
-  return axios.get(`/client/${user?.id}`);
+  return axios.get(`/client/client/${user?.id}`);
 };
 
 const getAppointmentsByClientId = (userId) => {
-  return axios.get(`/appointments/client/${userId}`);
+  return axios.get(`/appointments/client-appointments/${userId}`);
 };
 
-const updateUserPassword = (data, user) => {
-  return axios.put("/users/updatePassword", {
-    ...data,
-    email: user?.user?.email,
-    userId: user?.user?.userId,
-  });
-};
-
-const updateUserSecurityPin = (data, user) => {
-  return axios.put("/users/changePinByUserId", {
-    ...data,
-    email: user?.user?.email,
-    userId: user?.user?.userId,
-  });
-};
-
-const getAuthStatus = (email) => {
-  return axios.get(`/client/isAuthCompletedWebsite/${email}`);
+//removed due to webhook
+const bookAppointment = (data) => {
+  return axios.post(`/appointments`, data);
 };
 
 const userService = {
   updateClientDetails,
   getUserData,
-  updateUserPassword,
-  updateUserSecurityPin,
   getAuthStatus,
   createClient,
   updateClientConcerns,
   addOnboardingData,
   bookAppointment,
   getAppointmentsByClientId,
+  checkCouponCode,
 };
 export default userService;

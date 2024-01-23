@@ -1,9 +1,50 @@
 import React, { useEffect, useState } from "react";
 import RazorpayPaymentButton from "../pages/appointment/RazorpayPaymentButton ";
+import userService from "../services/userService";
 
 const Modal = ({ closeModal, bookingData, therapistData }) => {
-  console.log(bookingData);
   const [paymentModalOpen, setPaymentModalOpen] = useState(false);
+  const [couponCode, setCouponCode] = useState("");
+  const [isCouponValid, setIsCouponValid] = useState(false);
+  const [isCouponApplied, setIsCouponApplied] = useState(false);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+
+  const handleApplyCoupon = async () => {
+    try {
+      if (couponCode) {
+        const res = await userService.checkCouponCode(couponCode);
+        console.log(res);
+        let amountToDeduct;
+        if (res?.data?.success) {
+          if (
+            parseFloat(res?.data?.data?.discValInPer) > 0 &&
+            parseFloat(res?.data?.data?.discValFixed) === 0
+          ) {
+            amountToDeduct =
+              (parseFloat(bookingData[0]?.rate) *
+                parseFloat(res?.data?.data?.discValInPer)) /
+              100;
+          } else if (
+            parseFloat(res?.data?.data?.discValInPer) === 0 &&
+            parseFloat(res?.data?.data?.discValFixed) > 0
+          ) {
+            amountToDeduct = parseFloat(res?.data?.data?.discValFixed);
+          }
+          console.log(amountToDeduct);
+          bookingData[0].rate =
+            parseFloat(bookingData[0]?.rate) - parseFloat(amountToDeduct);
+          setIsCouponValid(true);
+          bookingData[0].couponCode = couponCode;
+        } else {
+          setIsCouponValid(false);
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsCouponApplied(true);
+    }
+  };
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -13,7 +54,7 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 ">
       <div className="fixed inset-0 bg-black opacity-60"></div>
-      <div className="w-[500px] rounded-[12px] bg-white flex flex-col p-[25px] relative">
+      <div className="w-[550px] rounded-[12px] bg-white flex flex-col p-[25px] relative">
         <button
           type="button"
           class="text-gray-400 bg-transparent hover:bg-purple-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-purple-600 dark:hover:text-white"
@@ -96,10 +137,47 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:w-auto mt-5">
+              {/* Coupon Section */}
+              <div className="w-full flex flex-row gap-4 justify-start items-center">
+                <div className="flex flex-col">
+                  <label className="text-[#101828] text-base font-semibold">
+                    Apply Coupon
+                  </label>
+                  <div className="flex flex-row">
+                    <input
+                      type="text"
+                      value={couponCode}
+                      onChange={(e) => setCouponCode(e.target.value)}
+                      className="border border-gray-300 rounded-lg px-3 py-2"
+                    />
+                    <button
+                      onClick={handleApplyCoupon}
+                      className="bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full ml-2"
+                    >
+                      Apply
+                    </button>
+                  </div>
+                  {isCouponApplied && isCouponValid && (
+                    <p className="text-[#50C878]">Coupon code applied!</p>
+                  )}
+                  {isCouponApplied && !isCouponValid && (
+                    <p className="text-[#FF0000]">Invalid coupon code!</p>
+                  )}
+                </div>
+              </div>
+              <div className="w-full md:w-auto mt-4">
                 <button
-                  onClick={() => setPaymentModalOpen(true)}
-                  className="w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-between items-center"
+                  onClick={() => {
+                    setPaymentModalOpen(true);
+                    setIsButtonClicked(true);
+                  }}
+                  disabled={isButtonClicked}
+                  className={`w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-center items-center ${
+                    isButtonClicked ? "opacity-50" : "" // Apply opacity class when isButtonClicked is true
+                  }`}
+                  style={{
+                    cursor: isButtonClicked ? "not-allowed" : "pointer",
+                  }} // Change cursor based on isButtonClicked
                 >
                   Pay Rs. {bookingData[0]?.rate}
                   <img

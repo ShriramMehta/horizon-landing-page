@@ -263,7 +263,7 @@ const BookSession = () => {
                   <p className="text-[#101828] text-xl font-semibold">
                     Available Dates
                   </p>
-                  <div className="flex flex-row items-center justify-start w-full gap-4">
+                  <div className="flex flex-row flex-wrap  items-center justify-start w-full gap-4">
                     {repeatDivCal}
                     <div className="flex justify-end mx-auto">
                       {slotData?.length > 4 && (

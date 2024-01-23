@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../../hooks/useAuth";
-import userService from "../../services/userService";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
@@ -10,8 +9,8 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    const socket = io("http://localhost:5000");
-    // const socket = io("http://13.49.115.88:5000");
+    // const socket = io("http://localhost:5000");
+    const socket = io("http://13.49.115.88:5000");
     socket.on("webhookReceived", (data) => {
       console.log(data);
       if ((data = "booked")) {
@@ -57,8 +56,8 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
     try {
       // Make a request to your server to create a Razorpay order
       const response = await axios.post(
-        // "https://adaptwellness.in/api/payment/createOrder",
-        "http://localhost:5000/api/payment/website-create-order",
+        "https://adaptwellness.in/api/payment/createOrder",
+        // "http://localhost:5000/api/payment/website-create-order",
         {
           slotId: bookingData[0]?.slot_id,
 
@@ -71,7 +70,7 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
 
           therapistEmail: therapistData?.email,
           clientEmail: user?.email,
-          couponCode: null,
+          couponCode: bookingData[0]?.couponCode,
           clientType: user?.type,
         }
       );

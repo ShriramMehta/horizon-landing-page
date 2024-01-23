@@ -30,7 +30,7 @@ const Schedule = () => {
           toast.error("Something went wrong");
         }
       } catch (err) {
-        toast.error("Something went wrong");
+        // toast.error("Something went wrong");
       }
     })();
   }, []);
