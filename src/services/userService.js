@@ -6,6 +6,9 @@ const addOnboardingData = (data) => {
 const createClient = (user) => {
   return axios.post(`/client/create`, user);
 };
+const submitQuery = (data) => {
+  return axios.post(`/client/submit-query`, data);
+};
 const getAuthStatus = (email) => {
   return axios.get(`/client/isAuthCompletedWebsite/${email}`);
 };
@@ -44,5 +47,6 @@ const userService = {
   bookAppointment,
   getAppointmentsByClientId,
   checkCouponCode,
+  submitQuery,
 };
 export default userService;
