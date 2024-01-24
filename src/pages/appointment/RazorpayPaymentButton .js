@@ -10,7 +10,7 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
   const navigate = useNavigate();
   useEffect(() => {
     // const socket = io("http://localhost:5000");
-    const socket = io("http://13.49.115.88:5000");
+    const socket = io("https://adaptwellness.in");
     socket.on("webhookReceived", (data) => {
       console.log(data);
       if ((data = "booked")) {
