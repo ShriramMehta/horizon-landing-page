@@ -56,7 +56,7 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
     try {
       // Make a request to your server to create a Razorpay order
       const response = await axios.post(
-        "https://adaptwellness.in/api/payment/createOrder",
+        "https://adaptwellness.in/api/payment/website-create-order",
         // "http://localhost:5000/api/payment/website-create-order",
         {
           slotId: bookingData[0]?.slot_id,
