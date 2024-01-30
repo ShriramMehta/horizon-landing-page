@@ -7,13 +7,13 @@ const data = [
   {
     image: "/images/Feat1.png",
     topContent: "We have helped",
-    value: "4,000",
+    value: "4,800",
     belowContent: "people.",
   },
   {
     image: "/images/Feat2.png",
     topContent: "You can choose from",
-    value: "30+",
+    value: "35+",
     belowContent: "therapists.",
   },
   {
