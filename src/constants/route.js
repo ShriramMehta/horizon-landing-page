@@ -10,7 +10,6 @@ import { FiLink } from "react-icons/fi";
 import { BiSolidNotepad } from "react-icons/bi";
 import { IoTicketSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa6";
-
 const routes = [
   {
     name: "Home",

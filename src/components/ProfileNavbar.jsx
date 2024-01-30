@@ -23,7 +23,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className=" max-w-screen-xl w-full mb-2">
+    <div className="  w-full mb-2">
       <div className="flex flex-row justify-between items-center">
         <h1 className="font-semibold text-2xl sm:text-4xl  sm:mb-0">
           {/* Hi, {user?.user?.name.split(" ")[0]}! */}
@@ -40,9 +40,9 @@ export default function Navbar() {
         </div> */}
 
         <div className="flex items-center space-x-2 lg:space-x-4 relative ">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center cursor-pointer">
+          {/* <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center cursor-pointer">
             <GrNotification size={16} color="#6B7280" />
-          </div>
+          </div> */}
 
           <div
             className="flex items-center space-x-4 cursor-pointer"

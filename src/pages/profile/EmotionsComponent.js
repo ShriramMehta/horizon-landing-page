@@ -105,11 +105,19 @@ const EmotionsComponent = () => {
             {emotions.map((emotion, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center items-center gap-4"
+                className={`flex flex-col  items-center 
+                   ${emotion.emotion === "Happy" ? "gap-[16px] " : "gap-4"}
+                `}
               >
                 <div
                   onClick={() => handleEmotionClick(emotion.emotion)}
-                  className="text-7xl cursor-pointer transition ease-in-out hover:scale-110 duration-300"
+                  className={`flex flex-col justify-center items-center ${
+                    emotion.emotion === "Happy" ||
+                    emotion.emotion === "Exhausted" ||
+                    emotion.emotion === "Don’t know"
+                      ? "text-6xl mb-[8px] "
+                      : "text-7xl"
+                  } cursor-pointer transition ease-in-out hover:scale-110 duration-300`}
                 >
                   {emotion.icon}
                 </div>

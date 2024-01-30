@@ -6,7 +6,7 @@ export { default as DashboardIcon } from "./icons/Dashboard.svg";
 export { default as AnalyticsIcon } from "./icons/Analytics.svg";
 export { default as ChatIcon } from "./icons/Chat.svg";
 export { default as DebitIcon } from "./icons/DebitCard.svg";
-export { default as SettingIcon } from "./icons/Settings.svg";
+export { default as SettingIcon } from "./icons/profile.svg";
 export { default as LogoutIcon } from "./icons/Logout.svg";
 export { default as TotalIcon } from "./icons/Total.svg";
 export { default as VerseBank } from "./icons/VerseBank.svg";
