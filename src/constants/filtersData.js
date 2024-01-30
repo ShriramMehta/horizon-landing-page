@@ -19,14 +19,14 @@ export const LanguagesData = [
   "Gujarati",
   "Bengali",
   "Tamil",
-  "Telgu",
+  "Telugu",
   "Punjabi",
 ];
 
 export const ApprochesData = [
   "CBT",
   "DBT",
-  "RBT",
+  "REBT",
   "Psychodynamic",
   "Humanistic",
   "Mindfulness based",

@@ -215,7 +215,7 @@ const FilterModal = ({ closeModal, applyFilters }) => {
         </div>
         <hr></hr>
         <div className="flex flex-col gap-6 w-full">
-          <div className="text-[#101828] font-semibold text-lg">Approch</div>
+          <div className="text-[#101828] font-semibold text-lg">Approach</div>
           <div className="flex flex-col gap-2 md:flex-row justify-between">
             {ApprochesData.map((item, idx) => (
               <div key={idx} className="flex justify-between gap-2">
