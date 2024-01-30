@@ -121,7 +121,7 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
           razorpayOrderId: response.razorpay_order_id,
           razorpaySignature: response.razorpay_signature,
         };
-        console.log(data);
+        closeModal(true);
         // try {
         //   const res = await userService.bookAppointment(data);
         //   if (res?.data?.success) {
