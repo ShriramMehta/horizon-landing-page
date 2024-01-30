@@ -171,7 +171,7 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
                     setPaymentModalOpen(true);
                     setIsButtonClicked(true);
                   }}
-                  disabled={isButtonClicked}
+                  disabled={isButtonClicked || isCouponApplied}
                   className={`w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-center items-center ${
                     isButtonClicked ? "opacity-50" : "" // Apply opacity class when isButtonClicked is true
                   }`}

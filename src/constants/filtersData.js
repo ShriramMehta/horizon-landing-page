@@ -17,9 +17,7 @@ export const LanguagesData = [
   "Hindi",
   "Marathi",
   "Gujarati",
-  "Bengali",
   "Tamil",
-  "Telugu",
   "Punjabi",
 ];
 
