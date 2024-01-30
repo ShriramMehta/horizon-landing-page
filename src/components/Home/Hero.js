@@ -73,7 +73,7 @@ const Hero = () => {
             {/* We are
             <br /> here to help you find what helps you in your
             <br /> journey towards mental wellness! */}
-            Discover your unique path with us today.
+            Discover your unique path with us today!
           </h4>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/2 flex justify-end items-end pl-4">
