@@ -99,7 +99,7 @@ const Hero = () => {
             }}
             src="/images/3.png"
             alt="mind"
-            className="absolute top-[16rem] md:top-[18rem] lg:top-10 xl:top-0  sm:w-[95%] md:w-1/2"
+            className="absolute top-[16rem] md:top-[18rem] lg:top-10 xl:top-0  w-[95%] md:w-1/2"
           />
         </div>
       </div>
