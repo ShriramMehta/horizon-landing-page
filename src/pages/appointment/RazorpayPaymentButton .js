@@ -4,6 +4,7 @@ import { useAuth } from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
+import baseURL from "../../constants/baseURL";
 
 const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
   const { user } = useAuth();
@@ -56,8 +57,7 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
     try {
       // Make a request to your server to create a Razorpay order
       const response = await axios.post(
-        "https://adaptwellness.in/api/payment/website-create-order",
-        // "http://localhost:5000/api/payment/website-create-order",
+        `${baseURL}/payment/website-create-order`,
         {
           slotId: bookingData[0]?.slot_id,
 
@@ -99,45 +99,8 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
       order_id: order_id,
       handler: async (response) => {
         console.log(response);
-        const data = {
-          slotId: bookingData[0]?.slot_id,
 
-          clientId: user?.id,
-          therapistId: therapistData?.therapistId,
-          startTime: bookingData[0]?.startTime,
-          endTime: bookingData[0]?.endTime,
-          appointmentDate: bookingData[0]?.appointmentDate,
-          orderId: order_id,
-          amount: bookingData[0]?.rate,
-
-          therapistEmail: therapistData?.email,
-          clientEmail: user?.email,
-          couponCode: null,
-          clientType: user?.type,
-          method: "GPAY",
-          status: "confirmed",
-          razorpayPaymentId: response.razorpay_payment_id,
-
-          razorpayOrderId: response.razorpay_order_id,
-          razorpaySignature: response.razorpay_signature,
-        };
         closeModal(true);
-        // try {
-        //   const res = await userService.bookAppointment(data);
-        //   if (res?.data?.success) {
-        //     toast.success("Appointment Successful");
-        //     closeModal(true);
-        //     navigate("/profile/schedule");
-        //   } else {
-        //     toast.error("Something went wrong");
-        //   }
-        // } catch (err) {
-        //   console.log(err);
-        //   closeModal(true);
-        //   toast.error("Something went wrong");
-        // } finally {
-        //   closeModal(true);
-        // }
       },
       prefill: {
         name: user?.name, // Replace with user's name

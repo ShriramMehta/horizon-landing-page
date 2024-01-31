@@ -160,20 +160,18 @@ const Therapist = () => {
                     <p className="text-[#475467] text-base font-normal">
                       Starting at <span className="font-semibold">Rs. 800</span>
                     </p>
-                    <div className="flex items-center  w-full">
-                      <p className="text-[#475467] text-base font-normal w-1/6">
+                    <div className="flex items-center  w-full gap-2">
+                      <p className="text-[#475467] text-base font-normal w-1/7">
                         Best help for:
                       </p>
-                      <div className="flex flex-wrap gap-2 w-5/6">
+                      <div className="flex flex-wrap gap-2 w-6/7">
                         {item?.concernSpecialisation
                           .slice(0, 5)
                           .map((specialization, index) => (
-                            <div
-                              key={index}
-                              className="cursor-pointer max-w-[115px] w-full max-h-[50px] h-full rounded-[16px] flex justify-center items-center py-[12px] px-[4px] border-[1px] bg-white text-black border-[#4E139F]"
-                            >
-                              <p className="text-xs text-black font-medium text-[#344054] text-center">
+                            <div key={index}>
+                              <p className="text-lg  font-semibold text-[#344054] text-center">
                                 {specialization}
+                                {index !== 4 && ","}
                               </p>
                             </div>
                           ))}

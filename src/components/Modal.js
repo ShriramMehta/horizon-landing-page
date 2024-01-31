@@ -51,6 +51,11 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
       document.body.style.overflow = "visible";
     };
   }, []);
+
+  const handleCloseModal = () => {
+    setPaymentModalOpen(false);
+    closeModal();
+  };
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 ">
       <div className="fixed inset-0 bg-black opacity-60"></div>
@@ -152,7 +157,13 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
                     />
                     <button
                       onClick={handleApplyCoupon}
-                      className="bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full ml-2"
+                      disabled={isCouponApplied}
+                      className={`bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full ml-2
+                      ${isCouponApplied ? "opacity-50" : ""}
+                      `}
+                      style={{
+                        cursor: isCouponApplied ? "not-allowed" : "pointer",
+                      }}
                     >
                       Apply
                     </button>
@@ -171,7 +182,7 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
                     setPaymentModalOpen(true);
                     setIsButtonClicked(true);
                   }}
-                  disabled={isButtonClicked || isCouponApplied}
+                  disabled={isButtonClicked}
                   className={`w-full justify-center text-center bg-primaryIndigo hover:bg-lightBlue text-white px-4 py-2 rounded-full mr-2 flex justify-center items-center ${
                     isButtonClicked ? "opacity-50" : "" // Apply opacity class when isButtonClicked is true
                   }`}
@@ -193,7 +204,7 @@ const Modal = ({ closeModal, bookingData, therapistData }) => {
       </div>
       {paymentModalOpen && (
         <RazorpayPaymentButton
-          closeModal={closeModal}
+          closeModal={handleCloseModal}
           therapistData={therapistData}
           bookingData={bookingData}
         />
