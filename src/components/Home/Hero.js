@@ -97,7 +97,7 @@ const Hero = () => {
               delay: 1.5,
               ease: "anticipate",
             }}
-            src="/images/hero.png"
+            src="/images/3.png"
             alt="mind"
             className="absolute top-[16rem] md:top-[18rem] lg:top-10 xl:top-0 w-full md:w-1/2"
           />
