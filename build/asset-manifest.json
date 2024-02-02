@@ -1,15 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.3aeb1be8.css",
-    "main.js": "/static/js/main.25a7089b.js",
-    "static/js/787.db99504d.chunk.js": "/static/js/787.db99504d.chunk.js",
+    "main.css": "/static/css/main.f8387c15.css",
+    "main.js": "/static/js/main.071d7f0c.js",
+    "static/media/logo.png": "/static/media/logo.9c8df26ee44f722b4fff.png",
+    "static/media/VerseBank.svg": "/static/media/VerseBank.79c0dcd57c5752ee121b59ee12dab1db.svg",
+    "static/media/Analytics.svg": "/static/media/Analytics.7c8e89a4a11c869abf493edcbd57ba3c.svg",
+    "static/media/profile.svg": "/static/media/profile.cf524d529899fc3d0bb4d961b586f01a.svg",
+    "static/media/Total.svg": "/static/media/Total.a8c375e003b1545d4b74e074e14c5e4d.svg",
     "index.html": "/index.html",
-    "main.3aeb1be8.css.map": "/static/css/main.3aeb1be8.css.map",
-    "main.25a7089b.js.map": "/static/js/main.25a7089b.js.map",
-    "787.db99504d.chunk.js.map": "/static/js/787.db99504d.chunk.js.map"
+    "static/media/DebitCard.svg": "/static/media/DebitCard.ab561f2b88f209280176d1f3c0a1fee8.svg",
+    "static/media/Home.svg": "/static/media/Home.e4e91a6f355289ba3c2bc182fcd35d8c.svg",
+    "static/media/Dashboard.svg": "/static/media/Dashboard.00a7bbb7efe7c01c5e16f5c10c1eba64.svg",
+    "static/media/Logout.svg": "/static/media/Logout.99f61d90ca08eb2857bb6eabb6c3c53a.svg",
+    "static/media/Chat.svg": "/static/media/Chat.0bc61fd7c7e3cc551444ec1c7335d9d1.svg",
+    "main.f8387c15.css.map": "/static/css/main.f8387c15.css.map",
+    "main.071d7f0c.js.map": "/static/js/main.071d7f0c.js.map"
   },
   "entrypoints": [
-    "static/css/main.3aeb1be8.css",
-    "static/js/main.25a7089b.js"
+    "static/css/main.f8387c15.css",
+    "static/js/main.071d7f0c.js"
   ]
 }
