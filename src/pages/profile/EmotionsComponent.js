@@ -28,7 +28,7 @@ const EmotionsComponent = () => {
       ),
       label: "Ecstatic",
       description: "Amazing! Hold onto that feeling and let it inspire you.",
-      buttonText: "Start setting goal",
+      buttonText: "Find activities",
     },
     Happy: {
       icon: (
@@ -37,7 +37,7 @@ const EmotionsComponent = () => {
       label: "Happy",
       description:
         "Yay! Remind yourself of what makes you feel this way and do more of it.",
-      buttonText: "Start Journaling",
+      buttonText: "Stay inspired",
     },
     Good: {
       icon: (
@@ -46,7 +46,7 @@ const EmotionsComponent = () => {
       label: "Good",
       description:
         "Take a wellbeing test to understand why you may feel like this!",
-      buttonText: "Know Yourself",
+      buttonText: "Get started",
     },
     Unhappy: {
       icon: (
@@ -55,7 +55,7 @@ const EmotionsComponent = () => {
       label: "Unhappy",
       description:
         "Navigate through difficult days with expert support and feel better!",
-      buttonText: "Talk to experts",
+      buttonText: "Speak to an expert",
     },
     Distressed: {
       icon: (
@@ -72,7 +72,7 @@ const EmotionsComponent = () => {
       label: "Exhausted",
       description:
         "Juggling a lot at once can be overwhelming. We’ve got support that can help you feel better.",
-      buttonText: "Get Help",
+      buttonText: "Unwind & relax ",
     },
     "Don’t know": {
       icon: (
@@ -81,7 +81,7 @@ const EmotionsComponent = () => {
       label: "Don’t know",
       description:
         "It's okay not to have all the answers. Our experts can help you navigate your feelings.",
-      buttonText: "Get Guidance",
+      buttonText: "Get guidance",
     },
   };
 
@@ -136,14 +136,28 @@ const EmotionsComponent = () => {
                 <p className="text-lg">
                   {emotionContent[selectedEmotion].description}
                 </p>
-                <button
-                  onClick={() => {
-                    navigate("/therapist");
-                  }}
-                  className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2"
-                >
-                  {emotionContent[selectedEmotion].buttonText}
-                </button>
+                {selectedEmotion === "Ecstatic" ||
+                selectedEmotion === "Happy" ||
+                selectedEmotion === "Good" ||
+                selectedEmotion === "Exhausted" ? (
+                  <a
+                    href="https://onelink.to/gdspb2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2"
+                  >
+                    {emotionContent[selectedEmotion].buttonText}
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => {
+                      navigate("/therapist");
+                    }}
+                    className="py-2 px-4 bg-[#7B3CF3] text-white rounded-lg my-2"
+                  >
+                    {emotionContent[selectedEmotion].buttonText}
+                  </button>
+                )}
               </div>
             )}
             <button

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AppImage from "./AppImage";
 
 const GetAppMain = () => {
   return (
@@ -48,13 +49,7 @@ const GetAppMain = () => {
             </div>
           </div>
         </div>
-        <div className="relative w-full flex justify-center items-center">
-          <img
-            src="/images/App.png"
-            alt="app"
-            className="w-full h-auto object-cover"
-          />
-        </div>
+        <AppImage />
       </div>
     </section>
   );
