@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router";
 import therapistService from "../../services/therapistService";
 import { useAuth } from "../../hooks/useAuth";
 import Modal from "../../components/Modal";
+import { io } from "socket.io-client";
+
 import { toast } from "react-hot-toast";
 const transformToAvailableDates = (slotData) => {
   const transformedDates = {};
@@ -79,6 +81,26 @@ const formatStartTime = (startTime) => {
 };
 
 const BookSession = () => {
+  useEffect(() => {
+    // const socket = io("http://localhost:5000");
+    const socket = io("https://adaptwellness.in");
+    socket.on("webhookReceived", (data) => {
+      console.log(data);
+      if ((data = "booked")) {
+        toast.success("Your appointment has been successfully booked!");
+
+        navigate("/profile/schedule");
+      } else if ((data = "cancelled")) {
+        toast.error("Your appointment couldn't be booked. Please try again!");
+
+        navigate("/therapist");
+      }
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
   const { user } = useAuth();
   const navigate = useNavigate();
   const [selectedDateIdx, setSelectedDateIdx] = useState(0);

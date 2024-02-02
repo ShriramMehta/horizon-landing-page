@@ -1,36 +1,12 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../../hooks/useAuth";
-import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { io } from "socket.io-client";
 import baseURL from "../../constants/baseURL";
 
 const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
-  useEffect(() => {
-    // const socket = io("http://localhost:5000");
-    const socket = io("https://adaptwellness.in");
-    socket.on("webhookReceived", (data) => {
-      console.log(data);
-      if ((data = "booked")) {
-        toast.success("Your appointment has been successfully booked!");
-
-        closeModal(true);
-        navigate("/profile/schedule");
-      } else if ((data = "cancelled")) {
-        toast.error("Your appointment couldn't be booked. Please try again!");
-
-        closeModal(true);
-        navigate("/therapist");
-      }
-    });
-
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
 
   function loadScript(src) {
     return new Promise((resolve) => {
