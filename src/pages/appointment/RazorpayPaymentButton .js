@@ -10,6 +10,7 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
+    console.log("inside socket");
     // const socket = io("http://localhost:5000");
     const socket = io("https://adaptwellness.in");
     socket.on("webhookReceived", (data) => {
@@ -100,7 +101,7 @@ const RazorpayPaymentButton = ({ bookingData, closeModal, therapistData }) => {
       handler: async (response) => {
         console.log(response);
 
-        closeModal(true);
+        // closeModal(true);
       },
       prefill: {
         name: user?.name, // Replace with user's name
