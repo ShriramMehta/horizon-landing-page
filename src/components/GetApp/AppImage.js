@@ -2,7 +2,7 @@ import React from "react";
 
 const AppImage = () => {
   return (
-    <div className="relative w-full flex h-full justify-center items-center">
+    <div className="relative w-[300%] md:w-full flex h-full justify-center items-center">
       {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
