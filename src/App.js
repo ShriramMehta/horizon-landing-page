@@ -6,22 +6,10 @@ import Footer from "./components/Footer";
 import Main from "./pages/Main";
 import Team from "./pages/static/Team";
 import GetApp from "./pages/static/GetApp";
-import DeleteAccount from "./pages/static/DeleteAccount";
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
-import BookSession from "./pages/appointment/BookSession";
-import ConfirmBooking from "./pages/appointment/ConfirmBooking";
-import ViewDetails from "./pages/profile/Thearpist/ViewDetails";
-import Dashboard from "./pages/profile/Dashboard";
-import Schedule from "./pages/profile/Schedule";
-import { DashboardLayout } from "./layouts/index";
-import Settings from "./pages/profile/seetingsPgs/Settings";
 import TermsCond from "./pages/profile/knowMore/TermsCond";
 import PrivacyPol from "./pages/profile/knowMore/PrivacyPol";
 import Faq from "./pages/profile/knowMore/Faq";
-import Therapist from "./pages/profile/Thearpist/Therapist";
-import Contact from "./pages/profile/Contact";
-import RazorpayPaymentButton from "./pages/appointment/RazorpayPaymentButton ";
+import Contact from "./pages/Contact";
 
 const Layout = () => {
   return (
@@ -44,24 +32,10 @@ const App = () => {
             <Route path="/home" element={<Main />} />
             <Route path="/team" element={<Team />} />
             <Route path="/getApp" element={<GetApp />} />
-            <Route path="/book-session/:id" element={<BookSession />} />
-            <Route path="/confirmBooking" element={<ConfirmBooking />} />
-            <Route path="/view-details/:id" element={<ViewDetails />} />
-            <Route path="/therapist" element={<Therapist />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/terms-and-conditions" element={<TermsCond />} />
             <Route path="/privacy-policy" element={<PrivacyPol />} />/
             <Route path="/contact" element={<Contact />} />
-            <Route path="/payment" element={<RazorpayPaymentButton />} />
-          </Route>
-          <Route path="/signin" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/delete-account" element={<DeleteAccount />} />
-
-          <Route path="/profile" element={<DashboardLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="schedule" element={<Schedule />} />
-            <Route path="settings" element={<Settings />} />
           </Route>
         </Routes>
       </BrowserRouter>

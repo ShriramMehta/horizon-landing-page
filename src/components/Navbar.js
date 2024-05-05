@@ -8,9 +8,6 @@ const Navbar = () => {
   const Links = [
     { name: "Home", link: "/home" },
     { name: "About", link: "/about" },
-    { name: "Team", link: "/team" },
-    { name: "Get App", link: "/getApp" },
-    { name: "Therapy", link: "/therapist" },
   ];
   const { user } = useAuth();
 
