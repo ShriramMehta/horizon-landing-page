@@ -3,16 +3,10 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
-import AuthProvider from "./state/AuthContext";
-import ToastProvider from "./providers/ToastProvider";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <ToastProvider />
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <App />
   </>
 );
 

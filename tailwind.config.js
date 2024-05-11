@@ -4,18 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryIndigo: "#7B3CF3",
-        darkIndigo: "#4E139F",
-        // darkWhite: "#ECE7FE",
-        lightBlue: "#6C63FF",
-        // radicalRed: "#FF2D55",
-        // Backgroundwhite: "#FFFFFF",
-        // lightBlack: "#333333",
-        // darkGray: "#475467",
-        // lightWhite: "#D0D5DD",
-        // errorRed: "#E50000",
-        // successGreen: "#00C853",
-        // lightIndigo: "#9E9EFF",
+        primaryRed: "#CD0706",
+        darkIndigo: "#CD0706",
+        lightBlue: "#CD0706",
+
         headingColor: "#1C048DFF",
         textColor: "#171A1FFF",
       },
@@ -24,9 +16,12 @@ module.exports = {
         heading: ["poppins"],
       },
       backgroundImage: {
-        bluegradient: "linear-gradient(to right, #D0DBF9, #E6ECFC, #F4F7FE, #FFFFFF 48%)",
-        purplegradientBottom: "linear-gradient(to left bottom, #b88ffa, #dfcefa,#ECE3FB , #ffffff 50%)", 
-        purplegradientTop: "linear-gradient(to right top,#b88ffa, #D8C5F6, #ECE3FB, #FFFFFF 50%)",
+        bluegradient:
+          "linear-gradient(to right, #D0DBF9, #E6ECFC, #F4F7FE, #FFFFFF 48%)",
+        purplegradientBottom:
+          "linear-gradient(to left bottom, #b88ffa, #dfcefa,#ECE3FB , #ffffff 50%)",
+        purplegradientTop:
+          "linear-gradient(to right top,#b88ffa, #D8C5F6, #ECE3FB, #FFFFFF 50%)",
       },
       boxShadow: {
         yellowShadow: "0px 0px 80px 20px #fcffc7",

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const Links = [
     { name: "Home", link: "/home" },
     { name: "About", link: "/about" },
+    { name: "Products", link: "/products" },
+    { name: "Contact Us", link: "/contact" },
   ];
-  const { user } = useAuth();
 
   return (
     <section className="my-3" data-scroll-section>
@@ -17,7 +17,7 @@ const Navbar = () => {
         <div class="p-5 flex justify-between items-center">
           <Link to="/">
             <img
-              src="/images/nav_logo.jpg"
+              src="/images/nav_logo.png"
               class="w-20 cursor-pointer object-cover"
               alt="nav logo"
               data-scroll-to
@@ -58,17 +58,6 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-          </ul>
-          <ul className="justify-end sm:z-auto md:z-[10] ">
-            <li>
-              <Link
-                to="/signin"
-                className="w-full justify-center text-center bg-[#7B3CF3] hover:bg-[#F0F0FE] hover:text-[#0E0079] border-[1px] border-[#7B3CF3] hover:border-[#0E0079] hover:border-[1px] text-white px-6 py-2 rounded-xl flex items-center"
-                onClick={() => setOpen(!open)}
-              >
-                {user ? "Profile" : "Login"}
-              </Link>
-            </li>
           </ul>
         </nav>
       </div>

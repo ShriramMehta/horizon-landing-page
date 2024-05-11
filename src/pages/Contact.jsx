@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { IoCallOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
-import toast from "react-hot-toast";
-import userService from "../../services/userService";
 
 const Contact = () => {
   const [query, setQuery] = useState("");
   const handleSubmit = async () => {
     const data = { query };
     try {
-      const res = await userService.submitQuery(data);
-      if (res.data?.success) {
-        toast.success("Query submitted successfullly");
-        setQuery("");
-      }
+     
     } catch (err) {
       console.log(err);
     } finally {

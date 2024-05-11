@@ -26,7 +26,7 @@ export default function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
         <div className={clsx("flex flex-col space-y-10 w-full items-center")}>
           {/* <div className="cursor-pointer h-14 px-1 w-14 md:h-16 xl:h-18 md:w-16 xl:w-18 2xl:w-20 2xl:h-20 rounded-full bg-white flex items-center justify-center"> */}
           <img
-              src="/images/nav_logo.jpg"
+              src="/images/nav_logo.png"
               class="w-16 cursor-pointer object-cover"
               alt="nav logo"
               onClick={()=> handleNavigate('/')}
