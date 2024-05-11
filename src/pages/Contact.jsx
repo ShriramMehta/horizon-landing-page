@@ -45,7 +45,7 @@ const Contact = () => {
           <div className="p-4 border border-1 border-gray-300 rounded-xl flex flex-col justify-center">
             <div className="p-2 flex flex-row gap-4 justify-start items-center">
               <IoCallOutline className="cursor-pointer text-black text-2xl" />
-              <div className="text-black text-xl">+91 0000000</div>
+              <div className="text-black text-xl">+91 8788957664</div>
             </div>
             <hr className="my-2 text-gray-200" />
             <div className="p-2 flex flex-row gap-4 justify-start items-center">

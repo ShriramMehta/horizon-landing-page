@@ -20,8 +20,8 @@ export default function NewFooter() {
 
             <ul className="">
               <li>Info@horizon.com</li>
-              <li>+44 00000</li>
-              <li>63 sasd GARDEN LONDON ENGLAND E</li>
+              <li>+91 8788957664</li>
+              <li>402 Pearl Residency, Kondhapur, Hyderabad 500084 </li>
             </ul>
           </div>
 
