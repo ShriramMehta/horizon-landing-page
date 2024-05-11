@@ -8,8 +8,8 @@ const GetAppMain = () => {
       <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8  md:px-8 md:pb-0">
         <div className="w-3/4 flex flex-col justify-center items-center gap-16 md:gap-16 md:p-3">
           <div className="text-[24px] md:text-[30px] text-headingColor font-medium">
-            Get the <span className="font-bold">Adapt app</span> now and <br />{" "}
-            let’s take you towards your <br />
+            Get the <span className="font-bold">Horizon Spices app</span> now
+            and <br /> let’s take you towards your <br />
             <span className="font-bold">personalised wellness path!</span>
           </div>
           <div className="w-full flex flex-row justify-between lg:justify-center gap-6 items-center">
@@ -20,7 +20,7 @@ const GetAppMain = () => {
                 className="min-w-[100px] w-full h-auto"
               />
               <Link
-                to="https://apps.apple.com/us/app/adapt-wellness/id6463197623?platform=iphone"
+                to="https://apps.apple.com/us/app/Horizon Spices-wellness/id6463197623?platform=iphone"
                 target="_"
               >
                 <img
@@ -37,7 +37,7 @@ const GetAppMain = () => {
                 className="min-w-[100px] w-full h-auto"
               />
               <Link
-                to="https://play.google.com/store/apps/details?id=com.mynd.adapt"
+                to="https://play.google.com/store/apps/details?id=com.mynd.Horizon Spices"
                 target="_"
               >
                 <img

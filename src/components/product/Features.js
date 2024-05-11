@@ -48,7 +48,7 @@ const Features = () => {
               ease: [0, 0.71, 0.2, 1.01],
             },
           }}
-          className="text-4xl  font-lg text-textColor text-center "
+          className="text-3xl mt-4  font-lg text-textColor text-center "
         >
           Key Features
         </m.h1>

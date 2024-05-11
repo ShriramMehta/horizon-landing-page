@@ -18,8 +18,8 @@ const TermsCond = () => {
         Technology (Intermediaries guidelines) Rules, 2011 that require
         publishing the rules and regulations, privacy policy and Terms for
         access or usage of our application and website being: ________(the
-        "Platform"). [JC1] The Platform is owned and operated by Adapt
-        ("Organisation" / “Adapt”), a private limited company, incorporated
+        "Platform"). [JC1] The Platform is owned and operated by Horizon Spices
+        ("Organisation" / “Horizon Spices”), a private limited company, incorporated
         under the provisions of the Companies Act, 2013 [JC2] and having its
         registered office at _________ These terms of usage ("Terms") govern
         your use of the Platform and services provided therein "Services"). By
@@ -28,17 +28,17 @@ const TermsCond = () => {
         read, understood, and accepted to be bound by these Terms. In an event
         you do not agree to these Terms as mentioned herein, we would advise you
         to not use this Platform/ Services. Since these Terms are a legal
-        contract between you and Adapt, it is important that you review the
+        contract between you and Horizon Spices, it is important that you review the
         Terms carefully before accessing or using the Platform. These Terms are
         not intended to alter in any way or limit the terms or conditions of any
-        other agreement that you may have with Adapt, including without
+        other agreement that you may have with Horizon Spices, including without
         limitation the privacy policy accessible at: __________. ("Privacy
         Policy"). For the purpose of these Terms, wherever the context so
         requires "You", "Your", "Customer" or "User" shall mean any natural
         person who uses the Platform for availing the Services. The term "We",
-        "Us", "Our", "Adapt" shall mean the Company, its employees, and
+        "Us", "Our", "Horizon Spices" shall mean the Company, its employees, and
         authorised agents that perform any services on the Company's behalf.
-        Adapt reserves the right to add, modify or make changes to these Terms
+        Horizon Spices reserves the right to add, modify or make changes to these Terms
         at any time. Any such modifications will become effective immediately
         upon posting to the Platform and your continued use of the Platform,
         and/or the Services constitutes your agreement to such modifications.
@@ -48,9 +48,9 @@ const TermsCond = () => {
         and therapy services. 1. Use of Services by an incorporated/registered
         entity 1. If you are not an individual and are an
         incorporated/registered entity/institute/organisation seeking to avail
-        the services of Adapt for your members/employees/students or any
+        the services of Horizon Spices for your members/employees/students or any
         individuals registered with you for any services, you shall enter into
-        an agreement/memorandum of understanding with Adapt for this purpose
+        an agreement/memorandum of understanding with Horizon Spices for this purpose
         prior to availing our Services. 2. Use of Services/Platform by minors 1.
         Use of the Platform is available only to persons over the age of
         eighteen (18). If you are a minor i.e. under the age of eighteen (18)
@@ -66,7 +66,7 @@ const TermsCond = () => {
         order to use the Platform, you may be required to provide information
         about yourself including your name, email address and other personal
         information ("Personal Information"). You agree that any information you
-        provide to Adapt on the Platform will always be accurate, correct and up
+        provide to Horizon Spices on the Platform will always be accurate, correct and up
         to date. You shall not impersonate someone else or provide account
         information, an email address or any other information that is not your
         own. The treatment of your Personal Information and other related
@@ -74,27 +74,27 @@ const TermsCond = () => {
         responsible for maintaining the confidentiality of your account details
         at all times. Further, you are responsible for all activities that occur
         under your account. 4. Payment 1. By using the Platform, you agree to
-        pay all applicable fees and charges upfront to Adapt and also authorise
+        pay all applicable fees and charges upfront to Horizon Spices and also authorise
         us to automatically deduct all applicable charges and fees from the
         payments made as and when such Services are availed on our Platform. You
         further agree to be responsible for any telephonic charges and/or
         internet service fees that may be incurred whilst availing our Services.
         2. All applicable payments should be made by the User prior to availing
         our Services. The User’s booking(s) will not be confirmed until the
-        payment of the same is received by Adapt. [JC3] 3. Before availing any
+        payment of the same is received by Horizon Spices. [JC3] 3. Before availing any
         such Services, we shall communicate in writing (emails permitted) to the
         User, the applicable charges for the said Service. In addition to these
         Terms, a User shall also be bound by the terms (if any) mentioned for
         specific Service(s). 4. Please note that the charges paid by a User are
         not refundable. In the event a User is not satisfied with the Service
-        provided by Adapt, then they may send a mail to our Grievance Redressal
-        Officer ______. Adapt will review each such mail as per its sole
+        provided by Horizon Spices, then they may send a mail to our Grievance Redressal
+        Officer ______. Horizon Spices will review each such mail as per its sole
         discretion, on a case to case basis, and may refund the charges paid, if
-        it deems fit. The User hereby agrees that the decision of Adapt on any
+        it deems fit. The User hereby agrees that the decision of Horizon Spices on any
         such matter shall be final and binding. · REFUND POLICY[JC4] As a
         platform which aims to increase the accessibility of mental health care,
-        Adapt strives to provide every User with the best possible service in
-        order to maximise User satisfaction. Keeping this in mind, Adapt’s
+        Horizon Spices strives to provide every User with the best possible service in
+        order to maximise User satisfaction. Keeping this in mind, Horizon Spices’s
         refund policy has been penned to ensure flexibility for both our Users
         and our Experts. Please note the specific refund policy in the event of
         the following circumstances: 1. Care Plan: Any purchased Care Plan is
@@ -108,24 +108,24 @@ const TermsCond = () => {
         schedule, which might be subject to change. The User agrees that all
         requests for chat sessions are serviced on a first come first serve
         basis. 2. Appointments(Audio/Video/Face to Face): 1. For any Services
-        purchased, the Adapt team shall make three (3) attempts to reach the
+        purchased, the Horizon Spices team shall make three (3) attempts to reach the
         User for confirmation of the Services. In case, the User fails to
         respond within seven (7) days of the last communication, the Service
-        will be treated as consumed and no refunds shall be provided by Adapt.
+        will be treated as consumed and no refunds shall be provided by Horizon Spices.
         2. In case, of technical difficulties during or at the time of the
-        session, Adapt will check with their service providers. If the case is
-        adjudged by Adapt to be genuine, the appointment shall be rescheduled.
+        session, Horizon Spices will check with their service providers. If the case is
+        adjudged by Horizon Spices to be genuine, the appointment shall be rescheduled.
         However, the User shall not be entitled to a refund on account of
         technical difficulties at the time of the session. 3. For Audio and
         Video Sessions, in case, the User fails to turn up at the time of the
-        appointment, Adapt will reschedule the session only once. If the User
+        appointment, Horizon Spices will reschedule the session only once. If the User
         still does not turn up the second time, the appointment will be treated
-        as consumed and no refunds shall be provided by Adapt. 4. For Face to
+        as consumed and no refunds shall be provided by Horizon Spices. 4. For Face to
         Face appointments, any no shows are treated as availed services and no
-        refund or rescheduling shall be provided by Adapt in such a scenario. 5.
-        For any reschedules, the Customer needs to inform Adapt at least
+        refund or rescheduling shall be provided by Horizon Spices in such a scenario. 5.
+        For any reschedules, the Customer needs to inform Horizon Spices at least
         twenty-four (24) hours in advance for a free reschedule. However, if the
-        User requests Adapt for rescheduling its appointment in less than
+        User requests Horizon Spices for rescheduling its appointment in less than
         twenty-four (24) hours of the actual appointment, the User shall have to
         book the same as a new session and make the payment for the same. Unless
         specifically allowed by the Terms, the Customer shall not be entitled to
@@ -149,13 +149,13 @@ const TermsCond = () => {
         authorization for any transactions; (b) any payment issues arising out
         of the transaction or (c) decline of such transaction for any reason. 8.
         You understand, accept and agree that the payment facility provided by
-        us, is neither a banking nor financial service. 9. Adapt reserves its
+        us, is neither a banking nor financial service. 9. Horizon Spices reserves its
         right to revise the charges for Services, at any time, without the
         requirement of any prior intimation to the User. Any such change shall
         be binding and effective on the User. 5. Ownership of the Platform 1.
-        The Platform contains content owned or licensed by Adapt ("Adapt IP").
-        Adapt owns and retains all rights in the Adapt IP. Intellectual Property
-        or IP of Adapt can be defined as all patent rights, copyright rights,
+        The Platform contains content owned or licensed by Horizon Spices ("Horizon Spices IP").
+        Horizon Spices owns and retains all rights in the Horizon Spices IP. Intellectual Property
+        or IP of Horizon Spices can be defined as all patent rights, copyright rights,
         mask work rights, moral rights, rights of publicity, trademark, trade
         dress and service mark rights, goodwill, trade secret rights and other
         intellectual property rights as may now exist or hereafter come into
@@ -163,15 +163,15 @@ const TermsCond = () => {
         extensions thereof, under the laws of any state, country, territory or
         other jurisdiction. You will not remove, alter or conceal any copyright,
         trademark, service mark or other proprietary rights notices incorporated
-        in or accompanying the Adapt IP and you will not reproduce, modify,
-        adapt, prepare derivative works based on, perform, display, publish,
+        in or accompanying the Horizon Spices IP and you will not reproduce, modify,
+        Horizon Spices, prepare derivative works based on, perform, display, publish,
         distribute, transmit, broadcast, sell, license or otherwise exploit the
-        Adapt IP. 2. The Adapt name and logo are trademarks of Adapt, and may
+        Horizon Spices IP. 2. The Horizon Spices name and logo are trademarks of Horizon Spices, and may
         not be copied, imitated or used, in whole or in part, without the prior
-        written permission of Adapt. In addition, all custom graphics, button
+        written permission of Horizon Spices. In addition, all custom graphics, button
         icons and scripts are service marks, trademarks and/or trade dress of
-        Adapt, and may not be copied, imitated or used, in whole or in part,
-        without prior written permission from Adapt. 6. Use of the Platform and
+        Horizon Spices, and may not be copied, imitated or used, in whole or in part,
+        without prior written permission from Horizon Spices. 6. Use of the Platform and
         conduct 1. Use of the Platform 1. You may use the Platform for lawful
         purposes only. You shall not post or transmit through the Platform any
         material which violates or infringes the rights of others, or which is
@@ -203,14 +203,14 @@ const TermsCond = () => {
         that prevent or restrict use or copying of any content or enforce
         limitations on use of the Platform or the content therein. 2. User
         Content Guidelines: 1. You are solely responsible for your conduct and
-        any data that you submit, post or display on or via the Platform. Adapt
+        any data that you submit, post or display on or via the Platform. Horizon Spices
         shall have no liability for conduct in relation to your use of our
         Platform. Violations of these Terms may result in legal consequences
         prescribed by the applicable laws. 2. The Platform provides Users the
         facility to create, share and post content (together, "User Content").
-        Adapt claims no ownership rights over User Content created by you. Adapt
+        Horizon Spices claims no ownership rights over User Content created by you. Horizon Spices
         has the right (but not the obligation) in its sole discretion to remove
-        any User Content that is stored via the Platform. 3. Adapt takes no
+        any User Content that is stored via the Platform. 3. Horizon Spices takes no
         responsibility and assumes no liability for any User Content that you or
         any other User or third party creates, stores, shares, posts or sends
         through the Platform. You shall be solely responsible for your User
@@ -239,8 +239,8 @@ const TermsCond = () => {
         agree that any User Content that you create, store, or share does not
         and will not violate third-party rights of any kind, including without
         limitation any Intellectual Property Rights (as defined below) or rights
-        of privacy. Adapt reserves the right, but is not obligated, to reject
-        and/or remove any User Content that Adapt believes, in its sole
+        of privacy. Horizon Spices reserves the right, but is not obligated, to reject
+        and/or remove any User Content that Horizon Spices believes, in its sole
         discretion, violates these provisions. For the purposes of these Terms,
         "Intellectual Property Rights" means all patent rights, copyrights, mask
         work rights, moral rights, rights of publicity, trademark, trade dress
@@ -257,31 +257,31 @@ const TermsCond = () => {
         work or in which you do not otherwise own the copyright, you have
         obtained all rights, licenses, consents, and permissions necessary in
         order to use that copyrighted material in connection with the creation
-        and/or dissemination of that User Content using the Platform. 3. Adapt
+        and/or dissemination of that User Content using the Platform. 3. Horizon Spices
         may exercise the rights to your User Content granted under these Terms
         without liability for payment of any guild fees, residuals, payments,
         fees, or royalties payable under any collective bargaining agreement or
-        otherwise. 4. Adapt takes no responsibility and assumes no liability for
+        otherwise. 4. Horizon Spices takes no responsibility and assumes no liability for
         any User Content that you or any other User or third party creates,
         stores, shares, posts, sends or otherwise makes available through the
         Platform, whether directly or indirectly. You shall be solely
         responsible for your User Content and the consequences of posting,
-        publishing it, or sharing it and you agree that Adapt is only acting a
+        publishing it, or sharing it and you agree that Horizon Spices is only acting a
         passive conduit for the distribution and publication of your User
         Content. If your User Content violates these Terms, you may have to bear
         consequences under applicable law for such User Content. 7. Rights to
-        User Content 1. If you share your User Content with Adapt and/or link
-        your User Content to Adapt on a third party service and/or post content
-        on any social media page owned and operated by Adapt, you expressly
+        User Content 1. If you share your User Content with Horizon Spices and/or link
+        your User Content to Horizon Spices on a third party service and/or post content
+        on any social media page owned and operated by Horizon Spices, you expressly
         grant and you hereby represent and warrant that you have all rights
-        necessary to grant to Adapt a royalty-free, sublicensable, transferable,
+        necessary to grant to Horizon Spices a royalty-free, sublicensable, transferable,
         perpetual, irrevocable, non-exclusive, worldwide license to use,
         reproduce, modify, publish, list information regarding, edit, translate,
         distribute, syndicate, publicly perform, publicly display, and make
         derivative works of all such User Content and your name, voice, and/or
         likeness as contained in your User Content, in whole or in part, and in
         any form, media or technology, whether now known or hereafter developed,
-        for use in connection with the Platform and Adapt’s (and its successors'
+        for use in connection with the Platform and Horizon Spices’s (and its successors'
         and affiliates') business, including without limitation for promoting
         and redistributing part or all of our Platform (and derivative works
         thereof) in any media formats and through any media channels. 8.
@@ -291,12 +291,12 @@ const TermsCond = () => {
         health professional. You are advised strongly against relying solely on,
         or make decisions based solely on advice provided by any Expert.[JC5] 2.
         You understand and agree that although an Expert may be a counsellor,
-        therapist or other mental health professional, Adapt disclaims any and
+        therapist or other mental health professional, Horizon Spices disclaims any and
         all liability for any consultation and therapy services rendered by an
         Expert to you through the Platform. You further acknowledge and agree
         that you take full responsibility for the decision to access a Expert
         through the Platform and to continue to interact with such
-        individual(s), and that the role of Adapt is strictly limited to
+        individual(s), and that the role of Horizon Spices is strictly limited to
         providing access to such Experts to you. 3. Use of the Services is not
         for emergencies. If you think you have a medical or mental health
         emergency, or if at any time you are concerned about your care or
@@ -308,14 +308,14 @@ const TermsCond = () => {
         personnel. If you are thinking about suicide, immediately call a suicide
         prevention helpline such as Aasra (91-22-27546669).[JC6] 5. Your use of
         information provided on the Platform and availing of services on the
-        Platform is solely at your own risk. Adapt is not, and will not in any
+        Platform is solely at your own risk. Horizon Spices is not, and will not in any
         manner be involved in the practice of medicine or the provision of
         medical care. 9. Privacy and security 1. You understand that by using
         the Platform you consent to the collection, use and disclosure of your
         Personal Information (as defined in the Privacy Policy) and aggregate
         data as set forth in our Privacy Policy. 2. We endeavor to protect the
         privacy of your User account and other Personal Information collected by
-        us, but you understand that Adapt cannot guarantee that unauthorized
+        us, but you understand that Horizon Spices cannot guarantee that unauthorized
         third parties will never be able to defeat our security measures or use
         your personal information for improper purposes. You acknowledge that
         you provide your Personal Information at your own risk. 3. Your User
@@ -331,9 +331,9 @@ const TermsCond = () => {
         provided without warranties of any kind, whether express or implied,
         including, but not limited to, implied warranties of merchantability,
         fitness for a particular purpose, or non-infringement. No advice or
-        information, whether oral or written, obtained by you from Adapt or
+        information, whether oral or written, obtained by you from Horizon Spices or
         through the Platform will not create any warranty not expressly stated
-        herein. Without limiting the foregoing, Adapt, its subsidiaries, its
+        herein. Without limiting the foregoing, Horizon Spices, its subsidiaries, its
         affiliates, and its licensors do not warrant that the content found on
         the Platform is accurate, reliable or correct; that the Platform will
         meet your requirements; that the Platform will be available at any
@@ -343,19 +343,19 @@ const TermsCond = () => {
         through the use of the Platform is downloaded at your own risk and you
         will be solely responsible for any damage to your computer system or
         mobile device or loss of data that results from such download or your
-        use of the Platform. 2. Adapt does not warrant, endorse, guarantee, or
+        use of the Platform. 2. Horizon Spices does not warrant, endorse, guarantee, or
         assume responsibility for any product or service advertised or offered
         by a third party through the Platform or any hyperlinked website or
-        service, and Adapt will not be a party to or in any way monitor any
+        service, and Horizon Spices will not be a party to or in any way monitor any
         transaction between you and third-party providers of products or
-        services. 11. Exceptions and limitations 1. Adapt does not make any
+        services. 11. Exceptions and limitations 1. Horizon Spices does not make any
         representation or warranty as to the quality or value of the Services
-        offered on the Platform, or availability of Expert(s). Adapt does not
+        offered on the Platform, or availability of Expert(s). Horizon Spices does not
         implicitly or explicitly support or endorse any services on the
-        Platform. Adapt shall not be liable for any errors or omissions, whether
-        on behalf of itself or third parties. 2. While Adapt carries out
+        Platform. Horizon Spices shall not be liable for any errors or omissions, whether
+        on behalf of itself or third parties. 2. While Horizon Spices carries out
         background checks and verifications on all Experts, you understand and
-        acknowledge that Adapt does not endorse, recommend, warrant or guarantee
+        acknowledge that Horizon Spices does not endorse, recommend, warrant or guarantee
         to qualifications, expertise, claims or background of any Expert, or any
         service, advice, opinion, recommendation provided by an Expert. Nothing
         contained in these Terms, the Platform or on any third party site shall
@@ -368,17 +368,17 @@ const TermsCond = () => {
         occasions when the Platform may be interrupted, including, without
         limitation, for scheduled maintenance or upgrades, for emergency
         repairs, or due to failure of telecommunications links and/or equipment.
-        4. You agree that Adapt is not responsible for, and does not endorse
-        User Content posted within the Platform. Adapt does not have any
+        4. You agree that Horizon Spices is not responsible for, and does not endorse
+        User Content posted within the Platform. Horizon Spices does not have any
         obligation to pre-screen, monitor, edit, or remove any User Content. If
         your User Content violates these Terms, you shall be solely responsible
         for all consequences under applicable law with respect to such User
-        Content. 5. Adapt reserves the right to remove any User Content from the
+        Content. 5. Horizon Spices reserves the right to remove any User Content from the
         Platform for any reason, without prior notice. User Content removed from
-        the Platform may continue to be stored by Adapt, including, without
+        the Platform may continue to be stored by Horizon Spices, including, without
         limitation, in order to comply with certain legal obligations imposed by
         applicable law, but may not be retrievable without a valid court order.
-        Adapt will not be liable to you for any modification, suspension, or
+        Horizon Spices will not be liable to you for any modification, suspension, or
         discontinuation of the Platform, or the loss of any User Content. 6. We
         may, without prior notice, change the Platform, stop providing the
         Platform or features of the Platform, to you or to Users generally, or
@@ -387,8 +387,8 @@ const TermsCond = () => {
         Content without notice and liability for any reason, including if in our
         sole determination you violate any provision of these Terms, or for no
         reason. Upon termination for any reason or no reason, you continue to be
-        bound by these Terms. 12. Termination 1. Adapt may terminate these Terms
-        for any reason at any time. Adapt reserves the right, in its sole
+        bound by these Terms. 12. Termination 1. Horizon Spices may terminate these Terms
+        for any reason at any time. Horizon Spices reserves the right, in its sole
         discretion, to restrict, suspend, or terminate your access to and use of
         the Platform, with or without reason and prior notice. Otherwise
         applicable sections of the Terms shall survive termination. In addition
@@ -396,7 +396,7 @@ const TermsCond = () => {
         any violations of these Terms. You may terminate these Terms at any time
         by deleting your User account. 13. Third-party links 1. The Platform may
         contain links to other Platform ("Linked Sites"). The Linked Sites are
-        not under the control of Adapt. We are not responsible for the content
+        not under the control of Horizon Spices. We are not responsible for the content
         of any Linked Site, including, without limitation to, any link contained
         in a Linked Site, or any changes or updates to a Linked Site. 2. We are
         not responsible for any form of transmission, whatsoever, received by
@@ -425,22 +425,22 @@ const TermsCond = () => {
         reasonable access to you, as we deem necessary. You shall not settle any
         third party claim or waive any defence without our prior written
         consent. 2. In the event of a dispute regarding any transaction
-        conducted via the Platform, you hereby relieve Adapt, its affiliates,
+        conducted via the Platform, you hereby relieve Horizon Spices, its affiliates,
         their respective officers, directors, shareholders, employees,
         sub-contractors and agents from all manner of actions, claims or demands
         and from any and all losses (direct, indirect, incidental or
         consequential), damages, costs or expenses, including, without
         limitation, court costs and attorneys' fees, which member may have
         against one or more of the above. 15. Limitation of liability 1. In no
-        event will Adapt or its affiliates or any party involved in creating,
+        event will Horizon Spices or its affiliates or any party involved in creating,
         producing, or delivering the Platform be liable for any direct,
         incidental, consequential, indirect, special, or punitive damages
         arising out of your access, use, misuse, or inability to use the
         Platform or any linked sites, or in connection with any failure of
         performance. These limitations apply whether the alleged liability is
         based on contract, tort, negligence, strict liability, or any other
-        basis, even if Adapt has been advised of the possibility of such damage.
-        2. At Adapt, we believe it is unethical for our counsellors/Experts to
+        basis, even if Horizon Spices has been advised of the possibility of such damage.
+        2. At Horizon Spices, we believe it is unethical for our counsellors/Experts to
         have dual relationships with current or former clients. During and after
         our counselling work, you are forbidden to have any individual
         relationship of any other type with our counsellors; this includes
@@ -450,7 +450,7 @@ const TermsCond = () => {
         refer others to us.[JC7] 3. By use of the Platform and the Services, the
         User acknowledges that he/she is solely responsible for any and all
         actions, liabilities, consequences, decisions, behaviours ("Conduct")
-        arising out of or in connection Adapt and/or its affiliates responsible
+        arising out of or in connection Horizon Spices and/or its affiliates responsible
         for such Conduct. 16. Dispute Resolution 1. In the event of any dispute,
         controversy or claim arising out of or relating to this Agreement or any
         subsequent amendments to this Agreement including, without limitation,
@@ -497,20 +497,20 @@ const TermsCond = () => {
         agreements to be performed by the other shall not be construed to be a
         waiver of any succeeding breach thereof or of any covenant, condition,
         or agreement herein contained (whether or not the provision is similar).
-        5. Notices: Any notice required or permitted to be given to Adapt
+        5. Notices: Any notice required or permitted to be given to Horizon Spices
         hereunder shall be in writing and sent or transmitted by (i) registered
         or certified mail; (ii) hand-delivery; (iii) email; or (iv)
         internationally recognized courier service, provided its receipt is
         acknowledged and, dispatched or sent or transmitted to the address
-        specified by Adapt. All notice required to be given under these Terms
+        specified by Horizon Spices. All notice required to be given under these Terms
         shall be addressed to: Name: Postal Address: E-mail Address:
         [JC1]Assuming this is both for the app and the website [JC2]To be
         confirmed [JC3]To be confirmed. [JC4]Should also include situation where
         the session is cancelled by an Expert. [JC5]TBC. Substitute: You
         understand and agree that any interactions and associated issues with
         the Experts on the platform, is strictly between you and the Experts.
-        You shall not hold Adapt and/or the Experts responsible for any such
-        interactions and associated issues. Adapt and/or the Expert is not
+        You shall not hold Horizon Spices and/or the Experts responsible for any such
+        interactions and associated issues. Horizon Spices and/or the Expert is not
         responsible for any outcome between you and the Expert you interact
         with. If you decide to engage with a Expert to provide Psychological
         wellness Services to you, you do so at your own discretion and risk. The

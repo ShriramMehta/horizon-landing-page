@@ -2,17 +2,17 @@ import React from "react";
 import { Routes, Route, Outlet, BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./pages/static/About";
-import Footer from "./components/Footer";
 import Main from "./pages/Main";
 import Contact from "./pages/Contact";
 import Product from "./pages/static/Product";
+import NewFooter from "./components/NewFooter";
 
 const Layout = () => {
   return (
     <>
       <Navbar />
       <Outlet />
-      <Footer />
+      <NewFooter />
     </>
   );
 };

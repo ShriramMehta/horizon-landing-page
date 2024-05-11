@@ -8,7 +8,7 @@ const PrivacyPol = () => {
       </h1>
       <p className="text-md">
         About your privacy and this Privacy Policy Your privacy is extremely
-        important to us at Adapt (“Organisation/We/Our”). We are constantly
+        important to us at Horizon Spices (“Organisation/We/Our”). We are constantly
         putting a great deal of thought, effort, tools, resources and procedures
         in place in order to protect and safeguard your privacy. This document
         is our “Privacy Policy” and it contains details on issues related to
@@ -18,7 +18,7 @@ const PrivacyPol = () => {
         Policy applies to the visitors to our website or app (collectively, the
         “Platform”) and the individuals who utilise our Services. The Privacy
         Policy must be read together with the Terms and Conditions which can be
-        found here at Adapt. When you use our Platform, you accept and agree to
+        found here at Horizon Spices. When you use our Platform, you accept and agree to
         both the Terms and Conditions and to the Privacy Policy. If you do not
         agree to be bound to the Privacy Policy you should stop using the
         Platform immediately. By accessing and using our Platform you affirm
@@ -398,7 +398,7 @@ const PrivacyPol = () => {
         too. “Business Day” means days falling between Monday to Friday,
         including such days from __ am to __ pm and excluding any national
         holidays. [JC2]“any information” makes the ambit too broad, therefore
-        added “designated as confidential” [JC3]Assuming that Adapt can also be
+        added “designated as confidential” [JC3]Assuming that Horizon Spices can also be
         aggrieved in case of breach of privacy policy by the User.
         [JC4]Arbitration may not be the best option since it works on its own
         pace and works best if both parties are amicable and not hostile towards

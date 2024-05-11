@@ -1,1 +1,1 @@
-# Adapt-website
+# Horizon Spices-website

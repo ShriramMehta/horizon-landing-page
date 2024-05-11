@@ -79,18 +79,21 @@ const Hero = () => {
             }}
             class=" my-1 text-xl  text-textColor "
           >
+            <br />
             At Horizon Spices, we take pride in bringing you the finest
             selection of spices, meticulously curated to elevate your culinary
             experience. From the fiery heat of our red chili powder to the
             aromatic richness of our cumin and coriander, each spice embodies
             the unparalleled quality that Guntur is famous for. Our commitment
             to authenticity and purity ensures that every spice blend we offer
-            is a true reflection of Guntur's heritage and craftsmanship. Whether
-            you're a seasoned chef or an enthusiastic home cook, our spices will
-            inspire you to create unforgettable dishes that tantalize the taste
-            buds and nourish the soul. Join us on a journey of culinary
-            exploration and experience the unmatched quality of Guntur spices
-            with Horizon Spices.
+            is a true reflection of Guntur's heritage and craftsmanship.
+            <br />
+            <br />
+            Whether you're a seasoned chef or an enthusiastic home cook, our
+            spices will inspire you to create unforgettable dishes that
+            tantalize the taste buds and nourish the soul. Join us on a journey
+            of culinary exploration and experience the unmatched quality of
+            Guntur spices with Horizon Spices.
           </m.h4>
         </div>
       </div>
