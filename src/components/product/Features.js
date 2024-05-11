@@ -29,7 +29,7 @@ const Features = () => {
         <span className="text-primaryRed "> Special Guntur Chili Powder</span>
       </h3>
       <div className="w-full flex justify-center mt-6">
-        <div className="w-1/2 text-lg text-center">
+        <div className="w-full md:w-1/2 text-lg text-center">
           Indulge in the fiery essence of Guntur with Horizon Spices' Special
           Guntur Chili Powder. Sourced directly from the spice capital of India,
           our chili powder is crafted with utmost care to deliver unmatched heat

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 export default function NewFooter() {
   return (
-    <div className="overflow-x-hidden text-black   w-full font-poppins mx-auto pt-5">
-      <footer aria-label="Site Footer" class=" mx-auto p-6 px-48">
-        <div class="flex flex-col gap-6 sm:flex-row w-full justify-center items-center">
-          <div class="w-[40%] ">
+    <div className=" text-black   w-full font-poppins mx-auto pt-5">
+      <footer aria-label="Site Footer" class=" mx-auto p-6 px-6 md:px-48">
+        <div class="flex flex-col gap-6 md:flex-row w-full justify-center items-center">
+          <div class="w-full md:w-[40%] ">
             <img src="/images/nav_logo.png" alt="footer logo" />
           </div>
-          <div className="text-left text-black text-sm font-normal  ">
+          <div className="text-left text-black text-sm font-normal ">
             {/* Logo  */}
             <p className="mb-4 ">
               Join us on a journey of flavor exploration and 
@@ -209,7 +209,7 @@ export default function NewFooter() {
           <div className="py-5 text-center">
             Copyright @ 2024 by{" "}
             <span className="text-primaryRed font-bold">Horizon Spices</span>{" "}
-            | all rights reserved!
+            | All rights reserved!
           </div>
         </div>
       </div>

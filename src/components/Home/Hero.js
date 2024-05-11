@@ -23,7 +23,7 @@ const Hero = () => {
             }}
             src="/images/spices.jpg"
             alt="hero"
-            className="w-full  h-full mt-[-5rem] "
+            className="w-full h-[200px] md:h-full mt-[-5rem] "
           />
         </div>
         <div className="w-full md:w-1/2 xl:w-1/2  flex flex-col justify-start items-start p-5 md:ml-12">

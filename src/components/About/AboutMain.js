@@ -3,15 +3,15 @@ import React from "react";
 const AboutMain = () => {
   return (
     <section className="mx-auto mb-auto mb-20">
-      <div className="flex flex-row md:flex-row justify-center items-center md:gap-16 p-5 w-full">
-        <div className="w-1/2">
+      <div className="flex flex-col md:flex-row justify-center items-center md:gap-16 p-5 w-full">
+        <div className="w-full md:w-1/2">
           <img
             src="/images/history.png"
             alt="hero"
             className="w-full  h-full "
           />
         </div>
-        <div className="w-1/2 flex flex-col gap-8">
+        <div className="w-full md:w-1/2 flex flex-col gap-8">
           <h3 className=" text-4xl md:text-5xl lg:text-6xl text-textColor font-bold p-3 font-heading">
             About <span className="text-primaryRed"> Horizon Spices!</span>
           </h3>
