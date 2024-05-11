@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutMain = () => {
   return (
-    <section className="relative">
+    <section className="mx-auto mb-auto mb-20">
       <div className="flex flex-row md:flex-row justify-center items-center md:gap-16 p-5 w-full">
         <div className="w-1/2">
           <img

@@ -10,7 +10,7 @@ const Hero = () => {
     setHasAnimated(true);
   }, []);
   return (
-    <section className="mx-auto mb-auto xl:mb-44">
+    <section className="mx-auto mb-auto mb-20">
       <div className="flex flex-col  w-full justify-between items-center">
         <div className="w-full  flex justify-end items-end pl-4">
           <m.img

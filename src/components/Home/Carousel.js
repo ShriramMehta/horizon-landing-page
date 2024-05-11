@@ -36,30 +36,18 @@ const Carousel = () => {
       breakpoints={{
         0: {
           slidesPerView: 1,
-          // autoplay: true,
-          // autoplay:{
-          //   delay:1000,
-          // }
         },
         480: {
           slidesPerView: 1.8,
-          // autoplay:{
-          //   delay:1000,
-          // }
         },
         768: {
           slidesPerView: 2,
-          // autoplay:{
-          //   delay:1000,
-          // }
         },
         1024: {
           slidesPerView: 2.5,
-          // autoplay: false,
         },
         1280: {
           slidesPerView: 3,
-          // autoplay: false,
         },
       }}
     >

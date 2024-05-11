@@ -1,16 +1,14 @@
 import React from "react";
 import Home from "./static/Home";
 import About from "./static/About";
-import GetApp from "./static/GetApp";
-import Team from "./static/Team";
+import Product from "./static/Product";
 
 const Main = () => {
   return (
     <>
       <Home />
       <About />
-      <GetApp />
-      <Team />
+      <Product />
     </>
   );
 };
