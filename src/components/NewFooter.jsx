@@ -9,11 +9,11 @@ export default function NewFooter() {
           <div class="w-full md:w-[40%] ">
             <img src="/images/nav_logo.png" alt="footer logo" />
           </div>
-          <div className="text-left text-black text-sm font-normal ">
+          <div className="text-left text-black text-sm font-normal p-3 ">
             {/* Logo  */}
             <p className="mb-4 ">
               Join us on a journey of flavor exploration and 
-              <br/>experience the
+              experience the
               unmatched quality and richness of Guntur spices with Horizon
               Spices.
             </p>
@@ -25,7 +25,7 @@ export default function NewFooter() {
             </ul>
           </div>
 
-          <div class="flex gap-6 font-poppins text-left  items-center w-[50%] justify-center">
+          {/* <div class="flex gap-6 font-poppins text-left  items-center w-[50%] justify-center">
             <div className="">
               <nav aria-label="Footer Navigation - Services" className="">
                 <ul class=" text-md tracking-wider ">
@@ -72,7 +72,7 @@ export default function NewFooter() {
                 </ul>
               </nav>
             </div>
-          </div>
+          </div> */}
 
           <div className="font-poppins flex flex-col gap-2 mr-10">
             <ul class="flex gap-6 my-6">

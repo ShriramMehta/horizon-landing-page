@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section className="mx-auto mb-auto mb-20">
       <div className="flex flex-col  w-full justify-between items-center">
-        <div className="w-full  flex justify-end items-end pl-4">
+        <div className="w-full  flex justify-end items-end overflow-x-hidden">
           <m.img
             initial={!hasAnimated ? { x: 30, opacity: 0 } : {}}
             animate={!hasAnimated ? { x: 0, opacity: 1 } : {}}
@@ -23,7 +23,7 @@ const Hero = () => {
             }}
             src="/images/spices.jpg"
             alt="hero"
-            className="w-full h-[200px] md:h-full mt-[-5rem] "
+            className="max-w-screen h-[200px] md:h-full mt-0 md:mt-[-5rem] "
           />
         </div>
         <div className="w-full md:w-1/2 xl:w-1/2  flex flex-col justify-start items-start p-5 md:ml-12">
@@ -56,7 +56,7 @@ const Hero = () => {
                 ease: "anticipate",
               },
             }}
-            class=" my-2 text-xl text-textColor "
+            class=" my-2  text-textColor "
           >
             Discover the essence of authentic spices with our premium selection
             sourced directly from the heartland of spice,
@@ -77,7 +77,7 @@ const Hero = () => {
                 ease: "anticipate",
               },
             }}
-            class=" my-1 text-xl  text-textColor "
+            class=" my-1   text-textColor "
           >
             <br />
             At Horizon Spices, we take pride in bringing you the finest

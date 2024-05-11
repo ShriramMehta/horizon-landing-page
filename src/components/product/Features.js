@@ -25,11 +25,11 @@ const items = [
 const Features = () => {
   return (
     <div className="w-full px-6" id="service">
-      <h3 className=" text-4xl text-textColor font-bold  text-center">
+      <h3 className=" text-4xl text-textColor font-bold p-3 text-left md:text-center">
         <span className="text-primaryRed "> Special Guntur Chili Powder</span>
       </h3>
       <div className="w-full flex justify-center mt-6">
-        <div className="w-full md:w-1/2 text-lg text-center">
+        <div className="w-full md:w-1/2 text-lg text-left md:text-center">
           Indulge in the fiery essence of Guntur with Horizon Spices' Special
           Guntur Chili Powder. Sourced directly from the spice capital of India,
           our chili powder is crafted with utmost care to deliver unmatched heat
@@ -53,7 +53,7 @@ const Features = () => {
           Key Features
         </m.h1>
       </div>
-      <div className="text-white grid my-10 lg:grid-cols-4 gap-6 sm:grid-cols-2 gap-3 px-12">
+      <div className="text-white grid my-10 lg:grid-cols-4 gap-6 sm:grid-cols-2 gap-3 px-0 md:px-12">
         {items.map((item, index) => (
           <m.div
             key={index}
