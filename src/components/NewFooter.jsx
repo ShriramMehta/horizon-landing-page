@@ -208,7 +208,7 @@ export default function NewFooter() {
         <div class="items-center justify-between ">
           <div className="py-5 text-center">
             Copyright @ 2024 by{" "}
-            <span className="text-headingColor font-bold">Horizon Spices</span>{" "}
+            <span className="text-primaryRed font-bold">Horizon Spices</span>{" "}
             | all rights reserved!
           </div>
         </div>
