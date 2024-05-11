@@ -1,29 +1,50 @@
 import React from "react";
-import AboutSVG from "./AboutSVG";
 
 const AboutMain = () => {
   return (
-    <section className="relative md:mt-10">
-      <div className="flex flex-col md:flex-row justify-center items-center md:gap-0 pt-5 px-5 w-full">
-        <AboutSVG />
-        <div className="w-full flex flex-col gap-8 z-[3] md:ml-[-10rem] p-5">
-          <div className="text-[28px] md:text-[40px] md:leading-[50px] text-headingColor font-[700]">
-            Mental health care that fits
-            <br /> seamlessly into your daily routine.{" "}
-          </div>
-          <div className="text-[20px] md:leading-[40px] text-textColor font-medium">
-            We help you <span className="italic">adapt</span> to difficult
-            situations while we <br /> <span className="italic">adapt</span> to
-            your unique needs.
+    <section className="relative">
+      <div className="flex flex-row md:flex-row justify-center items-center md:gap-16 p-5 w-full">
+        <div className="w-1/2">
+          <img
+            src="/images/history.png"
+            alt="hero"
+            className="w-full  h-full "
+          />
+        </div>
+        <div className="w-1/2 flex flex-col gap-8">
+          <h3 className=" text-4xl md:text-5xl lg:text-6xl text-textColor font-bold p-3 font-heading">
+            About <span className="text-primaryRed"> Horizon Spices!</span>
+          </h3>
+          <div>
+            At Horizon Spices, we are passionate about bringing the rich
+            heritage and authentic flavors of Guntur spices to your kitchen.
+            Founded with a vision to elevate culinary experiences, Horizon
+            Spices is dedicated to sourcing the finest spices directly from the
+            heartland of spice cultivation.
             <br />
-            From activities for different focus areas to experienced <br />
-            therapists that will guide you - you{" "}
-            <span className="italic">can</span> have it all!
+            <br />
+            Guntur, nestled in the southern state of Andhra Pradesh, is renowned
+            worldwide for its premium quality spices and vibrant culinary
+            culture. It is here that Horizon Spices finds its inspiration,
+            sourcing the freshest chili peppers, cumin, coriander, and other
+            spices directly from local farmers who have honed their craft for
+            generations.
+            <br />
+            <br />
+            We believe in preserving the essence of Guntur spices by adhering to
+            traditional methods of cultivation and processing. Each spice we
+            offer undergoes rigorous quality checks to ensure that it meets our
+            high standards of purity and flavor.
+            <br />
+            <br />
+            At Horizon Spices, we are committed to transparency, authenticity,
+            and sustainability. We take pride in our role as custodians of
+            Guntur's spice heritage, and we strive to share its bounty with the
+            world. Join us on a journey of flavor exploration and experience the
+            unmatched quality and richness of Guntur spices with Horizon Spices.
           </div>
         </div>
       </div>
-      <div className="w-[200px] h-[200px] md:h-[600px] absolute bg-purplegradientTop z-[1] bottom-0"></div>
-      <div className="w-[400px] h-[100px] md:h-[400px] absolute bg-purplegradientBottom z-[1] top-0 right-0"></div>
     </section>
   );
 };
