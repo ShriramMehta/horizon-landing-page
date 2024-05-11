@@ -74,7 +74,7 @@ export default function NewFooter() {
             </div>
           </div> */}
 
-          <div className="font-poppins flex flex-col gap-2 mr-10">
+          <div className="font-poppins flex flex-col gap-2 ">
             <ul class="flex gap-6 my-6">
               <li>
                 <Link
